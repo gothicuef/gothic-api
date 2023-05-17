@@ -37,16 +37,16 @@ static int DynamicCastStrcmp( const char* str1, const char* str2 ) {
 }
 
 
-static void CallPatch( unsigned int address, void* callTarget ) {
+static void CallPatch( unsigned int address, unsigned int callTarget ) {
   unsigned int* offset = (unsigned int*)(address + 1);
   DWORD protection = PAGE_READWRITE;
   VirtualProtect( offset, 4, protection, &protection );
-  *offset = (unsigned int)callTarget - address - 5;
+  *offset = callTarget - address - 5;
   VirtualProtect( offset, 4, protection, &protection );
 }
 
 
-static void SetJump( unsigned int address, void* jumpTarget ) {
+static void SetJump( unsigned int address, unsigned int jumpTarget ) {
 #pragma pack(push, 1)
   struct Jump {
     byte Instruction;
@@ -59,7 +59,7 @@ static void SetJump( unsigned int address, void* jumpTarget ) {
   DWORD protection = PAGE_READWRITE;
   VirtualProtect( jump, sizeof( Jump ), protection, &protection);
   jump->Instruction = 0xE9;
-  jump->Offset = (unsigned int)jumpTarget - address - 5;
+  jump->Offset = jumpTarget - address - 5;
   VirtualProtect( jump, sizeof( Jump ), protection, &protection );
 }
 
@@ -104,53 +104,55 @@ static bool DynamicCastPatch() {
     return false;
   }
 
+  auto callTarget = (unsigned int)DynamicCastStrcmp;
+  auto jumpFrom = (unsigned int)rtDynamicCast;
   if( gameVersion == 1 ) {
-    CallPatch( 0x00777249, &DynamicCastStrcmp );
-    CallPatch( 0x007772A9, &DynamicCastStrcmp );
-    CallPatch( 0x007772DA, &DynamicCastStrcmp );
-    CallPatch( 0x00777342, &DynamicCastStrcmp );
-    CallPatch( 0x007773A5, &DynamicCastStrcmp );
-    CallPatch( 0x007773DA, &DynamicCastStrcmp );
-    CallPatch( 0x0077747A, &DynamicCastStrcmp );
+    CallPatch( 0x00777249, callTarget );
+    CallPatch( 0x007772A9, callTarget );
+    CallPatch( 0x007772DA, callTarget );
+    CallPatch( 0x00777342, callTarget );
+    CallPatch( 0x007773A5, callTarget );
+    CallPatch( 0x007773DA, callTarget );
+    CallPatch( 0x0077747A, callTarget );
     DynamicCastNamespace = "Gothic_I_Classic@@";
     DynamicCastNamespaceLength = strlen( DynamicCastNamespace );
-    SetJump( 0x0077709A, rtDynamicCast );
+    SetJump( jumpFrom, 0x0077709A );
   }
   else if( gameVersion == 2 ) {
-    CallPatch( 0x007BB009, &DynamicCastStrcmp );
-    CallPatch( 0x007BB069, &DynamicCastStrcmp );
-    CallPatch( 0x007BB09A, &DynamicCastStrcmp );
-    CallPatch( 0x007BB102, &DynamicCastStrcmp );
-    CallPatch( 0x007BB165, &DynamicCastStrcmp );
-    CallPatch( 0x007BB19A, &DynamicCastStrcmp );
-    CallPatch( 0x007BB23A, &DynamicCastStrcmp );
+    CallPatch( 0x007BB009, callTarget );
+    CallPatch( 0x007BB069, callTarget );
+    CallPatch( 0x007BB09A, callTarget );
+    CallPatch( 0x007BB102, callTarget );
+    CallPatch( 0x007BB165, callTarget );
+    CallPatch( 0x007BB19A, callTarget );
+    CallPatch( 0x007BB23A, callTarget );
     DynamicCastNamespace = "Gothic_I_Addon@@";
     DynamicCastNamespaceLength = strlen( DynamicCastNamespace );
-    SetJump( 0x007BAE5A, rtDynamicCast );
+    SetJump( jumpFrom, 0x007BAE5A );
   }
   else if( gameVersion == 3 ) {
-    CallPatch( 0x007C4729, &DynamicCastStrcmp );
-    CallPatch( 0x007C4789, &DynamicCastStrcmp );
-    CallPatch( 0x007C47BA, &DynamicCastStrcmp );
-    CallPatch( 0x007C4822, &DynamicCastStrcmp );
-    CallPatch( 0x007C4885, &DynamicCastStrcmp );
-    CallPatch( 0x007C48BA, &DynamicCastStrcmp );
-    CallPatch( 0x007C495A, &DynamicCastStrcmp );
+    CallPatch( 0x007C4729, callTarget );
+    CallPatch( 0x007C4789, callTarget );
+    CallPatch( 0x007C47BA, callTarget );
+    CallPatch( 0x007C4822, callTarget );
+    CallPatch( 0x007C4885, callTarget );
+    CallPatch( 0x007C48BA, callTarget );
+    CallPatch( 0x007C495A, callTarget );
     DynamicCastNamespace = "Gothic_II_Classic@@";
     DynamicCastNamespaceLength = strlen( DynamicCastNamespace );
-    SetJump( 0x007C457A, rtDynamicCast );
+    SetJump( jumpFrom, 0x007C457A );
   }
   else if( gameVersion == 4 ) {
-    CallPatch( 0x007D0BE9, &DynamicCastStrcmp );
-    CallPatch( 0x007D0C49, &DynamicCastStrcmp );
-    CallPatch( 0x007D0C7A, &DynamicCastStrcmp );
-    CallPatch( 0x007D0CE2, &DynamicCastStrcmp );
-    CallPatch( 0x007D0D45, &DynamicCastStrcmp );
-    CallPatch( 0x007D0D7A, &DynamicCastStrcmp );
-    CallPatch( 0x007D0E1A, &DynamicCastStrcmp );
+    CallPatch( 0x007D0BE9, callTarget );
+    CallPatch( 0x007D0C49, callTarget );
+    CallPatch( 0x007D0C7A, callTarget );
+    CallPatch( 0x007D0CE2, callTarget );
+    CallPatch( 0x007D0D45, callTarget );
+    CallPatch( 0x007D0D7A, callTarget );
+    CallPatch( 0x007D0E1A, callTarget );
     DynamicCastNamespace = "Gothic_II_Addon@@";
     DynamicCastNamespaceLength = strlen( DynamicCastNamespace );
-    SetJump( 0x007D0A3A, rtDynamicCast );
+    SetJump( jumpFrom, 0x007D0A3A );
   }
 
   return true;
