@@ -1,6 +1,11 @@
 #include <Windows.h>
-#include <crtversion.h>
 #include <stdio.h>
+
+
+static void WriteLogMessage( const char* message ) {
+  DWORD dw;
+  WriteConsole( GetStdHandle( STD_OUTPUT_HANDLE ), message, strlen( message ), &dw, nullptr);
+}
 
 
 static int GetGameVersion() {
@@ -111,12 +116,6 @@ static void* GetDynamicCastAddress() {
   return __RTDynamicCast;
 }
 #endif
-
-
-static void WriteLogMessage( const char* message ) {
-  DWORD dw;
-  WriteConsole( GetStdHandle( STD_OUTPUT_HANDLE ), message, strlen( message ), &dw, nullptr);
-}
 
 
 static bool DynamicCastApplyPatch() {
