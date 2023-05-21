@@ -70,7 +70,7 @@ namespace Gothic_I_Addon {
     inline int Length() const { return length; }
     inline bool operator == ( const char* other ) const { return ((int(__stdcall*)( const char*, const char* ))*(void**)0x008132D0)( ToChar(), other ) == 0; }
     inline bool operator != ( const char* other ) const { return !operator == ( other ); }
-    inline zSTRING& Append( const zSTRING& other ) { Insert( length, other ); }
+    inline zSTRING& Append( const zSTRING& other )      { Insert( length, other ); return *this; }
 
     zSTRING& Align( zTSTR_ALIGN, int, char )                                      zCall( 0x0046D300 );
     zSTRING PickWord( unsigned int, zSTRING const&, zSTRING const& ) const        zCall( 0x0046DAC0 );
