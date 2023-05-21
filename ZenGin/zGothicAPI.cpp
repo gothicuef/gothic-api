@@ -28,8 +28,8 @@ static int GothicNamespaceLength = 0;
 inline void DisableNamespace( char* where ) {
   DWORD protection = PAGE_READWRITE;
   VirtualProtect( where, 3, protection, &protection );
-  where[2] = '@';
-  where[3] = '\0';
+  where[1] = '@';
+  where[2] = '\0';
   VirtualProtect( where, 3, protection, &protection );
 }
 
