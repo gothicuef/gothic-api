@@ -9,7 +9,7 @@
 #define cppimport __declspec( dllimport )
 #define cppexport __declspec( dllexport )
 
-#pragma comment (lib, "Shw32.lib")
+#pragma comment (lib, "ZenGin/Shw32.lib")
 cimport void* shi_malloc( unsigned int sz );
 cimport void* shi_calloc( unsigned int num, unsigned int sz );
 cimport void* shi_realloc( void* mem, unsigned int sz );
