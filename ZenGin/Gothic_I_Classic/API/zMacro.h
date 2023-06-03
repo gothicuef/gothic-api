@@ -82,7 +82,7 @@ namespace Gothic_I_Classic {
     }                                                                                      \
     void* operator new( unsigned int size, const char* classn, const char *file, int l ) { \
       zCMemPoolBase::SetMemDebug( classn, file, l );                                       \
-      return operator new( size );                                                         \
+      return shi_malloc( size );                                                         \
     }                                                                                      \
     void operator delete( void* ptr, const char* classn, const char* file, int line ) {    \
       operator delete( ptr );                                                              \
@@ -101,10 +101,10 @@ namespace Gothic_I_Classic {
     }                                                                                      \
     void* operator new( unsigned int size, const char* classn, const char* file, int l ) { \
       zCMemPoolBase::SetMemDebug( classn, file, l );                                       \
-      return operator new(size);                                                           \
+      return shi_malloc(size);                                                           \
     }                                                                                      \
     void  operator delete( void* ptr,const char *classn,const char *file,int line) {       \
-      operator delete(ptr);                                                                \
+      shi_free(ptr);                                                                \
     }                                                                                      \
     static void PreAlloc( size_t num, int force_oneblock = FALSE ) {                       \
       ((zCMemPoolBase*)address)->PreAlloc( num, force_oneblock );                          \
@@ -117,13 +117,13 @@ namespace Gothic_I_Classic {
 #define zCLASS_DECLARATION( className )                               \
   static zCClassDef* classDef;                                        \
   void* operator new( size_t size ) {                                 \
-    void* mem = ::operator new( size );                               \
+    void* mem = shi_malloc( size );                               \
   zCClassDef::ObjectCreated( (zCObject*)mem, className::classDef );   \
   return mem;                                                         \
   };                                                                  \
   void operator delete( void* mem ) {                                 \
     zCClassDef::ObjectDeleted( (zCObject*)mem, className::classDef ); \
-    ::operator delete( mem );                                         \
+    shi_free( mem );                                         \
   };
 
 // class declaration for union zobject classes
@@ -144,13 +144,13 @@ namespace Gothic_I_Classic {
     return className::classDef;                                                                                                                 \
   };                                                                                                                                            \
   void* className::operator new( size_t size ) {                                                                                                \
-    void* mem = ::operator new( size );                                                                                                         \
+    void* mem = shi_malloc( size );                                                                                                         \
     zCClassDef::ObjectCreated( (zCObject*)mem, className::classDef );                                                                           \
     return mem;                                                                                                                                 \
   };                                                                                                                                            \
   void className::operator delete( void* mem ) {                                                                                                \
     zCClassDef::ObjectDeleted( (zCObject*)mem, className::classDef );                                                                           \
-    ::operator delete( mem );                                                                                                                   \
+    shi_free( mem );                                                                                                                   \
   };
 
 // class declaration for gothic api collision object classes
