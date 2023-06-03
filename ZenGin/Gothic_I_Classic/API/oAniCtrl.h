@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OANI_CTRL_H__VER0__
@@ -51,6 +51,8 @@ namespace Gothic_I_Classic {
     // sizeof 18h
     struct oTComboInfo {
     public:
+      zOPERATORS_DECLARATION()
+
       int hitAni;          // sizeof 04h    offset 00h
       int hitOptFrame;     // sizeof 04h    offset 04h
       int hitEndFrame;     // sizeof 04h    offset 08h
@@ -59,7 +61,7 @@ namespace Gothic_I_Classic {
       int comboDir;        // sizeof 04h    offset 14h
 
       // user API
-      #include "oCAniCtrl_Human_oTComboInfo.inl"
+      #include "..\..\Gothic_UserAPI\oCAniCtrl_Human_oTComboInfo.inl"
     };
 
     float angle_slide1;                        // sizeof 04h    offset 118h
@@ -456,9 +458,9 @@ namespace Gothic_I_Classic {
     virtual void Init( oCNpc* )                                         zCall( 0x0061B740 );
 
     // user API
-    #include "oCAniCtrl_Human.inl"
+    #include "..\..\Gothic_UserAPI\oCAniCtrl_Human.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __OANI_CTRL_H__VER0__
+#endif // __OANI_CTRL_H__VER0__ 

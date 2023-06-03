@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCCS_CUTSCENE_H__VER1__
@@ -13,6 +13,8 @@ namespace Gothic_I_Addon {
 
   // sizeof 14h
   struct zTCSBlockPosition {
+    zOPERATORS_DECLARATION()
+
     zCArray<zCCSBlockBase*> flatData; // sizeof 0Ch    offset 00h
     int index;                        // sizeof 04h    offset 0Ch
     int numInList;                    // sizeof 04h    offset 10h
@@ -21,7 +23,7 @@ namespace Gothic_I_Addon {
     ~zTCSBlockPosition() zCall( 0x00419540 );
 
     // user API
-    #include "zTCSBlockPosition.inl"
+    #include "..\..\Gothic_UserAPI\zTCSBlockPosition.inl"
   };
 
   // sizeof 50h
@@ -58,7 +60,7 @@ namespace Gothic_I_Addon {
     virtual zSTRING MD_GetSubTypeString( int )                                                    zCall( 0x0040D510 );
 
     // user API
-    #include "zCEvMsgCutscene.inl"
+    #include "..\..\Gothic_UserAPI\zCEvMsgCutscene.inl"
   };
 
   // sizeof 44h
@@ -125,7 +127,7 @@ namespace Gothic_I_Addon {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040D970 );
 
     // user API
-    #include "zCCSBlockBase.inl"
+    #include "..\..\Gothic_UserAPI\zCCSBlockBase.inl"
   };
 
   // sizeof 34h
@@ -162,12 +164,14 @@ namespace Gothic_I_Addon {
     virtual zCEventMessage* GetCommand()                                zCall( 0x0040B700 );
 
     // user API
-    #include "zCCSAtomicBlock.inl"
+    #include "..\..\Gothic_UserAPI\zCCSAtomicBlock.inl"
   };
 
   // sizeof 0Ch
   class zCCSBlockPosition {
   public:
+    zOPERATORS_DECLARATION()
+
     float position;       // sizeof 04h    offset 04h
     zCCSBlockBase* block; // sizeof 04h    offset 08h
 
@@ -181,7 +185,7 @@ namespace Gothic_I_Addon {
     virtual ~zCCSBlockPosition()                              zCall( 0x004183E0 );
 
     // user API
-    #include "zCCSBlockPosition.inl"
+    #include "..\..\Gothic_UserAPI\zCCSBlockPosition.inl"
   };
 
   // sizeof 44h
@@ -220,7 +224,7 @@ namespace Gothic_I_Addon {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040E310 );
 
     // user API
-    #include "zCCSBlock.inl"
+    #include "..\..\Gothic_UserAPI\zCCSBlock.inl"
   };
 
   // sizeof 50h
@@ -249,7 +253,7 @@ namespace Gothic_I_Addon {
     virtual void BlockAsFocus( int )                                    zCall( 0x0040F140 );
 
     // user API
-    #include "zCCSSyncBlock.inl"
+    #include "..\..\Gothic_UserAPI\zCCSSyncBlock.inl"
   };
 
   // sizeof 80h
@@ -336,9 +340,9 @@ namespace Gothic_I_Addon {
     virtual void PrepareBlock()                                         zCall( 0x00410E20 );
 
     // user API
-    #include "zCCutscene.inl"
+    #include "..\..\Gothic_UserAPI\zCCutscene.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCCS_CUTSCENE_H__VER1__
+#endif // __ZCCS_CUTSCENE_H__VER1__ 

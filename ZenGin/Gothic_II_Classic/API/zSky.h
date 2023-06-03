@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSKY_H__VER2__
@@ -14,6 +14,8 @@ namespace Gothic_II_Classic {
   // sizeof C4h
   class zCUnderwaterPFX : public zCParticleFX {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 camPosLastFrame; // sizeof 0Ch    offset B8h
 
     zCUnderwaterPFX() : zCtor( zCParticleFX ) {}
@@ -23,7 +25,7 @@ namespace Gothic_II_Classic {
     virtual int Render( zTRenderContext& ) zCall( 0x005D9B20 );
 
     // user API
-    #include "zCUnderwaterPFX.inl"
+    #include "..\..\Gothic_UserAPI\zCUnderwaterPFX.inl"
   };
 
   // sizeof 4Ch
@@ -92,7 +94,7 @@ namespace Gothic_II_Classic {
     static int& s_skyEffectsEnabled;
 
     // user API
-    #include "zCSkyControler.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler.inl"
   };
 
   // sizeof 7Ch
@@ -143,7 +145,7 @@ namespace Gothic_II_Classic {
     virtual void RenderSkyPost( int )                    zCall( 0x005D9380 );
 
     // user API
-    #include "zCSkyControler_Mid.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler_Mid.inl"
   };
 
   // sizeof 88h
@@ -177,9 +179,9 @@ namespace Gothic_II_Classic {
     virtual void RenderSkyPost( int )                     zCall( 0x005D9B10 );
 
     // user API
-    #include "zCSkyControler_Indoor.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler_Indoor.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSKY_H__VER2__
+#endif // __ZSKY_H__VER2__ 

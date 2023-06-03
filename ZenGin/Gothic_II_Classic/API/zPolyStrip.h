@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPOLY_STRIP_H__VER2__
@@ -73,15 +73,19 @@ namespace Gothic_II_Classic {
     virtual void FreeResources()                                          zCall( 0x005B7F70 );
 
     // user API
-    #include "zCPolyStrip.inl"
+    #include "..\..\Gothic_UserAPI\zCPolyStrip.inl"
   };
 
   // sizeof F4h
   class zCLightning : public zCVisual {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof C0h
     class zCBolt    : public zCPolyStrip {
     public:
+      zOPERATORS_DECLARATION()
+
       zCArray<zCBolt*> childList; // sizeof 0Ch    offset B4h
 
       zCBolt() : zCtor( zCPolyStrip ) {}
@@ -90,7 +94,7 @@ namespace Gothic_II_Classic {
       virtual void FreeResources()                         zCall( 0x005B9E80 );
 
       // user API
-      #include "zCLightning_zCBolt.inl"
+      #include "..\..\Gothic_UserAPI\zCLightning_zCBolt.inl"
     };
 
     zCBolt rootBolt; // sizeof C0h    offset 34h
@@ -100,7 +104,7 @@ namespace Gothic_II_Classic {
     void Generate( zVEC3 const&, zVEC3 const& )    zCall( 0x005B9860 );
 
     // user API
-    #include "zCLightning.inl"
+    #include "..\..\Gothic_UserAPI\zCLightning.inl"
   };
 
   // sizeof 88h
@@ -118,6 +122,8 @@ namespace Gothic_II_Classic {
 
     // sizeof 10h
     struct zTEffectParams {
+      zOPERATORS_DECLARATION()
+
       zTTexAniType texAniType; // sizeof 04h    offset 00h
       float texAniScaleStart;  // sizeof 04h    offset 04h
       float texAniSpeed;       // sizeof 04h    offset 08h
@@ -126,33 +132,39 @@ namespace Gothic_II_Classic {
       zTEffectParams() {}
 
       // user API
-      #include "zCQuadMark_zTEffectParams.inl"
+      #include "..\..\Gothic_UserAPI\zCQuadMark_zTEffectParams.inl"
     };
 
     // sizeof 14h
     struct zTQuadMarkVert {
+      zOPERATORS_DECLARATION()
+
       zVEC3 position; // sizeof 0Ch    offset 00h
       zVEC2 texCoord; // sizeof 08h    offset 0Ch
 
       zTQuadMarkVert() {}
 
       // user API
-      #include "zCQuadMark_zTQuadMarkVert.inl"
+      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkVert.inl"
     };
 
     // sizeof 0Ch
     struct zTQuadMarkPoly {
+      zOPERATORS_DECLARATION()
+
       zCArray<zTQuadMarkVert> vertex; // sizeof 0Ch    offset 00h
 
       zTQuadMarkPoly() {}
       ~zTQuadMarkPoly() zCall( 0x005C9FD0 );
 
       // user API
-      #include "zCQuadMark_zTQuadMarkPoly.inl"
+      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkPoly.inl"
     };
 
     // sizeof 30h
     struct zTQuadMarkAniState {
+      zOPERATORS_DECLARATION()
+
       int firstPolyIndex;      // sizeof 04h    offset 00h
       int lastPolyIndex;       // sizeof 04h    offset 04h
       float scaleStart;        // sizeof 04h    offset 08h
@@ -167,7 +179,7 @@ namespace Gothic_II_Classic {
       zTQuadMarkAniState() {}
 
       // user API
-      #include "zCQuadMark_zTQuadMarkAniState.inl"
+      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkAniState.inl"
     };
 
     zCMesh* quadMesh;                               // sizeof 04h    offset 34h
@@ -211,9 +223,9 @@ namespace Gothic_II_Classic {
     virtual void SetVisualUsedBy( zCVob* )                                                          zCall( 0x005CA110 );
 
     // user API
-    #include "zCQuadMark.inl"
+    #include "..\..\Gothic_UserAPI\zCQuadMark.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZPOLY_STRIP_H__VER2__
+#endif // __ZPOLY_STRIP_H__VER2__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCONVEX_COLLISION_H__VER3__
@@ -9,13 +9,15 @@ namespace Gothic_II_Addon {
   // sizeof 08h
   class zCCacheIndex {
   public:
+    zOPERATORS_DECLARATION()
+
     zCVob* voba; // sizeof 04h    offset 00h
     zCVob* vobb; // sizeof 04h    offset 04h
 
     zCCacheIndex() {}
 
     // user API
-    #include "zCCacheIndex.inl"
+    #include "..\..\Gothic_UserAPI\zCCacheIndex.inl"
   };
 
   // sizeof 10h
@@ -31,12 +33,14 @@ namespace Gothic_II_Addon {
     zCConvexCollisionCache( zCCacheIndex const& a0 )          zInit( zCConvexCollisionCache_OnInit( a0 ));
 
     // user API
-    #include "zCConvexCollisionCache.inl"
+    #include "..\..\Gothic_UserAPI\zCConvexCollisionCache.inl"
   };
 
   // sizeof 1Ch
   class zCConvexPrimitive {
   public:
+    zOPERATORS_DECLARATION()
+
     zTBBox3D bbox3Dlocal; // sizeof 18h    offset 04h
 
     zDefineInheritableCtor( zCConvexPrimitive ) {}
@@ -58,12 +62,14 @@ namespace Gothic_II_Addon {
     virtual void DrawVirtual() const                                                                                                                             zCall( 0x00555150 );
 
     // user API
-    #include "zCConvexPrimitive.inl"
+    #include "..\..\Gothic_UserAPI\zCConvexPrimitive.inl"
   };
 
   // sizeof 1Ch
   class zCConvexPrimitiveUnitSphere : public zCConvexPrimitive {
   public:
+    zOPERATORS_DECLARATION()
+
 
     void zCConvexPrimitiveUnitSphere_OnInit()                           zCall( 0x00555380 );
     zCConvexPrimitiveUnitSphere() : zCtor( zCConvexPrimitive )          zInit( zCConvexPrimitiveUnitSphere_OnInit() );
@@ -79,12 +85,14 @@ namespace Gothic_II_Addon {
     static zCConvexPrimitiveUnitSphere& s_unitSphere;
 
     // user API
-    #include "zCConvexPrimitiveUnitSphere.inl"
+    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveUnitSphere.inl"
   };
 
   // sizeof 38h
   class zCConvexPrimitiveScaleTrans : public zCConvexPrimitive {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 scale;                 // sizeof 0Ch    offset 1Ch
     zVEC3 translation;           // sizeof 0Ch    offset 28h
     zCConvexPrimitive* original; // sizeof 04h    offset 34h
@@ -101,12 +109,14 @@ namespace Gothic_II_Addon {
     virtual void DrawVirtual() const                                                                                       zCall( 0x00555990 );
 
     // user API
-    #include "zCConvexPrimitiveScaleTrans.inl"
+    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveScaleTrans.inl"
   };
 
   // sizeof 3Ch
   class zCConvexPrimitiveEllipsoid : public zCConvexPrimitiveScaleTrans {
   public:
+    zOPERATORS_DECLARATION()
+
     int symetric; // sizeof 04h    offset 38h
 
     zCConvexPrimitiveEllipsoid() : zCtor( zCConvexPrimitiveScaleTrans ) {}
@@ -117,9 +127,9 @@ namespace Gothic_II_Addon {
     virtual int SymetryRotation( zVEC3& ) const                                                           zCall( 0x00555B90 );
 
     // user API
-    #include "zCConvexPrimitiveEllipsoid.inl"
+    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveEllipsoid.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZCONVEX_COLLISION_H__VER3__
+#endif // __ZCONVEX_COLLISION_H__VER3__ 

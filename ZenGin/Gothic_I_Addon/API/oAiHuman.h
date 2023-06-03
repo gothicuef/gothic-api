@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OAI_HUMAN_H__VER1__
@@ -27,7 +27,7 @@ namespace Gothic_I_Addon {
     virtual int HasAIDetectedCollision()                                zCall( 0x006395A0 );
 
     // user API
-    #include "oCAICamera.inl"
+    #include "..\..\Gothic_UserAPI\oCAICamera.inl"
   };
 
   // sizeof 120Ch
@@ -116,7 +116,7 @@ namespace Gothic_I_Addon {
     static zSTRING& Cam_Fight;
 
     // user API
-    #include "oCAIHuman.inl"
+    #include "..\..\Gothic_UserAPI\oCAIHuman.inl"
   };
 
   // sizeof 24h
@@ -133,9 +133,9 @@ namespace Gothic_I_Addon {
     virtual void DoAI( zCVob*, int& )                                                       zCall( 0x006399A0 );
 
     // user API
-    #include "oCAIHuman_Stand.inl"
+    #include "..\..\Gothic_UserAPI\oCAIHuman_Stand.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __OAI_HUMAN_H__VER1__
+#endif // __OAI_HUMAN_H__VER1__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZOPTION_H__VER2__
@@ -39,6 +39,8 @@ namespace Gothic_II_Classic {
   // sizeof 50h
   class zCOptionEntry {
   public:
+    zOPERATORS_DECLARATION()
+
     int changed;                                  // sizeof 04h    offset 00h
     zCArray<int(*)( zCOptionEntry& )> ccbList; // sizeof 0Ch    offset 04h
     zSTRING varName;                              // sizeof 14h    offset 10h
@@ -52,12 +54,14 @@ namespace Gothic_II_Classic {
     ~zCOptionEntry()                                            zCall( 0x0045FEE0 );
 
     // user API
-    #include "zCOptionEntry.inl"
+    #include "..\..\Gothic_UserAPI\zCOptionEntry.inl"
   };
 
   // sizeof 20h
   class zCOptionSection {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING secName;                   // sizeof 14h    offset 00h
     zCArray<zCOptionEntry*> entryList; // sizeof 0Ch    offset 14h
 
@@ -67,12 +71,14 @@ namespace Gothic_II_Classic {
     ~zCOptionSection()                            zCall( 0x0045FA30 );
 
     // user API
-    #include "zCOptionSection.inl"
+    #include "..\..\Gothic_UserAPI\zCOptionSection.inl"
   };
 
   // sizeof 298h
   class zCOption {
   public:
+    zOPERATORS_DECLARATION()
+
     int m_bReadTemp;                       // sizeof 04h    offset 04h
     zCArray<zCOptionSection*> sectionList; // sizeof 0Ch    offset 08h
     zFILE*( directory )[NUM_ENTRIES];      // sizeof 68h    offset 14h
@@ -131,9 +137,9 @@ namespace Gothic_II_Classic {
     virtual ~zCOption()                                                                       zCall( 0x0045FD60 );
 
     // user API
-    #include "zCOption.inl"
+    #include "..\..\Gothic_UserAPI\zCOption.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZOPTION_H__VER2__
+#endif // __ZOPTION_H__VER2__ 

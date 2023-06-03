@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OMOB_INTER_H__VER0__
@@ -14,13 +14,15 @@ namespace Gothic_I_Classic {
   // sizeof 5Ch
   struct TMobOptPos {
   public:
+    zOPERATORS_DECLARATION()
+
     zMAT4 trafo;      // sizeof 40h    offset 00h
     int distance;     // sizeof 04h    offset 40h
     oCNpc* npc;       // sizeof 04h    offset 44h
     zSTRING nodeName; // sizeof 14h    offset 48h
 
     // user API
-    #include "TMobOptPos.inl"
+    #include "..\..\Gothic_UserAPI\TMobOptPos.inl"
   };
 
   // sizeof 168h
@@ -77,7 +79,7 @@ namespace Gothic_I_Classic {
     virtual int AllowDiscardingOfSubtree()                                                   zCall( 0x0067BB00 );
 
     // user API
-    #include "oCMOB.inl"
+    #include "..\..\Gothic_UserAPI\oCMOB.inl"
   };
 
   // sizeof 210h
@@ -168,7 +170,7 @@ namespace Gothic_I_Classic {
     virtual TMobOptPos* SearchFreePosition( oCNpc* )                    zCall( 0x0067CD60 );
 
     // user API
-    #include "oCMobInter.inl"
+    #include "..\..\Gothic_UserAPI\oCMobInter.inl"
   };
 
   // sizeof 210h
@@ -186,7 +188,7 @@ namespace Gothic_I_Classic {
     virtual void OnEndStateChange( oCNpc*, int, int )                   zCall( 0x00681780 );
 
     // user API
-    #include "oCMobBed.inl"
+    #include "..\..\Gothic_UserAPI\oCMobBed.inl"
   };
 
   // sizeof 210h
@@ -203,7 +205,7 @@ namespace Gothic_I_Classic {
     virtual ~oCMobSwitch()                                              zCall( 0x00681900 );
 
     // user API
-    #include "oCMobSwitch.inl"
+    #include "..\..\Gothic_UserAPI\oCMobSwitch.inl"
   };
 
   // sizeof 218h
@@ -229,7 +231,7 @@ namespace Gothic_I_Classic {
     virtual oCItem* RemoveItem()                                        zCall( 0x00686340 );
 
     // user API
-    #include "oCMobItemSlot.inl"
+    #include "..\..\Gothic_UserAPI\oCMobItemSlot.inl"
   };
 
   // sizeof 23Ch
@@ -266,7 +268,7 @@ namespace Gothic_I_Classic {
     virtual int PickLock( oCNpc*, char )                     zCall( 0x00682990 );
 
     // user API
-    #include "oCMobLockable.inl"
+    #include "..\..\Gothic_UserAPI\oCMobLockable.inl"
   };
 
   // sizeof 260h
@@ -297,7 +299,7 @@ namespace Gothic_I_Classic {
     virtual void CreateContents( zSTRING const& )                       zCall( 0x00684050 );
 
     // user API
-    #include "oCMobContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCMobContainer.inl"
   };
 
   // sizeof 250h
@@ -318,7 +320,7 @@ namespace Gothic_I_Classic {
     virtual void Close( oCNpc* )                                        zCall( 0x00679260 );
 
     // user API
-    #include "oCMobDoor.inl"
+    #include "..\..\Gothic_UserAPI\oCMobDoor.inl"
   };
 
   // sizeof 23Ch
@@ -346,7 +348,7 @@ namespace Gothic_I_Classic {
     virtual void PostSave()                                             zCall( 0x00681360 );
 
     // user API
-    #include "oCMobFire.inl"
+    #include "..\..\Gothic_UserAPI\oCMobFire.inl"
   };
 
   // sizeof 210h
@@ -364,7 +366,7 @@ namespace Gothic_I_Classic {
     virtual void Interact( oCNpc*, int, int, int, int, int )            zCall( 0x00685210 );
 
     // user API
-    #include "oCMobWheel.inl"
+    #include "..\..\Gothic_UserAPI\oCMobWheel.inl"
   };
 
   // sizeof 210h
@@ -385,7 +387,7 @@ namespace Gothic_I_Classic {
     virtual TMobOptPos* SearchFreePosition( oCNpc* )                    zCall( 0x00685AB0 );
 
     // user API
-    #include "oCMobLadder.inl"
+    #include "..\..\Gothic_UserAPI\oCMobLadder.inl"
   };
 
   // sizeof 100h
@@ -401,7 +403,7 @@ namespace Gothic_I_Classic {
     virtual void OnTrigger( zCVob*, zCVob* )                            zCall( 0x006865E0 );
 
     // user API
-    #include "oCDummyVobGenerator.inl"
+    #include "..\..\Gothic_UserAPI\oCDummyVobGenerator.inl"
   };
 
   // sizeof 38h
@@ -439,9 +441,9 @@ namespace Gothic_I_Classic {
     virtual void Unpack( zCBuffer&, zCEventManager* )                          zCall( 0x0067A4C0 );
 
     // user API
-    #include "oCMobMsg.inl"
+    #include "..\..\Gothic_UserAPI\oCMobMsg.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __OMOB_INTER_H__VER0__
+#endif // __OMOB_INTER_H__VER0__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZMENU__ITEM_H__VER1__
@@ -73,6 +73,8 @@ namespace Gothic_I_Addon {
   // sizeof 3D4h
   class zCMenuItem : public zCView {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING m_parFontName;                       // sizeof 14h    offset FCh
     zSTRING m_parText[MAX_USERSTRINGS];          // sizeof C8h    offset 110h
     zSTRING m_parBackPic;                        // sizeof 14h    offset 1D8h
@@ -190,12 +192,14 @@ namespace Gothic_I_Addon {
     static zCMenuItem*& tmp;
 
     // user API
-    #include "zCMenuItem.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItem.inl"
   };
 
   // sizeof 3F0h
   class zCMenuItemInput : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING value;         // sizeof 14h    offset 3D4h
     unsigned short curPos; // sizeof 02h    offset 3E8h
     int canceled;          // sizeof 04h    offset 3ECh
@@ -217,12 +221,14 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                      zCall( 0x004E27A0 );
 
     // user API
-    #include "zCMenuItemInput.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemInput.inl"
   };
 
   // sizeof 400h
   class zCMenuItemText : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zCMenuItemTextEnum3 {
       MODE_SIMPLE,
       MODE_ENUM,
@@ -253,12 +259,14 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                         zCall( 0x004E6FB0 );
 
     // user API
-    #include "zCMenuItemText.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemText.inl"
   };
 
   // sizeof 3E4h
   class zCMenuItemSlider : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     zCViewWindow* slider; // sizeof 04h    offset 3D4h
     int slideStep;        // sizeof 04h    offset 3D8h
     float sliderValue;    // sizeof 04h    offset 3DCh
@@ -280,12 +288,14 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                       zCall( 0x004E27E0 );
 
     // user API
-    #include "zCMenuItemSlider.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemSlider.inl"
   };
 
   // sizeof 3ECh
   class zCMenuItemButton : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING pic; // sizeof 14h    offset 3D4h
     int active;  // sizeof 04h    offset 3E8h
 
@@ -302,12 +312,14 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "zCMenuItemButton.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemButton.inl"
   };
 
   // sizeof 3E4h
   class zCMenuItemChoice : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     zCView* winCursor; // sizeof 04h    offset 3D4h
     int option;        // sizeof 04h    offset 3D8h
     int optionStart;   // sizeof 04h    offset 3DCh
@@ -332,11 +344,13 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "zCMenuItemChoice.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemChoice.inl"
   };
 
   // sizeof 2Ch
   struct zTMenuItemListElement {
+    zOPERATORS_DECLARATION()
+
     zSTRING title;             // sizeof 14h    offset 00h
     zSTRING content;           // sizeof 14h    offset 14h
     zCMenuItem* contentViewer; // sizeof 04h    offset 28h
@@ -346,12 +360,14 @@ namespace Gothic_I_Addon {
     zTMenuItemListElement()             zInit( zTMenuItemListElement_OnInit() );
 
     // user API
-    #include "zTMenuItemListElement.inl"
+    #include "..\..\Gothic_UserAPI\zTMenuItemListElement.inl"
   };
 
   // sizeof 3F4h
   class zCMenuItemList : public zCMenuItem {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<zTMenuItemListElement> m_list; // sizeof 0Ch    offset 3D4h
     int m_cur_element;                     // sizeof 04h    offset 3E0h
     int m_top_element;                     // sizeof 04h    offset 3E4h
@@ -386,9 +402,9 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                     zCall( 0x004EA7A0 );
 
     // user API
-    #include "zCMenuItemList.inl"
+    #include "..\..\Gothic_UserAPI\zCMenuItemList.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZMENU__ITEM_H__VER1__
+#endif // __ZMENU__ITEM_H__VER1__ 

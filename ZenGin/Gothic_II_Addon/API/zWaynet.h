@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZWAYNET_H__VER3__
@@ -29,7 +29,7 @@ namespace Gothic_II_Addon {
     virtual ~zCVobWaypoint()                 zCall( 0x007ACC20 );
 
     // user API
-    #include "zCVobWaypoint.inl"
+    #include "..\..\Gothic_UserAPI\zCVobWaypoint.inl"
   };
 
   // sizeof 7Ch
@@ -80,12 +80,14 @@ namespace Gothic_II_Addon {
     virtual int CanBeUsed( zCVob const* )    zCall( 0x007AF860 );
 
     // user API
-    #include "zCWaypoint.inl"
+    #include "..\..\Gothic_UserAPI\zCWaypoint.inl"
   };
 
   // sizeof 20h
   class zCWay {
   public:
+    zOPERATORS_DECLARATION()
+
     int cost;          // sizeof 04h    offset 04h
     int usedCtr;       // sizeof 04h    offset 08h
     float chasmDepth;  // sizeof 04h    offset 0Ch
@@ -116,7 +118,7 @@ namespace Gothic_II_Addon {
     virtual int IsObjectOnWay( zCVob const* )     zCall( 0x007AE850 );
 
     // user API
-    #include "zCWay.inl"
+    #include "..\..\Gothic_UserAPI\zCWay.inl"
   };
 
   // sizeof 4Ch
@@ -190,12 +192,14 @@ namespace Gothic_II_Addon {
     virtual ~zCWayNet()                                                zCall( 0x007ACDB0 );
 
     // user API
-    #include "zCWayNet.inl"
+    #include "..\..\Gothic_UserAPI\zCWayNet.inl"
   };
 
   // sizeof 1Ch
   class zCRoute {
   public:
+    zOPERATORS_DECLARATION()
+
     zCList<zCWay> wayList;  // sizeof 08h    offset 04h
     zCWaypoint* startwp;    // sizeof 04h    offset 0Ch
     zCWaypoint* target;     // sizeof 04h    offset 10h
@@ -217,7 +221,7 @@ namespace Gothic_II_Addon {
     virtual ~zCRoute()                                zCall( 0x007B28A0 );
 
     // user API
-    #include "zCRoute.inl"
+    #include "..\..\Gothic_UserAPI\zCRoute.inl"
   };
 
   // sizeof 128h
@@ -237,7 +241,7 @@ namespace Gothic_II_Addon {
     virtual ~zCVobSpot()                     zCall( 0x007B3000 );
 
     // user API
-    #include "zCVobSpot.inl"
+    #include "..\..\Gothic_UserAPI\zCVobSpot.inl"
   };
 
   // sizeof 120h
@@ -251,9 +255,9 @@ namespace Gothic_II_Addon {
     virtual ~zCVobStartpoint()               zCall( 0x007B3980 );
 
     // user API
-    #include "zCVobStartpoint.inl"
+    #include "..\..\Gothic_UserAPI\zCVobStartpoint.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZWAYNET_H__VER3__
+#endif // __ZWAYNET_H__VER3__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZMORPH_MESH_H__VER2__
@@ -9,8 +9,12 @@ namespace Gothic_II_Classic {
   // sizeof 50h
   class zCMorphMeshAni {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof 01h
     struct zCMorphMeshAniDummy0 {
+      zOPERATORS_DECLARATION()
+
       unsigned char discontinuity : 1; // sizeof 01h    offset bit
       unsigned char looping       : 1; // sizeof 01h    offset bit
       unsigned char shape         : 1; // sizeof 01h    offset bit
@@ -39,12 +43,14 @@ namespace Gothic_II_Classic {
     void SetFlagsByString( zSTRING const& ) zCall( 0x0059FB50 );
 
     // user API
-    #include "zCMorphMeshAni.inl"
+    #include "..\..\Gothic_UserAPI\zCMorphMeshAni.inl"
   };
 
   // sizeof 3Ch
   class zCMorphMeshProto {
   public:
+    zOPERATORS_DECLARATION()
+
     zCMorphMeshProto* next;               // sizeof 04h    offset 00h
     zCMorphMeshProto* prev;               // sizeof 04h    offset 04h
     int refCtr;                           // sizeof 04h    offset 08h
@@ -74,7 +80,7 @@ namespace Gothic_II_Classic {
     static zCMorphMeshProto*& morphRoot;
 
     // user API
-    #include "zCMorphMeshProto.inl"
+    #include "..\..\Gothic_UserAPI\zCMorphMeshProto.inl"
   };
 
   // sizeof 88h
@@ -90,6 +96,8 @@ namespace Gothic_II_Classic {
 
     // sizeof 2Ch
     struct zTMorphAniEntry {
+      zOPERATORS_DECLARATION()
+
       zCMorphMeshAni* ani; // sizeof 04h    offset 00h
       float weight;        // sizeof 04h    offset 04h
       float weightDest;    // sizeof 04h    offset 08h
@@ -105,11 +113,13 @@ namespace Gothic_II_Classic {
       zTMorphAniEntry() {}
 
       // user API
-      #include "zCMorphMesh_zTMorphAniEntry.inl"
+      #include "..\..\Gothic_UserAPI\zCMorphMesh_zTMorphAniEntry.inl"
     };
 
     // sizeof 1Ch
     struct zTRandAni {
+      zOPERATORS_DECLARATION()
+
       float randAniTimer;      // sizeof 04h    offset 00h
       zCMorphMeshAni* randAni; // sizeof 04h    offset 04h
       float randAniTimeMin;    // sizeof 04h    offset 08h
@@ -121,7 +131,7 @@ namespace Gothic_II_Classic {
       zTRandAni() {}
 
       // user API
-      #include "zCMorphMesh_zTRandAni.inl"
+      #include "..\..\Gothic_UserAPI\zCMorphMesh_zTRandAni.inl"
     };
 
     zCMorphMeshProto* morphProto;             // sizeof 04h    offset 34h
@@ -175,12 +185,14 @@ namespace Gothic_II_Classic {
     virtual zSTRING const* GetAnyAnimation()                                                              zCall( 0x005A18E0 );
 
     // user API
-    #include "zCMorphMesh.inl"
+    #include "..\..\Gothic_UserAPI\zCMorphMesh.inl"
   };
 
   // sizeof 30h
   class zCMorphMeshConvertFileHandler : public zCScanDirFileHandler {
   public:
+    zOPERATORS_DECLARATION()
+
 
     void zCMorphMeshConvertFileHandler_OnInit()                        zCall( 0x005A2600 );
     zCMorphMeshConvertFileHandler() : zCtor( zCScanDirFileHandler )    zInit( zCMorphMeshConvertFileHandler_OnInit() );
@@ -188,9 +200,9 @@ namespace Gothic_II_Classic {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005A26E0 );
 
     // user API
-    #include "zCMorphMeshConvertFileHandler.inl"
+    #include "..\..\Gothic_UserAPI\zCMorphMeshConvertFileHandler.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZMORPH_MESH_H__VER2__
+#endif // __ZMORPH_MESH_H__VER2__ 

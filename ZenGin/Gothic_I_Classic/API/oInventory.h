@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OINVENTORY_H__VER0__
@@ -27,6 +27,8 @@ namespace Gothic_I_Classic {
   // sizeof 98h
   class oCItemContainer : public zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     enum oTItemListMode {
       FULLSCREEN,
       HALFSCREEN,
@@ -127,12 +129,14 @@ namespace Gothic_I_Classic {
     static zCGfx** gfx_arrow;
 
     // user API
-    #include "oCItemContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCItemContainer.inl"
   };
 
   // sizeof 9Ch
   class oCStealContainer : public oCItemContainer {
   public:
+    zOPERATORS_DECLARATION()
+
     oCNpc* owner; // sizeof 04h    offset 98h
 
     zDefineInheritableCtor( oCStealContainer ) : zCtor( oCItemContainer ) {}
@@ -145,12 +149,14 @@ namespace Gothic_I_Classic {
     virtual void CreateList()                     zCall( 0x0066A5C0 );
 
     // user API
-    #include "oCStealContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCStealContainer.inl"
   };
 
   // sizeof 9Ch
   class oCNpcContainer : public oCStealContainer {
   public:
+    zOPERATORS_DECLARATION()
+
 
     void oCNpcContainer_OnInit()                 zCall( 0x0066A960 );
     oCNpcContainer() : zCtor( oCStealContainer ) zInit( oCNpcContainer_OnInit() );
@@ -161,12 +167,14 @@ namespace Gothic_I_Classic {
     virtual void CreateList()                    zCall( 0x0066AB10 );
 
     // user API
-    #include "oCNpcContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCNpcContainer.inl"
   };
 
   // sizeof 230h
   class oCNpcInventory : public oCItemContainer {
   public:
+    zOPERATORS_DECLARATION()
+
     oCNpc* owner;                          // sizeof 04h    offset 98h
     int packAbility;                       // sizeof 04h    offset 9Ch
     zCListSort<oCItem> inventory[INV_MAX]; // sizeof 6Ch    offset A0h
@@ -230,9 +238,9 @@ namespace Gothic_I_Classic {
     static zCGfx** gfx_cats;
 
     // user API
-    #include "oCNpcInventory.inl"
+    #include "..\..\Gothic_UserAPI\oCNpcInventory.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __OINVENTORY_H__VER0__
+#endif // __OINVENTORY_H__VER0__ 

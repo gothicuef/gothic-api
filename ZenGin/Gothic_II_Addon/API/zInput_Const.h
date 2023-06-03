@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZINPUT_CONST__VER3__
@@ -303,4 +303,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZINPUT_CONST__VER3__
+#endif // __ZINPUT_CONST__VER3__ 

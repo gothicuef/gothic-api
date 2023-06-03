@@ -1,7 +1,8 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
-#include "G1A.h"
+#ifndef __G_GLOBAL_VARS_H__VER1__
+#define __G_GLOBAL_VARS_H__VER1__
 
 namespace Gothic_I_Addon {
 #ifdef __ZPROTO_B_VER1__
@@ -142,6 +143,6 @@ namespace Gothic_I_Addon {
       HWND&      Window   = hWndApp;
     }
   }
-
 #endif // __ZPROTO_B_VER1__
 } // Gothic_I_Addon
+#endif // __G_GLOBAL_VARS_H__VER1__

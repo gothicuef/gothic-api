@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ONPC_H__VER0__
@@ -267,12 +267,14 @@ namespace Gothic_I_Classic {
     virtual ~oCNpcTalent()                                              zCall( 0x0068A260 );
 
     // user API
-    #include "oCNpcTalent.inl"
+    #include "..\..\Gothic_UserAPI\oCNpcTalent.inl"
   };
 
   // sizeof 38h
   struct TNpcSlot {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING name;                   // sizeof 14h    offset 00h
     int inInventory;                // sizeof 04h    offset 14h
     int tmpLevel;                   // sizeof 04h    offset 18h
@@ -287,19 +289,21 @@ namespace Gothic_I_Classic {
     ~TNpcSlot()            zCall( 0x0068C760 );
 
     // user API
-    #include "TNpcSlot.inl"
+    #include "..\..\Gothic_UserAPI\TNpcSlot.inl"
   };
 
   // sizeof 08h
   struct TNpcPerc {
   public:
+    zOPERATORS_DECLARATION()
+
     int percID;   // sizeof 04h    offset 00h
     int percFunc; // sizeof 04h    offset 04h
 
     TNpcPerc() {}
 
     // user API
-    #include "TNpcPerc.inl"
+    #include "..\..\Gothic_UserAPI\TNpcPerc.inl"
   };
 
   // sizeof A38h
@@ -365,6 +369,8 @@ namespace Gothic_I_Classic {
     // sizeof 1Ch
     typedef struct oSActionBlock {
     public:
+      zOPERATORS_DECLARATION()
+
       int ownaction[FA_MAX_ENTRY]; // sizeof 18h    offset 00h
       int max;                     // sizeof 04h    offset 18h
 
@@ -375,6 +381,8 @@ namespace Gothic_I_Classic {
     // sizeof 1DCh
     struct oSFightAI {
     public:
+      zOPERATORS_DECLARATION()
+
       oSActionBlock myactions[FA_MAX_SITUATIONS]; // sizeof 1DCh   offset 00h
 
       oSFightAI() {}
@@ -383,6 +391,8 @@ namespace Gothic_I_Classic {
     // sizeof CCh
     typedef struct oSDamageDescriptor {
     public:
+      zOPERATORS_DECLARATION()
+
       unsigned long dwFieldsValid;                         // sizeof 04h    offset 00h
       zCVob* pVobAttacker;                                 // sizeof 04h    offset 04h
       oCNpc* pNpcAttacker;                                 // sizeof 04h    offset 08h
@@ -431,6 +441,8 @@ namespace Gothic_I_Classic {
 
     // sizeof 10h
     struct oSDirectionInfo {
+      zOPERATORS_DECLARATION()
+
       zVEC3 checkDirection;                  // sizeof 0Ch    offset 00h
       unsigned char checkForChasm       : 1; // sizeof 01h    offset bit
       unsigned char checkForSmallObject : 1; // sizeof 01h    offset bit
@@ -439,11 +451,13 @@ namespace Gothic_I_Classic {
       oSDirectionInfo() {}
 
       // user API
-      #include "oCNpc_oSDirectionInfo.inl"
+      #include "..\..\Gothic_UserAPI\oCNpc_oSDirectionInfo.inl"
     };
 
     // sizeof 9Ch
     struct oTRobustTrace {
+      zOPERATORS_DECLARATION()
+
       group {
         unsigned char stand                : 1; // sizeof 01h    offset bit
         unsigned char dirChoosed           : 1; // sizeof 01h    offset bit
@@ -478,12 +492,14 @@ namespace Gothic_I_Classic {
       ~oTRobustTrace() zCall( 0x0068BE90 );
 
       // user API
-      #include "oCNpc_oTRobustTrace.inl"
+      #include "..\..\Gothic_UserAPI\oCNpc_oTRobustTrace.inl"
     };
 
     // sizeof 04h
     class TActiveInfo {
     public:
+      zOPERATORS_DECLARATION()
+
       int modified           : 1; // sizeof 01h    offset bit
       int putTorchBackInHand : 1; // sizeof 01h    offset bit
       int changeTorchAni     : 1; // sizeof 01h    offset bit
@@ -495,12 +511,14 @@ namespace Gothic_I_Classic {
       ~TActiveInfo()                          zCall( 0x0068A590 );
 
       // user API
-      #include "oCNpc_TActiveInfo.inl"
+      #include "..\..\Gothic_UserAPI\oCNpc_TActiveInfo.inl"
     };
 
     // sizeof 18h
     class oCNpcTimedOverlay {
     public:
+      zOPERATORS_DECLARATION()
+
       zSTRING mdsOverlayName; // sizeof 14h    offset 00h
       float timer;            // sizeof 04h    offset 14h
 
@@ -510,7 +528,7 @@ namespace Gothic_I_Classic {
       int Process()        zCall( 0x006B8B10 );
 
       // user API
-      #include "oCNpc_oCNpcTimedOverlay.inl"
+      #include "..\..\Gothic_UserAPI\oCNpc_oCNpcTimedOverlay.inl"
     };
 
     group {
@@ -1322,9 +1340,9 @@ namespace Gothic_I_Classic {
     static int& isEnabledTalkBox;
 
     // user API
-    #include "oCNpc.inl"
+    #include "..\..\Gothic_UserAPI\oCNpc.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ONPC_H__VER0__
+#endif // __ONPC_H__VER0__ 

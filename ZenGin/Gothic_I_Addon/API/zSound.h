@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSOUND_H__VER1__
@@ -18,6 +18,8 @@ namespace Gothic_I_Addon {
   // sizeof 08h
   class zCSoundSystem {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zTLoopType {
       zSND_LOOPING_DEFAULT,
       zSND_LOOPING_ENABLED,
@@ -33,6 +35,8 @@ namespace Gothic_I_Addon {
 
     // sizeof 20h
     struct zTSound3DParams {
+      zOPERATORS_DECLARATION()
+
       float obstruction;   // sizeof 04h    offset 00h
       float volume;        // sizeof 04h    offset 04h
       float radius;        // sizeof 04h    offset 08h
@@ -46,7 +50,7 @@ namespace Gothic_I_Addon {
       void SetDefaults() zCall( 0x00606310 );
 
       // user API
-      #include "zCSoundSystem_zTSound3DParams.inl"
+      #include "..\..\Gothic_UserAPI\zCSoundSystem_zTSound3DParams.inl"
     };
 
     float defaultRadius; // sizeof 04h    offset 04h
@@ -89,7 +93,7 @@ namespace Gothic_I_Addon {
     virtual float GetCPULoad()                                               zCall( 0x004EF3F0 );
 
     // user API
-    #include "zCSoundSystem.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundSystem.inl"
   };
 
   // sizeof 54h
@@ -118,23 +122,27 @@ namespace Gothic_I_Addon {
     virtual int IsLooping() const                                       zCall( 0x004F2470 );
 
     // user API
-    #include "zCSoundFX.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundFX.inl"
   };
 
   // sizeof 54h
   class zCSoundFXDummy : public zCSoundFX {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCSoundFXDummy() : zCtor( zCSoundFX ) {}
     virtual ~zCSoundFXDummy() zCall( 0x00625830 );
 
     // user API
-    #include "zCSoundFXDummy.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundFXDummy.inl"
   };
 
   // sizeof 08h
   class zCSoundSystemDummy : public zCSoundSystem {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCSoundSystemDummy() : zCtor( zCSoundSystem ) {}
     virtual ~zCSoundSystemDummy()                                                           zCall( 0x0062ADA0 );
@@ -149,9 +157,9 @@ namespace Gothic_I_Addon {
     virtual void SetGlobalOcclusion( float )                                                zCall( 0x00625860 );
 
     // user API
-    #include "zCSoundSystemDummy.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundSystemDummy.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZSOUND_H__VER1__
+#endif // __ZSOUND_H__VER1__ 

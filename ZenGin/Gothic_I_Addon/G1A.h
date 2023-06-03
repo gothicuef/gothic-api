@@ -1,4 +1,4 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 #ifdef __G1A
 #ifndef __G_H__VER1__

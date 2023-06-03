@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OMOB_INTER_H__VER3__
@@ -14,13 +14,15 @@ namespace Gothic_II_Addon {
   // sizeof 5Ch
   struct TMobOptPos {
   public:
+    zOPERATORS_DECLARATION()
+
     zMAT4 trafo;      // sizeof 40h    offset 00h
     int distance;     // sizeof 04h    offset 40h
     oCNpc* npc;       // sizeof 04h    offset 44h
     zSTRING nodeName; // sizeof 14h    offset 48h
 
     // user API
-    #include "TMobOptPos.inl"
+    #include "..\..\Gothic_UserAPI\TMobOptPos.inl"
   };
 
   // sizeof 188h
@@ -77,7 +79,7 @@ namespace Gothic_II_Addon {
     virtual int AllowDiscardingOfSubtree()                                                   zCall( 0x0071CCC0 );
 
     // user API
-    #include "oCMOB.inl"
+    #include "..\..\Gothic_UserAPI\oCMOB.inl"
   };
 
   // sizeof 234h
@@ -179,7 +181,7 @@ namespace Gothic_II_Addon {
     virtual TMobOptPos* SearchFreePosition( oCNpc*, float )               zCall( 0x0071DFC0 );
 
     // user API
-    #include "oCMobInter.inl"
+    #include "..\..\Gothic_UserAPI\oCMobInter.inl"
   };
 
   // sizeof 248h
@@ -201,7 +203,7 @@ namespace Gothic_II_Addon {
     virtual TMobOptPos* SearchFreePosition( oCNpc*, float ) zCall( 0x00723350 );
 
     // user API
-    #include "oCMobBed.inl"
+    #include "..\..\Gothic_UserAPI\oCMobBed.inl"
   };
 
   // sizeof 234h
@@ -218,7 +220,7 @@ namespace Gothic_II_Addon {
     virtual ~oCMobSwitch()                   zCall( 0x00723600 );
 
     // user API
-    #include "oCMobSwitch.inl"
+    #include "..\..\Gothic_UserAPI\oCMobSwitch.inl"
   };
 
   // sizeof 23Ch
@@ -244,7 +246,7 @@ namespace Gothic_II_Addon {
     virtual oCItem* RemoveItem()             zCall( 0x007283C0 );
 
     // user API
-    #include "oCMobItemSlot.inl"
+    #include "..\..\Gothic_UserAPI\oCMobItemSlot.inl"
   };
 
   // sizeof 260h
@@ -281,7 +283,7 @@ namespace Gothic_II_Addon {
     virtual int PickLock( oCNpc*, char )                     zCall( 0x00724800 );
 
     // user API
-    #include "oCMobLockable.inl"
+    #include "..\..\Gothic_UserAPI\oCMobLockable.inl"
   };
 
   // sizeof 284h
@@ -312,7 +314,7 @@ namespace Gothic_II_Addon {
     virtual void CreateContents( zSTRING const& )     zCall( 0x00726190 );
 
     // user API
-    #include "oCMobContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCMobContainer.inl"
   };
 
   // sizeof 274h
@@ -333,7 +335,7 @@ namespace Gothic_II_Addon {
     virtual void Close( oCNpc* )                            zCall( 0x0071A440 );
 
     // user API
-    #include "oCMobDoor.inl"
+    #include "..\..\Gothic_UserAPI\oCMobDoor.inl"
   };
 
   // sizeof 260h
@@ -361,7 +363,7 @@ namespace Gothic_II_Addon {
     virtual void PostSave()                                           zCall( 0x00722D40 );
 
     // user API
-    #include "oCMobFire.inl"
+    #include "..\..\Gothic_UserAPI\oCMobFire.inl"
   };
 
   // sizeof 234h
@@ -379,7 +381,7 @@ namespace Gothic_II_Addon {
     virtual void Interact( oCNpc*, int, int, int, int, int ) zCall( 0x007272E0 );
 
     // user API
-    #include "oCMobWheel.inl"
+    #include "..\..\Gothic_UserAPI\oCMobWheel.inl"
   };
 
   // sizeof 23Ch
@@ -404,7 +406,7 @@ namespace Gothic_II_Addon {
     virtual TMobOptPos* SearchFreePosition( oCNpc*, float )  zCall( 0x007279F0 );
 
     // user API
-    #include "oCMobLadder.inl"
+    #include "..\..\Gothic_UserAPI\oCMobLadder.inl"
   };
 
   // sizeof 120h
@@ -420,7 +422,7 @@ namespace Gothic_II_Addon {
     virtual void OnTrigger( zCVob*, zCVob* ) zCall( 0x00728660 );
 
     // user API
-    #include "oCDummyVobGenerator.inl"
+    #include "..\..\Gothic_UserAPI\oCDummyVobGenerator.inl"
   };
 
   // sizeof 38h
@@ -458,9 +460,9 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                          zCall( 0x0071B6A0 );
 
     // user API
-    #include "oCMobMsg.inl"
+    #include "..\..\Gothic_UserAPI\oCMobMsg.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __OMOB_INTER_H__VER3__
+#endif // __OMOB_INTER_H__VER3__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OITEM_H__VER0__
@@ -179,9 +179,9 @@ namespace Gothic_I_Classic {
     virtual oTSndMaterial GetSoundMaterial()                                                 zCall( 0x00670F60 );
 
     // user API
-    #include "oCItem.inl"
+    #include "..\..\Gothic_UserAPI\oCItem.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __OITEM_H__VER0__
+#endif // __OITEM_H__VER0__ 

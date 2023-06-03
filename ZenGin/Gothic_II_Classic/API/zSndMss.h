@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSND_MSS_H__VER2__
@@ -15,6 +15,8 @@ namespace Gothic_II_Classic {
   // sizeof 220h
   class zCDrvProperties_MSS {
   public:
+    zOPERATORS_DECLARATION()
+
     float volume;                    // sizeof 04h    offset 00h
     int bitResolution;               // sizeof 04h    offset 04h
     int sampleRate;                  // sizeof 04h    offset 08h
@@ -32,12 +34,14 @@ namespace Gothic_II_Classic {
     ~zCDrvProperties_MSS()            zCall( 0x004E7600 );
 
     // user API
-    #include "zCDrvProperties_MSS.inl"
+    #include "..\..\Gothic_UserAPI\zCDrvProperties_MSS.inl"
   };
 
   // sizeof 60h
   class zCActiveSnd {
   public:
+    zOPERATORS_DECLARATION()
+
     int handle;                         // sizeof 04h    offset 00h
     void* sample;                       // sizeof 04h    offset 04h
     void* sample3D;                     // sizeof 04h    offset 08h
@@ -114,12 +118,14 @@ namespace Gothic_II_Classic {
     static zCActiveSnd*& nextFreeSnd;
 
     // user API
-    #include "zCActiveSnd.inl"
+    #include "..\..\Gothic_UserAPI\zCActiveSnd.inl"
   };
 
   // sizeof 18h
   class zCSndChannel {
   public:
+    zOPERATORS_DECLARATION()
+
     int actFrame;                   // sizeof 04h    offset 00h
     int refCtr;                     // sizeof 04h    offset 04h
     int loaded;                     // sizeof 04h    offset 08h
@@ -130,12 +136,14 @@ namespace Gothic_II_Classic {
     ~zCSndChannel()            zCall( 0x004F6A50 );
 
     // user API
-    #include "zCSndChannel.inl"
+    #include "..\..\Gothic_UserAPI\zCSndChannel.inl"
   };
 
   // sizeof 6Ch
   class zCSndFrame {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING fileName;         // sizeof 14h    offset 00h
     float pitchOffset;        // sizeof 04h    offset 14h
     float pitchVariance;      // sizeof 04h    offset 18h
@@ -162,12 +170,14 @@ namespace Gothic_II_Classic {
     void CacheOut()               zCall( 0x004F7390 );
 
     // user API
-    #include "zCSndFrame.inl"
+    #include "..\..\Gothic_UserAPI\zCSndFrame.inl"
   };
 
   // sizeof 30h
   class zCWaveData {
   public:
+    zOPERATORS_DECLARATION()
+
     int size;            // sizeof 04h    offset 00h
     void* memAddr;       // sizeof 04h    offset 04h
     float msLength;      // sizeof 04h    offset 08h
@@ -191,12 +201,14 @@ namespace Gothic_II_Classic {
     int GetSize()                      zCall( 0x004F9660 );
 
     // user API
-    #include "zCWaveData.inl"
+    #include "..\..\Gothic_UserAPI\zCWaveData.inl"
   };
 
   // sizeof 14h
   class zCSndSys_MSS : public zCSoundSystem {
   public:
+    zOPERATORS_DECLARATION()
+
     zTSpeakerType speakerType; // sizeof 04h    offset 08h
     int globalReverbPreset;    // sizeof 04h    offset 0Ch
     int m_bReverbEnabled;      // sizeof 04h    offset 10h
@@ -256,12 +268,14 @@ namespace Gothic_II_Classic {
     static zCDrvProperties_MSS& prefs;
 
     // user API
-    #include "zCSndSys_MSS.inl"
+    #include "..\..\Gothic_UserAPI\zCSndSys_MSS.inl"
   };
 
   // sizeof 84h
   class zCSndFX_MSS : public zCSoundFX {
   public:
+    zOPERATORS_DECLARATION()
+
     float volume;                       // sizeof 04h    offset 54h
     float pan;                          // sizeof 04h    offset 58h
     int rate;                           // sizeof 04h    offset 5Ch
@@ -306,12 +320,14 @@ namespace Gothic_II_Classic {
     virtual int GetIsFixed() const                 zCall( 0x004EB490 );
 
     // user API
-    #include "zCSndFX_MSS.inl"
+    #include "..\..\Gothic_UserAPI\zCSndFX_MSS.inl"
   };
 
   // sizeof 18h
   class zCHandleManager {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<void*>free3DSamples; // sizeof 0Ch    offset 00h
     zCArray<void*>freeSamples;   // sizeof 0Ch    offset 0Ch
 
@@ -325,9 +341,9 @@ namespace Gothic_II_Classic {
     void DisposeAllSamples()      zCall( 0x004F98A0 );
 
     // user API
-    #include "zCHandleManager.inl"
+    #include "..\..\Gothic_UserAPI\zCHandleManager.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSND_MSS_H__VER2__
+#endif // __ZSND_MSS_H__VER2__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZLIST_H__VER2__
@@ -12,6 +12,8 @@ namespace Gothic_II_Classic {
   template <class T>
   class zCPQueue {
   public:
+    zOPERATORS_DECLARATION()
+
     T* array;
     int numAlloc;
     int numInArray;
@@ -207,7 +209,7 @@ namespace Gothic_II_Classic {
     int IsEmpty() const { return (numInArray == 0); }
 
     // user API
-    #include "zCPQueue.inl"
+    #include "..\..\Gothic_UserAPI\zCPQueue.inl"
   };
 
   template <class T>
@@ -351,7 +353,7 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zCListSort.inl"
+    #include "..\..\Gothic_UserAPI\zCListSort.inl"
   };
 
   template <class T>
@@ -457,7 +459,11 @@ namespace Gothic_II_Classic {
   template <class KEY, class VALUE>
   class zTRayTurboValMap {
   public:
+    zOPERATORS_DECLARATION()
+
     struct zSNode {
+      zOPERATORS_DECLARATION()
+
       KEY Key;
       VALUE Value;
       unsigned long Hash;
@@ -643,4 +649,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZLIST_H__VER2__
+#endif // __ZLIST_H__VER2__ 

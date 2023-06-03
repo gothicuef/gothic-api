@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZBSP_H__VER2__
@@ -32,6 +32,8 @@ namespace Gothic_II_Classic {
   // sizeof 28h
   class zCBspBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCBspNode* parent;      // sizeof 04h    offset 00h
     zTBBox3D bbox3D;        // sizeof 18h    offset 04h
     zCPolygon** polyList;   // sizeof 04h    offset 1Ch
@@ -71,12 +73,14 @@ namespace Gothic_II_Classic {
     static void __fastcall RenderOutdoor( zCBspBase*, zTBBox3D, int, int )                    zCall( 0x0052C540 );
 
     // user API
-    #include "zCBspBase.inl"
+    #include "..\..\Gothic_UserAPI\zCBspBase.inl"
   };
 
   // sizeof 4Ch
   class zCBspNode : public zCBspBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zTPlane plane;               // sizeof 10h    offset 28h
     zCBspBase* front;            // sizeof 04h    offset 38h
     zCBspBase* back;             // sizeof 04h    offset 3Ch
@@ -89,12 +93,14 @@ namespace Gothic_II_Classic {
     void CalcPlaneSignbits( zCBspTree* ) zCall( 0x0052DB60 );
 
     // user API
-    #include "zCBspNode.inl"
+    #include "..\..\Gothic_UserAPI\zCBspNode.inl"
   };
 
   // sizeof 5Ch
   class zCBspLeaf : public zCBspBase {
   public:
+    zOPERATORS_DECLARATION()
+
 
     int lastTimeLighted;               // sizeof 04h    offset 28h
     zCArray<zCVob*> leafVobList;       // sizeof 0Ch    offset 2Ch
@@ -117,12 +123,14 @@ namespace Gothic_II_Classic {
     void __fastcall TraceRayCollectVobs( zCArray<zCVob*>&, zTBBox3D const&, int ) const zCall( 0x0052E7B0 );
 
     // user API
-    #include "zCBspLeaf.inl"
+    #include "..\..\Gothic_UserAPI\zCBspLeaf.inl"
   };
 
   // sizeof 90h
   class zCBspTree {
   public:
+    zOPERATORS_DECLARATION()
+
     zCBspNode* actNodePtr;                // sizeof 04h    offset 00h
     zCBspLeaf* actLeafPtr;                // sizeof 04h    offset 04h
     zCBspBase* bspRoot;                   // sizeof 04h    offset 08h
@@ -190,12 +198,14 @@ namespace Gothic_II_Classic {
     static int& s_renderAllPortals;
 
     // user API
-    #include "zCBspTree.inl"
+    #include "..\..\Gothic_UserAPI\zCBspTree.inl"
   };
 
   // sizeof 10h
   class zTPolyNode {
   public:
+    zOPERATORS_DECLARATION()
+
     zCPolygon* poly;       // sizeof 04h    offset 00h
     zTPolyNode* next;      // sizeof 04h    offset 04h
     int marked;            // sizeof 04h    offset 08h
@@ -204,12 +214,14 @@ namespace Gothic_II_Classic {
     zTPolyNode() {}
 
     // user API
-    #include "zTPolyNode.inl"
+    #include "..\..\Gothic_UserAPI\zTPolyNode.inl"
   };
 
   // sizeof 54h
   class zCCBspNode {
   public:
+    zOPERATORS_DECLARATION()
+
     zTPlane plane;                // sizeof 10h    offset 00h
     zCCBspNode* front;            // sizeof 04h    offset 10h
     zCCBspNode* back;             // sizeof 04h    offset 14h
@@ -255,12 +267,14 @@ namespace Gothic_II_Classic {
     void DescribeTree( int )                                                       zCall( 0x0053C3A0 );
 
     // user API
-    #include "zCCBspNode.inl"
+    #include "..\..\Gothic_UserAPI\zCCBspNode.inl"
   };
 
   // sizeof 8Ch
   class zCCBspTree {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zTSpanningMode {
       zSPANNING_SPLIT,
       zSPANNING_CENTER,
@@ -295,21 +309,25 @@ namespace Gothic_II_Classic {
     void BuildTree( float )                                  zCall( 0x005384E0 );
 
     // user API
-    #include "zCCBspTree.inl"
+    #include "..\..\Gothic_UserAPI\zCCBspTree.inl"
   };
 
   // sizeof 64h
   class zCBspSector {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof 02h
     struct zTPortalInfo {
+      zOPERATORS_DECLARATION()
+
       unsigned char visible; // sizeof 01h    offset 00h
       unsigned char alpha;   // sizeof 01h    offset 01h
 
       zTPortalInfo() {}
 
       // user API
-      #include "zCBspSector_zTPortalInfo.inl"
+      #include "..\..\Gothic_UserAPI\zCBspSector_zTPortalInfo.inl"
     };
 
     zSTRING sectorName;                     // sizeof 14h    offset 00h
@@ -342,12 +360,14 @@ namespace Gothic_II_Classic {
     static zCArray<zTBBox2D>& s_activeOutdoorPortals;
 
     // user API
-    #include "zCBspSector.inl"
+    #include "..\..\Gothic_UserAPI\zCBspSector.inl"
   };
 
   // sizeof 4Ch
   class zCBuildPortal {
   public:
+    zOPERATORS_DECLARATION()
+
     zCPolygon* portalPoly;                   // sizeof 04h    offset 00h
     zCPolygon* portalPolyBack;               // sizeof 04h    offset 04h
     zCArray<zCPolygon*> borderPolyList;      // sizeof 0Ch    offset 08h
@@ -360,9 +380,9 @@ namespace Gothic_II_Classic {
     ~zCBuildPortal()            zCall( 0x0053CC50 );
 
     // user API
-    #include "zCBuildPortal.inl"
+    #include "..\..\Gothic_UserAPI\zCBuildPortal.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZBSP_H__VER2__
+#endif // __ZBSP_H__VER2__ 

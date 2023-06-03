@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPROTOTYPES_H__VER2__
@@ -498,4 +498,4 @@ namespace Gothic_II_Classic {
   enum zTVisualCamAlign;
 } // namespace Gothic_II_Classic
 
-#endif // __ZPROTOTYPES_H__VER2__
+#endif // __ZPROTOTYPES_H__VER2__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZMACRO_H__VER2__
@@ -185,6 +185,14 @@ namespace Gothic_II_Classic {
 struct zIInheritableInterfaceObject {};
 #define zDefineInheritableCtor(className) className(InheritableInterfaceObject) 
 #define zCtor(baseClassName) baseClassName(zIInheritableInterfaceObject())
+
+#define zOPERATORS_DECLARATION()      \
+  void* operator new( size_t size ) { \
+    return shi_malloc( size );        \
+  };                                  \
+  void operator delete( void* mem ) { \
+    shi_free( mem );                  \
+  };
 } // namespace Gothic_II_Classic
 
 #endif // __ZMACRO_H__VER2__

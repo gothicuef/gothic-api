@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCONTAINER_H__VER0__
@@ -16,6 +16,8 @@ namespace Gothic_I_Classic {
   template <class T>
   class zCArray {
   public:
+    zOPERATORS_DECLARATION()
+
     T* parray;
     int numAlloc;
     int numInArray;
@@ -263,12 +265,14 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "zCArray.inl"
+    #include "..\..\Gothic_UserAPI\zCArray.inl"
   };
 
   template <class T>
   class zCArraySort {
   public:
+    zOPERATORS_DECLARATION()
+
     T* array;
     int numAlloc;
     int numInArray;
@@ -546,12 +550,14 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "zCArraySort.inl"
+    #include "..\..\Gothic_UserAPI\zCArraySort.inl"
   };
 
   template <class T>
   class zCArrayAdapt {
   public:
+    zOPERATORS_DECLARATION()
+
     T* array;
     int numInArray;
 
@@ -681,12 +687,14 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "zCArrayAdapt.inl"
+    #include "..\..\Gothic_UserAPI\zCArrayAdapt.inl"
   };
 
   template <class T, int SIZE>
   class zCMatrixStack {
   public:
+    zOPERATORS_DECLARATION()
+
     int pos;
     T stack[SIZE];
 
@@ -816,12 +824,14 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "zCTree.inl"
+    #include "..\..\Gothic_UserAPI\zCTree.inl"
   };
 
   template <class T>
   class zList {
   public:
+    zOPERATORS_DECLARATION()
+
     int( *Compare )( T* ele1, T* ele2 );
     int count;
     T* last;
@@ -1070,12 +1080,14 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "zCList.inl"
+    #include "..\..\Gothic_UserAPI\zCList.inl"
   };
 
   template <class T>
   class GETSmallArrayNative {
   public:
+    zOPERATORS_DECLARATION()
+
     unsigned long Entries;
     unsigned long Used;
     T* Entry;
@@ -1161,3 +1173,4 @@ namespace Gothic_I_Classic {
 } // namespace Gothic_II_Addon
 
 #endif // __ZCONTAINER_H__VER0__
+ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZRENDERER_H__VER1__
@@ -199,6 +199,8 @@ namespace Gothic_I_Addon {
   // sizeof 4Ch
   class zCRenderLight {
   public:
+    zOPERATORS_DECLARATION()
+
     zTRenderLightType lightType; // sizeof 04h    offset 00h
     zVEC3 colorDiffuse;          // sizeof 0Ch    offset 04h
     zVEC3 position;              // sizeof 0Ch    offset 10h
@@ -213,12 +215,14 @@ namespace Gothic_I_Addon {
     zCRenderLight()             zInit( zCRenderLight_OnInit() );
 
     // user API
-    #include "zCRenderLight.inl"
+    #include "..\..\Gothic_UserAPI\zCRenderLight.inl"
   };
 
   // sizeof 0Ch
   class zCRndAlphaSortObject {
   public:
+    zOPERATORS_DECLARATION()
+
     zCRndAlphaSortObject* nextSortObject; // sizeof 04h    offset 04h
     float zvalue;                         // sizeof 04h    offset 08h
 
@@ -229,11 +233,13 @@ namespace Gothic_I_Addon {
     virtual int IsAlphaPoly()       zCall( 0x0052D790 );
 
     // user API
-    #include "zCRndAlphaSortObject.inl"
+    #include "..\..\Gothic_UserAPI\zCRndAlphaSortObject.inl"
   };
 
   // sizeof 24h
   struct zTRnd_TexFormatInfo {
+    zOPERATORS_DECLARATION()
+
     float bytesPerPixel; // sizeof 04h    offset 00h
     int rPos;            // sizeof 04h    offset 04h
     int gPos;            // sizeof 04h    offset 08h
@@ -247,22 +253,26 @@ namespace Gothic_I_Addon {
     zTRnd_TexFormatInfo() {}
 
     // user API
-    #include "zTRnd_TexFormatInfo.inl"
+    #include "..\..\Gothic_UserAPI\zTRnd_TexFormatInfo.inl"
   };
 
   // sizeof 14h
   struct zTRnd_DeviceInfo {
+    zOPERATORS_DECLARATION()
+
     zSTRING deviceName; // sizeof 14h    offset 00h
 
     zTRnd_DeviceInfo() {}
     ~zTRnd_DeviceInfo() zCall( 0x004290E0 );
 
     // user API
-    #include "zTRnd_DeviceInfo.inl"
+    #include "..\..\Gothic_UserAPI\zTRnd_DeviceInfo.inl"
   };
 
   // sizeof 10h
   struct zTRnd_VidModeInfo {
+    zOPERATORS_DECLARATION()
+
     int xdim;           // sizeof 04h    offset 00h
     int ydim;           // sizeof 04h    offset 04h
     int bpp;            // sizeof 04h    offset 08h
@@ -271,11 +281,13 @@ namespace Gothic_I_Addon {
     zTRnd_VidModeInfo() {}
 
     // user API
-    #include "zTRnd_VidModeInfo.inl"
+    #include "..\..\Gothic_UserAPI\zTRnd_VidModeInfo.inl"
   };
 
   // sizeof 24h
   struct zTRnd_Stats {
+    zOPERATORS_DECLARATION()
+
     int texMemUsed;          // sizeof 04h    offset 00h
     int texMemFetched;       // sizeof 04h    offset 04h
     int numTexturesFetched;  // sizeof 04h    offset 08h
@@ -289,11 +301,13 @@ namespace Gothic_I_Addon {
     zTRnd_Stats() {}
 
     // user API
-    #include "zTRnd_Stats.inl"
+    #include "..\..\Gothic_UserAPI\zTRnd_Stats.inl"
   };
 
   // sizeof 18h
   struct zTRndSimpleVertex {
+    zOPERATORS_DECLARATION()
+
     zVEC2 pos;    // sizeof 08h    offset 00h
     float z;      // sizeof 04h    offset 08h
     zVEC2 uv;     // sizeof 08h    offset 0Ch
@@ -303,11 +317,13 @@ namespace Gothic_I_Addon {
     zTRndSimpleVertex()             zInit( zTRndSimpleVertex_OnInit() );
 
     // user API
-    #include "zTRndSimpleVertex.inl"
+    #include "..\..\Gothic_UserAPI\zTRndSimpleVertex.inl"
   };
 
   // sizeof 20h
   struct zTRndSurfaceDesc {
+    zOPERATORS_DECLARATION()
+
     void* pSurface;            // sizeof 04h    offset 00h
     unsigned long bytePitch;   // sizeof 04h    offset 04h
     unsigned long pixelWidth;  // sizeof 04h    offset 08h
@@ -320,21 +336,25 @@ namespace Gothic_I_Addon {
     zTRndSurfaceDesc() {}
 
     // user API
-    #include "zTRndSurfaceDesc.inl"
+    #include "..\..\Gothic_UserAPI\zTRndSurfaceDesc.inl"
   };
 
   // sizeof 34h
   class zCRenderer {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof 20h
     struct zTMaterial {
+      zOPERATORS_DECLARATION()
+
       zVEC4 diffuseRGBA; // sizeof 10h    offset 00h
       zVEC4 ambientRGBA; // sizeof 10h    offset 10h
 
       zTMaterial() {}
 
       // user API
-      #include "zCRenderer_zTMaterial.inl"
+      #include "..\..\Gothic_UserAPI\zCRenderer_zTMaterial.inl"
     };
 
     zTRnd_PolySortMode polySortMode; // sizeof 04h    offset 04h
@@ -449,9 +469,9 @@ namespace Gothic_I_Addon {
     virtual zCVertexBuffer* CreateVertexBuffer()                                                       zPureCall;
 
     // user API
-    #include "zCRenderer.inl"
+    #include "..\..\Gothic_UserAPI\zCRenderer.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZRENDERER_H__VER1__
+#endif // __ZRENDERER_H__VER1__ 

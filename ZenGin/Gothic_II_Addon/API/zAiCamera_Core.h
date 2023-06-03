@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZAI_CAMERA__CORE_H__VER3__
@@ -62,8 +62,12 @@ namespace Gothic_II_Addon {
 
   // sizeof 24h
   struct zSEvasionSearchDesc {
+    zOPERATORS_DECLARATION()
+
     // sizeof 58h
     struct zSEvasionSearchOptions {
+      zOPERATORS_DECLARATION()
+
       zVEC3 scSign;       // sizeof 0Ch    offset 00h
       zVEC3 scQuality;    // sizeof 0Ch    offset 0Ch
       zVEC3 scStart;      // sizeof 0Ch    offset 18h
@@ -77,7 +81,7 @@ namespace Gothic_II_Addon {
       zSEvasionSearchOptions& operator =( zSEvasionSearchOptions const& ) zCall( 0x004B0EA0 );
 
       // user API
-      #include "zSEvasionSearchDesc_zSEvasionSearchOptions.inl"
+      #include "..\..\Gothic_UserAPI\zSEvasionSearchDesc_zSEvasionSearchOptions.inl"
     };
 
     int(* searchFunc )( const zSEvasionSearchDesc& ); // sizeof 04h    offset 00h
@@ -90,11 +94,13 @@ namespace Gothic_II_Addon {
     zSEvasionSearchDesc& operator =( zSEvasionSearchDesc const& ) zCall( 0x004B1190 );
 
     // user API
-    #include "zSEvasionSearchDesc.inl"
+    #include "..\..\Gothic_UserAPI\zSEvasionSearchDesc.inl"
   };
 
   // sizeof 60h
   struct zSPathSearchResult {
+    zOPERATORS_DECLARATION()
+
     int foundEvasion;               // sizeof 04h    offset 00h
     zVEC3 p1;                       // sizeof 0Ch    offset 04h
     zVEC3 p2;                       // sizeof 0Ch    offset 10h
@@ -113,11 +119,13 @@ namespace Gothic_II_Addon {
     zSPathSearchResult()             zInit( zSPathSearchResult_OnInit() );
 
     // user API
-    #include "zSPathSearchResult.inl"
+    #include "..\..\Gothic_UserAPI\zSPathSearchResult.inl"
   };
 
   // sizeof 98h
   struct zSPathSearchState {
+    zOPERATORS_DECLARATION()
+
     float startAzi;              // sizeof 04h    offset 00h
     float startElev;             // sizeof 04h    offset 04h
     float startRange;            // sizeof 04h    offset 08h
@@ -138,11 +146,13 @@ namespace Gothic_II_Addon {
     ~zSPathSearchState() zCall( 0x004A5A70 );
 
     // user API
-    #include "zSPathSearchState.inl"
+    #include "..\..\Gothic_UserAPI\zSPathSearchState.inl"
   };
 
   // sizeof 74h
   struct zSPathSearchState_Internal {
+    zOPERATORS_DECLARATION()
+
     float maxRange;               // sizeof 04h    offset 00h
     zVEC3 foundPos;               // sizeof 0Ch    offset 04h
     zMAT4 trafoCamToWorld;        // sizeof 40h    offset 10h
@@ -160,25 +170,31 @@ namespace Gothic_II_Addon {
     zSPathSearchState_Internal()             zInit( zSPathSearchState_Internal_OnInit() );
 
     // user API
-    #include "zSPathSearchState_Internal.inl"
+    #include "..\..\Gothic_UserAPI\zSPathSearchState_Internal.inl"
   };
 
   // sizeof 10h
   class zCSphereCoordsCache {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof 78h
     struct zSRangeSphereCoord {
+      zOPERATORS_DECLARATION()
+
       float range;                            // sizeof 04h    offset 00h
       zSPathSearchState_Internal searchState; // sizeof 74h    offset 04h
 
       zSRangeSphereCoord() {}
 
       // user API
-      #include "zCSphereCoordsCache_zSRangeSphereCoord.inl"
+      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSRangeSphereCoord.inl"
     };
 
     // sizeof 18h
     struct zSElevSphereCoord {
+      zOPERATORS_DECLARATION()
+
       float elev;                                   // sizeof 04h    offset 00h
       float maxRange;                               // sizeof 04h    offset 04h
       zCArraySort<zSRangeSphereCoord*> rangeCoords; // sizeof 10h    offset 08h
@@ -187,11 +203,13 @@ namespace Gothic_II_Addon {
       ~zSElevSphereCoord() zCall( 0x004A6A10 );
 
       // user API
-      #include "zCSphereCoordsCache_zSElevSphereCoord.inl"
+      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSElevSphereCoord.inl"
     };
 
     // sizeof 14h
     struct zSAziSphereCoord {
+      zOPERATORS_DECLARATION()
+
       float azi;                                  // sizeof 04h    offset 00h
       zCArraySort<zSElevSphereCoord*> elevCoords; // sizeof 10h    offset 04h
 
@@ -199,7 +217,7 @@ namespace Gothic_II_Addon {
       ~zSAziSphereCoord() zCall( 0x004A69F0 );
 
       // user API
-      #include "zCSphereCoordsCache_zSAziSphereCoord.inl"
+      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSAziSphereCoord.inl"
     };
 
     zCArraySort<zSAziSphereCoord*> aziCoords; // sizeof 10h    offset 00h
@@ -212,14 +230,18 @@ namespace Gothic_II_Addon {
     void DeleteList()                                                                                zCall( 0x004A6C10 );
 
     // user API
-    #include "zCSphereCoordsCache.inl"
+    #include "..\..\Gothic_UserAPI\zCSphereCoordsCache.inl"
   };
 
   // sizeof 214h
   class zCPathSearch {
   public:
+    zOPERATORS_DECLARATION()
+
     // sizeof 30h
     struct zSPathSearchOptions {
+      zOPERATORS_DECLARATION()
+
       int searchFlags;                 // sizeof 04h    offset 00h
       zTPoseFailReason poseFailReason; // sizeof 04h    offset 04h
       zTPathLerpMode minLerpMode;      // sizeof 04h    offset 08h
@@ -236,7 +258,7 @@ namespace Gothic_II_Addon {
       zSPathSearchOptions() {}
 
       // user API
-      #include "zCPathSearch_zSPathSearchOptions.inl"
+      #include "..\..\Gothic_UserAPI\zCPathSearch_zSPathSearchOptions.inl"
     };
 
     zSPathSearchState bestSearchState;                            // sizeof 98h    offset 00h
@@ -296,9 +318,9 @@ namespace Gothic_II_Addon {
     static zCPathSearch* GetSearch()                                                 zCall( 0x004A6D80 );
 
     // user API
-    #include "zCPathSearch.inl"
+    #include "..\..\Gothic_UserAPI\zCPathSearch.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZAI_CAMERA__CORE_H__VER3__
+#endif // __ZAI_CAMERA__CORE_H__VER3__ 

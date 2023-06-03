@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZAI_PLAYER_H__VER3__
@@ -34,6 +34,8 @@ namespace Gothic_II_Addon {
 
     // sizeof 40h
     struct zTConfig {
+      zOPERATORS_DECLARATION()
+
       float zMV_MIN_SPACE_MOVE_FORWARD;  // sizeof 04h    offset 00h
       float zMV_DETECT_CHASM_SCAN_AT;    // sizeof 04h    offset 04h
       float zMV_STEP_HEIGHT;             // sizeof 04h    offset 08h
@@ -54,11 +56,13 @@ namespace Gothic_II_Addon {
       zTConfig() {}
 
       // user API
-      #include "zCAIPlayer_zTConfig.inl"
+      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTConfig.inl"
     };
 
     // sizeof 28h
     struct zTLedgeInfo {
+      zOPERATORS_DECLARATION()
+
       zVEC3 point;          // sizeof 0Ch    offset 00h
       zVEC3 normal;         // sizeof 0Ch    offset 0Ch
       zVEC3 cont;           // sizeof 0Ch    offset 18h
@@ -67,18 +71,20 @@ namespace Gothic_II_Addon {
       zTLedgeInfo() {}
 
       // user API
-      #include "zCAIPlayer_zTLedgeInfo.inl"
+      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTLedgeInfo.inl"
     };
 
     // sizeof 08h
     struct zTBloodVobTrack {
+      zOPERATORS_DECLARATION()
+
       zCVob* bloodVob; // sizeof 04h    offset 00h
       float alpha;     // sizeof 04h    offset 04h
 
       zTBloodVobTrack() {}
 
       // user API
-      #include "zCAIPlayer_zTBloodVobTrack.inl"
+      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTBloodVobTrack.inl"
     };
 
     zTConfig config;                                                  // sizeof 40h    offset 24h
@@ -199,9 +205,9 @@ namespace Gothic_II_Addon {
     static int& s_bShowWeaponTrails;
 
     // user API
-    #include "zCAIPlayer.inl"
+    #include "..\..\Gothic_UserAPI\zCAIPlayer.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZAI_PLAYER_H__VER3__
+#endif // __ZAI_PLAYER_H__VER3__ 

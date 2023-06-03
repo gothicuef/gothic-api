@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPARSER__SYMBOL_H__VER0__
@@ -9,6 +9,8 @@ namespace Gothic_I_Classic {
   // sizeof 0Ch
   class zCPar_StringTable {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<zSTRING*> array; // sizeof 0Ch    offset 00h
 
     zCPar_StringTable() {}
@@ -25,12 +27,14 @@ namespace Gothic_I_Classic {
     void Show()                          zCall( 0x006F7B90 );
 
     // user API
-    #include "zCPar_StringTable.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_StringTable.inl"
   };
 
   // sizeof 3Ch
   class zCPar_Symbol {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING name;               // sizeof 14h    offset 00h
     zCPar_Symbol* next;         // sizeof 04h    offset 14h
     union {
@@ -95,12 +99,14 @@ namespace Gothic_I_Classic {
     static void*& instance_adr;
 
     // user API
-    #include "zCPar_Symbol.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_Symbol.inl"
   };
 
   // sizeof 2Ch
   class zCPar_SymbolTable {
   public:
+    zOPERATORS_DECLARATION()
+
     zCPar_Symbol* preAllocatedSymbols; // sizeof 04h    offset 00h
     int nextPreAllocated;              // sizeof 04h    offset 04h
     zCArray<zCPar_Symbol*> table;      // sizeof 0Ch    offset 08h
@@ -138,12 +144,14 @@ namespace Gothic_I_Classic {
     static zCPar_SymbolTable*& cur_table;
 
     // user API
-    #include "zCPar_SymbolTable.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_SymbolTable.inl"
   };
 
   // sizeof 10h
   class zCPar_Stack {
   public:
+    zOPERATORS_DECLARATION()
+
     unsigned char* stack; // sizeof 04h    offset 00h
     union {
       unsigned char* stackptr;
@@ -182,12 +190,14 @@ namespace Gothic_I_Classic {
     void Load( zFILE* )             zCall( 0x006FB450 );
 
     // user API
-    #include "zCPar_Stack.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_Stack.inl"
   };
 
   // sizeof 1004h
   class zCPar_DataStack {
   public:
+    zOPERATORS_DECLARATION()
+
     int stack[1024]; // sizeof 1000h  offset 00h
     int sptr;        // sizeof 04h    offset 1000h
 
@@ -201,9 +211,9 @@ namespace Gothic_I_Classic {
     void Clear()                  zCall( 0x006FB560 );
 
     // user API
-    #include "zCPar_DataStack.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_DataStack.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZPARSER__SYMBOL_H__VER0__
+#endif // __ZPARSER__SYMBOL_H__VER0__ 

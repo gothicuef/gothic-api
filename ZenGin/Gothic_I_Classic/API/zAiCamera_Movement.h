@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZAI_CAMERA__MOVEMENT_H__VER0__
@@ -43,6 +43,8 @@ namespace Gothic_I_Classic {
   // sizeof 1F98h
   class zCMovementTracker {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zTWayPoint {
       zWAYPOINT_PLAYER,
       zWAYPOINT_CAM,
@@ -194,9 +196,9 @@ namespace Gothic_I_Classic {
     static zCMovementTracker* GetTracker()                                    zCall( 0x004ABB60 );
 
     // user API
-    #include "zCMovementTracker.inl"
+    #include "..\..\Gothic_UserAPI\zCMovementTracker.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZAI_CAMERA__MOVEMENT_H__VER0__
+#endif // __ZAI_CAMERA__MOVEMENT_H__VER0__ 

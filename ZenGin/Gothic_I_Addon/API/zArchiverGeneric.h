@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZARCHIVER_GENERIC_H__VER1__
@@ -13,13 +13,15 @@ namespace Gothic_I_Addon {
 
     // sizeof 08h
     struct zTWriteObjectEntry {
+      zOPERATORS_DECLARATION()
+
       zCObject* object; // sizeof 04h    offset 00h
       int objectIndex;  // sizeof 04h    offset 04h
 
       zTWriteObjectEntry() {}
 
       // user API
-      #include "zCArchiverGeneric_zTWriteObjectEntry.inl"
+      #include "..\..\Gothic_UserAPI\zCArchiverGeneric_zTWriteObjectEntry.inl"
     };
 
     zFILE* file;                                                  // sizeof 04h    offset 2Ch
@@ -140,9 +142,9 @@ namespace Gothic_I_Addon {
     virtual void __fastcall DeleteBuffer()                                                             zCall( 0x005275E0 );
 
     // user API
-    #include "zCArchiverGeneric.inl"
+    #include "..\..\Gothic_UserAPI\zCArchiverGeneric.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZARCHIVER_GENERIC_H__VER1__
+#endif // __ZARCHIVER_GENERIC_H__VER1__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZVOB_H__VER0__
@@ -93,7 +93,7 @@ namespace Gothic_I_Classic {
     virtual void Unpack( zCBuffer&, zCEventManager* )                               zCall( 0x00401F70 );
 
     // user API
-    #include "zCEventMessage.inl"
+    #include "..\..\Gothic_UserAPI\zCEventMessage.inl"
   };
 
   // sizeof 4Ch
@@ -132,7 +132,7 @@ namespace Gothic_I_Classic {
     virtual void Unpack( zCBuffer&, zCEventManager* )                   zCall( 0x005D98E0 );
 
     // user API
-    #include "zCEventCore.inl"
+    #include "..\..\Gothic_UserAPI\zCEventCore.inl"
   };
 
   // sizeof 100h
@@ -166,6 +166,8 @@ namespace Gothic_I_Classic {
 
     // sizeof 18h
     struct zTCollisionContext {
+      zOPERATORS_DECLARATION()
+
       zCArray<zCCollisionObject*> otherCollObjectList; // sizeof 0Ch    offset 00h
       zCArray<zCVob*> otherCollVobList;                // sizeof 0Ch    offset 0Ch
 
@@ -173,11 +175,13 @@ namespace Gothic_I_Classic {
       ~zTCollisionContext() zCall( 0x005F1EE0 );
 
       // user API
-      #include "zCVob_zTCollisionContext.inl"
+      #include "..\..\Gothic_UserAPI\zCVob_zTCollisionContext.inl"
     };
 
     // sizeof 18h
     struct zTModelLimbColl {
+      zOPERATORS_DECLARATION()
+
       zCVob* hitVob;                            // sizeof 04h    offset 00h
       zCList<zCModelNodeInst> hitModelNodeList; // sizeof 08h    offset 04h
       zVEC3 approxCollisionPos;                 // sizeof 0Ch    offset 0Ch
@@ -187,7 +191,7 @@ namespace Gothic_I_Classic {
       ~zTModelLimbColl()            zCall( 0x005D83B0 );
 
       // user API
-      #include "zCVob_zTModelLimbColl.inl"
+      #include "..\..\Gothic_UserAPI\zCVob_zTModelLimbColl.inl"
     };
 
     zCTree<zCVob>* globalVobTreeNode;               // sizeof 04h    offset 24h
@@ -420,12 +424,14 @@ namespace Gothic_I_Classic {
     static zCCollisionDetector*& s_poCollisionDetector;
 
     // user API
-    #include "zCVob.inl"
+    #include "..\..\Gothic_UserAPI\zCVob.inl"
   };
 
   // sizeof 48h
   class zCVobLightData {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<float> rangeAniScaleList;   // sizeof 0Ch    offset 00h
     zCArray<zCOLOR> colorAniList;       // sizeof 0Ch    offset 0Ch
     int lensFlareFXNo;                  // sizeof 04h    offset 18h
@@ -460,7 +466,7 @@ namespace Gothic_I_Classic {
     void SetRange( float, int )                zCall( 0x005DDC80 );
 
     // user API
-    #include "zCVobLightData.inl"
+    #include "..\..\Gothic_UserAPI\zCVobLightData.inl"
   };
 
   // sizeof 80h
@@ -479,7 +485,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobLightPreset()                                         zCall( 0x005D24F0 );
 
     // user API
-    #include "zCVobLightPreset.inl"
+    #include "..\..\Gothic_UserAPI\zCVobLightPreset.inl"
   };
 
   // sizeof 15Ch
@@ -515,7 +521,7 @@ namespace Gothic_I_Classic {
     static int& renderLightVisuals;
 
     // user API
-    #include "zCVobLight.inl"
+    #include "..\..\Gothic_UserAPI\zCVobLight.inl"
   };
 
   // sizeof 100h
@@ -539,9 +545,9 @@ namespace Gothic_I_Classic {
     static int& unarcIgnoreVisuals;
 
     // user API
-    #include "zCVobLevelCompo.inl"
+    #include "..\..\Gothic_UserAPI\zCVobLevelCompo.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZVOB_H__VER0__
+#endif // __ZVOB_H__VER0__ 

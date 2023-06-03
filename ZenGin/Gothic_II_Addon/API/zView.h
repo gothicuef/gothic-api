@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZVIEW_H__VER3__
@@ -33,6 +33,8 @@ namespace Gothic_II_Addon {
   // sizeof 04h
   class zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zDefineInheritableCtor( zCInputCallback ) {}
     void zCInputCallback_OnInit()    zCall( 0x007A53F0 );
@@ -48,12 +50,14 @@ namespace Gothic_II_Addon {
     static zCList<zCInputCallback>& inputList;
 
     // user API
-    #include "zCInputCallback.inl"
+    #include "..\..\Gothic_UserAPI\zCInputCallback.inl"
   };
 
   // sizeof 38h
   class zCViewText {
   public:
+    zOPERATORS_DECLARATION()
+
     int posx;       // sizeof 04h    offset 04h
     int posy;       // sizeof 04h    offset 08h
     zSTRING text;   // sizeof 14h    offset 0Ch
@@ -73,12 +77,14 @@ namespace Gothic_II_Addon {
     virtual ~zCViewText()                                                                  zCall( 0x007AC700 );
 
     // user API
-    #include "zCViewText.inl"
+    #include "..\..\Gothic_UserAPI\zCViewText.inl"
   };
 
   // sizeof 100h
   class zCView : public zCViewBase, public zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     typedef enum zEViewFX {
       VIEW_FX_NONE,
       VIEW_FX_ZOOM,
@@ -249,7 +255,7 @@ namespace Gothic_II_Addon {
     static float& s_fViewTimePerChar;
 
     // user API
-    #include "zCView.inl"
+    #include "..\..\Gothic_UserAPI\zCView.inl"
   };
 
   extern zCView*& screen;
@@ -260,4 +266,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZVIEW_H__VER3__
+#endif // __ZVIEW_H__VER3__ 

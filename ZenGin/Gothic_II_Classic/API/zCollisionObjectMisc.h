@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCOLLISION_OBJECT_MISC_H__VER2__
@@ -9,6 +9,8 @@ namespace Gothic_II_Classic {
   // sizeof 8Ch
   class zCCollObjectBase : public zCCollisionObject {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zDefineInheritableCtor( zCCollObjectBase ) : zCtor( zCCollisionObject ) {}
     zCCollObjectBase() : zCtor( zCCollisionObject ) {}
@@ -19,12 +21,14 @@ namespace Gothic_II_Classic {
     virtual void __fastcall GetLargestBBox3DLocal( zTBBox3D& )                                                     zCall( 0x005499B0 );
 
     // user API
-    #include "zCCollObjectBase.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectBase.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectUndef : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectUndef )
 
     zCCollObjectUndef() : zCtor( zCCollObjectBase ) {}
@@ -33,12 +37,14 @@ namespace Gothic_II_Classic {
     virtual ~zCCollObjectUndef()                          zCall( 0x00548450 );
 
     // user API
-    #include "zCCollObjectUndef.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectUndef.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectPoint : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectPoint )
 
     zDefineInheritableCtor( zCCollObjectPoint ) : zCtor( zCCollObjectBase ) {}
@@ -54,12 +60,14 @@ namespace Gothic_II_Classic {
     virtual void __fastcall GetLargestBBox3DLocal( zTBBox3D& )                                                       zCall( 0x00548A00 );
 
     // user API
-    #include "zCCollObjectPoint.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectPoint.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectProjectile : public zCCollObjectPoint {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectProjectile )
 
     zCCollObjectProjectile() : zCtor( zCCollObjectPoint ) {}
@@ -68,12 +76,14 @@ namespace Gothic_II_Classic {
     virtual ~zCCollObjectProjectile()                     zCall( 0x005487A0 );
 
     // user API
-    #include "zCCollObjectProjectile.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectProjectile.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectComplex : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectComplex )
 
     zCCollObjectComplex() : zCtor( zCCollObjectBase ) {}
@@ -84,12 +94,14 @@ namespace Gothic_II_Classic {
     virtual float __fastcall GetAdaptiveStepSize()                                        zCall( 0x00549080 );
 
     // user API
-    #include "zCCollObjectComplex.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectComplex.inl"
   };
 
   // sizeof 98h
   class zCCollObjectLevelPolys : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectLevelPolys )
 
     zCArray<zCPolygon*> m_aoPolyList; // sizeof 0Ch    offset 8Ch
@@ -101,12 +113,14 @@ namespace Gothic_II_Classic {
     virtual ~zCCollObjectLevelPolys()                     zCall( 0x00548520 );
 
     // user API
-    #include "zCCollObjectLevelPolys.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectLevelPolys.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectBoxPassThrough : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectBoxPassThrough )
 
     zCCollObjectBoxPassThrough() : zCtor( zCCollObjectBase ) {}
@@ -116,12 +130,14 @@ namespace Gothic_II_Classic {
     virtual int __fastcall SuppressCollisionResponse()    zCall( 0x005489C0 );
 
     // user API
-    #include "zCCollObjectBoxPassThrough.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectBoxPassThrough.inl"
   };
 
   // sizeof 8Ch
   class zCCollObjectBoxBlocker : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectBoxBlocker )
 
     zCCollObjectBoxBlocker() : zCtor( zCCollObjectBase ) {}
@@ -130,12 +146,14 @@ namespace Gothic_II_Classic {
     virtual ~zCCollObjectBoxBlocker()                     zCall( 0x00548920 );
 
     // user API
-    #include "zCCollObjectBoxBlocker.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectBoxBlocker.inl"
   };
 
   // sizeof 13Ch
   class zCCollObjectCharacter : public zCCollObjectBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCOLLISION_OBJECT_DECLARATION( zCCollObjectCharacter )
 
     enum zEConfigState {
@@ -148,6 +166,8 @@ namespace Gothic_II_Classic {
 
     // sizeof 10h
     struct zTConfig {
+      zOPERATORS_DECLARATION()
+
       float m_fMaxGroundAngleWalk;                       // sizeof 04h    offset 00h
       float m_fStepHeight;                               // sizeof 04h    offset 04h
       group {
@@ -164,11 +184,13 @@ namespace Gothic_II_Classic {
       zTConfig() {}
 
       // user API
-      #include "zCCollObjectCharacter_zTConfig.inl"
+      #include "..\..\Gothic_UserAPI\zCCollObjectCharacter_zTConfig.inl"
     };
 
     // sizeof 20h
     struct zTSpatialState {
+      zOPERATORS_DECLARATION()
+
       float m_fFloorY;                     // sizeof 04h    offset 00h
       float m_fWaterY;                     // sizeof 04h    offset 04h
       float m_fCeilingY;                   // sizeof 04h    offset 08h
@@ -185,13 +207,17 @@ namespace Gothic_II_Classic {
       zTSpatialState() {}
 
       // user API
-      #include "zCCollObjectCharacter_zTSpatialState.inl"
+      #include "..\..\Gothic_UserAPI\zCCollObjectCharacter_zTSpatialState.inl"
     };
 
     // sizeof 30h
     struct zTInterferenceReport {
+      zOPERATORS_DECLARATION()
+
       // sizeof 01h
       struct zTInterferenceReportDummy0 {
+        zOPERATORS_DECLARATION()
+
         unsigned char spacingRayFront     : 1; // sizeof 01h    offset bit
         unsigned char spacingRayBack      : 1; // sizeof 01h    offset bit
         unsigned char spacingRayLeft      : 1; // sizeof 01h    offset bit
@@ -201,6 +227,8 @@ namespace Gothic_II_Classic {
 
       // sizeof 01h
       struct zTInterferenceReportDummy1 {
+        zOPERATORS_DECLARATION()
+
         unsigned char lowCeiling        : 1; // sizeof 01h    offset bit
         unsigned char floorTooSteepUp   : 1; // sizeof 01h    offset bit
         unsigned char floorTooSteepDown : 1; // sizeof 01h    offset bit
@@ -225,7 +253,7 @@ namespace Gothic_II_Classic {
       zTInterferenceReport() {}
 
       // user API
-      #include "zCCollObjectCharacter_zTInterferenceReport.inl"
+      #include "..\..\Gothic_UserAPI\zCCollObjectCharacter_zTInterferenceReport.inl"
     };
 
     zCRayCache m_oUpRayCache;                   // sizeof 08h    offset 8Ch
@@ -274,9 +302,9 @@ namespace Gothic_II_Classic {
     virtual void PushAround( zVEC3 const& )                                                                          zCall( 0x0054A700 );
 
     // user API
-    #include "zCCollObjectCharacter.inl"
+    #include "..\..\Gothic_UserAPI\zCCollObjectCharacter.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZCOLLISION_OBJECT_MISC_H__VER2__
+#endif // __ZCOLLISION_OBJECT_MISC_H__VER2__ 

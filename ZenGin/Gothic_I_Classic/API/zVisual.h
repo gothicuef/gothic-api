@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZVISUAL_H__VER0__
@@ -15,6 +15,8 @@ namespace Gothic_I_Classic {
 
   // sizeof 20h
   struct zTRenderContext {
+    zOPERATORS_DECLARATION()
+
     int clipFlags;                              // sizeof 04h    offset 00h
     zCVob* vob;                                 // sizeof 04h    offset 04h
     zCWorld* world;                             // sizeof 04h    offset 08h
@@ -31,7 +33,7 @@ namespace Gothic_I_Classic {
     zTRenderContext() {}
 
     // user API
-    #include "zTRenderContext.inl"
+    #include "..\..\Gothic_UserAPI\zTRenderContext.inl"
   };
 
   // sizeof 34h
@@ -76,7 +78,7 @@ namespace Gothic_I_Classic {
     static zCArray<zCVisual*>& s_visualClassList;
 
     // user API
-    #include "zCVisual.inl"
+    #include "..\..\Gothic_UserAPI\zCVisual.inl"
   };
 
   // sizeof 34h
@@ -97,7 +99,7 @@ namespace Gothic_I_Classic {
     virtual zSTRING const* GetAnyAnimation()        zPureCall;
 
     // user API
-    #include "zCVisualAnimate.inl"
+    #include "..\..\Gothic_UserAPI\zCVisualAnimate.inl"
   };
 
   // sizeof 4Ch
@@ -140,7 +142,7 @@ namespace Gothic_I_Classic {
     static zCMesh*& decalMesh2Sided;
 
     // user API
-    #include "zCDecal.inl"
+    #include "..\..\Gothic_UserAPI\zCDecal.inl"
   };
 
   // sizeof E0h
@@ -263,9 +265,9 @@ namespace Gothic_I_Classic {
     static zCMesh*& s_meshRoot;
 
     // user API
-    #include "zCMesh.inl"
+    #include "..\..\Gothic_UserAPI\zCMesh.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZVISUAL_H__VER0__
+#endif // __ZVISUAL_H__VER0__ 

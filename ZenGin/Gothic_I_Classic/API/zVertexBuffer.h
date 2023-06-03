@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZVERTEX_BUFFER_H__VER0__
@@ -56,6 +56,8 @@ namespace Gothic_I_Classic {
 
     // sizeof 24h
     struct zCVertexBufferDummy0 {
+      zOPERATORS_DECLARATION()
+
       unsigned char* basePtr; // sizeof 04h    offset 00h
       zVEC3* XYZPtr;          // sizeof 04h    offset 04h
       zVEC4* XYZRHWPtr;       // sizeof 04h    offset 08h
@@ -73,13 +75,15 @@ namespace Gothic_I_Classic {
 
     // sizeof 08h
     struct zTCallbackData {
+      zOPERATORS_DECLARATION()
+
       void* recreateLostVBCallback;     // sizeof 04h    offset 00h
       void* recreateLostVBCallbackData; // sizeof 04h    offset 04h
 
       zTCallbackData() {}
 
       // user API
-      #include "zCVertexBuffer_zTCallbackData.inl"
+      #include "..\..\Gothic_UserAPI\zCVertexBuffer_zTCallbackData.inl"
     };
 
     unsigned long numVertex;              // sizeof 04h    offset 24h
@@ -118,12 +122,14 @@ namespace Gothic_I_Classic {
     static unsigned long& s_classCtorCtr;
 
     // user API
-    #include "zCVertexBuffer.inl"
+    #include "..\..\Gothic_UserAPI\zCVertexBuffer.inl"
   };
 
   // sizeof 1Ch
   class zCVertexBufferDyn {
   public:
+    zOPERATORS_DECLARATION()
+
     enum LOCK_FLAGS {
       LOCKFLAGS_FLUSH  = zVBUFFER_LOCK_FLAG_NOSYSLOCK | zVBUFFER_LOCK_FLAG_WRITEONLY | zVBUFFER_LOCK_FLAG_DISCARDCONTENTS,
       LOCKFLAGS_APPEND = zVBUFFER_LOCK_FLAG_NOSYSLOCK | zVBUFFER_LOCK_FLAG_WRITEONLY | zVBUFFER_LOCK_FLAG_NOOVERWRITE
@@ -145,12 +151,14 @@ namespace Gothic_I_Classic {
     void Unlock()                                                 zCall( 0x005D1360 );
 
     // user API
-    #include "zCVertexBufferDyn.inl"
+    #include "..\..\Gothic_UserAPI\zCVertexBufferDyn.inl"
   };
 
   // sizeof 1Ch
   class zCVertexBufferDyn2 {
   public:
+    zOPERATORS_DECLARATION()
+
     enum LOCK_FLAGS {
       LOCKFLAGS_FLUSH  = zVBUFFER_LOCK_FLAG_NOSYSLOCK | zVBUFFER_LOCK_FLAG_WRITEONLY | zVBUFFER_LOCK_FLAG_DISCARDCONTENTS,
       LOCKFLAGS_APPEND = zVBUFFER_LOCK_FLAG_NOSYSLOCK | zVBUFFER_LOCK_FLAG_WRITEONLY | zVBUFFER_LOCK_FLAG_NOOVERWRITE
@@ -173,12 +181,14 @@ namespace Gothic_I_Classic {
     void Unlock( unsigned long )                                   zCall( 0x005D14A0 );
 
     // user API
-    #include "zCVertexBufferDyn2.inl"
+    #include "..\..\Gothic_UserAPI\zCVertexBufferDyn2.inl"
   };
 
   // sizeof 1Ch
   class zCVertexBufferManager {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<zCVertexBuffer*> openVBList;   // sizeof 0Ch    offset 00h
     zCArray<zCVertexBuffer*> closedVBList; // sizeof 0Ch    offset 0Ch
     int changeWorldHintSet;                // sizeof 04h    offset 18h
@@ -193,9 +203,9 @@ namespace Gothic_I_Classic {
     void EndChangeWorld()                                                                                   zCall( 0x005D1A60 );
 
     // user API
-    #include "zCVertexBufferManager.inl"
+    #include "..\..\Gothic_UserAPI\zCVertexBufferManager.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZVERTEX_BUFFER_H__VER0__
+#endif // __ZVERTEX_BUFFER_H__VER0__ 

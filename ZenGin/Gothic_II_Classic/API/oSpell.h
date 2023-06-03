@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OSPELL_H__VER2__
@@ -202,9 +202,9 @@ namespace Gothic_II_Classic {
     virtual ~oCSpell()                          zCall( 0x00482940 );
 
     // user API
-    #include "oCSpell.inl"
+    #include "..\..\Gothic_UserAPI\oCSpell.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __OSPELL_H__VER2__
+#endif // __OSPELL_H__VER2__ 

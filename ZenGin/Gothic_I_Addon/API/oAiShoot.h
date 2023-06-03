@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OAI_SHOOT_H__VER1__
@@ -31,7 +31,7 @@ namespace Gothic_I_Addon {
     virtual void DoAI( zCVob*, int& )                               zPureCall;
 
     // user API
-    #include "oCAISound.inl"
+    #include "..\..\Gothic_UserAPI\oCAISound.inl"
   };
 
   // sizeof 54h
@@ -66,7 +66,7 @@ namespace Gothic_I_Addon {
     virtual void AICollisionResponseSelfDetected( zVEC3 const&, int& )  zCall( 0x0063B9E0 );
 
     // user API
-    #include "oCAIArrowBase.inl"
+    #include "..\..\Gothic_UserAPI\oCAIArrowBase.inl"
   };
 
   // sizeof 64h
@@ -94,7 +94,7 @@ namespace Gothic_I_Addon {
     virtual void ReportCollisionToAI( zCCollisionReport const& )        zCall( 0x0063CAA0 );
 
     // user API
-    #include "oCAIArrow.inl"
+    #include "..\..\Gothic_UserAPI\oCAIArrow.inl"
   };
 
   // sizeof 48h
@@ -127,7 +127,7 @@ namespace Gothic_I_Addon {
     virtual int HasAIDetectedCollision()                                zCall( 0x0063D080 );
 
     // user API
-    #include "oCAIDrop.inl"
+    #include "..\..\Gothic_UserAPI\oCAIDrop.inl"
   };
 
   // sizeof 3Ch
@@ -155,7 +155,7 @@ namespace Gothic_I_Addon {
     virtual void Init( zCVob*, zCVob*, zVEC3&, float, float, zMAT4* )   zCall( 0x0063AC80 );
 
     // user API
-    #include "oCAIVobMove.inl"
+    #include "..\..\Gothic_UserAPI\oCAIVobMove.inl"
   };
 
   // sizeof 40h
@@ -176,9 +176,9 @@ namespace Gothic_I_Addon {
     virtual void Init( zCVob*, zCVob*, zVEC3&, float, float, zMAT4* )   zCall( 0x0063B5A0 );
 
     // user API
-    #include "oCAIVobMoveTorch.inl"
+    #include "..\..\Gothic_UserAPI\oCAIVobMoveTorch.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __OAI_SHOOT_H__VER1__
+#endif // __OAI_SHOOT_H__VER1__ 

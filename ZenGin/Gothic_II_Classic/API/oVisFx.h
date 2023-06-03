@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OVIS_FX_H__VER2__
@@ -66,6 +66,8 @@ namespace Gothic_II_Classic {
   // sizeof 5Ch
   class oCTrajectory {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<zCPositionKey*> keyList; // sizeof 0Ch    offset 00h
     zCKBSpline* spl;                 // sizeof 04h    offset 0Ch
     int mode;                        // sizeof 04h    offset 10h
@@ -90,12 +92,14 @@ namespace Gothic_II_Classic {
     int GetNumKeys()                                                    zCall( 0x0048F740 );
 
     // user API
-    #include "oCTrajectory.inl"
+    #include "..\..\Gothic_UserAPI\oCTrajectory.inl"
   };
 
   // sizeof 1D4h
   class oCEmitterKey {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING visName_S;                     // sizeof 14h    offset 00h
     float visSizeScale;                    // sizeof 04h    offset 14h
     float scaleDuration;                   // sizeof 04h    offset 18h
@@ -154,11 +158,13 @@ namespace Gothic_II_Classic {
     static void CreateNewScriptKey( zSTRING const& ) zCall( 0x00499240 );
 
     // user API
-    #include "oCEmitterKey.inl"
+    #include "..\..\Gothic_UserAPI\oCEmitterKey.inl"
   };
 
   // sizeof 1Ch
   struct zSVisualFXColl {
+    zOPERATORS_DECLARATION()
+
     zCVob* foundVob;         // sizeof 04h    offset 00h
     zVEC3 foundContactPoint; // sizeof 0Ch    offset 04h
     zVEC3 foundNormal;       // sizeof 0Ch    offset 10h
@@ -166,7 +172,7 @@ namespace Gothic_II_Classic {
     zSVisualFXColl() {}
 
     // user API
-    #include "zSVisualFXColl.inl"
+    #include "..\..\Gothic_UserAPI\zSVisualFXColl.inl"
   };
 
   // sizeof 600h
@@ -408,12 +414,14 @@ namespace Gothic_II_Classic {
     static oCVisualFX*& actFX;
 
     // user API
-    #include "oCVisualFX.inl"
+    #include "..\..\Gothic_UserAPI\oCVisualFX.inl"
   };
 
   // sizeof 2Ch
   class oCVisualFXAI : public zCAIBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCVob* vob;    // sizeof 04h    offset 24h
     int delete_it; // sizeof 04h    offset 28h
 
@@ -424,9 +432,9 @@ namespace Gothic_II_Classic {
     virtual void HostVobAddedToWorld( zCVob*, zCWorld* )         zCall( 0x0048A430 );
 
     // user API
-    #include "oCVisualFXAI.inl"
+    #include "..\..\Gothic_UserAPI\oCVisualFXAI.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __OVIS_FX_H__VER2__
+#endif // __OVIS_FX_H__VER2__ 

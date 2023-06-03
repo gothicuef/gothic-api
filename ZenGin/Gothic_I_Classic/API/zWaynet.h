@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZWAYNET_H__VER0__
@@ -29,7 +29,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobWaypoint()                                            zCall( 0x00703010 );
 
     // user API
-    #include "zCVobWaypoint.inl"
+    #include "..\..\Gothic_UserAPI\zCVobWaypoint.inl"
   };
 
   // sizeof 7Ch
@@ -80,12 +80,14 @@ namespace Gothic_I_Classic {
     virtual int CanBeUsed( zCVob const* )                               zCall( 0x00705C60 );
 
     // user API
-    #include "zCWaypoint.inl"
+    #include "..\..\Gothic_UserAPI\zCWaypoint.inl"
   };
 
   // sizeof 20h
   class zCWay {
   public:
+    zOPERATORS_DECLARATION()
+
     int cost;          // sizeof 04h    offset 04h
     int usedCtr;       // sizeof 04h    offset 08h
     float chasmDepth;  // sizeof 04h    offset 0Ch
@@ -116,7 +118,7 @@ namespace Gothic_I_Classic {
     virtual int IsObjectOnWay( zCVob const* )     zCall( 0x00704C60 );
 
     // user API
-    #include "zCWay.inl"
+    #include "..\..\Gothic_UserAPI\zCWay.inl"
   };
 
   // sizeof 4Ch
@@ -190,12 +192,14 @@ namespace Gothic_I_Classic {
     virtual ~zCWayNet()                                                 zCall( 0x007031A0 );
 
     // user API
-    #include "zCWayNet.inl"
+    #include "..\..\Gothic_UserAPI\zCWayNet.inl"
   };
 
   // sizeof 1Ch
   class zCRoute {
   public:
+    zOPERATORS_DECLARATION()
+
     zCList<zCWay> wayList;  // sizeof 08h    offset 04h
     zCWaypoint* startwp;    // sizeof 04h    offset 0Ch
     zCWaypoint* target;     // sizeof 04h    offset 10h
@@ -217,7 +221,7 @@ namespace Gothic_I_Classic {
     virtual ~zCRoute()                                zCall( 0x00708BA0 );
 
     // user API
-    #include "zCRoute.inl"
+    #include "..\..\Gothic_UserAPI\zCRoute.inl"
   };
 
   // sizeof 108h
@@ -237,7 +241,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobSpot()                                                zCall( 0x00709300 );
 
     // user API
-    #include "zCVobSpot.inl"
+    #include "..\..\Gothic_UserAPI\zCVobSpot.inl"
   };
 
   // sizeof 100h
@@ -251,9 +255,9 @@ namespace Gothic_I_Classic {
     virtual ~zCVobStartpoint()                                          zCall( 0x00709CD0 );
 
     // user API
-    #include "zCVobStartpoint.inl"
+    #include "..\..\Gothic_UserAPI\zCVobStartpoint.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZWAYNET_H__VER0__
+#endif // __ZWAYNET_H__VER0__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSKY_H__VER0__
@@ -21,6 +21,8 @@ namespace Gothic_I_Classic {
   // sizeof 40h
   class zCSkyLayerData {
   public:
+    zOPERATORS_DECLARATION()
+
     zESkyLayerMode skyMode; // sizeof 04h    offset 00h
     zCTexture* texBox[5];   // sizeof 14h    offset 04h
     zCTexture* tex;         // sizeof 04h    offset 18h
@@ -34,12 +36,14 @@ namespace Gothic_I_Classic {
     ~zCSkyLayerData()            zCall( 0x005BB8A0 );
 
     // user API
-    #include "zCSkyLayerData.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyLayerData.inl"
   };
 
   // sizeof C0h
   class zCSkyState {
   public:
+    zOPERATORS_DECLARATION()
+
     float time;                           // sizeof 04h    offset 00h
     zVEC3 polyColor;                      // sizeof 0Ch    offset 04h
     zVEC3 fogColor;                       // sizeof 0Ch    offset 10h
@@ -63,12 +67,14 @@ namespace Gothic_I_Classic {
     void PresetDawn()        zCall( 0x005BC370 );
 
     // user API
-    #include "zCSkyState.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyState.inl"
   };
 
   // sizeof 18h
   class zCSkyLayer {
   public:
+    zOPERATORS_DECLARATION()
+
     zCMesh* skyPolyMesh;    // sizeof 04h    offset 00h
     zCPolygon* skyPoly;     // sizeof 04h    offset 04h
     zVEC2 skyTexOffs;       // sizeof 08h    offset 08h
@@ -88,12 +94,14 @@ namespace Gothic_I_Classic {
     static zCMesh* CreateSkyBoxMesh( int )   zCall( 0x005BFEE0 );
 
     // user API
-    #include "zCSkyLayer.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyLayer.inl"
   };
 
   // sizeof 40h
   class zCSkyPlanet {
   public:
+    zOPERATORS_DECLARATION()
+
     zCMesh* mesh;  // sizeof 04h    offset 00h
     zVEC4 color0;  // sizeof 10h    offset 04h
     zVEC4 color1;  // sizeof 10h    offset 14h
@@ -106,12 +114,14 @@ namespace Gothic_I_Classic {
     ~zCSkyPlanet()            zCall( 0x005BC760 );
 
     // user API
-    #include "zCSkyPlanet.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyPlanet.inl"
   };
 
   // sizeof BCh
   class zCUnderwaterPFX : public zCParticleFX {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 camPosLastFrame; // sizeof 0Ch    offset B0h
 
     zCUnderwaterPFX() : zCtor( zCParticleFX ) {}
@@ -121,7 +131,7 @@ namespace Gothic_I_Classic {
     virtual int Render( zTRenderContext& ) zCall( 0x005BADA0 );
 
     // user API
-    #include "zCUnderwaterPFX.inl"
+    #include "..\..\Gothic_UserAPI\zCUnderwaterPFX.inl"
   };
 
   // sizeof 38h
@@ -172,7 +182,7 @@ namespace Gothic_I_Classic {
     static int& s_skyEffectsEnabled;
 
     // user API
-    #include "zCSkyControler.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler.inl"
   };
 
   // sizeof 68h
@@ -220,7 +230,7 @@ namespace Gothic_I_Classic {
     virtual void RenderSkyPost()                         zCall( 0x005BAB80 );
 
     // user API
-    #include "zCSkyControler_Mid.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler_Mid.inl"
   };
 
   // sizeof 74h
@@ -251,7 +261,7 @@ namespace Gothic_I_Classic {
     virtual void RenderSkyPost()                                        zCall( 0x005BB820 );
 
     // user API
-    #include "zCSkyControler_Indoor.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler_Indoor.inl"
   };
 
   // sizeof 680h
@@ -261,6 +271,8 @@ namespace Gothic_I_Classic {
 
     // sizeof 1Ch
     struct zTRainFX {
+      zOPERATORS_DECLARATION()
+
       zCOutdoorRainFX* outdoorRainFX;        // sizeof 04h    offset 00h
       zTCamLocationHint camLocationHint;     // sizeof 04h    offset 04h
       float outdoorRainFXWeight;             // sizeof 04h    offset 08h
@@ -272,7 +284,7 @@ namespace Gothic_I_Classic {
       zTRainFX() {}
 
       // user API
-      #include "zCSkyControler_Outdoor_zTRainFX.inl"
+      #include "..\..\Gothic_UserAPI\zCSkyControler_Outdoor_zTRainFX.inl"
     };
 
     int initDone;                         // sizeof 04h    offset 68h
@@ -350,9 +362,9 @@ namespace Gothic_I_Classic {
     virtual void SetCameraLocationHint( zCSkyControler::zTCamLocationHint ) zCall( 0x005BC7D0 );
 
     // user API
-    #include "zCSkyControler_Outdoor.inl"
+    #include "..\..\Gothic_UserAPI\zCSkyControler_Outdoor.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZSKY_H__VER0__
+#endif // __ZSKY_H__VER0__ 

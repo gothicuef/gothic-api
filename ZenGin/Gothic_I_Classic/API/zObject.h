@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZOBJECT_H__VER0__
@@ -15,17 +15,21 @@ namespace Gothic_I_Classic {
   // sizeof 0Ch
   class zCLivingObjectsState {
   public:
+    zOPERATORS_DECLARATION()
+
     zCArray<int> numList; // sizeof 0Ch    offset 00h
 
     zCLivingObjectsState() {}
 
     // user API
-    #include "zCLivingObjectsState.inl"
+    #include "..\..\Gothic_UserAPI\zCLivingObjectsState.inl"
   };
 
   // sizeof 6Ch
   class zCClassDef {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING className;                             // sizeof 14h    offset 00h
     zSTRING baseClassName;                         // sizeof 14h    offset 14h
     zSTRING scriptClassName;                       // sizeof 14h    offset 28h
@@ -76,7 +80,7 @@ namespace Gothic_I_Classic {
     static int& startupFinished;
 
     // user API
-    #include "zCClassDef.inl"
+    #include "..\..\Gothic_UserAPI\zCClassDef.inl"
   };
 
   // sizeof 24h
@@ -115,7 +119,7 @@ namespace Gothic_I_Classic {
     const T* CastTo() const;
 
     // user API
-    #include "zCObject.inl"
+    #include "..\..\Gothic_UserAPI\zCObject.inl"
   };
 
   template<class T>
@@ -162,8 +166,8 @@ namespace Gothic_I_Classic {
     virtual zCWay* CreateWay( void )                                    zCall( 0x0058C0C0 );
 
     // user API
-    #include "zCObjectFactory.inl"
+    #include "..\..\Gothic_UserAPI\zCObjectFactory.inl"
   };
 } // namespace Gothic_I_Classic
 
-#endif // __ZOBJECT_H__VER0__
+#endif // __ZOBJECT_H__VER0__ 

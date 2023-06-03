@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZMENU_H__VER1__
@@ -24,6 +24,8 @@ namespace Gothic_I_Addon {
   // sizeof CC4h
   class zCMenu : public zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zCMenuEnum2 {
       NONE,
       BACK,
@@ -135,9 +137,9 @@ namespace Gothic_I_Addon {
     static int& inGameMenu;
 
     // user API
-    #include "zCMenu.inl"
+    #include "..\..\Gothic_UserAPI\zCMenu.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZMENU_H__VER1__
+#endif // __ZMENU_H__VER1__ 

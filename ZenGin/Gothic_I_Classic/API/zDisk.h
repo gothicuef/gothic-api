@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZDISK_H__VER0__
@@ -39,6 +39,8 @@ namespace Gothic_I_Classic {
 
   // sizeof 120h
   struct _finddata32i64_t_vc6 {
+    zOPERATORS_DECLARATION()
+
     unsigned  attrib;      // sizeof 04h    offset 00h
     long      time_create; // sizeof 04h    offset 04h
     long      time_access; // sizeof 04h    offset 08h
@@ -50,6 +52,8 @@ namespace Gothic_I_Classic {
   // sizeof 10h
   class zDATE {
   public:
+    zOPERATORS_DECLARATION()
+
     unsigned int year;     // sizeof 04h    offset 00h
     unsigned short month;  // sizeof 02h    offset 04h
     unsigned short day;    // sizeof 02h    offset 06h
@@ -63,12 +67,14 @@ namespace Gothic_I_Classic {
     zSTRING ToString( zTDATE_CONVERT ) zCall( 0x0043E9F0 );
 
     // user API
-    #include "zDATE.inl"
+    #include "..\..\Gothic_UserAPI\zDATE.inl"
   };
 
   // sizeof 34h
   class zFILE_STATS {
   public:
+    zOPERATORS_DECLARATION()
+
     zDATE accessDate;  // sizeof 10h    offset 00h
     zDATE createDate;  // sizeof 10h    offset 10h
     zDATE modifyDate;  // sizeof 10h    offset 20h
@@ -77,24 +83,28 @@ namespace Gothic_I_Classic {
     zFILE_STATS() {}
 
     // user API
-    #include "zFILE_STATS.inl"
+    #include "..\..\Gothic_UserAPI\zFILE_STATS.inl"
   };
 
   // sizeof 28h
   class zFILE_INFO {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING path; // sizeof 14h    offset 00h
     zSTRING name; // sizeof 14h    offset 14h
 
     zFILE_INFO() {}
 
     // user API
-    #include "zFILE_INFO.inl"
+    #include "..\..\Gothic_UserAPI\zFILE_INFO.inl"
   };
 
   // sizeof 10h
   class zFILE {
   public:
+    zOPERATORS_DECLARATION()
+
     bool write;       // sizeof 01h    offset 04h
     int buffering;    // sizeof 04h    offset 08h
     zCBuffer* buffer; // sizeof 04h    offset 0Ch
@@ -186,12 +196,14 @@ namespace Gothic_I_Classic {
     static int*& bufferFlag;
 
     // user API
-    #include "zFILE.inl"
+    #include "..\..\Gothic_UserAPI\zFILE.inl"
   };
 
   // sizeof 1C0h
   class zFILE_FILE : public zFILE {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING dir;                        // sizeof 14h    offset 10h
     zSTRING drive;                      // sizeof 14h    offset 24h
     zSTRING filename;                   // sizeof 14h    offset 38h
@@ -277,12 +289,14 @@ namespace Gothic_I_Classic {
     virtual zSTRING DirStepInto( zSTRING )                        zCall( 0x00442960 );
 
     // user API
-    #include "zFILE_FILE.inl"
+    #include "..\..\Gothic_UserAPI\zFILE_FILE.inl"
   };
 
   // sizeof 08h
   class zPATH {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zCOLLECT_MODE {
       CURRENT_ONLY,
       RECURSIVE
@@ -305,9 +319,9 @@ namespace Gothic_I_Classic {
     virtual ~zPATH()                                      zCall( 0x004855A0 );
 
     // user API
-    #include "zPATH.inl"
+    #include "..\..\Gothic_UserAPI\zPATH.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZDISK_H__VER0__
+#endif // __ZDISK_H__VER0__ 

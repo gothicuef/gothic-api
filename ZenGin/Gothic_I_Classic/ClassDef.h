@@ -1,7 +1,8 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
-#include "G1.h"
+#ifndef __G_CLASS_DEF_H__VER0__
+#define __G_CLASS_DEF_H__VER0__
 
 namespace Gothic_I_Classic {
 #ifdef __OCS_MANAGER_H__VER0__
@@ -506,3 +507,4 @@ namespace Gothic_I_Classic {
   zCClassDef* zCVobSpot::classDef                   = (zCClassDef*)0x008DE3A0;
 #endif
 } // Gothic_I_Classic
+#endif // __G_CLASS_DEF_H__VER0__

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCS_CAMERA_H__VER1__
@@ -65,7 +65,7 @@ namespace Gothic_I_Addon {
     virtual void ThisVobRemovedFromWorld( zCWorld* )                    zCall( 0x004C3E50 );
 
     // user API
-    #include "zCCamTrj_KeyFrame.inl"
+    #include "..\..\Gothic_UserAPI\zCCamTrj_KeyFrame.inl"
   };
 
   // sizeof 3Ch
@@ -108,7 +108,7 @@ namespace Gothic_I_Addon {
     virtual float MD_GetMinTime()                                            zCall( 0x004CD490 );
 
     // user API
-    #include "zCCSCamera_EventMsg.inl"
+    #include "..\..\Gothic_UserAPI\zCCSCamera_EventMsg.inl"
   };
 
   // sizeof 48h
@@ -141,7 +141,7 @@ namespace Gothic_I_Addon {
     virtual void MD_SetVobParam( zCVob* )                               zCall( 0x004CD940 );
 
     // user API
-    #include "zCCSCamera_EventMsgActivate.inl"
+    #include "..\..\Gothic_UserAPI\zCCSCamera_EventMsgActivate.inl"
   };
 
   // sizeof 14BCh
@@ -273,9 +273,9 @@ namespace Gothic_I_Addon {
     static int& evaluateAvgFPS;
 
     // user API
-    #include "zCCSCamera.inl"
+    #include "..\..\Gothic_UserAPI\zCCSCamera.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCS_CAMERA_H__VER1__
+#endif // __ZCS_CAMERA_H__VER1__ 

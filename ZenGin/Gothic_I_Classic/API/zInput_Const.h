@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZINPUT__CONST_H__VER0__
@@ -303,4 +303,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZINPUT__CONST_H__VER0__
+#endif // __ZINPUT__CONST_H__VER0__ 

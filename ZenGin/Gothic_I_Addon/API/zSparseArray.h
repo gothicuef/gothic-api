@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSPARSE_ARRAY_H__VER1__
@@ -10,17 +10,21 @@ namespace Gothic_I_Addon {
 
   class zCSparseArrayManDat {
   public:
+    zOPERATORS_DECLARATION()
+
     int refCtr   : 31;
     int occupied : 1;
 
     zCSparseArrayManDat() {}
 
     // user API
-    #include "zCSparseArrayManDat.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayManDat.inl"
   };
 
   class zCSparseArrayBase {
   public:
+    zOPERATORS_DECLARATION()
+
     unsigned long numberOfIterators;
     unsigned long size;
     unsigned long min_size;
@@ -59,11 +63,13 @@ namespace Gothic_I_Addon {
     virtual void DestructData( void* ) const                               zCall( 0x005E2D60 );
 
     // user API
-    #include "zCSparseArrayBase.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayBase.inl"
   };
 
   class zCSparseArrayIterator {
   public:
+    zOPERATORS_DECLARATION()
+
     int count;
     zCSparseArrayBase* array;
     int registered;
@@ -79,12 +85,14 @@ namespace Gothic_I_Addon {
     zCSparseArrayIterator( zCSparseArrayBase& a0 )          zInit( zCSparseArrayIterator_OnInit( a0 ));
 
     // user API
-    #include "zCSparseArrayIterator.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayIterator.inl"
   };
   
   template <class T, class Data>
   class zCSparseArray : public zCSparseArrayBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCSparseArray( unsigned long size = 1031 ) :zCSparseArrayBase( 0 )  { 
       if( size > 0 ) {
         Create( size );
@@ -196,6 +204,8 @@ namespace Gothic_I_Addon {
 
   class zCCacheBase {
   public:
+    zOPERATORS_DECLARATION()
+
     int timeout;
     zCCacheBase* next;
     zCCacheBase** anchor;
@@ -214,10 +224,12 @@ namespace Gothic_I_Addon {
     static zCCacheBase*& s_run;
 
     // user API
-    #include "zCCacheBase.inl"
+    #include "..\..\Gothic_UserAPI\zCCacheBase.inl"
   };
   
   template <class Index, class Data> class zCCacheData {
+    zOPERATORS_DECLARATION()
+
     Data    *data;
     int      lastFrameUsed;
 
@@ -265,4 +277,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZSPARSE_ARRAY_H__VER1__
+#endif // __ZSPARSE_ARRAY_H__VER1__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OGAME_H__VER1__
@@ -16,6 +16,8 @@ namespace Gothic_I_Addon {
   // sizeof 180h
   class oCGame : public zCSession {
   public:
+    zOPERATORS_DECLARATION()
+
     typedef enum oEGameDialogView {
       GAME_VIEW_SCREEN,
       GAME_VIEW_CONVERSATION,
@@ -29,6 +31,8 @@ namespace Gothic_I_Addon {
     // sizeof 24h
     struct TObjectRoutine {
     public:
+      zOPERATORS_DECLARATION()
+
       zSTRING objName; // sizeof 14h    offset 00h
       int stateNum;    // sizeof 04h    offset 14h
       int hour1;       // sizeof 04h    offset 18h
@@ -40,7 +44,7 @@ namespace Gothic_I_Addon {
       ~TObjectRoutine() zCall( 0x0065C5E0 );
 
       // user API
-      #include "oCGame_TObjectRoutine.inl"
+      #include "..\..\Gothic_UserAPI\oCGame_TObjectRoutine.inl"
     };
 
     float cliprange;                                  // sizeof 04h    offset 1Ch
@@ -210,9 +214,9 @@ namespace Gothic_I_Addon {
     virtual void SetAsPlayer( zSTRING const& )                                   zCall( 0x0065FFF0 );
 
     // user API
-    #include "oCGame.inl"
+    #include "..\..\Gothic_UserAPI\oCGame.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __OGAME_H__VER1__
+#endif // __OGAME_H__VER1__ 

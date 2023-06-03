@@ -1,10 +1,10 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
-#include "G2A.h"
+#ifndef __G_STATIC_PROPS_H__VER3__
+#define __G_STATIC_PROPS_H__VER3__
 
 namespace Gothic_II_Addon {
-
 #ifdef __OAI_HUMAN_H__VER3__
   zSTRING& oCAIHuman::Cam_Normal = *(zSTRING*)0x00AAD5F8;
   zSTRING& oCAIHuman::Cam_Run    = *(zSTRING*)0x00AAD560;
@@ -584,5 +584,5 @@ namespace Gothic_II_Addon {
   zCCollisionObjectDef* zCCollObjectCharacter::s_oCollObjClass      = (zCCollisionObjectDef*)0x008D835C;
   zCCollisionObjectDef* zCCollObjectProjectile::s_oCollObjClass     = (zCCollisionObjectDef*)0x008D8368;
 #endif // __ZCOLLISION_OBJECT_MISC_H__VER3__
-
 } // namespace Gothic_II_Addon
+#endif // __G_STATIC_PROPS_H__VER3__

@@ -1,7 +1,8 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
-#include "G1A.h"
+#ifndef __G_STATIC_PROPS_H__VER1__
+#define __G_STATIC_PROPS_H__VER1__
 
 namespace Gothic_I_Addon {
 
@@ -522,6 +523,5 @@ namespace Gothic_I_Addon {
   zCCollisionObjectDef* zCCollObjectCharacter::s_oCollObjClass      = (zCCollisionObjectDef*)0x008B92D8;
   zCCollisionObjectDef* zCCollObjectProjectile::s_oCollObjClass     = (zCCollisionObjectDef*)0x008B9288;
 #endif // __ZCOLLISION_OBJECT_MISC_H__VER1__
-
-
 } // namespace Gothic_I_Addon
+#endif // __G_STATIC_PROPS_H__VER1__

@@ -1,7 +1,8 @@
-// Supported with union (c) 2018-2022 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
-#include "G2A.h"
+#ifndef __G_GLOBAL_VARS_H__VER3__
+#define __G_GLOBAL_VARS_H__VER3__
 
 namespace Gothic_II_Addon {
 #ifdef __ZPROTO_B_VER3__
@@ -149,3 +150,4 @@ namespace Gothic_II_Addon {
 
 #endif // __ZPROTO_B_VER3__
 } // Gothic_II_Addon
+#endif // __G_GLOBAL_VARS_H__VER3__

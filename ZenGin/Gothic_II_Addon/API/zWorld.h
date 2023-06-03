@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZWORLD_H__VER3__
@@ -38,38 +38,46 @@ namespace Gothic_II_Addon {
   // sizeof 01h
   class zCCallback {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zDefineInheritableCtor( zCCallback ) {}
     zCCallback() {}
 
     // user API
-    #include "zCCallback.inl"
+    #include "..\..\Gothic_UserAPI\zCCallback.inl"
   };
 
   // sizeof 04h
   class zCVobCallback : public zCCallback {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCVobCallback() : zCtor( zCCallback ) {}
     virtual void HandleVob( zCVob*, void* ) zPureCall;
 
     // user API
-    #include "zCVobCallback.inl"
+    #include "..\..\Gothic_UserAPI\zCVobCallback.inl"
   };
 
   // sizeof 04h
   class zCWorldPerFrameCallback : public zCCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     
     virtual void DoWorldPerFrameCallback( zCWorld*, zCCamera* ) zPureCall;
     zCWorldPerFrameCallback() : zCtor( zCCallback ) {}
 
     // user API
-    #include "zCWorldPerFrameCallback.inl"
+    #include "..\..\Gothic_UserAPI\zCWorldPerFrameCallback.inl"
   };
 
   // sizeof 28h
   struct zTTraceRayReport {
+    zOPERATORS_DECLARATION()
+
     int foundHit;            // sizeof 04h    offset 00h
     zCVob* foundVob;         // sizeof 04h    offset 04h
     zCPolygon* foundPoly;    // sizeof 04h    offset 08h
@@ -80,19 +88,21 @@ namespace Gothic_II_Addon {
     zTTraceRayReport() {}
 
     // user API
-    #include "zTTraceRayReport.inl"
+    #include "..\..\Gothic_UserAPI\zTTraceRayReport.inl"
   };
 
   // sizeof 08h
   class zCTransferConstr {
   public:
+    zOPERATORS_DECLARATION()
+
     zCPatch* targetPatch; // sizeof 04h    offset 00h
     float formFactor;     // sizeof 04h    offset 04h
 
     zCTransferConstr() {}
 
     // user API
-    #include "zCTransferConstr.inl"
+    #include "..\..\Gothic_UserAPI\zCTransferConstr.inl"
   };
   
 #pragma pack( push, 1 )
@@ -100,13 +110,15 @@ namespace Gothic_II_Addon {
   // sizeof 06h
   class zCTransfer {
   public:
+    zOPERATORS_DECLARATION()
+
     zCPatch* targetPatch;      // sizeof 04h    offset 00h
     unsigned short formFactor; // sizeof 02h    offset 04h
 
     zCTransfer() {}
 
     // user API
-    #include "zCTransfer.inl"
+    #include "..\..\Gothic_UserAPI\zCTransfer.inl"
   };
   
 #pragma pack( pop )	
@@ -114,6 +126,8 @@ namespace Gothic_II_Addon {
   // sizeof 5Ch
   class zCPatch {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 center;                     // sizeof 0Ch    offset 00h
     zVEC3 centerLight;                // sizeof 0Ch    offset 0Ch
     zVEC3 normal;                     // sizeof 0Ch    offset 18h
@@ -130,7 +144,7 @@ namespace Gothic_II_Addon {
     void DoTransfers()    zCall( 0x0062F000 );
 
     // user API
-    #include "zCPatch.inl"
+    #include "..\..\Gothic_UserAPI\zCPatch.inl"
   };
 
 #pragma pack( push, 1 )
@@ -138,6 +152,8 @@ namespace Gothic_II_Addon {
   // sizeof 7Dh
   class zCPatchMap {
   public:
+    zOPERATORS_DECLARATION()
+
     char hit;                    // sizeof 01h    offset 00h
     short xdim;                  // sizeof 02h    offset 01h
     short ydim;                  // sizeof 02h    offset 03h
@@ -156,7 +172,7 @@ namespace Gothic_II_Addon {
     ~zCPatchMap()                                                          zCall( 0x0062E760 );
 
     // user API
-    #include "zCPatchMap.inl"
+    #include "..\..\Gothic_UserAPI\zCPatchMap.inl"
   };
 
 #pragma pack( pop )	
@@ -357,9 +373,9 @@ namespace Gothic_II_Addon {
     static int& showTextureStats;
 
     // user API
-    #include "zCWorld.inl"
+    #include "..\..\Gothic_UserAPI\zCWorld.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZWORLD_H__VER3__
+#endif // __ZWORLD_H__VER3__ 

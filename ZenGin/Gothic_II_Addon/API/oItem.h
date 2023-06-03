@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OITEM_H__VER3__
@@ -193,9 +193,9 @@ namespace Gothic_II_Addon {
     static float& s_fGlobalItemZBiasScale;
 
     // user API
-    #include "oCItem.inl"
+    #include "..\..\Gothic_UserAPI\oCItem.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __OITEM_H__VER3__
+#endif // __OITEM_H__VER3__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZALGEBRA_H__VER2__
@@ -63,6 +63,8 @@ namespace Gothic_II_Classic {
 
   class zVEC2 {
   public:
+    zOPERATORS_DECLARATION()
+
     float n[2];
 
     zVEC2()
@@ -203,11 +205,13 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zVEC2.inl"
+    #include "..\..\Gothic_UserAPI\zVEC2.inl"
   };
 
   class zVEC3 {
   public:
+    zOPERATORS_DECLARATION()
+
     float n[3];
 
     zVEC3()
@@ -417,11 +421,13 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zVEC3.inl"
+    #include "..\..\Gothic_UserAPI\zVEC3.inl"
   };
 
   class zVEC4 {
   public:
+    zOPERATORS_DECLARATION()
+
     float n[4];
 
     zVEC4()
@@ -585,7 +591,7 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zVEC4.inl"
+    #include "..\..\Gothic_UserAPI\zVEC4.inl"
   };
 
   inline zMAT3 Alg_Scaling2D( zVEC2& );
@@ -593,6 +599,8 @@ namespace Gothic_II_Classic {
 
   class zMAT3 {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 v[3];
 
     zMAT3()
@@ -793,11 +801,13 @@ namespace Gothic_II_Classic {
      static zMAT3& s_identity;
 
     // user API
-    #include "zMAT3.inl"
+    #include "..\..\Gothic_UserAPI\zMAT3.inl"
   };
 
   class zMAT4 {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC4 v[4];
 
     zMAT4()
@@ -1061,11 +1071,13 @@ namespace Gothic_II_Classic {
     static zMAT4& s_identity;
 
     // user API
-    #include "zMAT4.inl"
+    #include "..\..\Gothic_UserAPI\zMAT4.inl"
   };
 
   class zCQuat {
   public:
+    zOPERATORS_DECLARATION()
+
     float q[4];
 
     zCQuat()
@@ -1227,10 +1239,12 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zCQuat.inl"
+    #include "..\..\Gothic_UserAPI\zCQuat.inl"
   };
 
   struct zComplex {
+    zOPERATORS_DECLARATION()
+
     float real;
     float img;
     float mag;
@@ -1309,11 +1323,13 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zComplex.inl"
+    #include "..\..\Gothic_UserAPI\zComplex.inl"
   };
 
   class zCValueSmooth {
   public:
+    zOPERATORS_DECLARATION()
+
     float  fixedValue;
     float  smoothedValue;
     float  inertia;
@@ -1359,11 +1375,13 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zCValueSmooth.inl"
+    #include "..\..\Gothic_UserAPI\zCValueSmooth.inl"
   };
 
   class zCVEC3Smooth {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3  fixedValue;
     zVEC3  smoothedValue;
     float  inertia;
@@ -1409,7 +1427,7 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zCVEC3Smooth.inl"
+    #include "..\..\Gothic_UserAPI\zCVEC3Smooth.inl"
   };
 
   inline void GetProjection( int& x, int& y, zVEC3 v );
@@ -1420,6 +1438,8 @@ namespace Gothic_II_Classic {
   extern oCGame*& ogame;
 
   class zCLine2D {
+    zOPERATORS_DECLARATION()
+
     zVEC2 posA;
     zVEC2 posB;
   public:
@@ -1551,7 +1571,7 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-    #include "zCLine2D.inl"
+    #include "..\..\Gothic_UserAPI\zCLine2D.inl"
   };
   
   inline zVEC2 Alg_Min( zVEC2 const &, zVEC2 const & )               zCall( 0x005101F0 );
@@ -1593,4 +1613,4 @@ namespace Gothic_II_Classic {
 
 #pragma warning(pop)
 
-#endif // __ZALGEBRA_H__VER2__
+#endif // __ZALGEBRA_H__VER2__ 

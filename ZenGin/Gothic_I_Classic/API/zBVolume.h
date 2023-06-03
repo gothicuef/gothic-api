@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZBVOLUME_H__VER0__
@@ -8,6 +8,8 @@ namespace Gothic_I_Classic {
 
   // sizeof 10h
   struct zTBSphere3D {
+    zOPERATORS_DECLARATION()
+
     zVEC3 center; // sizeof 0Ch    offset 00h
     float radius; // sizeof 04h    offset 0Ch
 
@@ -17,11 +19,13 @@ namespace Gothic_I_Classic {
     void Draw( zCOLOR const& ) const                       zCall( 0x00530540 );
 
     // user API
-    #include "zTBSphere3D.inl"
+    #include "..\..\Gothic_UserAPI\zTBSphere3D.inl"
   };
 
   // sizeof 10h
   struct zTBBox2D {
+    zOPERATORS_DECLARATION()
+
     zVEC2 mins; // sizeof 08h    offset 00h
     zVEC2 maxs; // sizeof 08h    offset 08h
 
@@ -32,11 +36,13 @@ namespace Gothic_I_Classic {
     void Draw() const                     zCall( 0x00532BC0 );
 
     // user API
-    #include "zTBBox2D.inl"
+    #include "..\..\Gothic_UserAPI\zTBBox2D.inl"
   };
 
   // sizeof 18h
   struct zTBBox3D {
+    zOPERATORS_DECLARATION()
+
     zVEC3 mins; // sizeof 0Ch    offset 00h
     zVEC3 maxs; // sizeof 0Ch    offset 0Ch
 
@@ -80,11 +86,13 @@ namespace Gothic_I_Classic {
     int IsIntersecting( zTBBox3D const& ) const                                                zCall( 0x005D8320 );
 
     // user API
-    #include "zTBBox3D.inl"
+    #include "..\..\Gothic_UserAPI\zTBBox3D.inl"
   };
 
   // sizeof 14h
   struct zTBCylinder3D {
+    zOPERATORS_DECLARATION()
+
     zVEC3 center;  // sizeof 0Ch    offset 00h
     float radius;  // sizeof 04h    offset 0Ch
     float heightY; // sizeof 04h    offset 10h
@@ -95,12 +103,14 @@ namespace Gothic_I_Classic {
     void SetByBBox3D( zTBBox3D )                     zCall( 0x00530340 );
 
     // user API
-    #include "zTBCylinder3D.inl"
+    #include "..\..\Gothic_UserAPI\zTBCylinder3D.inl"
   };
 
   // sizeof 44h
   class zCOBBox3D {
   public:
+    zOPERATORS_DECLARATION()
+
     zVEC3 center;             // sizeof 0Ch    offset 00h
     zVEC3 axis[3];            // sizeof 24h    offset 0Ch
     zVEC3 extent;             // sizeof 0Ch    offset 30h
@@ -129,9 +139,9 @@ namespace Gothic_I_Classic {
     static zMAT4& trafoB2ToThis;
 
     // user API
-    #include "zCOBBox3D.inl"
+    #include "..\..\Gothic_UserAPI\zCOBBox3D.inl"
   };
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZBVOLUME_H__VER0__
+#endif // __ZBVOLUME_H__VER0__ 

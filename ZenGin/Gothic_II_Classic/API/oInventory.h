@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OINVENTORY_H__VER2__
@@ -37,6 +37,8 @@ namespace Gothic_II_Classic {
   // sizeof A0h
   class oCItemContainer : public zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     zCListSort<oCItem>* contents;      // sizeof 04h    offset 04h
     oCNpc* npc;                        // sizeof 04h    offset 08h
     zSTRING titleText;                 // sizeof 14h    offset 0Ch
@@ -149,12 +151,14 @@ namespace Gothic_II_Classic {
     static zCGfx** gfx_arrow;
 
     // user API
-    #include "oCItemContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCItemContainer.inl"
   };
 
   // sizeof A4h
   class oCStealContainer : public oCItemContainer {
   public:
+    zOPERATORS_DECLARATION()
+
     oCNpc* owner; // sizeof 04h    offset A0h
 
     zDefineInheritableCtor( oCStealContainer ) : zCtor( oCItemContainer ) {}
@@ -167,12 +171,14 @@ namespace Gothic_II_Classic {
     virtual void CreateList()                     zCall( 0x006AD2F0 );
 
     // user API
-    #include "oCStealContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCStealContainer.inl"
   };
 
   // sizeof A4h
   class oCNpcContainer : public oCStealContainer {
   public:
+    zOPERATORS_DECLARATION()
+
 
     void oCNpcContainer_OnInit()                 zCall( 0x006AD8D0 );
     oCNpcContainer() : zCtor( oCStealContainer ) zInit( oCNpcContainer_OnInit() );
@@ -183,12 +189,14 @@ namespace Gothic_II_Classic {
     virtual void CreateList()                    zCall( 0x006ADA80 );
 
     // user API
-    #include "oCNpcContainer.inl"
+    #include "..\..\Gothic_UserAPI\oCNpcContainer.inl"
   };
 
   // sizeof CCh
   class oCNpcInventory : public oCItemContainer {
   public:
+    zOPERATORS_DECLARATION()
+
     oCNpc* owner;                 // sizeof 04h    offset A0h
     int packAbility;              // sizeof 04h    offset A4h
     zCListSort<oCItem> inventory; // sizeof 0Ch    offset A8h
@@ -242,9 +250,9 @@ namespace Gothic_II_Classic {
     static zCGfx*& gfx_title;
 
     // user API
-    #include "oCNpcInventory.inl"
+    #include "..\..\Gothic_UserAPI\oCNpcInventory.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __OINVENTORY_H__VER2__
+#endif // __OINVENTORY_H__VER2__ 

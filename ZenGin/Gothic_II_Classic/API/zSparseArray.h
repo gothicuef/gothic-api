@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSPARSE_ARRAY_H__VER2__
@@ -8,14 +8,18 @@ namespace Gothic_II_Classic {
   
   class zCSparseArrayManDat {
   public:
+    zOPERATORS_DECLARATION()
+
     int refCtr   : 31;
     int occupied : 1;
 
     // user API
-    #include "zCSparseArrayManDat.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayManDat.inl"
   };
 
   class zCSparseArrayBase {
+    zOPERATORS_DECLARATION()
+
     friend class zCSparseArrayIterator;
 
   public:
@@ -58,11 +62,13 @@ namespace Gothic_II_Classic {
     virtual void DestructData( void* ) const                               zCall( 0x005E8630 );
 
     // user API
-    #include "zCSparseArrayBase.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayBase.inl"
   };
 
   class zCSparseArrayIterator {
   public:
+    zOPERATORS_DECLARATION()
+
     int count;
     zCSparseArrayBase* array;
     int registered;
@@ -78,12 +84,14 @@ namespace Gothic_II_Classic {
     zCSparseArrayIterator( zCSparseArrayBase& a0 )          zInit( zCSparseArrayIterator_OnInit( a0 ));
 
     // user API
-    #include "zCSparseArrayIterator.inl"
+    #include "..\..\Gothic_UserAPI\zCSparseArrayIterator.inl"
   };
 
   template <class T, class Data>
   class zCSparseArray : public zCSparseArrayBase {
   public:
+    zOPERATORS_DECLARATION()
+
     zCSparseArray( unsigned long size = 1031 ) :zCSparseArrayBase( 0 ) {
       if( size > 0 ) {
         Create( size );
@@ -195,6 +203,8 @@ namespace Gothic_II_Classic {
 
   class zCCacheBase {
   public:
+    zOPERATORS_DECLARATION()
+
     int timeout;
     zCCacheBase* next;
     zCCacheBase** anchor;
@@ -213,10 +223,12 @@ namespace Gothic_II_Classic {
     static zCCacheBase*& s_run;
 
     // user API
-    #include "zCCacheBase.inl"
+    #include "..\..\Gothic_UserAPI\zCCacheBase.inl"
   };
 
   template <class Index, class Data> class zCCacheData {
+    zOPERATORS_DECLARATION()
+
     Data    *data;
     int      lastFrameUsed;
 
@@ -264,4 +276,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSPARSE_ARRAY_H__VER2__
+#endif // __ZSPARSE_ARRAY_H__VER2__ 

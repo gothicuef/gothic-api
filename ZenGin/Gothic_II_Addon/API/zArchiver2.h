@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZARCHIVER2_H__VER3__
@@ -154,9 +154,9 @@ namespace Gothic_II_Addon {
     virtual void __fastcall DeleteBuffer()                                                             zCall( 0x0051C900 );
 
     // user API
-    #include "zCArchiverBinSafe.inl"
+    #include "..\..\Gothic_UserAPI\zCArchiverBinSafe.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZARCHIVER2_H__VER3__
+#endif // __ZARCHIVER2_H__VER3__ 

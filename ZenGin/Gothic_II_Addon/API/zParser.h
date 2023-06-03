@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPARSER_H__VER3__
@@ -13,6 +13,8 @@ namespace Gothic_II_Addon {
   // sizeof 30h
   class zCPar_TreeNode {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING name;          // sizeof 14h    offset 00h
     unsigned char token;   // sizeof 01h    offset 14h
     union {
@@ -41,12 +43,14 @@ namespace Gothic_II_Addon {
     static zCPar_TreeNode* MakeMonadicNode( int, zCPar_TreeNode* )                 zCall( 0x00797D20 );
 
     // user API
-    #include "zCPar_TreeNode.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_TreeNode.inl"
   };
 
   // sizeof 2Ch
   class zCPar_File {
   public:
+    zOPERATORS_DECLARATION()
+
     int fileid;           // sizeof 04h    offset 00h
     zSTRING name;         // sizeof 14h    offset 04h
     char* begin_adr;      // sizeof 04h    offset 18h
@@ -79,12 +83,14 @@ namespace Gothic_II_Addon {
     void DeleteTree()                                zCall( 0x0078DE90 );
 
     // user API
-    #include "zCPar_File.inl"
+    #include "..\..\Gothic_UserAPI\zCPar_File.inl"
   };
 
   // sizeof 21C4h
   class zCParser {
   public:
+    zOPERATORS_DECLARATION()
+
     void( *msgfunc )( zSTRING );    // sizeof 04h    offset 00h
     zCArray<zCPar_File*> file;      // sizeof 0Ch    offset 04h
     zCPar_SymbolTable symtab;       // sizeof 2Ch    offset 10h
@@ -277,9 +283,9 @@ namespace Gothic_II_Addon {
     static zCParser*& cur_parser;
 
     // user API
-    #include "zCParser.inl"
+    #include "..\..\Gothic_UserAPI\zCParser.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZPARSER_H__VER3__
+#endif // __ZPARSER_H__VER3__ 

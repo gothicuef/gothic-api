@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSOUND_H__VER2__
@@ -18,6 +18,8 @@ namespace Gothic_II_Classic {
   // sizeof 08h
   class zCSoundSystem {
   public:
+    zOPERATORS_DECLARATION()
+
     enum zTLoopType {
       zSND_LOOPING_DEFAULT,
       zSND_LOOPING_ENABLED,
@@ -36,6 +38,8 @@ namespace Gothic_II_Classic {
 
     // sizeof 20h
     struct zTSound3DParams {
+      zOPERATORS_DECLARATION()
+
       float obstruction;   // sizeof 04h    offset 00h
       float volume;        // sizeof 04h    offset 04h
       float radius;        // sizeof 04h    offset 08h
@@ -49,7 +53,7 @@ namespace Gothic_II_Classic {
       void SetDefaults() zCall( 0x0060B890 );
 
       // user API
-      #include "zCSoundSystem_zTSound3DParams.inl"
+      #include "..\..\Gothic_UserAPI\zCSoundSystem_zTSound3DParams.inl"
     };
 
     float defaultRadius; // sizeof 04h    offset 04h
@@ -92,7 +96,7 @@ namespace Gothic_II_Classic {
     virtual float GetCPULoad()                                               zCall( 0x004E8840 );
 
     // user API
-    #include "zCSoundSystem.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundSystem.inl"
   };
 
   // sizeof 54h
@@ -123,23 +127,27 @@ namespace Gothic_II_Classic {
     virtual int GetIsFixed() const                                zCall( 0x004EB3E0 );
 
     // user API
-    #include "zCSoundFX.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundFX.inl"
   };
 
   // sizeof 54h
   class zCSoundFXDummy : public zCSoundFX {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCSoundFXDummy() : zCtor( zCSoundFX ) {}
     virtual ~zCSoundFXDummy() zCall( 0x0062B380 );
 
     // user API
-    #include "zCSoundFXDummy.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundFXDummy.inl"
   };
 
   // sizeof 08h
   class zCSoundSystemDummy : public zCSoundSystem {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCSoundSystemDummy() : zCtor( zCSoundSystem ) {}
     virtual ~zCSoundSystemDummy()                                                           zCall( 0x00631860 );
@@ -154,9 +162,9 @@ namespace Gothic_II_Classic {
     virtual void SetGlobalOcclusion( float )                                                zCall( 0x0062B3B0 );
 
     // user API
-    #include "zCSoundSystemDummy.inl"
+    #include "..\..\Gothic_UserAPI\zCSoundSystemDummy.inl"
   };
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSOUND_H__VER2__
+#endif // __ZSOUND_H__VER2__ 

@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZAI_CAMERA_H__VER1__
@@ -138,9 +138,9 @@ namespace Gothic_I_Addon {
     static int& bCamChanges;
 
     // user API
-    #include "zCAICamera.inl"
+    #include "..\..\Gothic_UserAPI\zCAICamera.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZAI_CAMERA_H__VER1__
+#endif // __ZAI_CAMERA_H__VER1__ 

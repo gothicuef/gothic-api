@@ -1,6 +1,32 @@
 #include <Windows.h>
 #include <stdio.h>
 
+#include "zGothicAPI.h"
+
+#ifdef __G1
+#include "Gothic_I_Classic/ClassDef.h"
+#include "Gothic_I_Classic/GlobalVariables.h"
+#include "Gothic_I_Classic/StaticsProperties.h"
+#endif
+
+#ifdef __G1A
+#include "Gothic_I_Addon/ClassDef.h"
+#include "Gothic_I_Addon/GlobalVariables.h"
+#include "Gothic_I_Addon/StaticsProperties.h"
+#endif
+
+#ifdef __G2
+#include "Gothic_II_Classic/ClassDef.h"
+#include "Gothic_II_Classic/GlobalVariables.h"
+#include "Gothic_II_Classic/StaticsProperties.h"
+#endif
+
+#ifdef __G2A
+#include "Gothic_II_Addon/ClassDef.h"
+#include "Gothic_II_Addon/GlobalVariables.h"
+#include "Gothic_II_Addon/StaticsProperties.h"
+#endif
+
 
 static void WriteLogMessage( const char* message ) {
   DWORD dw;

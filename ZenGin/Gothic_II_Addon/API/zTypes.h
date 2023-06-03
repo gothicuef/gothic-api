@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZTYPES_H__VER3__
@@ -50,6 +50,8 @@ namespace Gothic_II_Addon {
 
 #ifndef _FILE_DEFINED
   struct _iobuf {
+    zOPERATORS_DECLARATION()
+
     char *_ptr;
     int   _cnt;
     char *_base;
@@ -65,6 +67,8 @@ namespace Gothic_II_Addon {
 
 #ifndef _finddata_t
   struct _finddata_t {
+    zOPERATORS_DECLARATION()
+
     unsigned int  attrib;
     long long     time_create;
     long long     time_access;
@@ -400,4 +404,4 @@ namespace Gothic_II_Addon {
   };
 } // namespace Gothic_II_Addon
 
-#endif // __ZTYPES_H__VER3__
+#endif // __ZTYPES_H__VER3__ 

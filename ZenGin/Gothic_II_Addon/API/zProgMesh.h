@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPROG_MESH_H__VER3__
@@ -36,6 +36,8 @@ namespace Gothic_II_Addon {
 
   // sizeof C0h
   struct zTLazyMesh {
+    zOPERATORS_DECLARATION()
+
     zCArray<int> wedgePermut;                      // sizeof 0Ch    offset 00h
     zCArray<int> wedgeParent;                      // sizeof 0Ch    offset 0Ch
     zCArray<unsigned short int> triMatIndexList;   // sizeof 0Ch    offset 18h
@@ -58,11 +60,13 @@ namespace Gothic_II_Addon {
     ~zTLazyMesh()            zCall( 0x005C3A80 );
 
     // user API
-    #include "zTLazyMesh.inl"
+    #include "..\..\Gothic_UserAPI\zTLazyMesh.inl"
   };
 
   // sizeof 18h
   struct zTPMWedge {
+    zOPERATORS_DECLARATION()
+
     zVEC3 normal;                // sizeof 0Ch    offset 00h
     zVEC2 texUV;                 // sizeof 08h    offset 0Ch
     unsigned short int position; // sizeof 02h    offset 14h
@@ -70,48 +74,56 @@ namespace Gothic_II_Addon {
     zTPMWedge() {}
 
     // user API
-    #include "zTPMWedge.inl"
+    #include "..\..\Gothic_UserAPI\zTPMWedge.inl"
   };
 
   // sizeof 06h
   struct zTPMTriangle {
+    zOPERATORS_DECLARATION()
+
     unsigned short int wedge[3]; // sizeof 06h    offset 00h
 
     zTPMTriangle() {}
 
     // user API
-    #include "zTPMTriangle.inl"
+    #include "..\..\Gothic_UserAPI\zTPMTriangle.inl"
   };
 
   // sizeof 06h
   struct zTPMTriangleEdges {
+    zOPERATORS_DECLARATION()
+
     unsigned short int edge[3]; // sizeof 06h    offset 00h
 
     zTPMTriangleEdges() {}
 
     // user API
-    #include "zTPMTriangleEdges.inl"
+    #include "..\..\Gothic_UserAPI\zTPMTriangleEdges.inl"
   };
 
   // sizeof 04h
   struct zTPMEdge {
+    zOPERATORS_DECLARATION()
+
     unsigned short int wedge[2]; // sizeof 04h    offset 00h
 
     zTPMEdge() {}
 
     // user API
-    #include "zTPMEdge.inl"
+    #include "..\..\Gothic_UserAPI\zTPMEdge.inl"
   };
 
   // sizeof 04h
   struct zTPMVertexUpdate {
+    zOPERATORS_DECLARATION()
+
     unsigned short int numNewTri;   // sizeof 02h    offset 00h
     unsigned short int numNewWedge; // sizeof 02h    offset 02h
 
     zTPMVertexUpdate() {}
 
     // user API
-    #include "zTPMVertexUpdate.inl"
+    #include "..\..\Gothic_UserAPI\zTPMVertexUpdate.inl"
   };
 
   // sizeof D8h
@@ -121,6 +133,8 @@ namespace Gothic_II_Addon {
 
     // sizeof 10h
     struct zTLODRenderArgs {
+      zOPERATORS_DECLARATION()
+
       float vertPerc;     // sizeof 04h    offset 00h
       int numPos;         // sizeof 04h    offset 04h
       int numMinMorphPos; // sizeof 04h    offset 08h
@@ -129,11 +143,13 @@ namespace Gothic_II_Addon {
       zTLODRenderArgs() {}
 
       // user API
-      #include "zCProgMeshProto_zTLODRenderArgs.inl"
+      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgs.inl"
     };
 
     // sizeof 10h
     struct zTLODParams {
+      zOPERATORS_DECLARATION()
+
       float strength;   // sizeof 04h    offset 00h
       float zDisplace2; // sizeof 04h    offset 04h
       float morphPerc;  // sizeof 04h    offset 08h
@@ -142,12 +158,14 @@ namespace Gothic_II_Addon {
       zTLODParams() {}
 
       // user API
-      #include "zCProgMeshProto_zTLODParams.inl"
+      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODParams.inl"
     };
 
     // sizeof 58h
     class zCSubMesh {
     public:
+      zOPERATORS_DECLARATION()
+
       zCMaterial* material;                               // sizeof 04h    offset 00h
       zCArrayAdapt<zTPMTriangle> triList;                 // sizeof 08h    offset 04h
       zCArrayAdapt<zTPMWedge> wedgeList;                  // sizeof 08h    offset 0Ch
@@ -166,11 +184,13 @@ namespace Gothic_II_Addon {
       ~zCSubMesh()            zCall( 0x005C6A70 );
 
       // user API
-      #include "zCProgMeshProto_zCSubMesh.inl"
+      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zCSubMesh.inl"
     };
 
     // sizeof 10h
     struct zTLODRenderArgsSubMesh {
+      zOPERATORS_DECLARATION()
+
       int numTri;           // sizeof 04h    offset 00h
       int numWedge;         // sizeof 04h    offset 04h
       int numMinMorphWedge; // sizeof 04h    offset 08h
@@ -179,7 +199,7 @@ namespace Gothic_II_Addon {
       zTLODRenderArgsSubMesh() {}
 
       // user API
-      #include "zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
+      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
     };
 
     zCArrayAdapt<zVEC3> posList;        // sizeof 08h    offset 34h
@@ -274,12 +294,14 @@ namespace Gothic_II_Addon {
     static unsigned long& s_classCtorCtr;
 
     // user API
-    #include "zCProgMeshProto.inl"
+    #include "..\..\Gothic_UserAPI\zCProgMeshProto.inl"
   };
 
   // sizeof 01h
   class zCProgMeshBuilder {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCProgMeshBuilder() {}
     void CreatePMTriPosList()                                                               zCall( 0x005C0F20 );
@@ -294,7 +316,7 @@ namespace Gothic_II_Addon {
     int BuildProgMeshProto( zCMesh*, zCProgMeshProto*, zCArray<int>*, int )                 zCall( 0x005C3E40 );
 
     // user API
-    #include "zCProgMeshBuilder.inl"
+    #include "..\..\Gothic_UserAPI\zCProgMeshBuilder.inl"
   };
 
   // sizeof 104h
@@ -305,6 +327,8 @@ namespace Gothic_II_Addon {
 #pragma pack( push, 1 )
     // sizeof 11h
     struct zTWeightEntry {
+      zOPERATORS_DECLARATION()
+
       float weight;            // sizeof 04h    offset 00h
       zVEC3 vertPosOS;         // sizeof 0Ch    offset 04h
       unsigned char nodeIndex; // sizeof 01h    offset 10h
@@ -313,19 +337,21 @@ namespace Gothic_II_Addon {
       zTWeightEntry()             zInit( zTWeightEntry_OnInit() );
 
       // user API
-      #include "zCMeshSoftSkin_zTWeightEntry.inl"
+      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTWeightEntry.inl"
     };
 #pragma pack( pop )
 
     // sizeof 10h
     struct zTNodeWedgeNormal {
+      zOPERATORS_DECLARATION()
+
       zVEC3 normal;  // sizeof 0Ch    offset 00h
       int nodeIndex; // sizeof 04h    offset 0Ch
 
       zTNodeWedgeNormal() {}
 
       // user API
-      #include "zCMeshSoftSkin_zTNodeWedgeNormal.inl"
+      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTNodeWedgeNormal.inl"
     };
 
     zCArray<int> nodeIndexList;                     // sizeof 0Ch    offset D8h
@@ -357,12 +383,14 @@ namespace Gothic_II_Addon {
     virtual int Save( zCFileBIN& )                                                                            zCall( 0x005CE930 );
 
     // user API
-    #include "zCMeshSoftSkin.inl"
+    #include "..\..\Gothic_UserAPI\zCMeshSoftSkin.inl"
   };
 
   // sizeof 30h
   class zCProgMeshConvertFileHandler : public zCScanDirFileHandler {
   public:
+    zOPERATORS_DECLARATION()
+
 
     void zCProgMeshConvertFileHandler_OnInit()                         zCall( 0x005D0100 );
     zCProgMeshConvertFileHandler() : zCtor( zCScanDirFileHandler )     zInit( zCProgMeshConvertFileHandler_OnInit() );
@@ -370,9 +398,9 @@ namespace Gothic_II_Addon {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005D01E0 );
 
     // user API
-    #include "zCProgMeshConvertFileHandler.inl"
+    #include "..\..\Gothic_UserAPI\zCProgMeshConvertFileHandler.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZPROG_MESH_H__VER3__
+#endif // __ZPROG_MESH_H__VER3__ 

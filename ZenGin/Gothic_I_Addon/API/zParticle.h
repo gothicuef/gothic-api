@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZPARTICLE_H__VER1__
@@ -44,6 +44,8 @@ namespace Gothic_I_Addon {
   // sizeof 58h
   typedef struct zSParticle {
   public:
+    zOPERATORS_DECLARATION()
+
     zSParticle* next;       // sizeof 04h    offset 00h
     zVEC3 position;         // sizeof 0Ch    offset 04h
     zVEC3 vel;              // sizeof 0Ch    offset 10h
@@ -64,6 +66,8 @@ namespace Gothic_I_Addon {
   // sizeof 320h
   class zCParticleEmitter {
   public:
+    zOPERATORS_DECLARATION()
+
     float ppsValue;                        // sizeof 04h    offset 00h
     zSTRING ppsScaleKeys_S;                // sizeof 14h    offset 04h
     int ppsIsLooping;                      // sizeof 04h    offset 18h
@@ -167,12 +171,14 @@ namespace Gothic_I_Addon {
     static zVEC2 String2Vec2( zSTRING const& )                 zCall( 0x005AE420 );
 
     // user API
-    #include "zCParticleEmitter.inl"
+    #include "..\..\Gothic_UserAPI\zCParticleEmitter.inl"
   };
 
   // sizeof 1Ch
   class zCParticleEmitterVars {
   public:
+    zOPERATORS_DECLARATION()
+
     float ppsScaleKeysActFrame;     // sizeof 04h    offset 00h
     float ppsNumParticlesFraction;  // sizeof 04h    offset 04h
     float ppsTotalLifeTime;         // sizeof 04h    offset 08h
@@ -184,7 +190,7 @@ namespace Gothic_I_Addon {
     zCParticleEmitterVars() {}
 
     // user API
-    #include "zCParticleEmitterVars.inl"
+    #include "..\..\Gothic_UserAPI\zCParticleEmitterVars.inl"
   };
 
   // sizeof B0h
@@ -195,6 +201,8 @@ namespace Gothic_I_Addon {
     // sizeof 0Ch
     class zCStaticPfxList {
     public:
+      zOPERATORS_DECLARATION()
+
       zCParticleFX* pfxListHead; // sizeof 04h    offset 00h
       zCParticleFX* pfxListTail; // sizeof 04h    offset 04h
       int numInList;             // sizeof 04h    offset 08h
@@ -207,7 +215,7 @@ namespace Gothic_I_Addon {
       int IsInList( zCParticleFX* )       zCall( 0x005A9280 );
 
       // user API
-      #include "zCParticleFX_zCStaticPfxList.inl"
+      #include "..\..\Gothic_UserAPI\zCParticleFX_zCStaticPfxList.inl"
     };
 
     zTParticle* firstPart;                     // sizeof 04h    offset 34h
@@ -287,9 +295,9 @@ namespace Gothic_I_Addon {
     static zCStaticPfxList& s_pfxList;
 
     // user API
-    #include "zCParticleFX.inl"
+    #include "..\..\Gothic_UserAPI\zCParticleFX.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZPARTICLE_H__VER1__
+#endif // __ZPARTICLE_H__VER1__ 

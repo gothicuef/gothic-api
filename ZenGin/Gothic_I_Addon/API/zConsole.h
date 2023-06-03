@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZCONSOLE_H__VER1__
@@ -19,6 +19,8 @@ namespace Gothic_I_Addon {
   // sizeof 3Ch
   class zCConDat {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING hint;   // sizeof 14h    offset 00h
     zSTRING name;   // sizeof 14h    offset 14h
     int type;       // sizeof 04h    offset 28h
@@ -35,12 +37,14 @@ namespace Gothic_I_Addon {
     ~zCConDat()                                                                zCall( 0x007149C0 );
 
     // user API
-    #include "zCConDat.inl"
+    #include "..\..\Gothic_UserAPI\zCConDat.inl"
   };
 
   // sizeof E0h
   class zCConsole : public zCInputCallback {
   public:
+    zOPERATORS_DECLARATION()
+
     zSTRING id;                                                        // sizeof 14h    offset 04h
     zSTRING instr;                                                     // sizeof 14h    offset 18h
     zSTRING savemsg;                                                   // sizeof 14h    offset 2Ch
@@ -110,9 +114,9 @@ namespace Gothic_I_Addon {
     static zCConsole*& cur_console;
 
     // user API
-    #include "zCConsole.inl"
+    #include "..\..\Gothic_UserAPI\zCConsole.inl"
   };
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCONSOLE_H__VER1__
+#endif // __ZCONSOLE_H__VER1__ 

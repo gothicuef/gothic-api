@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZZONE_H__VER1__
@@ -10,10 +10,14 @@ namespace Gothic_I_Addon {
   // sizeof 44h
   class zCBBox3DSorterBase {
   public:
+    zOPERATORS_DECLARATION()
+
 
     // sizeof 38h
     class zTBoxSortHandle {
     public:
+      zOPERATORS_DECLARATION()
+
       zCBBox3DSorterBase* mySorter; // sizeof 04h    offset 04h
       zTBBox3D bbox3D;              // sizeof 18h    offset 08h
       int indexBegin[DIMENSION];    // sizeof 0Ch    offset 20h
@@ -27,19 +31,21 @@ namespace Gothic_I_Addon {
       virtual void ClearActive()      zCall( 0x00613700 );
 
       // user API
-      #include "zCBBox3DSorterBase_zTBoxSortHandle.inl"
+      #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase_zTBoxSortHandle.inl"
     };
 
     // sizeof 08h
     class zTNode {
     public:
+      zOPERATORS_DECLARATION()
+
       int isBegin; // sizeof 04h    offset 00h
       void* data;  // sizeof 04h    offset 04h
 
       zTNode() {}
 
       // user API
-      #include "zCBBox3DSorterBase_zTNode.inl"
+      #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase_zTNode.inl"
     };
 
     zCArray<zTBoxSortHandle*> handles;        // sizeof 0Ch    offset 04h
@@ -68,7 +74,7 @@ namespace Gothic_I_Addon {
     static int& s_currentDimension;
 
     // user API
-    #include "zCBBox3DSorterBase.inl"
+    #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase.inl"
   };
 
   // sizeof 104h
@@ -97,7 +103,7 @@ namespace Gothic_I_Addon {
     virtual zSTRING GetDebugDescString( void )                                                         zCall( 0x0062E340 );
 
     // user API
-    #include "zCZone.inl"
+    #include "..\..\Gothic_UserAPI\zCZone.inl"
   };
 
   // sizeof 110h
@@ -122,7 +128,7 @@ namespace Gothic_I_Addon {
     virtual zCClassDef* GetDefaultZoneClass( void ) const                                              zCall( 0x0062E620 );
 
     // user API
-    #include "zCZoneZFog.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneZFog.inl"
   };
 
   // sizeof 110h
@@ -138,7 +144,7 @@ namespace Gothic_I_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )                        zCall( 0x0062E820 );
 
     // user API
-    #include "zCZoneZFogDefault.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneZFogDefault.inl"
   };
 
   // sizeof 110h
@@ -164,7 +170,7 @@ namespace Gothic_I_Addon {
     virtual zSTRING GetDebugDescString( void )                                                         zCall( 0x006310C0 );
 
     // user API
-    #include "zCZoneReverb.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneReverb.inl"
   };
 
   // sizeof 110h
@@ -181,7 +187,7 @@ namespace Gothic_I_Addon {
     virtual void ProcessZoneList( zCArraySort<zCZone*> const&, zCArraySort<zCZone*> const&, zCWorld* ) zCall( 0x0062B860 );
 
     // user API
-    #include "zCZoneReverbDefault.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneReverbDefault.inl"
   };
 
   // sizeof 104h
@@ -202,7 +208,7 @@ namespace Gothic_I_Addon {
     static int& s_canruleautochange;
 
     // user API
-    #include "zCZoneMusic.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneMusic.inl"
   };
 
   // sizeof 10Ch
@@ -226,7 +232,7 @@ namespace Gothic_I_Addon {
     virtual zCClassDef* GetDefaultZoneClass( void ) const                                              zCall( 0x0062EA70 );
 
     // user API
-    #include "zCZoneVobFarPlane.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneVobFarPlane.inl"
   };
 
   // sizeof 10Ch
@@ -242,7 +248,7 @@ namespace Gothic_I_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )                        zCall( 0x0062EC70 );
 
     // user API
-    #include "zCZoneVobFarPlaneDefault.inl"
+    #include "..\..\Gothic_UserAPI\zCZoneVobFarPlaneDefault.inl"
   };
 
   // sizeof 14Ch
@@ -311,7 +317,7 @@ namespace Gothic_I_Addon {
     virtual void DoSoundUpdate( float )                                                                zCall( 0x0062FE10 );
 
     // user API
-    #include "zCVobSound.inl"
+    #include "..\..\Gothic_UserAPI\zCVobSound.inl"
   };
 
   // sizeof 170h
@@ -339,11 +345,11 @@ namespace Gothic_I_Addon {
     virtual void DoSoundUpdate( float )                                 zCall( 0x00630B20 );
 
     // user API
-    #include "zCVobSoundDaytime.inl"
+    #include "..\..\Gothic_UserAPI\zCVobSoundDaytime.inl"
   };
 
 } // namespace Gothic_I_Addon
 
 #include "zBVolume_Util.h"
 
-#endif // __ZZONE_H__VER1__
+#endif // __ZZONE_H__VER1__ 

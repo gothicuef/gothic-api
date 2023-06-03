@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2022 Union team
+﻿// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZARCHIVER_H__VER3__
@@ -22,6 +22,8 @@ namespace Gothic_II_Addon {
   // sizeof 04h
   class zCArchiverFactory {
   public:
+    zOPERATORS_DECLARATION()
+
 
     zCArchiverFactory() {}
     int EndOfArchive( zCBuffer*, zFILE* )                                              zCall( 0x00519650 );
@@ -41,7 +43,7 @@ namespace Gothic_II_Addon {
     virtual zCArchiver* CreateArchiverWrite( zSTRING const&, zTArchiveMode, int, int ) zCall( 0x0051AF20 );
 
     // user API
-    #include "zCArchiverFactory.inl"
+    #include "..\..\Gothic_UserAPI\zCArchiverFactory.inl"
   };
 
   // sizeof 2Ch
@@ -62,6 +64,8 @@ namespace Gothic_II_Addon {
 
     // sizeof 38h
     struct zTChunkRecord {
+      zOPERATORS_DECLARATION()
+
       unsigned long startPos;    // sizeof 04h    offset 00h
       unsigned long size;        // sizeof 04h    offset 04h
       unsigned short version;    // sizeof 02h    offset 08h
@@ -75,7 +79,7 @@ namespace Gothic_II_Addon {
       zTChunkRecord()                                   zInit( zTChunkRecord_OnInit() );
 
       // user API
-      #include "zCArchiver_zTChunkRecord.inl"
+      #include "..\..\Gothic_UserAPI\zCArchiver_zTChunkRecord.inl"
     };
 
     zTArchiveMedium medium; // sizeof 04h    offset 24h
@@ -178,9 +182,9 @@ namespace Gothic_II_Addon {
     static zSTRING& stringEOL;
 
     // user API
-    #include "zCArchiver.inl"
+    #include "..\..\Gothic_UserAPI\zCArchiver.inl"
   };
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZARCHIVER_H__VER3__
+#endif // __ZARCHIVER_H__VER3__ 
