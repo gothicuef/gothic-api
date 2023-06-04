@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2023 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __OAI_HUMAN_H__VER1__
