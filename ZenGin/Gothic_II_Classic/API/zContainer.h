@@ -688,7 +688,7 @@ namespace Gothic_II_Classic {
     }
 
     // user API
-#include "zCArrayAdapt.inl"
+    #include "..\..\Gothic_UserAPI\zCArrayAdapt.inl"
   };
 
   template <class T, int SIZE>
