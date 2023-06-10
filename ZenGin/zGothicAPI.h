@@ -43,4 +43,32 @@ cimport int shi_MemInitDefaultPool();
 #include "Gothic_II_Addon/G2A.h"
 #undef ENGINE
 
+int GetGameVersion();
+
+template<typename T>
+T zSwitch( T g1, T g1a, T g2, T g2a ) {
+  static int version = GetGameVersion();
+	switch( version ) {
+		case 1: return g1;
+		case 2: return g1a;
+		case 3: return g2;
+		case 4: return g2a;
+	}
+
+	static T def;
+	return def;
+}
+
+template<typename T>
+T zSwitch( T g1, T g2a ) {
+  static int version = GetGameVersion();
+	switch( version ) {
+		case 1: return g1;
+		case 4: return g2a;
+	}
+
+	static T def;
+	return def;
+}
+
 #endif // __ZGOTHIC_API_H__

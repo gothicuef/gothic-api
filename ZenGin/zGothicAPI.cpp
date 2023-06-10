@@ -34,7 +34,7 @@ static void WriteLogMessage( const char* message ) {
 }
 
 
-static int GetGameVersion() {
+int GetGameVersion() {
   HMODULE module = GetModuleHandle( nullptr );
   const byte* bytecode = (byte*)module + 0x1000;
 
