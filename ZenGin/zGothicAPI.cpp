@@ -35,20 +35,23 @@ static void WriteLogMessage( const char* message ) {
 
 
 int GetGameVersion() {
-  HMODULE module = GetModuleHandle( nullptr );
+  static const int gameVersion =  [] {
+  HMODULE module = GetModuleHandle(nullptr);
   const byte* bytecode = (byte*)module + 0x1000;
 
-  const byte bytecodeForG1[]  = { 0xC7, 0x05, 0xEC, 0xE0, 0x85, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC3 };
+  const byte bytecodeForG1[] = { 0xC7, 0x05, 0xEC, 0xE0, 0x85, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC3 };
   const byte bytecodeForG1A[] = { 0xA1, 0xD4, 0x36, 0x81, 0x00, 0xA3, 0xFC, 0x24, 0x8A, 0x00, 0xC3 };
-  const byte bytecodeForG2[]  = { 0xC7, 0x05, 0x5C, 0x38, 0x8B, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC3 };
+  const byte bytecodeForG2[] = { 0xC7, 0x05, 0x5C, 0x38, 0x8B, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC3 };
   const byte bytecodeForG2A[] = { 0xC7, 0x05, 0x14, 0x1E, 0x8C, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC3 };
-
-  if( memcmp( bytecode, bytecodeForG1,  sizeof( bytecodeForG1  ) ) == 0 ) return 1;
-  if( memcmp( bytecode, bytecodeForG1A, sizeof( bytecodeForG1A ) ) == 0 ) return 2;
-  if( memcmp( bytecode, bytecodeForG2,  sizeof( bytecodeForG2  ) ) == 0 ) return 3;
-  if( memcmp( bytecode, bytecodeForG2A, sizeof( bytecodeForG2A ) ) == 0 ) return 4;
+        
+  if ( memcmp( bytecode, bytecodeForG1,  sizeof( bytecodeForG1  ) ) == 0) return Engine_G1;
+  if ( memcmp( bytecode, bytecodeForG1A, sizeof( bytecodeForG1A ) ) == 0) return Engine_G1A;
+  if ( memcmp( bytecode, bytecodeForG2,  sizeof( bytecodeForG2  ) ) == 0) return Engine_G2;
+  if ( memcmp( bytecode, bytecodeForG2A, sizeof( bytecodeForG2A ) ) == 0) return Engine_G2A;
 
   return 0;
+  }();
+  return gameVersion;
 }
 
 
