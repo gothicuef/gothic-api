@@ -276,4 +276,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSPARSE_ARRAY_H__VER2__ 
+#endif // __ZSPARSE_ARRAY_H__VER2__

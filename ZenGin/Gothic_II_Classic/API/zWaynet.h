@@ -260,4 +260,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZWAYNET_H__VER2__ 
+#endif // __ZWAYNET_H__VER2__

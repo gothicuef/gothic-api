@@ -501,4 +501,4 @@ namespace Gothic_I_Addon {
   enum zTPMLightingMode;
 } // namespace Gothic_II_Addon
 
-#endif // __ZPROTOTYPES_H__VER1__ 
+#endif // __ZPROTOTYPES_H__VER1__

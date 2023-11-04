@@ -534,4 +534,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __Z3D_H__VER3__ 
+#endif // __Z3D_H__VER3__

@@ -277,4 +277,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZSPARSE_ARRAY_H__VER0__ 
+#endif // __ZSPARSE_ARRAY_H__VER0__

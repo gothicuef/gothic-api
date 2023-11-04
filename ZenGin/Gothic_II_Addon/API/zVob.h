@@ -579,4 +579,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZVOB_H__VER3__ 
+#endif // __ZVOB_H__VER3__

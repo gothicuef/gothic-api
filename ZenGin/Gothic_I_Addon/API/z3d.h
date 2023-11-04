@@ -465,4 +465,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __Z3D_H__VER1__ 
+#endif // __Z3D_H__VER1__

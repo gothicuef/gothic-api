@@ -132,4 +132,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZCONVEX_COLLISION_H__VER2__ 
+#endif // __ZCONVEX_COLLISION_H__VER2__

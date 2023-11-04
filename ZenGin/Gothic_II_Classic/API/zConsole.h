@@ -120,4 +120,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZCONSOLE_H__VER2__ 
+#endif // __ZCONSOLE_H__VER2__

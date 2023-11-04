@@ -201,4 +201,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZAI_CAMERA__MOVEMENT_H__VER0__ 
+#endif // __ZAI_CAMERA__MOVEMENT_H__VER0__

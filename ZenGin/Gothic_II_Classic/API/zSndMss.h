@@ -346,4 +346,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSND_MSS_H__VER2__ 
+#endif // __ZSND_MSS_H__VER2__

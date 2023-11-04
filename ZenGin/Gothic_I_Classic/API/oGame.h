@@ -220,4 +220,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __OGAME_H__VER0__ 
+#endif // __OGAME_H__VER0__

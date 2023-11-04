@@ -1621,4 +1621,4 @@ namespace Gothic_II_Addon {
 
 #pragma warning(pop)
 
-#endif // __ZALGEBRA_H__VER3__ 
+#endif // __ZALGEBRA_H__VER3__

@@ -199,4 +199,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZAI_PLAYER_H__VER2__ 
+#endif // __ZAI_PLAYER_H__VER2__

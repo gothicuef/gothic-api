@@ -147,4 +147,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZARCHIVER_GENERIC_H__VER1__ 
+#endif // __ZARCHIVER_GENERIC_H__VER1__

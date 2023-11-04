@@ -407,4 +407,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZMENU__ITEM_H__VER1__ 
+#endif // __ZMENU__ITEM_H__VER1__

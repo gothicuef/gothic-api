@@ -437,4 +437,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __OVIS_FX_H__VER2__ 
+#endif // __OVIS_FX_H__VER2__

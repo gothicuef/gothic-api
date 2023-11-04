@@ -1175,4 +1175,3 @@ namespace Gothic_II_Addon {
 
 
 #endif // __ZCONTAINER_H__VER3__
- 

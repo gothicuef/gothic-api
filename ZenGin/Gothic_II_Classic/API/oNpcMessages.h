@@ -564,4 +564,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ONPC_MESSAGES_H__VER2__ 
+#endif // __ONPC_MESSAGES_H__VER2__

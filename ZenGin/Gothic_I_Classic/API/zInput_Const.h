@@ -303,4 +303,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZINPUT__CONST_H__VER0__ 
+#endif // __ZINPUT__CONST_H__VER0__

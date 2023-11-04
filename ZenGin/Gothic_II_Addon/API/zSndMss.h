@@ -347,4 +347,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZSND_MSS_H__VER3__ 
+#endif // __ZSND_MSS_H__VER3__

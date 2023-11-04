@@ -219,4 +219,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __OGAME_H__VER1__ 
+#endif // __OGAME_H__VER1__

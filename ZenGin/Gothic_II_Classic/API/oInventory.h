@@ -255,4 +255,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __OINVENTORY_H__VER2__ 
+#endif // __OINVENTORY_H__VER2__

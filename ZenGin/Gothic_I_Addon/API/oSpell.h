@@ -200,4 +200,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __OSPELL_H__VER1__ 
+#endif // __OSPELL_H__VER1__

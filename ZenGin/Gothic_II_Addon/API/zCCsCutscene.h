@@ -346,4 +346,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZCCS_CUTSCENE_H__VER3__ 
+#endif // __ZCCS_CUTSCENE_H__VER3__

@@ -498,4 +498,4 @@ namespace Gothic_II_Classic {
   enum zTVisualCamAlign;
 } // namespace Gothic_II_Classic
 
-#endif // __ZPROTOTYPES_H__VER2__ 
+#endif // __ZPROTOTYPES_H__VER2__

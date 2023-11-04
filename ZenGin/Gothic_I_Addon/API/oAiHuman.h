@@ -138,4 +138,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __OAI_HUMAN_H__VER1__ 
+#endif // __OAI_HUMAN_H__VER1__

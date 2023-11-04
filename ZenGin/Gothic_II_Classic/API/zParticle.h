@@ -322,4 +322,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZPARTICLE_H__VER2__ 
+#endif // __ZPARTICLE_H__VER2__

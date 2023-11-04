@@ -229,4 +229,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZRENDER_MANAGER_H__VER3__ 
+#endif // __ZRENDER_MANAGER_H__VER3__

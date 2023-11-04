@@ -463,4 +463,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __OANI_CTRL_H__VER1__ 
+#endif // __OANI_CTRL_H__VER1__

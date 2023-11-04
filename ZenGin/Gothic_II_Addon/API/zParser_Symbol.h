@@ -218,4 +218,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZPARSER__SYMBOL_H__VER3__ 
+#endif // __ZPARSER__SYMBOL_H__VER3__

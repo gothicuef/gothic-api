@@ -282,4 +282,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZSPARSE_ARRAY_H__VER3__ 
+#endif // __ZSPARSE_ARRAY_H__VER3__

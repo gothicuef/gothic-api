@@ -144,4 +144,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZBVOLUME_H__VER0__ 
+#endif // __ZBVOLUME_H__VER0__

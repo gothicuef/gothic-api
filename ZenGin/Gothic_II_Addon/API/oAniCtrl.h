@@ -469,4 +469,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __OANI_CTRL_H__VER3__ 
+#endif // __OANI_CTRL_H__VER3__

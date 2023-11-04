@@ -183,4 +183,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __OAI_SHOOT_H__VER3__ 
+#endif // __OAI_SHOOT_H__VER3__

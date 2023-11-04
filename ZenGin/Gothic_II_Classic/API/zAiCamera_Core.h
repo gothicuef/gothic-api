@@ -323,4 +323,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZAI_CAMERA__CORE_H__VER2__ 
+#endif // __ZAI_CAMERA__CORE_H__VER2__

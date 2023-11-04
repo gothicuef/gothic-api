@@ -324,4 +324,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSKY__OUTDOOR_H__VER2__ 
+#endif // __ZSKY__OUTDOOR_H__VER2__
