@@ -127,6 +127,10 @@ static void* GetDynamicCastAddress() {
     auto imp = &rtLocation[5] + *(unsigned int*)&rtLocation[1];
     rtLocation = **(byte***)&imp[2];
   }
+  else if( (unsigned short&)rtLocation[0] == 0x25FF ) {
+    auto imp = *(unsigned int*)&rtLocation[2];
+    rtLocation = *(byte**)imp;
+  }
 
   HMODULE rtModule = nullptr;
   GetModuleHandleEx(
