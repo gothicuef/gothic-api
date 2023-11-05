@@ -356,4 +356,4 @@ namespace Gothic_II_Classic {
 
 #include "zBVolume_Util.h"
 
-#endif // __ZZONE_H__VER2__ 
+#endif // __ZZONE_H__VER2__

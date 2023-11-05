@@ -491,4 +491,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZRENDERER_H__VER2__ 
+#endif // __ZRENDERER_H__VER2__

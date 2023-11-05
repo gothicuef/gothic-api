@@ -208,4 +208,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZVERTEX_BUFFER_H__VER1__ 
+#endif // __ZVERTEX_BUFFER_H__VER1__

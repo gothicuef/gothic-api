@@ -307,4 +307,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZCOLLISION_OBJECT_MISC_H__VER2__ 
+#endif // __ZCOLLISION_OBJECT_MISC_H__VER2__

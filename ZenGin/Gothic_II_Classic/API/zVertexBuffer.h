@@ -209,4 +209,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZVERTEX_BUFFER_H__VER2__ 
+#endif // __ZVERTEX_BUFFER_H__VER2__

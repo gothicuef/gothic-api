@@ -792,4 +792,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZVOB_MISC_H__VER2__ 
+#endif // __ZVOB_MISC_H__VER2__

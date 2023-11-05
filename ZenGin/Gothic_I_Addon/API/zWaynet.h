@@ -260,4 +260,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZWAYNET_H__VER1__ 
+#endif // __ZWAYNET_H__VER1__

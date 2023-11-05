@@ -366,4 +366,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZTEXTURE_H__VER3__ 
+#endif // __ZTEXTURE_H__VER3__

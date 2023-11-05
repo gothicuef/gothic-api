@@ -575,4 +575,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZRND_D3D_H__VER2__ 
+#endif // __ZRND_D3D_H__VER2__

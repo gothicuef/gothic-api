@@ -162,4 +162,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZSOUND_H__VER1__ 
+#endif // __ZSOUND_H__VER1__

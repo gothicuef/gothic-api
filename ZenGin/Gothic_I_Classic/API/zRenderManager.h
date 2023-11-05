@@ -219,4 +219,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZRENDER_MANAGER_H__VER0__ 
+#endif // __ZRENDER_MANAGER_H__VER0__

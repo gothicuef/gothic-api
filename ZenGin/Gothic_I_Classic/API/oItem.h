@@ -184,4 +184,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __OITEM_H__VER0__ 
+#endif // __OITEM_H__VER0__

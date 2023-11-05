@@ -787,4 +787,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZVOB_MISC_H__VER1__ 
+#endif // __ZVOB_MISC_H__VER1__

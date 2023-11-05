@@ -345,4 +345,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCCS_CUTSCENE_H__VER1__ 
+#endif // __ZCCS_CUTSCENE_H__VER1__

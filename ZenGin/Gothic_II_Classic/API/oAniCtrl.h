@@ -469,4 +469,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __OANI_CTRL_H__VER2__ 
+#endif // __OANI_CTRL_H__VER2__

@@ -446,4 +446,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __OMOB_INTER_H__VER0__ 
+#endif // __OMOB_INTER_H__VER0__

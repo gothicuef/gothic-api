@@ -167,4 +167,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZSOUND_H__VER2__ 
+#endif // __ZSOUND_H__VER2__

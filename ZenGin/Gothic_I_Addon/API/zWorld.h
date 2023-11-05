@@ -361,4 +361,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZWORLD_H__VER1__ 
+#endif // __ZWORLD_H__VER1__

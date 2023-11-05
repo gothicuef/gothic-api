@@ -1174,4 +1174,3 @@ namespace Gothic_II_Classic {
 } // namespace Gothic_II_Classic
 
 #endif // __ZCONTAINER_H__VER2__
- 

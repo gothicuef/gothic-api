@@ -149,4 +149,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZARCHIVER_GENERIC_H__VER3__ 
+#endif // __ZARCHIVER_GENERIC_H__VER3__

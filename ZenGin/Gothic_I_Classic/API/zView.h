@@ -267,4 +267,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZVIEW_H__VER0__ 
+#endif // __ZVIEW_H__VER0__

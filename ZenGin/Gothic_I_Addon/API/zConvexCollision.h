@@ -132,4 +132,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCONVEX_COLLISION_H__VER1__ 
+#endif // __ZCONVEX_COLLISION_H__VER1__

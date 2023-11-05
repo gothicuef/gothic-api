@@ -147,4 +147,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZARCHIVER_GENERIC_H__VER2__ 
+#endif // __ZARCHIVER_GENERIC_H__VER2__

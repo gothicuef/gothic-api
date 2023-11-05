@@ -339,4 +339,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZSND_MSS_H__VER0__ 
+#endif // __ZSND_MSS_H__VER0__

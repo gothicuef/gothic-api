@@ -303,4 +303,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZINPUT_CONST__VER3__ 
+#endif // __ZINPUT_CONST__VER3__

@@ -1540,4 +1540,4 @@ namespace Gothic_I_Addon {
 
 #pragma warning(pop)
 
-#endif // __ZALGEBRA_H__VER1__ 
+#endif // __ZALGEBRA_H__VER1__

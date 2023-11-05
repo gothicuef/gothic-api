@@ -773,4 +773,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZMODEL_H__VER2__ 
+#endif // __ZMODEL_H__VER2__

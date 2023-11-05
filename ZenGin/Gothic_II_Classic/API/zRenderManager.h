@@ -226,4 +226,4 @@ namespace Gothic_II_Classic {
 
 } // namespace Gothic_II_Classic
 
-#endif // __ZRENDER_MANAGER_H__VER2__ 
+#endif // __ZRENDER_MANAGER_H__VER2__

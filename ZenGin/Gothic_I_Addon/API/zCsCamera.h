@@ -278,4 +278,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCS_CAMERA_H__VER1__ 
+#endif // __ZCS_CAMERA_H__VER1__

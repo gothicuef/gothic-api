@@ -649,4 +649,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZLIST_H__VER0__ 
+#endif // __ZLIST_H__VER0__

@@ -307,4 +307,4 @@ namespace Gothic_I_Addon {
 
 } // namespace Gothic_I_Addon
 
-#endif // __ZCOLLISION_OBJECT_MISC_H__VER1__ 
+#endif // __ZCOLLISION_OBJECT_MISC_H__VER1__

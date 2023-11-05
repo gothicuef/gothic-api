@@ -1541,4 +1541,4 @@ namespace Gothic_I_Classic {
 
 #pragma warning(pop)
 
-#endif // __ZALGEBRA_H__VER0__ 
+#endif // __ZALGEBRA_H__VER0__

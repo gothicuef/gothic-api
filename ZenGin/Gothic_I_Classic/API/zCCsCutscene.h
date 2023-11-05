@@ -346,4 +346,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZCCS_CUTSCENE_H__VER0__ 
+#endif // __ZCCS_CUTSCENE_H__VER0__

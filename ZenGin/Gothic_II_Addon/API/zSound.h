@@ -169,4 +169,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZSOUND_H__VER3__ 
+#endif // __ZSOUND_H__VER3__

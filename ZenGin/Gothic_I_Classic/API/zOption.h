@@ -145,4 +145,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZOPTION_H__VER0__ 
+#endif // __ZOPTION_H__VER0__

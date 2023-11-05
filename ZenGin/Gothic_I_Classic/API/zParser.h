@@ -287,4 +287,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZPARSER_H__VER0__ 
+#endif // __ZPARSER_H__VER0__

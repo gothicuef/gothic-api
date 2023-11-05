@@ -325,4 +325,4 @@ namespace Gothic_II_Addon {
 
 } // namespace Gothic_II_Addon
 
-#endif // __ZPARTICLE_H__VER3__ 
+#endif // __ZPARTICLE_H__VER3__

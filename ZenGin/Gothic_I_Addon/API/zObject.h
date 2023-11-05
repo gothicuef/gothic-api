@@ -170,4 +170,4 @@ namespace Gothic_I_Addon {
   };
 } // namespace Gothic_I_Addon
 
-#endif // __ZOBJECT_H__VER1__ 
+#endif // __ZOBJECT_H__VER1__

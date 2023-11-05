@@ -324,4 +324,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZDISK_H__VER0__ 
+#endif // __ZDISK_H__VER0__

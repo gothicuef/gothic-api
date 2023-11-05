@@ -408,4 +408,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __ZMENU__ITEM_H__VER0__ 
+#endif // __ZMENU__ITEM_H__VER0__

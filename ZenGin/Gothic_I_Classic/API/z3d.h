@@ -463,4 +463,4 @@ namespace Gothic_I_Classic {
 
 } // namespace Gothic_I_Classic
 
-#endif // __Z3D_H__VER0__ 
+#endif // __Z3D_H__VER0__
