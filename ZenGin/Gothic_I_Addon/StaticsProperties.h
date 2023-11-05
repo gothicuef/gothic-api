@@ -409,7 +409,7 @@ namespace Gothic_I_Addon {
   char& zCTexture::s_globalLoadTextures                   = *(char*)0x00888969;
   unsigned long& zCTexture::s_texMaxPixelSize             = *(unsigned long*)0x009150A8;
   zSTRING*& zCTexture::s_texDesiredBPPSuffix              = *(zSTRING**)0x00915050;
-  zTRnd_TextureFormat*& zCTexture::s_texDesiredBPPDefault = *(zTRnd_TextureFormat**)0x0088897C;
+  zTRnd_TextureFormat* zCTexture::s_texDesiredBPPDefault  =  (zTRnd_TextureFormat*)0x0088897C;
   float& zCTexture::s_texRefRAM                           = *(float*)0x00888974;
   zCTexture::zTTexFileDesiredBPP& zCTexture::s_texRefBPP  = *(zCTexture::zTTexFileDesiredBPP*)0x00888978;
 #endif // __ZTEXTURE_H__VER1__

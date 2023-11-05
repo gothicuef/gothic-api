@@ -316,7 +316,7 @@ namespace Gothic_II_Classic {
     static char& s_globalLoadTextures;
     static unsigned long& s_texMaxPixelSize;
     static zSTRING*& s_texDesiredBPPSuffix;
-    static zTRnd_TextureFormat*& s_texDesiredBPPDefault;
+    static zTRnd_TextureFormat* s_texDesiredBPPDefault;
     static float& s_texRefRAM;
     static zTTexFileDesiredBPP& s_texRefBPP;
 
