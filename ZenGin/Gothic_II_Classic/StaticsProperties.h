@@ -479,7 +479,7 @@ namespace Gothic_II_Classic {
   char& zCTexture::s_globalLoadTextures                   = *(char*)0x008988D9;
   unsigned long& zCTexture::s_texMaxPixelSize             = *(unsigned long*)0x00974C64;
   zSTRING*& zCTexture::s_texDesiredBPPSuffix              = *(zSTRING**)0x00974C10;
-  zTRnd_TextureFormat*& zCTexture::s_texDesiredBPPDefault = *(zTRnd_TextureFormat**)0x008988EC;
+  zTRnd_TextureFormat* zCTexture::s_texDesiredBPPDefault  =  (zTRnd_TextureFormat*)0x008988EC;
   float& zCTexture::s_texRefRAM                           = *(float*)0x008988E4;
   zCTexture::zTTexFileDesiredBPP& zCTexture::s_texRefBPP  = *(zCTexture::zTTexFileDesiredBPP*)0x008988E8;
 #endif // __ZTEXTURE_H__VER2__

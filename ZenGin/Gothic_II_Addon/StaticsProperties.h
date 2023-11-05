@@ -472,7 +472,7 @@ namespace Gothic_II_Addon {
   char& zCTexture::s_globalLoadTextures                   = *(char*)0x008A6AA9;
   unsigned long& zCTexture::s_texMaxPixelSize             = *(unsigned long*)0x0099B3BC;
   zSTRING*& zCTexture::s_texDesiredBPPSuffix              = *(zSTRING**)0x0099B368;
-  zTRnd_TextureFormat*& zCTexture::s_texDesiredBPPDefault = *(zTRnd_TextureFormat**)0x008A6ABC;
+  zTRnd_TextureFormat* zCTexture::s_texDesiredBPPDefault  =  (zTRnd_TextureFormat*)0x008A6ABC;
   float& zCTexture::s_texRefRAM                           = *(float*)0x008A6AB4;
   zCTexture::zTTexFileDesiredBPP& zCTexture::s_texRefBPP  = *(zCTexture::zTTexFileDesiredBPP*)0x008A6AB8;
 #endif // __ZTEXTURE_H__VER3__
