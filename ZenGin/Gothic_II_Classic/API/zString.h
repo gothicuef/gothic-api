@@ -1,11 +1,8 @@
-﻿// Supported with union (c) 2018-2023 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSTRING_H__VER2__
 #define __ZSTRING_H__VER2__
-
-#define USING_UNION_STRING_METHODS TRUE
-#define UNPROTECT_ZSTRING_METHODS  FALSE
 
 namespace Gothic_II_Classic {
   enum zTSTR_KIND {
@@ -112,28 +109,6 @@ namespace Gothic_II_Classic {
     return s1.Append( s2 );
   }
 
-  // case Insensitive
-  inline int operator == ( const zSTRING& s1, const zSTRING& s2 ) {
-    return s1.operator ==( s2 );
-  }
-
-  // case Insensitive
-  inline int operator == ( const zSTRING& s1, const char* s2 ) {
-    return s1.operator ==( s2 );
-  }
-
-  // case Insensitive
-  inline int operator != ( const zSTRING& s1, const zSTRING& s2 ) {
-    return s1.operator !=( s2 );
-  }
-
-  // case Insensitive
-  inline int operator != ( const zSTRING& s1, const char* s2 ) {
-    return s1.operator !=( s2 );
-  }
-
 } // namespace Gothic_II_Classic
 
-#undef USING_UNION_STRING_METHODS
-#undef UNPROTECT_ZSTRING_METHODS
 #endif // __ZSTRING_H__VER2__
