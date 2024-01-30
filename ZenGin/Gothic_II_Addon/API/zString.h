@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2023 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZSTRING_H__VER3__
@@ -108,26 +108,6 @@ namespace Gothic_II_Addon {
 
   inline zSTRING& operator += ( zSTRING& s1, const zSTRING& s2 ) {
     return s1.Append( s2 );
-  }
-
-  // case Insensitive
-  inline int operator == ( const zSTRING& s1, const zSTRING& s2 ) {
-    return s1.operator ==( s2 );
-  }
-
-  // case Insensitive
-  inline int operator == ( const zSTRING& s1, const char* s2 ) {
-    return s1.operator ==( s2 );
-  }
-
-  // case Insensitive
-  inline int operator != ( const zSTRING& s1, const zSTRING& s2 ) {
-    return s1.operator !=( s2 );
-  }
-
-  // case Insensitive
-  inline int operator != ( const zSTRING& s1, const char* s2 ) {
-    return s1.operator !=( s2 );
   }
 
 } // namespace Gothic_II_Addon
