@@ -96,7 +96,7 @@ namespace Gothic_I_Classic {
     int GetKeyByItem( oCItem* )                     zCall( 0x00472F70 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMag_Book.inl"
+    #include "Gothic_UserAPI\oCMag_Book.inl"
   };
 
 } // namespace Gothic_I_Classic

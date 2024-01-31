@@ -28,7 +28,7 @@ namespace Gothic_II_Addon {
     virtual int Render( zTRenderContext& ) zCall( 0x005E08D0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCUnderwaterPFX.inl"
+    #include "Gothic_UserAPI\zCUnderwaterPFX.inl"
   };
 
   // sizeof 4Ch
@@ -97,7 +97,7 @@ namespace Gothic_II_Addon {
     static int& s_skyEffectsEnabled;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSkyControler.inl"
+    #include "Gothic_UserAPI\zCSkyControler.inl"
   };
 
   // sizeof 7Ch
@@ -148,7 +148,7 @@ namespace Gothic_II_Addon {
     virtual void RenderSkyPost( int )                    zCall( 0x005E0130 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSkyControler_Mid.inl"
+    #include "Gothic_UserAPI\zCSkyControler_Mid.inl"
   };
 
   // sizeof 88h
@@ -182,7 +182,7 @@ namespace Gothic_II_Addon {
     virtual void RenderSkyPost( int )                     zCall( 0x005E08C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSkyControler_Indoor.inl"
+    #include "Gothic_UserAPI\zCSkyControler_Indoor.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -27,7 +27,7 @@ namespace Gothic_II_Addon {
     void LoadGuildTable( zCArchiver& )          zCall( 0x00701390 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCGuilds.inl"
+    #include "Gothic_UserAPI\oCGuilds.inl"
   };
 
 } // namespace Gothic_II_Addon

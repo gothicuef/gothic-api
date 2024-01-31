@@ -32,7 +32,7 @@ namespace Gothic_I_Addon {
     zMAT4 GetMat() zCall( 0x004997F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPositionKey.inl"
+    #include "Gothic_UserAPI\zCPositionKey.inl"
   };
 
   // sizeof 3Ch
@@ -56,7 +56,7 @@ namespace Gothic_I_Addon {
     void Interpolate0( float, zVEC3& ) zCall( 0x004DC340 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCubicPolynomial.inl"
+    #include "Gothic_UserAPI\zCCubicPolynomial.inl"
   };
 
   // sizeof 24h
@@ -98,7 +98,7 @@ namespace Gothic_I_Addon {
     float GetTime( float )                               zCall( 0x004DC4F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCKBSpline.inl"
+    #include "Gothic_UserAPI\zCKBSpline.inl"
   };
 
 } // namespace Gothic_I_Addon

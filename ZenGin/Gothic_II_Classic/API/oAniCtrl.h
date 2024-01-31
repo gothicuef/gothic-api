@@ -61,7 +61,7 @@ namespace Gothic_II_Classic {
       int comboDir;        // sizeof 04h    offset 14h
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCAniCtrl_Human_oTComboInfo.inl"
+      #include "Gothic_UserAPI\oCAniCtrl_Human_oTComboInfo.inl"
     };
 
     float angle_slide1;                        // sizeof 04h    offset 118h
@@ -464,7 +464,7 @@ namespace Gothic_II_Classic {
     virtual void Init( oCNpc* )                                      zCall( 0x006474E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCAniCtrl_Human.inl"
+    #include "Gothic_UserAPI\oCAniCtrl_Human.inl"
   };
 
 } // namespace Gothic_II_Classic

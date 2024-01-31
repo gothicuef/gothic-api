@@ -66,7 +66,7 @@ namespace Gothic_I_Addon {
     static zCPlayerInfo*& activePlayer;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPlayerInfo.inl"
+    #include "Gothic_UserAPI\zCPlayerInfo.inl"
   };
 
 } // namespace Gothic_I_Addon

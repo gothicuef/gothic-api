@@ -37,7 +37,7 @@ namespace Gothic_I_Addon {
       virtual void FreeResources()                              zCall( 0x004D1880 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCFlash_zCBolt.inl"
+      #include "Gothic_UserAPI\zCFlash_zCBolt.inl"
     };
 
     float timeAlive;      // sizeof 04h    offset 34h
@@ -68,7 +68,7 @@ namespace Gothic_I_Addon {
     virtual void DynLightVisual( zCArray<zCVobLight*> const&, zMAT4* ) zCall( 0x004D0860 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCFlash.inl"
+    #include "Gothic_UserAPI\zCFlash.inl"
   };
 
 } // namespace Gothic_I_Addon

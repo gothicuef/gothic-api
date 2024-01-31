@@ -22,7 +22,7 @@ namespace Gothic_II_Classic {
     zCLivingObjectsState() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCLivingObjectsState.inl"
+    #include "Gothic_UserAPI\zCLivingObjectsState.inl"
   };
 
   // sizeof 6Ch
@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
     static int& startupFinished;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCClassDef.inl"
+    #include "Gothic_UserAPI\zCClassDef.inl"
   };
 
   // sizeof 24h
@@ -120,7 +120,7 @@ namespace Gothic_II_Classic {
     const T* CastTo() const;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCObject.inl"
+    #include "Gothic_UserAPI\zCObject.inl"
   };
 
   template<class T>
@@ -168,7 +168,7 @@ namespace Gothic_II_Classic {
     virtual zCWay* CreateWay()                             zCall( 0x005A6810 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCObjectFactory.inl"
+    #include "Gothic_UserAPI\zCObjectFactory.inl"
   };
 
 } // namespace Gothic_II_Classic

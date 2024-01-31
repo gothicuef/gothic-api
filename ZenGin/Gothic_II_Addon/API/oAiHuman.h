@@ -29,7 +29,7 @@ namespace Gothic_II_Addon {
     virtual int HasAIDetectedCollision()     zCall( 0x0069DE50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCAICamera.inl"
+    #include "Gothic_UserAPI\oCAICamera.inl"
   };
 
   // sizeof 120Ch
@@ -118,7 +118,7 @@ namespace Gothic_II_Addon {
     static zSTRING& Cam_Fight;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCAIHuman.inl"
+    #include "Gothic_UserAPI\oCAIHuman.inl"
   };
 
   // sizeof 24h
@@ -135,7 +135,7 @@ namespace Gothic_II_Addon {
     virtual void DoAI( zCVob*, int& )                            zCall( 0x0069E250 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCAIHuman_Stand.inl"
+    #include "Gothic_UserAPI\oCAIHuman_Stand.inl"
   };
 
 } // namespace Gothic_II_Addon

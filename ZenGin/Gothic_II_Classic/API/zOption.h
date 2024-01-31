@@ -54,7 +54,7 @@ namespace Gothic_II_Classic {
     ~zCOptionEntry()                                            zCall( 0x0045FEE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOptionEntry.inl"
+    #include "Gothic_UserAPI\zCOptionEntry.inl"
   };
 
   // sizeof 20h
@@ -71,7 +71,7 @@ namespace Gothic_II_Classic {
     ~zCOptionSection()                            zCall( 0x0045FA30 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOptionSection.inl"
+    #include "Gothic_UserAPI\zCOptionSection.inl"
   };
 
   // sizeof 298h
@@ -137,7 +137,7 @@ namespace Gothic_II_Classic {
     virtual ~zCOption()                                                                       zCall( 0x0045FD60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOption.inl"
+    #include "Gothic_UserAPI\zCOption.inl"
   };
 
 } // namespace Gothic_II_Classic

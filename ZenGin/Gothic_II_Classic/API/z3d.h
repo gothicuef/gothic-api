@@ -62,7 +62,7 @@ namespace Gothic_II_Classic {
     void PrintScreen( int, int ) zCall( 0x00507F40 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTEngineStats.inl"
+    #include "Gothic_UserAPI\zTEngineStats.inl"
   };
 
   // sizeof 0Ch
@@ -83,7 +83,7 @@ namespace Gothic_II_Classic {
       zTCacheEntry() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCLineCache_zTCacheEntry.inl"
+      #include "Gothic_UserAPI\zCLineCache_zTCacheEntry.inl"
     };
 
     int numEntries;      // sizeof 04h    offset 00h
@@ -98,7 +98,7 @@ namespace Gothic_II_Classic {
     void LineCS3D( zVEC3 const&, zVEC3 const&, zCOLOR )    zCall( 0x00508AA0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCLineCache.inl"
+    #include "Gothic_UserAPI\zCLineCache.inl"
   };
 
   // sizeof 38h
@@ -123,7 +123,7 @@ namespace Gothic_II_Classic {
     zTViewportData() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTViewportData.inl"
+    #include "Gothic_UserAPI\zTViewportData.inl"
   };
 
   // sizeof 934h
@@ -154,7 +154,7 @@ namespace Gothic_II_Classic {
       zTCamVertSimple() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCCamera_zTCamVertSimple.inl"
+      #include "Gothic_UserAPI\zCCamera_zTCamVertSimple.inl"
     };
 
     zTPlane frustumplanes[NUM_FRUSTUM_PLANES];         // sizeof 60h    offset 00h
@@ -252,7 +252,7 @@ namespace Gothic_II_Classic {
     static zVEC3& activeCamPos;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCamera.inl"
+    #include "Gothic_UserAPI\zCCamera.inl"
   };
 
   // sizeof 14h
@@ -278,7 +278,7 @@ namespace Gothic_II_Classic {
     static void ResetVertexTransforms()        zCall( 0x00508E20 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVertex.inl"
+    #include "Gothic_UserAPI\zCVertex.inl"
   };
 
   // sizeof 1Ch
@@ -296,7 +296,7 @@ namespace Gothic_II_Classic {
     zCVertFeature()             zInit( zCVertFeature_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVertFeature.inl"
+    #include "Gothic_UserAPI\zCVertFeature.inl"
   };
 
   // sizeof 34h
@@ -321,7 +321,7 @@ namespace Gothic_II_Classic {
       zSPolySavedValues() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCPolygon_zSPolySavedValues.inl"
+      #include "Gothic_UserAPI\zCPolygon_zSPolySavedValues.inl"
     };
 
     // sizeof 08h
@@ -334,7 +334,7 @@ namespace Gothic_II_Classic {
       zSVertexSavedValues() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCPolygon_zSVertexSavedValues.inl"
+      #include "Gothic_UserAPI\zCPolygon_zSVertexSavedValues.inl"
     };
 
     // sizeof 20h
@@ -349,7 +349,7 @@ namespace Gothic_II_Classic {
       zSFeatureSavedValues() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCPolygon_zSFeatureSavedValues.inl"
+      #include "Gothic_UserAPI\zCPolygon_zSFeatureSavedValues.inl"
     };
 
 #pragma pack( push, 1 )
@@ -369,7 +369,7 @@ namespace Gothic_II_Classic {
       TFlags() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCPolygon_TFlags.inl"
+      #include "Gothic_UserAPI\zCPolygon_TFlags.inl"
     };
 #pragma pack( pop )
 
@@ -487,7 +487,7 @@ namespace Gothic_II_Classic {
     static zCArray<zSPolySavedValues>& morphedPolysSavedValuesList;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPolygon.inl"
+    #include "Gothic_UserAPI\zCPolygon.inl"
   };
 
   // sizeof 40h
@@ -510,7 +510,7 @@ namespace Gothic_II_Classic {
     static zCMaterial*& portalDummyMaterial;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPortal.inl"
+    #include "Gothic_UserAPI\zCPortal.inl"
   };
 
   inline void GetProjection( int& x, int& y, zVEC3 v ) {

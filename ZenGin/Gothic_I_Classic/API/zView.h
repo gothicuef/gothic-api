@@ -52,7 +52,7 @@ namespace Gothic_I_Classic {
     static zCList<zCInputCallback>& inputList;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCInputCallback.inl"
+    #include "Gothic_UserAPI\zCInputCallback.inl"
   };
 
   // sizeof 38h
@@ -79,7 +79,7 @@ namespace Gothic_I_Classic {
     virtual ~zCViewText()                                                                  zCall( 0x00702AE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewText.inl"
+    #include "Gothic_UserAPI\zCViewText.inl"
   };
 
   // sizeof FCh
@@ -256,7 +256,7 @@ namespace Gothic_I_Classic {
     static int& showDebug;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCView.inl"
+    #include "Gothic_UserAPI\zCView.inl"
   };
 
   extern zCView*& screen;

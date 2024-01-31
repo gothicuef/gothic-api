@@ -46,7 +46,7 @@ namespace Gothic_II_Addon {
     static zCNetHost*& localhost;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetHost.inl"
+    #include "Gothic_UserAPI\zCNetHost.inl"
   };
 
 } // namespace Gothic_II_Addon

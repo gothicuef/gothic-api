@@ -33,7 +33,7 @@ namespace Gothic_I_Classic {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewStatusBar.inl"
+    #include "Gothic_UserAPI\zCViewStatusBar.inl"
   };
 
 } // namespace Gothic_I_Classic

@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
       zSEvasionSearchOptions& operator =( zSEvasionSearchOptions const& ) zCall( 0x004AE970 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zSEvasionSearchDesc_zSEvasionSearchOptions.inl"
+      #include "Gothic_UserAPI\zSEvasionSearchDesc_zSEvasionSearchOptions.inl"
     };
 
     int(* searchFunc )( const zSEvasionSearchDesc& ); // sizeof 04h    offset 00h
@@ -94,7 +94,7 @@ namespace Gothic_II_Classic {
     zSEvasionSearchDesc& operator =( zSEvasionSearchDesc const& ) zCall( 0x004AEC60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSEvasionSearchDesc.inl"
+    #include "Gothic_UserAPI\zSEvasionSearchDesc.inl"
   };
 
   // sizeof 60h
@@ -119,7 +119,7 @@ namespace Gothic_II_Classic {
     zSPathSearchResult()             zInit( zSPathSearchResult_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSPathSearchResult.inl"
+    #include "Gothic_UserAPI\zSPathSearchResult.inl"
   };
 
   // sizeof 98h
@@ -146,7 +146,7 @@ namespace Gothic_II_Classic {
     ~zSPathSearchState() zCall( 0x004A3560 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSPathSearchState.inl"
+    #include "Gothic_UserAPI\zSPathSearchState.inl"
   };
 
   // sizeof 74h
@@ -170,7 +170,7 @@ namespace Gothic_II_Classic {
     zSPathSearchState_Internal()             zInit( zSPathSearchState_Internal_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSPathSearchState_Internal.inl"
+    #include "Gothic_UserAPI\zSPathSearchState_Internal.inl"
   };
 
   // sizeof 10h
@@ -188,7 +188,7 @@ namespace Gothic_II_Classic {
       zSRangeSphereCoord() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSRangeSphereCoord.inl"
+      #include "Gothic_UserAPI\zCSphereCoordsCache_zSRangeSphereCoord.inl"
     };
 
     // sizeof 18h
@@ -203,7 +203,7 @@ namespace Gothic_II_Classic {
       ~zSElevSphereCoord() zCall( 0x004A44E0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSElevSphereCoord.inl"
+      #include "Gothic_UserAPI\zCSphereCoordsCache_zSElevSphereCoord.inl"
     };
 
     // sizeof 14h
@@ -217,7 +217,7 @@ namespace Gothic_II_Classic {
       ~zSAziSphereCoord() zCall( 0x004A44C0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSphereCoordsCache_zSAziSphereCoord.inl"
+      #include "Gothic_UserAPI\zCSphereCoordsCache_zSAziSphereCoord.inl"
     };
 
     zCArraySort<zSAziSphereCoord*> aziCoords; // sizeof 10h    offset 00h
@@ -230,7 +230,7 @@ namespace Gothic_II_Classic {
     void DeleteList()                                                                                zCall( 0x004A46E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSphereCoordsCache.inl"
+    #include "Gothic_UserAPI\zCSphereCoordsCache.inl"
   };
 
   // sizeof 214h
@@ -258,7 +258,7 @@ namespace Gothic_II_Classic {
       zSPathSearchOptions() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCPathSearch_zSPathSearchOptions.inl"
+      #include "Gothic_UserAPI\zCPathSearch_zSPathSearchOptions.inl"
     };
 
     zSPathSearchState bestSearchState;                               // sizeof 98h    offset 00h
@@ -318,7 +318,7 @@ namespace Gothic_II_Classic {
     static zCPathSearch* GetSearch()                                                 zCall( 0x004A4850 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPathSearch.inl"
+    #include "Gothic_UserAPI\zCPathSearch.inl"
   };
 
 } // namespace Gothic_II_Classic

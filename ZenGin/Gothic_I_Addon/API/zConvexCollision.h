@@ -17,7 +17,7 @@ namespace Gothic_I_Addon {
     zCCacheIndex() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCacheIndex.inl"
+    #include "Gothic_UserAPI\zCCacheIndex.inl"
   };
 
   // sizeof 10h
@@ -33,7 +33,7 @@ namespace Gothic_I_Addon {
     zCConvexCollisionCache( zCCacheIndex const& a0 )          zInit( zCConvexCollisionCache_OnInit( a0 ));
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConvexCollisionCache.inl"
+    #include "Gothic_UserAPI\zCConvexCollisionCache.inl"
   };
 
   // sizeof 1Ch
@@ -62,7 +62,7 @@ namespace Gothic_I_Addon {
     virtual void DrawVirtual() const                                                                                                                             zCall( 0x00558360 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConvexPrimitive.inl"
+    #include "Gothic_UserAPI\zCConvexPrimitive.inl"
   };
 
   // sizeof 1Ch
@@ -85,7 +85,7 @@ namespace Gothic_I_Addon {
     static zCConvexPrimitiveUnitSphere& s_unitSphere;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveUnitSphere.inl"
+    #include "Gothic_UserAPI\zCConvexPrimitiveUnitSphere.inl"
   };
 
   // sizeof 38h
@@ -109,7 +109,7 @@ namespace Gothic_I_Addon {
     virtual void DrawVirtual() const                                                                                       zCall( 0x00558B60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveScaleTrans.inl"
+    #include "Gothic_UserAPI\zCConvexPrimitiveScaleTrans.inl"
   };
 
   // sizeof 3Ch
@@ -127,7 +127,7 @@ namespace Gothic_I_Addon {
     virtual int SymetryRotation( zVEC3& ) const                                                           zCall( 0x00558D80 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConvexPrimitiveEllipsoid.inl"
+    #include "Gothic_UserAPI\zCConvexPrimitiveEllipsoid.inl"
   };
 
 } // namespace Gothic_I_Addon

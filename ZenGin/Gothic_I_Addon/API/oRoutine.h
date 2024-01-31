@@ -25,7 +25,7 @@ namespace Gothic_I_Addon {
     virtual ~oCRtnCutscene()    zCall( 0x00702AA0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCRtnCutscene.inl"
+    #include "Gothic_UserAPI\oCRtnCutscene.inl"
   };
 
   // sizeof 3Ch
@@ -56,7 +56,7 @@ namespace Gothic_I_Addon {
     zSTRING GetWaypoint()                                                           zCall( 0x00702EB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCRtnEntry.inl"
+    #include "Gothic_UserAPI\oCRtnEntry.inl"
   };
 
   // sizeof 88h
@@ -75,7 +75,7 @@ namespace Gothic_I_Addon {
       oCNpc* npc;    // sizeof 04h    offset 20h
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCRtnManager_TRtn_WayBoxLimit.inl"
+      #include "Gothic_UserAPI\oCRtnManager_TRtn_WayBoxLimit.inl"
     };
 
     // sizeof 20h
@@ -88,7 +88,7 @@ namespace Gothic_I_Addon {
       int found;     // sizeof 04h    offset 1Ch
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCRtnManager_TRtn_WayBox.inl"
+      #include "Gothic_UserAPI\oCRtnManager_TRtn_WayBox.inl"
     };
 
     int indexStart[3];                            // sizeof 0Ch    offset 00h
@@ -136,7 +136,7 @@ namespace Gothic_I_Addon {
     static int Sort_WayBoxZ( TRtn_WayBox*, TRtn_WayBox* )               zCall( 0x00702FE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCRtnManager.inl"
+    #include "Gothic_UserAPI\oCRtnManager.inl"
   };
 
 } // namespace Gothic_I_Addon

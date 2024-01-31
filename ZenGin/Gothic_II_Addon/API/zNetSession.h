@@ -25,7 +25,7 @@ namespace Gothic_II_Addon {
     virtual ~zCNetSession()                    zCall( 0x0045D1C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetSession.inl"
+    #include "Gothic_UserAPI\zCNetSession.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -83,7 +83,7 @@ namespace Gothic_II_Classic {
     static int& isHighLighted;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpcFocus.inl"
+    #include "Gothic_UserAPI\oCNpcFocus.inl"
   };
 
 } // namespace Gothic_II_Classic

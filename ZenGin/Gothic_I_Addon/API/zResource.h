@@ -41,7 +41,7 @@ namespace Gothic_I_Addon {
       void TouchRes( zCResource* )  zCall( 0x005D4860 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCResourceManager_zCClassCache.inl"
+      #include "Gothic_UserAPI\zCResourceManager_zCClassCache.inl"
     };
 
     zCArray<zCClassCache> classCacheList; // sizeof 0Ch    offset 18h
@@ -84,7 +84,7 @@ namespace Gothic_I_Addon {
     virtual unsigned long ThreadProc()                 zCall( 0x005D3A90 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCResourceManager.inl"
+    #include "Gothic_UserAPI\zCResourceManager.inl"
   };
 
   // sizeof 54h
@@ -122,7 +122,7 @@ namespace Gothic_I_Addon {
     virtual void GetCacheConfig( unsigned long&, unsigned long& ) zCall( 0x005D2C10 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCResource.inl"
+    #include "Gothic_UserAPI\zCResource.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -55,7 +55,7 @@ namespace Gothic_I_Addon {
     void SetValue( zSTRING, int )                               zCall( 0x00464130 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOptionEntry.inl"
+    #include "Gothic_UserAPI\zCOptionEntry.inl"
   };
 
   // sizeof 20h
@@ -72,7 +72,7 @@ namespace Gothic_I_Addon {
     ~zCOptionSection()                            zCall( 0x00462050 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOptionSection.inl"
+    #include "Gothic_UserAPI\zCOptionSection.inl"
   };
 
   // sizeof 298h
@@ -138,7 +138,7 @@ namespace Gothic_I_Addon {
     virtual ~zCOption()                                                                       zCall( 0x004623B0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOption.inl"
+    #include "Gothic_UserAPI\zCOption.inl"
   };
 
 } // namespace Gothic_I_Addon

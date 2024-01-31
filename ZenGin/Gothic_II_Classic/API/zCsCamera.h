@@ -65,7 +65,7 @@ namespace Gothic_II_Classic {
     virtual void ThisVobRemovedFromWorld( zCWorld* ) zCall( 0x004BBA30 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCamTrj_KeyFrame.inl"
+    #include "Gothic_UserAPI\zCCamTrj_KeyFrame.inl"
   };
 
   // sizeof 3Ch
@@ -108,7 +108,7 @@ namespace Gothic_II_Classic {
     virtual float MD_GetMinTime()                                         zCall( 0x004C4CB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSCamera_EventMsg.inl"
+    #include "Gothic_UserAPI\zCCSCamera_EventMsg.inl"
   };
 
   // sizeof 48h
@@ -143,7 +143,7 @@ namespace Gothic_II_Classic {
     virtual void MD_SetVobParam( zCVob* )                                                        zCall( 0x004C5150 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSCamera_EventMsgActivate.inl"
+    #include "Gothic_UserAPI\zCCSCamera_EventMsgActivate.inl"
   };
 
   // sizeof 14DCh
@@ -274,7 +274,7 @@ namespace Gothic_II_Classic {
     static int& evaluateAvgFPS;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSCamera.inl"
+    #include "Gothic_UserAPI\zCCSCamera.inl"
   };
 
 } // namespace Gothic_II_Classic

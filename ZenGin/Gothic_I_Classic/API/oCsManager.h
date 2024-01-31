@@ -24,7 +24,7 @@ namespace Gothic_I_Classic {
     virtual zCCSProps* CreateProperties()                               zCall( 0x00402B50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCCSManager.inl"
+    #include "Gothic_UserAPI\oCCSManager.inl"
   };
 
 } // namespace Gothic_I_Classic

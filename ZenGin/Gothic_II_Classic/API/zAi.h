@@ -24,7 +24,7 @@ namespace Gothic_II_Classic {
     virtual void HostVobAddedToWorld( zCVob*, zCWorld* )               zCall( 0x0048A490 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCAIBase.inl"
+    #include "Gothic_UserAPI\zCAIBase.inl"
   };
 
   // sizeof 2Ch
@@ -41,7 +41,7 @@ namespace Gothic_II_Classic {
     void StartDefaultCollisionSound( zCVob*, zCCollisionReport const& ) zCall( 0x00509420 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCAIBaseSound.inl"
+    #include "Gothic_UserAPI\zCAIBaseSound.inl"
   };
 
 } // namespace Gothic_II_Classic

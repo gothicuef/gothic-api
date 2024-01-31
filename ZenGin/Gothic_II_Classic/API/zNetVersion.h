@@ -26,7 +26,7 @@ namespace Gothic_II_Classic {
     virtual void Unpack( zCBuffer& )         zCall( 0x0045CCF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetVersion.inl"
+    #include "Gothic_UserAPI\zCNetVersion.inl"
   };
 
 } // namespace Gothic_II_Classic

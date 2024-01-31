@@ -62,7 +62,7 @@ namespace Gothic_I_Classic {
     static const char** message;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMgcEigenD.inl"
+    #include "Gothic_UserAPI\zCMgcEigenD.inl"
   };
 
 } // namespace Gothic_I_Classic

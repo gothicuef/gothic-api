@@ -28,7 +28,7 @@ namespace Gothic_I_Addon {
     ~zSKeyMapping() zCall( 0x004D2860 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSKeyMapping.inl"
+    #include "Gothic_UserAPI\zSKeyMapping.inl"
   };
 
   // sizeof 18h
@@ -44,7 +44,7 @@ namespace Gothic_I_Addon {
     zSCtrlValue()                                 zInit( zSCtrlValue_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSCtrlValue.inl"
+    #include "Gothic_UserAPI\zSCtrlValue.inl"
   };
 
   // sizeof 14h
@@ -152,7 +152,7 @@ namespace Gothic_I_Addon {
     static zCArray<zSCtrlValue>& values;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCInput.inl"
+    #include "Gothic_UserAPI\zCInput.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -28,7 +28,7 @@ namespace Gothic_II_Addon {
     virtual oCItem* CreateItem( int )                    zCall( 0x0076FDE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCObjectFactory.inl"
+    #include "Gothic_UserAPI\oCObjectFactory.inl"
   };
 
 } // namespace Gothic_II_Addon

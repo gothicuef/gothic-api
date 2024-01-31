@@ -92,7 +92,7 @@ namespace Gothic_I_Addon {
     int GetNumKeys()                                                    zCall( 0x00494510 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCTrajectory.inl"
+    #include "Gothic_UserAPI\oCTrajectory.inl"
   };
 
   // sizeof 1D4h
@@ -158,7 +158,7 @@ namespace Gothic_I_Addon {
     static void CreateNewScriptKey( zSTRING const& ) zCall( 0x0049D1C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCEmitterKey.inl"
+    #include "Gothic_UserAPI\oCEmitterKey.inl"
   };
 
   // sizeof 1Ch
@@ -172,7 +172,7 @@ namespace Gothic_I_Addon {
     zSVisualFXColl() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSVisualFXColl.inl"
+    #include "Gothic_UserAPI\zSVisualFXColl.inl"
   };
 
   // sizeof 5C8h
@@ -407,7 +407,7 @@ namespace Gothic_I_Addon {
     static oCVisualFX*& actFX;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCVisualFX.inl"
+    #include "Gothic_UserAPI\oCVisualFX.inl"
   };
 
   // sizeof 2Ch
@@ -425,7 +425,7 @@ namespace Gothic_I_Addon {
     virtual void HostVobAddedToWorld( zCVob*, zCWorld* )         zCall( 0x0048F270 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCVisualFXAI.inl"
+    #include "Gothic_UserAPI\oCVisualFXAI.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -205,7 +205,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zVEC2.inl"
+    #include "Gothic_UserAPI\zVEC2.inl"
   };
 
   class zVEC3 {
@@ -421,7 +421,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zVEC3.inl"
+    #include "Gothic_UserAPI\zVEC3.inl"
   };
 
   class zVEC4 {
@@ -591,7 +591,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zVEC4.inl"
+    #include "Gothic_UserAPI\zVEC4.inl"
   };
 
   inline zMAT3 Alg_Scaling2D( zVEC2& );
@@ -801,7 +801,7 @@ namespace Gothic_II_Addon {
     static zMAT3& s_identity;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zMAT3.inl"
+    #include "Gothic_UserAPI\zMAT3.inl"
   };
 
   class zMAT4 {
@@ -1079,7 +1079,7 @@ namespace Gothic_II_Addon {
     static zMAT4& s_identity;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zMAT4.inl"
+    #include "Gothic_UserAPI\zMAT4.inl"
   };
 
   class zCQuat {
@@ -1247,7 +1247,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCQuat.inl"
+    #include "Gothic_UserAPI\zCQuat.inl"
   };
 
   struct zComplex {
@@ -1331,7 +1331,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zComplex.inl"
+    #include "Gothic_UserAPI\zComplex.inl"
   };
 
   class zCValueSmooth {
@@ -1383,7 +1383,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCValueSmooth.inl"
+    #include "Gothic_UserAPI\zCValueSmooth.inl"
   };
 
   class zCVEC3Smooth {
@@ -1435,7 +1435,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVEC3Smooth.inl"
+    #include "Gothic_UserAPI\zCVEC3Smooth.inl"
   };
 
   inline void GetProjection( int& x, int& y, zVEC3 v );
@@ -1579,7 +1579,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCLine2D.inl"
+    #include "Gothic_UserAPI\zCLine2D.inl"
   };
   
   inline zVEC2 Alg_Min( zVEC2 const &, zVEC2 const & )               zCall( 0x00512FC0 );

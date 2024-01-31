@@ -73,7 +73,7 @@ namespace Gothic_II_Addon {
     virtual void CSDB_Stop( zCCutscene* )                                      zCall( 0x0041FAD0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSPlayer.inl"
+    #include "Gothic_UserAPI\zCCSPlayer.inl"
   };
 
 } // namespace Gothic_II_Addon

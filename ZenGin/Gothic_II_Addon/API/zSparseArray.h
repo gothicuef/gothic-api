@@ -14,7 +14,7 @@ namespace Gothic_II_Addon {
     int occupied : 1;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSparseArrayManDat.inl"
+    #include "Gothic_UserAPI\zCSparseArrayManDat.inl"
   };
 
   class zCSparseArrayBase {
@@ -63,7 +63,7 @@ namespace Gothic_II_Addon {
     virtual void DeData( void* ) const                                     zCall( 0x005EF3E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSparseArrayBase.inl"
+    #include "Gothic_UserAPI\zCSparseArrayBase.inl"
   };
 
   class zCSparseArrayIterator {
@@ -83,7 +83,7 @@ namespace Gothic_II_Addon {
     zCSparseArrayIterator( zCSparseArrayBase& ) zCall( 0x0073B670 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSparseArrayIterator.inl"
+    #include "Gothic_UserAPI\zCSparseArrayIterator.inl"
   };
 
   template <class T, class Data>
@@ -200,7 +200,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSparseArray.inl"
+    #include "Gothic_UserAPI\zCSparseArray.inl"
   };
 
   class zCCacheBase {
@@ -225,7 +225,7 @@ namespace Gothic_II_Addon {
     static zCCacheBase*& s_run;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCacheBase.inl"
+    #include "Gothic_UserAPI\zCCacheBase.inl"
   };
 
   template <class Index, class Data>
@@ -277,7 +277,7 @@ namespace Gothic_II_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCacheData.inl"
+    #include "Gothic_UserAPI\zCCacheData.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -39,7 +39,7 @@ namespace Gothic_I_Addon {
     zCCallback() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCallback.inl"
+    #include "Gothic_UserAPI\zCCallback.inl"
   };
 
   // sizeof 04h
@@ -52,7 +52,7 @@ namespace Gothic_I_Addon {
     virtual void HandleVob( zCVob*, void* ) zPureCall;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobCallback.inl"
+    #include "Gothic_UserAPI\zCVobCallback.inl"
   };
 
   // sizeof 04h
@@ -65,7 +65,7 @@ namespace Gothic_I_Addon {
     zCWorldPerFrameCallback() : zCtor( zCCallback ) {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWorldPerFrameCallback.inl"
+    #include "Gothic_UserAPI\zCWorldPerFrameCallback.inl"
   };
 
   // sizeof 28h
@@ -82,7 +82,7 @@ namespace Gothic_I_Addon {
     zTTraceRayReport() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTTraceRayReport.inl"
+    #include "Gothic_UserAPI\zTTraceRayReport.inl"
   };
 
   // sizeof 08h
@@ -96,7 +96,7 @@ namespace Gothic_I_Addon {
     zCTransferConstr() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCTransferConstr.inl"
+    #include "Gothic_UserAPI\zCTransferConstr.inl"
   };
   
 #pragma pack( push, 1 )
@@ -112,7 +112,7 @@ namespace Gothic_I_Addon {
     zCTransfer() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCTransfer.inl"
+    #include "Gothic_UserAPI\zCTransfer.inl"
   };
   
 #pragma pack( pop )
@@ -138,7 +138,7 @@ namespace Gothic_I_Addon {
     void DoTransfers()    zCall( 0x00621CF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPatch.inl"
+    #include "Gothic_UserAPI\zCPatch.inl"
   };
     
 #pragma pack( push, 1 )
@@ -166,7 +166,7 @@ namespace Gothic_I_Addon {
     ~zCPatchMap()                                                          zCall( 0x006214D0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPatchMap.inl"
+    #include "Gothic_UserAPI\zCPatchMap.inl"
   };
     
 #pragma pack( pop )
@@ -356,7 +356,7 @@ namespace Gothic_I_Addon {
     static zTWorldLoadMergeMode& s_worldMergeMode;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWorld.inl"
+    #include "Gothic_UserAPI\zCWorld.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -31,7 +31,7 @@ namespace Gothic_I_Addon {
       zSParticle() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCOutdoorRainFX_zSParticle.inl"
+      #include "Gothic_UserAPI\zCOutdoorRainFX_zSParticle.inl"
     };
 
     // sizeof 18h
@@ -44,7 +44,7 @@ namespace Gothic_I_Addon {
       zSCacheElement() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCOutdoorRainFX_zSCacheElement.inl"
+      #include "Gothic_UserAPI\zCOutdoorRainFX_zSCacheElement.inl"
     };
 
     zSParticle m_flyParticleList[zMAX_FLY_PARTICLE];       // sizeof 8000h  offset 00h
@@ -78,7 +78,7 @@ namespace Gothic_I_Addon {
     void RenderParticles( zTRenderContext&, zCOLOR ) zCall( 0x005D6E00 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOutdoorRainFX.inl"
+    #include "Gothic_UserAPI\zCOutdoorRainFX.inl"
   };
 
 } // namespace Gothic_I_Addon

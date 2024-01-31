@@ -48,7 +48,7 @@ namespace Gothic_I_Classic {
       zTConfig() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTConfig.inl"
+      #include "Gothic_UserAPI\zCAIPlayer_zTConfig.inl"
     };
 
     // sizeof 28h
@@ -63,7 +63,7 @@ namespace Gothic_I_Classic {
       zTLedgeInfo() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTLedgeInfo.inl"
+      #include "Gothic_UserAPI\zCAIPlayer_zTLedgeInfo.inl"
     };
 
     // sizeof 08h
@@ -76,7 +76,7 @@ namespace Gothic_I_Classic {
       zTBloodVobTrack() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCAIPlayer_zTBloodVobTrack.inl"
+      #include "Gothic_UserAPI\zCAIPlayer_zTBloodVobTrack.inl"
     };
 
     zTConfig config;                                                  // sizeof 40h    offset 24h
@@ -194,7 +194,7 @@ namespace Gothic_I_Classic {
     virtual void StartFallDownAni()                                     zCall( 0x00502240 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCAIPlayer.inl"
+    #include "Gothic_UserAPI\zCAIPlayer.inl"
   };
 
 } // namespace Gothic_I_Classic

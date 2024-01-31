@@ -60,7 +60,7 @@ namespace Gothic_II_Addon {
     ~zTLazyMesh()            zCall( 0x005C3A80 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTLazyMesh.inl"
+    #include "Gothic_UserAPI\zTLazyMesh.inl"
   };
 
   // sizeof 18h
@@ -74,7 +74,7 @@ namespace Gothic_II_Addon {
     zTPMWedge() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMWedge.inl"
+    #include "Gothic_UserAPI\zTPMWedge.inl"
   };
 
   // sizeof 06h
@@ -86,7 +86,7 @@ namespace Gothic_II_Addon {
     zTPMTriangle() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMTriangle.inl"
+    #include "Gothic_UserAPI\zTPMTriangle.inl"
   };
 
   // sizeof 06h
@@ -98,7 +98,7 @@ namespace Gothic_II_Addon {
     zTPMTriangleEdges() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMTriangleEdges.inl"
+    #include "Gothic_UserAPI\zTPMTriangleEdges.inl"
   };
 
   // sizeof 04h
@@ -110,7 +110,7 @@ namespace Gothic_II_Addon {
     zTPMEdge() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMEdge.inl"
+    #include "Gothic_UserAPI\zTPMEdge.inl"
   };
 
   // sizeof 04h
@@ -123,7 +123,7 @@ namespace Gothic_II_Addon {
     zTPMVertexUpdate() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMVertexUpdate.inl"
+    #include "Gothic_UserAPI\zTPMVertexUpdate.inl"
   };
 
   // sizeof D8h
@@ -143,7 +143,7 @@ namespace Gothic_II_Addon {
       zTLODRenderArgs() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgs.inl"
+      #include "Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgs.inl"
     };
 
     // sizeof 10h
@@ -158,7 +158,7 @@ namespace Gothic_II_Addon {
       zTLODParams() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODParams.inl"
+      #include "Gothic_UserAPI\zCProgMeshProto_zTLODParams.inl"
     };
 
     // sizeof 58h
@@ -184,7 +184,7 @@ namespace Gothic_II_Addon {
       ~zCSubMesh()            zCall( 0x005C6A70 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zCSubMesh.inl"
+      #include "Gothic_UserAPI\zCProgMeshProto_zCSubMesh.inl"
     };
 
     // sizeof 10h
@@ -199,7 +199,7 @@ namespace Gothic_II_Addon {
       zTLODRenderArgsSubMesh() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
+      #include "Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
     };
 
     zCArrayAdapt<zVEC3> posList;        // sizeof 08h    offset 34h
@@ -294,7 +294,7 @@ namespace Gothic_II_Addon {
     static unsigned long& s_classCtorCtr;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshProto.inl"
+    #include "Gothic_UserAPI\zCProgMeshProto.inl"
   };
 
   // sizeof 01h
@@ -316,7 +316,7 @@ namespace Gothic_II_Addon {
     int BuildProgMeshProto( zCMesh*, zCProgMeshProto*, zCArray<int>*, int )                 zCall( 0x005C3E40 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshBuilder.inl"
+    #include "Gothic_UserAPI\zCProgMeshBuilder.inl"
   };
 
   // sizeof 104h
@@ -337,7 +337,7 @@ namespace Gothic_II_Addon {
       zTWeightEntry()             zInit( zTWeightEntry_OnInit() );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTWeightEntry.inl"
+      #include "Gothic_UserAPI\zCMeshSoftSkin_zTWeightEntry.inl"
     };
 #pragma pack( pop )
 
@@ -351,7 +351,7 @@ namespace Gothic_II_Addon {
       zTNodeWedgeNormal() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTNodeWedgeNormal.inl"
+      #include "Gothic_UserAPI\zCMeshSoftSkin_zTNodeWedgeNormal.inl"
     };
 
     zCArray<int> nodeIndexList;                     // sizeof 0Ch    offset D8h
@@ -383,7 +383,7 @@ namespace Gothic_II_Addon {
     virtual int Save( zCFileBIN& )                                                                            zCall( 0x005CE930 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMeshSoftSkin.inl"
+    #include "Gothic_UserAPI\zCMeshSoftSkin.inl"
   };
 
   // sizeof 30h
@@ -398,7 +398,7 @@ namespace Gothic_II_Addon {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005D01E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshConvertFileHandler.inl"
+    #include "Gothic_UserAPI\zCProgMeshConvertFileHandler.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -44,7 +44,7 @@ namespace Gothic_I_Addon {
       ~TObjectRoutine() zCall( 0x0065C5E0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCGame_TObjectRoutine.inl"
+      #include "Gothic_UserAPI\oCGame_TObjectRoutine.inl"
     };
 
     float cliprange;                                  // sizeof 04h    offset 1Ch
@@ -214,7 +214,7 @@ namespace Gothic_I_Addon {
     virtual void SetAsPlayer( zSTRING const& )                                   zCall( 0x0065FFF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCGame.inl"
+    #include "Gothic_UserAPI\oCGame.inl"
   };
 
 } // namespace Gothic_I_Addon

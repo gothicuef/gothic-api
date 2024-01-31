@@ -41,7 +41,7 @@ namespace Gothic_II_Classic {
       zTVobLightLensFlare()             zInit( zTVobLightLensFlare_OnInit() );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCLensFlareFX_zTVobLightLensFlare.inl"
+      #include "Gothic_UserAPI\zCLensFlareFX_zTVobLightLensFlare.inl"
     };
 
     zCArray<zTVobLightLensFlare> lensFlareList; // sizeof 0Ch    offset 24h
@@ -66,7 +66,7 @@ namespace Gothic_II_Classic {
     static zCMesh*& s_glowMesh;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCLensFlareFX.inl"
+    #include "Gothic_UserAPI\zCLensFlareFX.inl"
   };
 
 } // namespace Gothic_II_Classic

@@ -23,7 +23,7 @@ namespace Gothic_I_Classic {
     /* for zCCSDebugger num : 7*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCCSPlayer.inl"
+    #include "Gothic_UserAPI\oCCSPlayer.inl"
   };
 
 } // namespace Gothic_I_Classic

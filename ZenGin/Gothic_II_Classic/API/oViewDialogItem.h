@@ -25,7 +25,7 @@ namespace Gothic_II_Classic {
     /* for oCViewDialogItem num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCViewDialogItem.inl"
+    #include "Gothic_UserAPI\oCViewDialogItem.inl"
   };
 
 } // namespace Gothic_II_Classic

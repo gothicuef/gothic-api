@@ -25,7 +25,7 @@ namespace Gothic_II_Addon {
     oCZoneMusicList() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCZoneMusicList.inl"
+    #include "Gothic_UserAPI\oCZoneMusicList.inl"
   };
 
   // sizeof 148h
@@ -92,7 +92,7 @@ namespace Gothic_II_Addon {
     static oCZoneMusic*& s_oldmusiczone;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCZoneMusic.inl"
+    #include "Gothic_UserAPI\oCZoneMusic.inl"
   };
 
   // sizeof 148h
@@ -107,7 +107,7 @@ namespace Gothic_II_Addon {
     virtual ~oCZoneMusicDefault()               zCall( 0x006424C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCZoneMusicDefault.inl"
+    #include "Gothic_UserAPI\oCZoneMusicDefault.inl"
   };
 
 } // namespace Gothic_II_Addon

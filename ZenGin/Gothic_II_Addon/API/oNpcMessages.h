@@ -42,7 +42,7 @@ namespace Gothic_II_Addon {
     virtual void SetHighPriority( int )      zCall( 0x00763140 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpcMessage.inl"
+    #include "Gothic_UserAPI\oCNpcMessage.inl"
   };
 
   // sizeof 118h
@@ -79,7 +79,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                                             zCall( 0x00765500 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgDamage.inl"
+    #include "Gothic_UserAPI\oCMsgDamage.inl"
   };
 
   // sizeof 50h
@@ -128,7 +128,7 @@ namespace Gothic_II_Addon {
     virtual float MD_GetMinTime()                                            zCall( 0x00766EF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgWeapon.inl"
+    #include "Gothic_UserAPI\oCMsgWeapon.inl"
   };
 
   // sizeof 7Ch
@@ -195,7 +195,7 @@ namespace Gothic_II_Addon {
     virtual float MD_GetMinTime()                                                   zCall( 0x00766700 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgMovement.inl"
+    #include "Gothic_UserAPI\oCMsgMovement.inl"
   };
 
   // sizeof 58h
@@ -245,7 +245,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                             zCall( 0x00767530 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgAttack.inl"
+    #include "Gothic_UserAPI\oCMsgAttack.inl"
   };
 
   // sizeof 50h
@@ -278,7 +278,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                     zCall( 0x00767C80 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgUseItem.inl"
+    #include "Gothic_UserAPI\oCMsgUseItem.inl"
   };
 
   // sizeof 74h
@@ -325,7 +325,7 @@ namespace Gothic_II_Addon {
     virtual float MD_GetMinTime()                                                             zCall( 0x00768730 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgState.inl"
+    #include "Gothic_UserAPI\oCMsgState.inl"
   };
 
   // sizeof 7Ch
@@ -397,7 +397,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                                                      zCall( 0x00769330 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgManipulate.inl"
+    #include "Gothic_UserAPI\oCMsgManipulate.inl"
   };
 
   // sizeof 98h
@@ -479,7 +479,7 @@ namespace Gothic_II_Addon {
     virtual float MD_GetMinTime()                                                                              zCall( 0x0076AF50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgConversation.inl"
+    #include "Gothic_UserAPI\oCMsgConversation.inl"
   };
 
   // sizeof 6Ch
@@ -531,7 +531,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                             zCall( 0x0076B360 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMsgMagic.inl"
+    #include "Gothic_UserAPI\oCMsgMagic.inl"
   };
 
 } // namespace Gothic_II_Addon

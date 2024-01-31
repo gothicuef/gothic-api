@@ -76,7 +76,7 @@ namespace Gothic_II_Addon {
     virtual void FreeResources()                                          zCall( 0x005BDAE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPolyStrip.inl"
+    #include "Gothic_UserAPI\zCPolyStrip.inl"
   };
 
   // sizeof F4h
@@ -97,7 +97,7 @@ namespace Gothic_II_Addon {
       virtual void FreeResources()                         zCall( 0x005BF9F0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCLightning_zCBolt.inl"
+      #include "Gothic_UserAPI\zCLightning_zCBolt.inl"
     };
 
     zCBolt rootBolt; // sizeof C0h    offset 34h
@@ -107,7 +107,7 @@ namespace Gothic_II_Addon {
     void Generate( zVEC3 const&, zVEC3 const& )    zCall( 0x005BF3D0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCLightning.inl"
+    #include "Gothic_UserAPI\zCLightning.inl"
   };
 
   // sizeof 88h
@@ -135,7 +135,7 @@ namespace Gothic_II_Addon {
       zTEffectParams() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCQuadMark_zTEffectParams.inl"
+      #include "Gothic_UserAPI\zCQuadMark_zTEffectParams.inl"
     };
 
     // sizeof 14h
@@ -148,7 +148,7 @@ namespace Gothic_II_Addon {
       zTQuadMarkVert() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkVert.inl"
+      #include "Gothic_UserAPI\zCQuadMark_zTQuadMarkVert.inl"
     };
 
     // sizeof 0Ch
@@ -161,7 +161,7 @@ namespace Gothic_II_Addon {
       ~zTQuadMarkPoly() zCall( 0x005D0B70 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkPoly.inl"
+      #include "Gothic_UserAPI\zCQuadMark_zTQuadMarkPoly.inl"
     };
 
     // sizeof 30h
@@ -182,7 +182,7 @@ namespace Gothic_II_Addon {
       zTQuadMarkAniState() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCQuadMark_zTQuadMarkAniState.inl"
+      #include "Gothic_UserAPI\zCQuadMark_zTQuadMarkAniState.inl"
     };
 
     zCMesh* quadMesh;                               // sizeof 04h    offset 34h
@@ -226,7 +226,7 @@ namespace Gothic_II_Addon {
     virtual void SetVisualUsedBy( zCVob* )                                                          zCall( 0x005D0CB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCQuadMark.inl"
+    #include "Gothic_UserAPI\zCQuadMark.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -24,7 +24,7 @@ namespace Gothic_I_Classic {
     virtual ~zCCollisionReport()    zCall( 0x00537FF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCollisionReport.inl"
+    #include "Gothic_UserAPI\zCCollisionReport.inl"
   };
 
   // sizeof 0Ch
@@ -57,7 +57,7 @@ namespace Gothic_I_Classic {
     static zCCollisionReport*& s_aoCollReportList;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCollisionDetector.inl"
+    #include "Gothic_UserAPI\zCCollisionDetector.inl"
   };
 
 } // namespace Gothic_I_Classic

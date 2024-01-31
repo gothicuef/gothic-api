@@ -30,7 +30,7 @@ namespace Gothic_I_Addon {
     virtual void UntriggerTarget( zCVob* )                                   zCall( 0x0043D080 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCTriggerChangeLevel.inl"
+    #include "Gothic_UserAPI\oCTriggerChangeLevel.inl"
   };
 
   // sizeof 15Ch
@@ -52,7 +52,7 @@ namespace Gothic_I_Addon {
     virtual void UntriggerTarget( zCVob* )                              zCall( 0x0043D7E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCTriggerScript.inl"
+    #include "Gothic_UserAPI\oCTriggerScript.inl"
   };
 
   // sizeof 118h
@@ -73,7 +73,7 @@ namespace Gothic_I_Addon {
     virtual void OnTrigger( zCVob*, zCVob* ) zCall( 0x0043DEC0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCObjectGenerator.inl"
+    #include "Gothic_UserAPI\oCObjectGenerator.inl"
   };
 
 } // namespace Gothic_I_Addon

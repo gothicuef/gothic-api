@@ -23,7 +23,7 @@ namespace Gothic_I_Classic {
     static int& s_actCounter;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCAccount.inl"
+    #include "Gothic_UserAPI\zCAccount.inl"
   };
 
 } // namespace Gothic_I_Classic

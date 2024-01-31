@@ -34,7 +34,7 @@ namespace Gothic_II_Addon {
     virtual void ProcessMessages()                                                              zCall( 0x0045BB90 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetManager.inl"
+    #include "Gothic_UserAPI\zCNetManager.inl"
   };
 
 } // namespace Gothic_II_Addon

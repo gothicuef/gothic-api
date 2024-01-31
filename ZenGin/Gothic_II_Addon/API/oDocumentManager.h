@@ -42,7 +42,7 @@ namespace Gothic_II_Addon {
     virtual int HandleEvent( int )                                              zCall( 0x0065F450 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCDocumentManager.inl"
+    #include "Gothic_UserAPI\oCDocumentManager.inl"
   };
 
 } // namespace Gothic_II_Addon

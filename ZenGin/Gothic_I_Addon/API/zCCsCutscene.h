@@ -23,7 +23,7 @@ namespace Gothic_I_Addon {
     ~zTCSBlockPosition() zCall( 0x00419540 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTCSBlockPosition.inl"
+    #include "Gothic_UserAPI\zTCSBlockPosition.inl"
   };
 
   // sizeof 50h
@@ -60,7 +60,7 @@ namespace Gothic_I_Addon {
     virtual zSTRING MD_GetSubTypeString( int )                                                    zCall( 0x0040D510 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCEvMsgCutscene.inl"
+    #include "Gothic_UserAPI\zCEvMsgCutscene.inl"
   };
 
   // sizeof 44h
@@ -127,7 +127,7 @@ namespace Gothic_I_Addon {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040D970 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlockBase.inl"
+    #include "Gothic_UserAPI\zCCSBlockBase.inl"
   };
 
   // sizeof 34h
@@ -164,7 +164,7 @@ namespace Gothic_I_Addon {
     virtual zCEventMessage* GetCommand()                                zCall( 0x0040B700 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSAtomicBlock.inl"
+    #include "Gothic_UserAPI\zCCSAtomicBlock.inl"
   };
 
   // sizeof 0Ch
@@ -185,7 +185,7 @@ namespace Gothic_I_Addon {
     virtual ~zCCSBlockPosition()                              zCall( 0x004183E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlockPosition.inl"
+    #include "Gothic_UserAPI\zCCSBlockPosition.inl"
   };
 
   // sizeof 44h
@@ -224,7 +224,7 @@ namespace Gothic_I_Addon {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040E310 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlock.inl"
+    #include "Gothic_UserAPI\zCCSBlock.inl"
   };
 
   // sizeof 50h
@@ -253,7 +253,7 @@ namespace Gothic_I_Addon {
     virtual void BlockAsFocus( int )                                    zCall( 0x0040F140 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSSyncBlock.inl"
+    #include "Gothic_UserAPI\zCCSSyncBlock.inl"
   };
 
   // sizeof 80h
@@ -340,7 +340,7 @@ namespace Gothic_I_Addon {
     virtual void PrepareBlock()                                         zCall( 0x00410E20 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCutscene.inl"
+    #include "Gothic_UserAPI\zCCutscene.inl"
   };
 
 } // namespace Gothic_I_Addon

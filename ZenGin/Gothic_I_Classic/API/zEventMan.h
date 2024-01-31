@@ -68,7 +68,7 @@ namespace Gothic_I_Classic {
     static int& showMsgCommunication;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCEventManager.inl"
+    #include "Gothic_UserAPI\zCEventManager.inl"
   };
 
 } // namespace Gothic_I_Classic

@@ -39,7 +39,7 @@ namespace Gothic_I_Addon {
     static zCView*& posView;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCDoc.inl"
+    #include "Gothic_UserAPI\oCDoc.inl"
   };
 
 } // namespace Gothic_I_Addon

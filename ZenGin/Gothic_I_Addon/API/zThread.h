@@ -43,7 +43,7 @@ namespace Gothic_I_Addon {
     virtual unsigned long ThreadProc()          zCall( 0x005ECF20 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCThread.inl"
+    #include "Gothic_UserAPI\zCThread.inl"
   };
 
   // sizeof 04h
@@ -59,7 +59,7 @@ namespace Gothic_I_Addon {
     virtual int Unlock()              zPureCall;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSyncObject.inl"
+    #include "Gothic_UserAPI\zCSyncObject.inl"
   };
 
   // sizeof 1Ch
@@ -76,7 +76,7 @@ namespace Gothic_I_Addon {
     virtual int Unlock()                        zCall( 0x005ED080 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCriticalSection.inl"
+    #include "Gothic_UserAPI\zCCriticalSection.inl"
   };
 
   // sizeof 08h
@@ -93,7 +93,7 @@ namespace Gothic_I_Addon {
     virtual int Unlock()              zCall( 0x005ED240 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMutex.inl"
+    #include "Gothic_UserAPI\zCMutex.inl"
   };
 
 } // namespace Gothic_I_Addon

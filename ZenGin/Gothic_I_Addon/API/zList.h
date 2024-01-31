@@ -209,7 +209,7 @@ namespace Gothic_I_Addon {
     int IsEmpty() const { return (numInArray == 0); }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPQueue.inl"
+    #include "Gothic_UserAPI\zCPQueue.inl"
   };
 
   template <class T>
@@ -353,7 +353,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCListSort.inl"
+    #include "Gothic_UserAPI\zCListSort.inl"
   };
 
   template <class T>

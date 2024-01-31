@@ -43,7 +43,7 @@ namespace Gothic_I_Addon {
     static zCPar_TreeNode* MakeMonadicNode( int, zCPar_TreeNode* )                 zCall( 0x00727840 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPar_TreeNode.inl"
+    #include "Gothic_UserAPI\zCPar_TreeNode.inl"
   };
 
   // sizeof 2Ch
@@ -83,7 +83,7 @@ namespace Gothic_I_Addon {
     void DeleteTree()                                zCall( 0x0071D630 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPar_File.inl"
+    #include "Gothic_UserAPI\zCPar_File.inl"
   };
 
   // sizeof 11C4h
@@ -282,7 +282,7 @@ namespace Gothic_I_Addon {
     static zCParser*& cur_parser;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCParser.inl"
+    #include "Gothic_UserAPI\zCParser.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -48,7 +48,7 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                      zCall( 0x007660F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCViewDialogStealContainer.inl"
+    #include "Gothic_UserAPI\oCViewDialogStealContainer.inl"
   };
 
 } // namespace Gothic_I_Addon

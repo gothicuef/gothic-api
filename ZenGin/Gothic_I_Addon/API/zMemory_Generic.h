@@ -26,7 +26,7 @@ namespace Gothic_I_Addon {
     virtual int Shutdown()                                              zCall( 0x005671A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMallocGeneric.inl"
+    #include "Gothic_UserAPI\zCMallocGeneric.inl"
   };
 
 } // namespace Gothic_I_Addon

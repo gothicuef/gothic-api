@@ -42,7 +42,7 @@ namespace Gothic_II_Classic {
     /* for zCViewBase num : 9*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewDraw.inl"
+    #include "Gothic_UserAPI\zCViewDraw.inl"
   };
 
 } // namespace Gothic_II_Classic

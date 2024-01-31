@@ -43,7 +43,7 @@ namespace Gothic_I_Addon {
     virtual void Unarchive( zCArchiver& )                      zCall( 0x006A3190 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMissionManager.inl"
+    #include "Gothic_UserAPI\oCMissionManager.inl"
   };
 
   // sizeof 80h
@@ -61,7 +61,7 @@ namespace Gothic_I_Addon {
       float startTime;     // sizeof 04h    offset 08h
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCMission_TMisStatus.inl"
+      #include "Gothic_UserAPI\oCMission_TMisStatus.inl"
     };
 
     group {
@@ -116,7 +116,7 @@ namespace Gothic_I_Addon {
     virtual oCMission* Unarchive( zCArchiver& ) zCall( 0x006A4D50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMission.inl"
+    #include "Gothic_UserAPI\oCMission.inl"
   };
 
 } // namespace Gothic_I_Addon

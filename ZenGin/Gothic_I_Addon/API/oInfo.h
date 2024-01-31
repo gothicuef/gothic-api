@@ -28,7 +28,7 @@ namespace Gothic_I_Addon {
     ~oCInfoChoice() zCall( 0x006932A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCInfoChoice.inl"
+    #include "Gothic_UserAPI\oCInfoChoice.inl"
   };
 
   // sizeof 5Ch
@@ -54,7 +54,7 @@ namespace Gothic_I_Addon {
       ~Tpd() zCall( 0x00692900 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCInfo_Tpd.inl"
+      #include "Gothic_UserAPI\oCInfo_Tpd.inl"
     };
 #pragma pack( pop )
 
@@ -88,7 +88,7 @@ namespace Gothic_I_Addon {
     virtual void RestoreParserInstance()  zCall( 0x00692F50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCInfo.inl"
+    #include "Gothic_UserAPI\oCInfo.inl"
   };
 
   // sizeof 14h
@@ -121,7 +121,7 @@ namespace Gothic_I_Addon {
     static int& size_checked;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCInfoManager.inl"
+    #include "Gothic_UserAPI\oCInfoManager.inl"
   };
 
 } // namespace Gothic_I_Addon

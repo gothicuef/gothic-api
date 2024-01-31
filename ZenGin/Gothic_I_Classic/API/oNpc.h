@@ -267,7 +267,7 @@ namespace Gothic_I_Classic {
     virtual ~oCNpcTalent()                                              zCall( 0x0068A260 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpcTalent.inl"
+    #include "Gothic_UserAPI\oCNpcTalent.inl"
   };
 
   // sizeof 38h
@@ -289,7 +289,7 @@ namespace Gothic_I_Classic {
     ~TNpcSlot()            zCall( 0x0068C760 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\TNpcSlot.inl"
+    #include "Gothic_UserAPI\TNpcSlot.inl"
   };
 
   // sizeof 08h
@@ -303,7 +303,7 @@ namespace Gothic_I_Classic {
     TNpcPerc() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\TNpcPerc.inl"
+    #include "Gothic_UserAPI\TNpcPerc.inl"
   };
 
   // sizeof A38h
@@ -451,7 +451,7 @@ namespace Gothic_I_Classic {
       oSDirectionInfo() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCNpc_oSDirectionInfo.inl"
+      #include "Gothic_UserAPI\oCNpc_oSDirectionInfo.inl"
     };
 
     // sizeof 9Ch
@@ -492,7 +492,7 @@ namespace Gothic_I_Classic {
       ~oTRobustTrace() zCall( 0x0068BE90 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCNpc_oTRobustTrace.inl"
+      #include "Gothic_UserAPI\oCNpc_oTRobustTrace.inl"
     };
 
     // sizeof 04h
@@ -511,7 +511,7 @@ namespace Gothic_I_Classic {
       ~TActiveInfo()                          zCall( 0x0068A590 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCNpc_TActiveInfo.inl"
+      #include "Gothic_UserAPI\oCNpc_TActiveInfo.inl"
     };
 
     // sizeof 18h
@@ -528,7 +528,7 @@ namespace Gothic_I_Classic {
       int Process()        zCall( 0x006B8B10 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\oCNpc_oCNpcTimedOverlay.inl"
+      #include "Gothic_UserAPI\oCNpc_oCNpcTimedOverlay.inl"
     };
 
     group {
@@ -1340,7 +1340,7 @@ namespace Gothic_I_Classic {
     static int& isEnabledTalkBox;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpc.inl"
+    #include "Gothic_UserAPI\oCNpc.inl"
   };
 
 } // namespace Gothic_I_Classic

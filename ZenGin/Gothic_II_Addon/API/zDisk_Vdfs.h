@@ -74,7 +74,7 @@ namespace Gothic_II_Addon {
     static zCCriticalSection*& s_criticalSection;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zFILE_VDFS.inl"
+    #include "Gothic_UserAPI\zFILE_VDFS.inl"
   };
 
 } // namespace Gothic_II_Addon

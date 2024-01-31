@@ -33,7 +33,7 @@ namespace Gothic_II_Classic {
     virtual void DoAI( zCVob*, int& ) zCall( 0x0065F7C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCAskBox.inl"
+    #include "Gothic_UserAPI\oCAskBox.inl"
   };
 
 } // namespace Gothic_II_Classic

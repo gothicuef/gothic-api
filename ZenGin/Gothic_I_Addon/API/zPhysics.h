@@ -65,7 +65,7 @@ namespace Gothic_I_Addon {
     void Unarchive( zCArchiver& )                                            zCall( 0x005B1540 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRigidBody.inl"
+    #include "Gothic_UserAPI\zCRigidBody.inl"
   };
 
 } // namespace Gothic_I_Addon

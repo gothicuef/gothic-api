@@ -141,7 +141,7 @@ namespace Gothic_I_Classic {
     static zCVertexBufferDyn2*& s_vertBufferDynTex2Normal;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRenderManager.inl"
+    #include "Gothic_UserAPI\zCRenderManager.inl"
   };
 
   // sizeof 30h
@@ -165,7 +165,7 @@ namespace Gothic_I_Classic {
     zCShaderStage()             zInit( zCShaderStage_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCShaderStage.inl"
+    #include "Gothic_UserAPI\zCShaderStage.inl"
   };
 
   // sizeof 20h
@@ -186,7 +186,7 @@ namespace Gothic_I_Classic {
     void InsertStage( int, zCShaderStage* ) zCall( 0x005B1100 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCShader.inl"
+    #include "Gothic_UserAPI\zCShader.inl"
   };
 
   // sizeof 01h
@@ -205,7 +205,7 @@ namespace Gothic_I_Classic {
       ~zTMapDetailTextureEntry() zCall( 0x005B3F00 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCMapDetailTexture_zTMapDetailTextureEntry.inl"
+      #include "Gothic_UserAPI\zCMapDetailTexture_zTMapDetailTextureEntry.inl"
     };
 
     zCMapDetailTexture() {}
@@ -214,7 +214,7 @@ namespace Gothic_I_Classic {
     static zTMapDetailTextureEntry const* S_GetDetailTextureInfo( zSTRING const& ) zCall( 0x005B3FE0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMapDetailTexture.inl"
+    #include "Gothic_UserAPI\zCMapDetailTexture.inl"
   };
 
 } // namespace Gothic_I_Classic
