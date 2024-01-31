@@ -42,7 +42,7 @@ namespace Gothic_I_Addon {
     void EndEditActive()                                      zCall( 0x00700480 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCParticleControl.inl"
+    #include "oCParticleControl.inl"
   };
 
 } // namespace Gothic_I_Addon

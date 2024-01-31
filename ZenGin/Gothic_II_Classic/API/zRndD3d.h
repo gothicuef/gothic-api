@@ -42,7 +42,7 @@ namespace Gothic_II_Classic {
       zD3D_vertexFormat() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zD3D_alphaPoly_zD3D_vertexFormat.inl"
+      #include "zD3D_alphaPoly_zD3D_vertexFormat.inl"
     };
 
     zTRnd_AlphaBlendFunc alphafunc;          // sizeof 04h    offset 0Ch
@@ -69,7 +69,7 @@ namespace Gothic_II_Classic {
     static int& actnov;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zD3D_alphaPoly.inl"
+    #include "zD3D_alphaPoly.inl"
   };
 
   // sizeof 82E80h
@@ -109,7 +109,7 @@ namespace Gothic_II_Classic {
       zD3D_Status() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCRnd_D3D_zD3D_Status.inl"
+      #include "zCRnd_D3D_zD3D_Status.inl"
     };
 
     // sizeof 54h
@@ -141,7 +141,7 @@ namespace Gothic_II_Classic {
       zD3D_Caps() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCRnd_D3D_zD3D_Caps.inl"
+      #include "zCRnd_D3D_zD3D_Caps.inl"
     };
 
     int fogType;                                                           // sizeof 04h    offset 34h
@@ -348,7 +348,7 @@ namespace Gothic_II_Classic {
     static int& xd3d_palsupp;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRnd_D3D.inl"
+    #include "zCRnd_D3D.inl"
   };
 
   // sizeof 28804h
@@ -369,7 +369,7 @@ namespace Gothic_II_Classic {
       zCSlotIndex() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSurfaceCache_D3D_zCSlotIndex.inl"
+      #include "zCSurfaceCache_D3D_zCSlotIndex.inl"
     };
 
     // sizeof 0Ch
@@ -383,7 +383,7 @@ namespace Gothic_II_Classic {
       zD3D_Entry() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSurfaceCache_D3D_zD3D_Entry.inl"
+      #include "zCSurfaceCache_D3D_zD3D_Entry.inl"
     };
 
     // sizeof 08h
@@ -396,7 +396,7 @@ namespace Gothic_II_Classic {
       zD3D_SlotHeader() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCSurfaceCache_D3D_zD3D_SlotHeader.inl"
+      #include "zCSurfaceCache_D3D_zD3D_SlotHeader.inl"
     };
 
     int xsc_cacheentryCounter;                  // sizeof 04h    offset 00h
@@ -417,7 +417,7 @@ namespace Gothic_II_Classic {
     static int& xsc_listposition;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSurfaceCache_D3D.inl"
+    #include "zCSurfaceCache_D3D.inl"
   };
 
   // sizeof 904h
@@ -436,7 +436,7 @@ namespace Gothic_II_Classic {
       zD3D_Entry() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCDXTCCache_D3D_zD3D_Entry.inl"
+      #include "zCDXTCCache_D3D_zD3D_Entry.inl"
     };
 
     // sizeof 08h
@@ -449,7 +449,7 @@ namespace Gothic_II_Classic {
       zD3D_SlotHeader() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCDXTCCache_D3D_zD3D_SlotHeader.inl"
+      #include "zCDXTCCache_D3D_zD3D_SlotHeader.inl"
     };
 
     int xdxtc_cacheentryCounter;           // sizeof 04h    offset 00h
@@ -464,7 +464,7 @@ namespace Gothic_II_Classic {
     IDirectDrawSurface7* XDXTC_CreateSurface( int, int, int, zD3D_Entry* ) zCall( 0x00757ED0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCDXTCCache_D3D.inl"
+    #include "zCDXTCCache_D3D.inl"
   };
 
   // sizeof 0Ch
@@ -478,7 +478,7 @@ namespace Gothic_II_Classic {
     zD3D_savedTexture() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zD3D_savedTexture.inl"
+    #include "zD3D_savedTexture.inl"
   };
 
   // sizeof 13Ch
@@ -529,7 +529,7 @@ namespace Gothic_II_Classic {
     virtual int CopyTextureDataTo( int, void*, int )   zCall( 0x00767740 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCTex_D3D.inl"
+    #include "zCTex_D3D.inl"
   };
 
   // sizeof 88h
@@ -570,7 +570,7 @@ namespace Gothic_II_Classic {
     static zCArray<zCVertexBuffer_D3D*>& xvb_vertexbufferList;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVertexBuffer_D3D.inl"
+    #include "zCVertexBuffer_D3D.inl"
   };
 
 } // namespace Gothic_II_Classic

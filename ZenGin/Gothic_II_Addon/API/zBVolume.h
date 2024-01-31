@@ -20,7 +20,7 @@ namespace Gothic_II_Addon {
     void Draw( zCOLOR const& ) const                       zCall( 0x005441F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTBSphere3D.inl"
+    #include "zTBSphere3D.inl"
   };
 
   // sizeof 10h
@@ -37,7 +37,7 @@ namespace Gothic_II_Addon {
     void Draw() const                     zCall( 0x00546C10 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTBBox2D.inl"
+    #include "zTBBox2D.inl"
   };
 
   // sizeof 18h
@@ -89,7 +89,7 @@ namespace Gothic_II_Addon {
     int IsIntersecting( zTBBox3D const& ) const                                                zCall( 0x006039C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTBBox3D.inl"
+    #include "zTBBox3D.inl"
   };
 
   // sizeof 14h
@@ -106,7 +106,7 @@ namespace Gothic_II_Addon {
     void SetByBBox3D( zTBBox3D )                     zCall( 0x00543F30 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTBCylinder3D.inl"
+    #include "zTBCylinder3D.inl"
   };
 
   // sizeof 44h
@@ -142,7 +142,7 @@ namespace Gothic_II_Addon {
     static zMAT4& trafoB2ToThis;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCOBBox3D.inl"
+    #include "zCOBBox3D.inl"
   };
 
 } // namespace Gothic_II_Addon

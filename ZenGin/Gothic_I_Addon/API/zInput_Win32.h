@@ -53,7 +53,7 @@ namespace Gothic_I_Addon {
     virtual void ProcessInputEvents()                                      zCall( 0x004D8CC0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCInput_Win32.inl"
+    #include "zCInput_Win32.inl"
   };
 
 } // namespace Gothic_I_Addon

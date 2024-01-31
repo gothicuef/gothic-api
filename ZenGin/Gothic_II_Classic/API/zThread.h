@@ -43,7 +43,7 @@ namespace Gothic_II_Classic {
     virtual unsigned long ThreadProc()          zCall( 0x005F2530 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCThread.inl"
+    #include "zCThread.inl"
   };
 
   // sizeof 04h
@@ -59,7 +59,7 @@ namespace Gothic_II_Classic {
     virtual int Unlock()              zPureCall;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCSyncObject.inl"
+    #include "zCSyncObject.inl"
   };
 
   // sizeof 1Ch
@@ -76,7 +76,7 @@ namespace Gothic_II_Classic {
     virtual int Unlock()                        zCall( 0x005F2690 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCriticalSection.inl"
+    #include "zCCriticalSection.inl"
   };
 
   // sizeof 08h
@@ -93,7 +93,7 @@ namespace Gothic_II_Classic {
     virtual int Unlock()              zCall( 0x005F2810 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMutex.inl"
+    #include "zCMutex.inl"
   };
 
 } // namespace Gothic_II_Classic

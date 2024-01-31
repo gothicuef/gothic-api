@@ -38,7 +38,7 @@ namespace Gothic_II_Classic {
     virtual zCNetMessage* CreateNetMessage( unsigned short const& )               zCall( 0x0045E170 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetVobControl.inl"
+    #include "zCNetVobControl.inl"
   };
 
 } // namespace Gothic_II_Classic

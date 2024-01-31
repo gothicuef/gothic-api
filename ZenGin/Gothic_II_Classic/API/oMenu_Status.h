@@ -31,7 +31,7 @@ namespace Gothic_II_Classic {
     oSMenuInfoAttribute()             zInit( oSMenuInfoAttribute_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oSMenuInfoAttribute.inl"
+    #include "oSMenuInfoAttribute.inl"
   };
 
   // sizeof 04h
@@ -50,7 +50,7 @@ namespace Gothic_II_Classic {
     oSMenuInfoArmor() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\oSMenuInfoArmor.inl"
+    #include "oSMenuInfoArmor.inl"
   };
 
   // sizeof 44h
@@ -68,7 +68,7 @@ namespace Gothic_II_Classic {
     oSMenuInfoTalent()             zInit( oSMenuInfoTalent_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oSMenuInfoTalent.inl"
+    #include "oSMenuInfoTalent.inl"
   };
 
   // sizeof CD8h
@@ -100,7 +100,7 @@ namespace Gothic_II_Classic {
     virtual int ExecCommand( zSTRING const& )                           zCall( 0x0047B1C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMenu_Log.inl"
+    #include "oCMenu_Log.inl"
   };
 
   // sizeof CE8h
@@ -128,7 +128,7 @@ namespace Gothic_II_Classic {
     virtual ~oCMenu_Status()                                                            zCall( 0x0047C340 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMenu_Status.inl"
+    #include "oCMenu_Status.inl"
   };
 
   // sizeof 08h
@@ -144,7 +144,7 @@ namespace Gothic_II_Classic {
     virtual ~oCStatusScreen()    zCall( 0x0047D680 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCStatusScreen.inl"
+    #include "oCStatusScreen.inl"
   };
 
   // sizeof 08h
@@ -160,7 +160,7 @@ namespace Gothic_II_Classic {
     virtual ~oCLogScreen()    zCall( 0x0047DD20 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCLogScreen.inl"
+    #include "oCLogScreen.inl"
   };
 
   // sizeof 04h
@@ -175,7 +175,7 @@ namespace Gothic_II_Classic {
     virtual ~oCMapScreen()    zCall( 0x0047E320 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCMapScreen.inl"
+    #include "oCMapScreen.inl"
   };
 
 } // namespace Gothic_II_Classic

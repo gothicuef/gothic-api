@@ -36,7 +36,7 @@ namespace Gothic_I_Addon {
     /* for oCViewDocumentMap num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCViewDocumentMap.inl"
+    #include "oCViewDocumentMap.inl"
   };
 
 } // namespace Gothic_I_Addon

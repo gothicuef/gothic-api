@@ -132,7 +132,7 @@ namespace Gothic_I_Addon {
     static zCGfx** gfx_arrow;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCItemContainer.inl"
+    #include "oCItemContainer.inl"
   };
 
   // sizeof A0h
@@ -152,7 +152,7 @@ namespace Gothic_I_Addon {
     virtual void CreateList()                     zCall( 0x00697FA0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCStealContainer.inl"
+    #include "oCStealContainer.inl"
   };
 
   // sizeof A0h
@@ -170,7 +170,7 @@ namespace Gothic_I_Addon {
     virtual void CreateList()                    zCall( 0x00698570 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpcContainer.inl"
+    #include "oCNpcContainer.inl"
   };
 
   // sizeof 234h
@@ -242,7 +242,7 @@ namespace Gothic_I_Addon {
     static zCGfx** gfx_cats;
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCNpcInventory.inl"
+    #include "oCNpcInventory.inl"
   };
 
 } // namespace Gothic_I_Addon

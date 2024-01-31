@@ -171,7 +171,7 @@ namespace Gothic_I_Classic {
     static zVEC2 String2Vec2( zSTRING const& )                 zCall( 0x00592930 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCParticleEmitter.inl"
+    #include "zCParticleEmitter.inl"
   };
 
   // sizeof 1Ch
@@ -190,7 +190,7 @@ namespace Gothic_I_Classic {
     zCParticleEmitterVars() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCParticleEmitterVars.inl"
+    #include "zCParticleEmitterVars.inl"
   };
 
   // sizeof B0h
@@ -215,7 +215,7 @@ namespace Gothic_I_Classic {
       int IsInList( zCParticleFX* )       zCall( 0x0058DC50 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCParticleFX_zCStaticPfxList.inl"
+      #include "zCParticleFX_zCStaticPfxList.inl"
     };
 
     zTParticle* firstPart;                     // sizeof 04h    offset 34h
@@ -295,7 +295,7 @@ namespace Gothic_I_Classic {
     static zCStaticPfxList& s_pfxList;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCParticleFX.inl"
+    #include "zCParticleFX.inl"
   };
 
 } // namespace Gothic_I_Classic

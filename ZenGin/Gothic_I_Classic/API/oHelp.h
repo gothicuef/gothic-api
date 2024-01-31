@@ -32,7 +32,7 @@ namespace Gothic_I_Classic {
     void Redraw( zCVob* ) zCall( 0x00664320 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCHelp.inl"
+    #include "oCHelp.inl"
   };
 
 } // namespace Gothic_I_Classic

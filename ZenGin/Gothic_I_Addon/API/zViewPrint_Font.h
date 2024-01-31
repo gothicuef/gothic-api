@@ -29,7 +29,7 @@ namespace Gothic_I_Addon {
     void __fastcall SetFont( zSTRING& )                                   zCall( 0x0079A5A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewFont.inl"
+    #include "zCViewFont.inl"
   };
 
   // sizeof 3Ch
@@ -66,7 +66,7 @@ namespace Gothic_I_Addon {
     ~zCViewText2()                                                                                                zCall( 0x0079A460 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewText2.inl"
+    #include "zCViewText2.inl"
   };
 
 } // namespace Gothic_I_Addon

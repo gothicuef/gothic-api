@@ -25,7 +25,7 @@ namespace Gothic_II_Addon {
     zCCircleArc3D() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCircleArc3D.inl"
+    #include "zCCircleArc3D.inl"
   };
 
   // sizeof 8E4h
@@ -73,7 +73,7 @@ namespace Gothic_II_Addon {
     static zMAT4& tmpMat;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPose.inl"
+    #include "zCPose.inl"
   };
 
 } // namespace Gothic_II_Addon

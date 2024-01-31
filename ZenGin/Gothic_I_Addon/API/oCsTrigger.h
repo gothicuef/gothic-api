@@ -23,7 +23,7 @@ namespace Gothic_I_Addon {
     virtual void UntriggerTarget( zCVob* )                              zCall( 0x004050B0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCCSTrigger.inl"
+    #include "oCCSTrigger.inl"
   };
 
 } // namespace Gothic_I_Addon

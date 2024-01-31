@@ -39,7 +39,7 @@ namespace Gothic_II_Addon {
     virtual void SetInstanceByName( zSTRING const& )    zCall( 0x00436590 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCPlayerInfo.inl"
+    #include "oCPlayerInfo.inl"
   };
 
 } // namespace Gothic_II_Addon

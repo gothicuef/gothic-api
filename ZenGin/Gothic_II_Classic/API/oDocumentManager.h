@@ -42,7 +42,7 @@ namespace Gothic_II_Classic {
     virtual int HandleEvent( int )                                              zCall( 0x00770F00 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCDocumentManager.inl"
+    #include "oCDocumentManager.inl"
   };
 
 } // namespace Gothic_II_Classic

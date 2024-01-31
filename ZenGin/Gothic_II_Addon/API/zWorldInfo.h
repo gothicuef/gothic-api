@@ -31,7 +31,7 @@ namespace Gothic_II_Addon {
     virtual ~zCWorldInfo()                    zCall( 0x0046FA10 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWorldInfo.inl"
+    #include "zCWorldInfo.inl"
   };
 
 } // namespace Gothic_II_Addon

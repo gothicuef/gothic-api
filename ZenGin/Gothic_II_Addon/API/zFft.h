@@ -42,7 +42,7 @@ namespace Gothic_II_Addon {
     float GetGaussAt( long )              zCall( 0x0055B220 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zRandom_Gauss.inl"
+    #include "zRandom_Gauss.inl"
   };
 
   // sizeof 1Ch
@@ -87,7 +87,7 @@ namespace Gothic_II_Addon {
     static zCFFT& s_fftFast;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCFFT.inl"
+    #include "zCFFT.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -55,7 +55,7 @@ namespace Gothic_II_Classic {
     ~zTLazyMesh()            zCall( 0x005BDF10 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTLazyMesh.inl"
+    #include "zTLazyMesh.inl"
   };
 
   // sizeof 18h
@@ -69,7 +69,7 @@ namespace Gothic_II_Classic {
     zTPMWedge() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMWedge.inl"
+    #include "zTPMWedge.inl"
   };
 
   // sizeof 06h
@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
     zTPMTriangle() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMTriangle.inl"
+    #include "zTPMTriangle.inl"
   };
 
   // sizeof 06h
@@ -93,7 +93,7 @@ namespace Gothic_II_Classic {
     zTPMTriangleEdges() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMTriangleEdges.inl"
+    #include "zTPMTriangleEdges.inl"
   };
 
   // sizeof 04h
@@ -105,7 +105,7 @@ namespace Gothic_II_Classic {
     zTPMEdge() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMEdge.inl"
+    #include "zTPMEdge.inl"
   };
 
   // sizeof 04h
@@ -118,7 +118,7 @@ namespace Gothic_II_Classic {
     zTPMVertexUpdate() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPMVertexUpdate.inl"
+    #include "zTPMVertexUpdate.inl"
   };
 
   // sizeof D8h
@@ -138,7 +138,7 @@ namespace Gothic_II_Classic {
       zTLODRenderArgs() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgs.inl"
+      #include "zCProgMeshProto_zTLODRenderArgs.inl"
     };
 
     // sizeof 10h
@@ -153,7 +153,7 @@ namespace Gothic_II_Classic {
       zTLODParams() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODParams.inl"
+      #include "zCProgMeshProto_zTLODParams.inl"
     };
 
     // sizeof 58h
@@ -179,7 +179,7 @@ namespace Gothic_II_Classic {
       ~zCSubMesh()            zCall( 0x005C0EF0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zCSubMesh.inl"
+      #include "zCProgMeshProto_zCSubMesh.inl"
     };
 
     // sizeof 10h
@@ -194,7 +194,7 @@ namespace Gothic_II_Classic {
       zTLODRenderArgsSubMesh() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
+      #include "zCProgMeshProto_zTLODRenderArgsSubMesh.inl"
     };
 
     zCArrayAdapt<zVEC3> posList;        // sizeof 08h    offset 34h
@@ -280,7 +280,7 @@ namespace Gothic_II_Classic {
     static unsigned long& s_classCtorCtr;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshProto.inl"
+    #include "zCProgMeshProto.inl"
   };
 
   // sizeof 01h
@@ -302,7 +302,7 @@ namespace Gothic_II_Classic {
     int BuildProgMeshProto( zCMesh*, zCProgMeshProto*, zCArray<int>*, int )                 zCall( 0x005BE2D0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshBuilder.inl"
+    #include "zCProgMeshBuilder.inl"
   };
 
   // sizeof 104h
@@ -323,7 +323,7 @@ namespace Gothic_II_Classic {
       zTWeightEntry()             zInit( zTWeightEntry_OnInit() );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTWeightEntry.inl"
+      #include "zCMeshSoftSkin_zTWeightEntry.inl"
     };
 #pragma pack( pop )
 
@@ -337,7 +337,7 @@ namespace Gothic_II_Classic {
       zTNodeWedgeNormal() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCMeshSoftSkin_zTNodeWedgeNormal.inl"
+      #include "zCMeshSoftSkin_zTNodeWedgeNormal.inl"
     };
 
     zCArray<int> nodeIndexList;                     // sizeof 0Ch    offset D8h
@@ -366,7 +366,7 @@ namespace Gothic_II_Classic {
     virtual int Load( zCFileBIN& )                                                                            zCall( 0x005C86C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMeshSoftSkin.inl"
+    #include "zCMeshSoftSkin.inl"
   };
 
   // sizeof 30h
@@ -381,7 +381,7 @@ namespace Gothic_II_Classic {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005C9640 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCProgMeshConvertFileHandler.inl"
+    #include "zCProgMeshConvertFileHandler.inl"
   };
 
 } // namespace Gothic_II_Classic

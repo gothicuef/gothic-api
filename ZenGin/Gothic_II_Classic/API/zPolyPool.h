@@ -21,7 +21,7 @@ namespace Gothic_II_Classic {
     zCVertexFeaturePool() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVertexFeaturePool.inl"
+    #include "zCVertexFeaturePool.inl"
   };
 
   // sizeof 08h
@@ -35,7 +35,7 @@ namespace Gothic_II_Classic {
     zCPolygonPool() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPolygonPool.inl"
+    #include "zCPolygonPool.inl"
   };
 
   // sizeof 0Ch
@@ -50,7 +50,7 @@ namespace Gothic_II_Classic {
     zCVertexPool() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVertexPool.inl"
+    #include "zCVertexPool.inl"
   };
 
   // sizeof 14h
@@ -67,7 +67,7 @@ namespace Gothic_II_Classic {
     zCMeshPool() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMeshPool.inl"
+    #include "zCMeshPool.inl"
   };
 
   // sizeof 08h
@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
     zCMeshesPool() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMeshesPool.inl"
+    #include "zCMeshesPool.inl"
   };
 
 } // namespace Gothic_II_Classic

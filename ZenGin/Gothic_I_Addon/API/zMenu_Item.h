@@ -192,7 +192,7 @@ namespace Gothic_I_Addon {
     static zCMenuItem*& tmp;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItem.inl"
+    #include "zCMenuItem.inl"
   };
 
   // sizeof 3F0h
@@ -221,7 +221,7 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                      zCall( 0x004E27A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemInput.inl"
+    #include "zCMenuItemInput.inl"
   };
 
   // sizeof 400h
@@ -259,7 +259,7 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                         zCall( 0x004E6FB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemText.inl"
+    #include "zCMenuItemText.inl"
   };
 
   // sizeof 3E4h
@@ -288,7 +288,7 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                       zCall( 0x004E27E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemSlider.inl"
+    #include "zCMenuItemSlider.inl"
   };
 
   // sizeof 3ECh
@@ -312,7 +312,7 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemButton.inl"
+    #include "zCMenuItemButton.inl"
   };
 
   // sizeof 3E4h
@@ -344,7 +344,7 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemChoice.inl"
+    #include "zCMenuItemChoice.inl"
   };
 
   // sizeof 2Ch
@@ -360,7 +360,7 @@ namespace Gothic_I_Addon {
     zTMenuItemListElement()             zInit( zTMenuItemListElement_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTMenuItemListElement.inl"
+    #include "zTMenuItemListElement.inl"
   };
 
   // sizeof 3F4h
@@ -402,7 +402,7 @@ namespace Gothic_I_Addon {
     virtual int HandleEvent( int )                                     zCall( 0x004EA7A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemList.inl"
+    #include "zCMenuItemList.inl"
   };
 
 } // namespace Gothic_I_Addon

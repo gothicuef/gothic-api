@@ -37,7 +37,7 @@ namespace Gothic_I_Addon {
     ~zCConDat()                                                                zCall( 0x007149C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConDat.inl"
+    #include "zCConDat.inl"
   };
 
   // sizeof E0h
@@ -114,7 +114,7 @@ namespace Gothic_I_Addon {
     static zCConsole*& cur_console;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCConsole.inl"
+    #include "zCConsole.inl"
   };
 
 } // namespace Gothic_I_Addon

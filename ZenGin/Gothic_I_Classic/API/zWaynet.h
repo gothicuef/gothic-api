@@ -29,7 +29,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobWaypoint()                                            zCall( 0x00703010 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobWaypoint.inl"
+    #include "zCVobWaypoint.inl"
   };
 
   // sizeof 7Ch
@@ -80,7 +80,7 @@ namespace Gothic_I_Classic {
     virtual int CanBeUsed( zCVob const* )                               zCall( 0x00705C60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWaypoint.inl"
+    #include "zCWaypoint.inl"
   };
 
   // sizeof 20h
@@ -118,7 +118,7 @@ namespace Gothic_I_Classic {
     virtual int IsObjectOnWay( zCVob const* )     zCall( 0x00704C60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWay.inl"
+    #include "zCWay.inl"
   };
 
   // sizeof 4Ch
@@ -192,7 +192,7 @@ namespace Gothic_I_Classic {
     virtual ~zCWayNet()                                                 zCall( 0x007031A0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCWayNet.inl"
+    #include "zCWayNet.inl"
   };
 
   // sizeof 1Ch
@@ -221,7 +221,7 @@ namespace Gothic_I_Classic {
     virtual ~zCRoute()                                zCall( 0x00708BA0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRoute.inl"
+    #include "zCRoute.inl"
   };
 
   // sizeof 108h
@@ -241,7 +241,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobSpot()                                                zCall( 0x00709300 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobSpot.inl"
+    #include "zCVobSpot.inl"
   };
 
   // sizeof 100h
@@ -255,7 +255,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobStartpoint()                                          zCall( 0x00709CD0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobStartpoint.inl"
+    #include "zCVobStartpoint.inl"
   };
 
 } // namespace Gothic_I_Classic

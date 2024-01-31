@@ -42,7 +42,7 @@ namespace Gothic_II_Addon {
     zCTex_D3D* texture; // sizeof 04h    offset 04h
 
     // user API
-    #include "..\..\Gothic_UserAPI\zD3DTEX.inl"
+    #include "zD3DTEX.inl"
   };
 
 } // namespace Gothic_II_Addon

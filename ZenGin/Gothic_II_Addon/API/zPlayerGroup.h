@@ -38,7 +38,7 @@ namespace Gothic_II_Addon {
     static zCList<zCPlayerGroup>& group_list;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCPlayerGroup.inl"
+    #include "zCPlayerGroup.inl"
   };
 
 } // namespace Gothic_II_Addon

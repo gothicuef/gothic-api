@@ -93,7 +93,7 @@ namespace Gothic_I_Classic {
     virtual void Unpack( zCBuffer&, zCEventManager* )                               zCall( 0x00401F70 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCEventMessage.inl"
+    #include "zCEventMessage.inl"
   };
 
   // sizeof 4Ch
@@ -132,7 +132,7 @@ namespace Gothic_I_Classic {
     virtual void Unpack( zCBuffer&, zCEventManager* )                   zCall( 0x005D98E0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCEventCore.inl"
+    #include "zCEventCore.inl"
   };
 
   // sizeof 100h
@@ -175,7 +175,7 @@ namespace Gothic_I_Classic {
       ~zTCollisionContext() zCall( 0x005F1EE0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCVob_zTCollisionContext.inl"
+      #include "zCVob_zTCollisionContext.inl"
     };
 
     // sizeof 18h
@@ -191,7 +191,7 @@ namespace Gothic_I_Classic {
       ~zTModelLimbColl()            zCall( 0x005D83B0 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCVob_zTModelLimbColl.inl"
+      #include "zCVob_zTModelLimbColl.inl"
     };
 
     zCTree<zCVob>* globalVobTreeNode;               // sizeof 04h    offset 24h
@@ -424,7 +424,7 @@ namespace Gothic_I_Classic {
     static zCCollisionDetector*& s_poCollisionDetector;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVob.inl"
+    #include "zCVob.inl"
   };
 
   // sizeof 48h
@@ -466,7 +466,7 @@ namespace Gothic_I_Classic {
     void SetRange( float, int )                zCall( 0x005DDC80 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobLightData.inl"
+    #include "zCVobLightData.inl"
   };
 
   // sizeof 80h
@@ -485,7 +485,7 @@ namespace Gothic_I_Classic {
     virtual ~zCVobLightPreset()                                         zCall( 0x005D24F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobLightPreset.inl"
+    #include "zCVobLightPreset.inl"
   };
 
   // sizeof 15Ch
@@ -521,7 +521,7 @@ namespace Gothic_I_Classic {
     static int& renderLightVisuals;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobLight.inl"
+    #include "zCVobLight.inl"
   };
 
   // sizeof 100h
@@ -545,7 +545,7 @@ namespace Gothic_I_Classic {
     static int& unarcIgnoreVisuals;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobLevelCompo.inl"
+    #include "zCVobLevelCompo.inl"
   };
 
 } // namespace Gothic_I_Classic

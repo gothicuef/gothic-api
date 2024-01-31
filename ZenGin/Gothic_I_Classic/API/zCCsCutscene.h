@@ -24,7 +24,7 @@ namespace Gothic_I_Classic {
     ~zTCSBlockPosition() zCall( 0x00417700 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTCSBlockPosition.inl"
+    #include "zTCSBlockPosition.inl"
   };
 
   // sizeof 50h
@@ -61,7 +61,7 @@ namespace Gothic_I_Classic {
     virtual zSTRING MD_GetSubTypeString( int )                                                    zCall( 0x0040C2C0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCEvMsgCutscene.inl"
+    #include "zCEvMsgCutscene.inl"
   };
 
   // sizeof 44h
@@ -128,7 +128,7 @@ namespace Gothic_I_Classic {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040C720 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlockBase.inl"
+    #include "zCCSBlockBase.inl"
   };
 
   // sizeof 34h
@@ -165,7 +165,7 @@ namespace Gothic_I_Classic {
     virtual zCEventMessage* GetCommand()                                zCall( 0x0040A660 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSAtomicBlock.inl"
+    #include "zCCSAtomicBlock.inl"
   };
 
   // sizeof 0Ch
@@ -186,7 +186,7 @@ namespace Gothic_I_Classic {
     virtual ~zCCSBlockPosition()                              zCall( 0x00416650 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlockPosition.inl"
+    #include "zCCSBlockPosition.inl"
   };
 
   // sizeof 44h
@@ -225,7 +225,7 @@ namespace Gothic_I_Classic {
     virtual zCCSBlockPosition* GetChildPos( int )                       zCall( 0x0040D040 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSBlock.inl"
+    #include "zCCSBlock.inl"
   };
 
   // sizeof 50h
@@ -254,7 +254,7 @@ namespace Gothic_I_Classic {
     virtual void BlockAsFocus( int )                                    zCall( 0x0040DEB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCSSyncBlock.inl"
+    #include "zCCSSyncBlock.inl"
   };
 
   // sizeof 80h
@@ -341,7 +341,7 @@ namespace Gothic_I_Classic {
     virtual void PrepareBlock()                                         zCall( 0x0040F930 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCutscene.inl"
+    #include "zCCutscene.inl"
   };
 
 } // namespace Gothic_I_Classic

@@ -46,7 +46,7 @@ namespace Gothic_I_Classic {
     static zCNetHost*& localhost;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCNetHost.inl"
+    #include "zCNetHost.inl"
   };
 
 } // namespace Gothic_I_Classic

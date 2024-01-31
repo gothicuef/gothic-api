@@ -77,7 +77,7 @@ namespace Gothic_II_Classic {
     static oCInformationManager& GetInformationManager() zCall( 0x00776590 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCInformationManager.inl"
+    #include "oCInformationManager.inl"
   };
 
 } // namespace Gothic_II_Classic

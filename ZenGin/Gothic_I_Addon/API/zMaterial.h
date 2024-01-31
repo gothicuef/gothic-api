@@ -35,7 +35,7 @@ namespace Gothic_I_Addon {
     static unsigned long& masterFrameCtr;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCTexAniCtrl.inl"
+    #include "zCTexAniCtrl.inl"
   };
 
   // sizeof 94h
@@ -119,7 +119,7 @@ namespace Gothic_I_Addon {
     static unsigned char& s_matUsageDefault;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMaterial.inl"
+    #include "zCMaterial.inl"
   };
 
 } // namespace Gothic_I_Addon

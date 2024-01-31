@@ -29,7 +29,7 @@ namespace Gothic_II_Addon {
       zTNode() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase_zTNode.inl"
+      #include "zCBBox3DSorterBase_zTNode.inl"
     };
 
     // sizeof 38h
@@ -50,7 +50,7 @@ namespace Gothic_II_Addon {
       virtual void ClearActive()      zCall( 0x00620010 );
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase_zTBoxSortHandle.inl"
+      #include "zCBBox3DSorterBase_zTBoxSortHandle.inl"
     };
 
     zCArray<zTBoxSortHandle*> handles;        // sizeof 0Ch    offset 04h
@@ -79,7 +79,7 @@ namespace Gothic_II_Addon {
     static int& s_currentDimension;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBBox3DSorterBase.inl"
+    #include "zCBBox3DSorterBase.inl"
   };
 
   // sizeof 124h
@@ -108,7 +108,7 @@ namespace Gothic_II_Addon {
     virtual zSTRING GetDebugDescString( void )                                                         zCall( 0x0063C400 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZone.inl"
+    #include "zCZone.inl"
   };
 
   // sizeof 138h
@@ -136,7 +136,7 @@ namespace Gothic_II_Addon {
     virtual zCClassDef* GetDefaultZoneClass( void ) const                                              zCall( 0x0063C790 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneZFog.inl"
+    #include "zCZoneZFog.inl"
   };
 
   // sizeof 138h
@@ -152,7 +152,7 @@ namespace Gothic_II_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )   zCall( 0x0063CD00 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneZFogDefault.inl"
+    #include "zCZoneZFogDefault.inl"
   };
 
   // sizeof 130h
@@ -178,7 +178,7 @@ namespace Gothic_II_Addon {
     virtual zSTRING GetDebugDescString( void )                                                         zCall( 0x0063F4F0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneReverb.inl"
+    #include "zCZoneReverb.inl"
   };
 
   // sizeof 130h
@@ -195,7 +195,7 @@ namespace Gothic_II_Addon {
     virtual void ProcessZoneList( zCArraySort<zCZone*> const&, zCArraySort<zCZone*> const&, zCWorld* ) zCall( 0x00639A80 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneReverbDefault.inl"
+    #include "zCZoneReverbDefault.inl"
   };
 
   // sizeof 124h
@@ -215,7 +215,7 @@ namespace Gothic_II_Addon {
     static int& s_canruleautochange;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneMusic.inl"
+    #include "zCZoneMusic.inl"
   };
 
   // sizeof 12Ch
@@ -239,7 +239,7 @@ namespace Gothic_II_Addon {
     virtual zCClassDef* GetDefaultZoneClass( void ) const                                              zCall( 0x0063CF90 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneVobFarPlane.inl"
+    #include "zCZoneVobFarPlane.inl"
   };
 
   // sizeof 12Ch
@@ -255,7 +255,7 @@ namespace Gothic_II_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )   zCall( 0x0063D190 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCZoneVobFarPlaneDefault.inl"
+    #include "zCZoneVobFarPlaneDefault.inl"
   };
 
   // sizeof 16Ch
@@ -324,7 +324,7 @@ namespace Gothic_II_Addon {
     virtual void DoSoundUpdate( float )                                                                zCall( 0x0063E210 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobSound.inl"
+    #include "zCVobSound.inl"
   };
 
   // sizeof 190h
@@ -352,7 +352,7 @@ namespace Gothic_II_Addon {
     virtual void DoSoundUpdate( float )                  zCall( 0x0063EF50 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCVobSoundDaytime.inl"
+    #include "zCVobSoundDaytime.inl"
   };
 
 } // namespace Gothic_II_Addon

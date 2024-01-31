@@ -30,7 +30,7 @@ namespace Gothic_I_Classic {
     static const unsigned short& ViewVirtualHeight;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewBase.inl"
+    #include "zCViewBase.inl"
   };
 
 } // namespace Gothic_I_Classic

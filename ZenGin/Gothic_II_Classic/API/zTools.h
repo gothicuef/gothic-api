@@ -39,7 +39,7 @@ namespace Gothic_II_Classic {
     static unsigned long& s_forcedMaxFrameTime;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCTimer.inl"
+    #include "zCTimer.inl"
   };
 
   // sizeof 04h
@@ -58,7 +58,7 @@ namespace Gothic_II_Classic {
     static unsigned long GetBufferCRC32( unsigned char*, unsigned long, unsigned long ) zCall( 0x005F2C20 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCChecksum.inl"
+    #include "zCChecksum.inl"
   };
 
   // sizeof 02h
@@ -75,7 +75,7 @@ namespace Gothic_II_Classic {
     static unsigned short GetBufferCRC16( unsigned char*, unsigned long, unsigned short ) zCall( 0x005F2E90 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCChecksum16.inl"
+    #include "zCChecksum16.inl"
   };
 
   // sizeof 08h
@@ -100,7 +100,7 @@ namespace Gothic_II_Classic {
     void PrintStatus()                    zCall( 0x005F31D0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCFPUControler.inl"
+    #include "zCFPUControler.inl"
   };
 
 } // namespace Gothic_II_Classic

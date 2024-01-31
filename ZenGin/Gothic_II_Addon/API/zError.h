@@ -106,7 +106,7 @@ namespace Gothic_II_Addon {
     virtual ~zERROR()                                                                             zCall( 0x0044C650 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zERROR.inl"
+    #include "zERROR.inl"
   };
 
 } // namespace Gothic_II_Addon

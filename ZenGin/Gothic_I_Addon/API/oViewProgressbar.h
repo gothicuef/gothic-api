@@ -23,7 +23,7 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\oCViewGothicProgressBar.inl"
+    #include "oCViewGothicProgressBar.inl"
   };
 
 } // namespace Gothic_I_Addon

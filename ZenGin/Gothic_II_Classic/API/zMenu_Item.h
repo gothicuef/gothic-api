@@ -197,7 +197,7 @@ namespace Gothic_II_Classic {
     static zCMenuItem*& tmp;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItem.inl"
+    #include "zCMenuItem.inl"
   };
 
   // sizeof 424h
@@ -226,7 +226,7 @@ namespace Gothic_II_Classic {
     virtual int HandleEvent( int )                                      zCall( 0x004DC420 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemInput.inl"
+    #include "zCMenuItemInput.inl"
   };
 
   // sizeof 434h
@@ -264,7 +264,7 @@ namespace Gothic_II_Classic {
     virtual int HandleEvent( int )                                         zCall( 0x004E0990 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemText.inl"
+    #include "zCMenuItemText.inl"
   };
 
   // sizeof 41Ch
@@ -294,7 +294,7 @@ namespace Gothic_II_Classic {
     virtual int HandleEvent( int )                                       zCall( 0x004DC460 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemSlider.inl"
+    #include "zCMenuItemSlider.inl"
   };
 
   // sizeof 420h
@@ -318,7 +318,7 @@ namespace Gothic_II_Classic {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemButton.inl"
+    #include "zCMenuItemButton.inl"
   };
 
   // sizeof 418h
@@ -350,7 +350,7 @@ namespace Gothic_II_Classic {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemChoice.inl"
+    #include "zCMenuItemChoice.inl"
   };
 
   // sizeof 2Ch
@@ -366,7 +366,7 @@ namespace Gothic_II_Classic {
     zTMenuItemListElement()             zInit( zTMenuItemListElement_OnInit() );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTMenuItemListElement.inl"
+    #include "zTMenuItemListElement.inl"
   };
 
   // sizeof 428h
@@ -408,7 +408,7 @@ namespace Gothic_II_Classic {
     virtual int HandleEvent( int )                                     zCall( 0x004E3EB0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMenuItemList.inl"
+    #include "zCMenuItemList.inl"
   };
 
 } // namespace Gothic_II_Classic

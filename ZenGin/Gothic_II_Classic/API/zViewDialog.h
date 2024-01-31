@@ -30,7 +30,7 @@ namespace Gothic_II_Classic {
     /* for zCViewBase num : 9*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewDialog.inl"
+    #include "zCViewDialog.inl"
   };
 
 } // namespace Gothic_II_Classic

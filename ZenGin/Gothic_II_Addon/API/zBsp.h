@@ -68,7 +68,7 @@ namespace Gothic_II_Addon {
     void Build( zCArray<zCPolygon*> const&, int )                                                          zCall( 0x0053B550 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCMeshOctreeNode.inl"
+    #include "zCMeshOctreeNode.inl"
   };
 
   // sizeof 4Ch
@@ -87,7 +87,7 @@ namespace Gothic_II_Addon {
     void TraverseTree( zCArray<zCPolygon*>&, zCMeshOctreeNode const& ) zCall( 0x0053AFF0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRayTurbo.inl"
+    #include "zCRayTurbo.inl"
   };
 
   // sizeof 0Ch
@@ -118,7 +118,7 @@ namespace Gothic_II_Addon {
     static int& s_iPolyTreshold;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCRayTurboAdmin.inl"
+    #include "zCRayTurboAdmin.inl"
   };
 
   // sizeof 28h
@@ -165,7 +165,7 @@ namespace Gothic_II_Addon {
     static void __fastcall RenderOutdoor( zCBspBase*, zTBBox3D, int, int )                                 zCall( 0x0052F490 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBspBase.inl"
+    #include "zCBspBase.inl"
   };
 
   // sizeof 4Ch
@@ -185,7 +185,7 @@ namespace Gothic_II_Addon {
     void CalcPlaneSignbits( zCBspTree* ) zCall( 0x00530AD0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBspNode.inl"
+    #include "zCBspNode.inl"
   };
 
   // sizeof 5Ch
@@ -215,7 +215,7 @@ namespace Gothic_II_Addon {
     void __fastcall TraceRayCollectVobs( zCArray<zCVob*>&, zTBBox3D const&, int ) const zCall( 0x00531720 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBspLeaf.inl"
+    #include "zCBspLeaf.inl"
   };
 
   // sizeof 94h
@@ -291,7 +291,7 @@ namespace Gothic_II_Addon {
     static int& s_renderAllPortals;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBspTree.inl"
+    #include "zCBspTree.inl"
   };
 
   // sizeof 10h
@@ -307,7 +307,7 @@ namespace Gothic_II_Addon {
     zTPolyNode() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zTPolyNode.inl"
+    #include "zTPolyNode.inl"
   };
 
   // sizeof 54h
@@ -360,7 +360,7 @@ namespace Gothic_II_Addon {
     void DescribeTree( int )                                                                    zCall( 0x005414B0 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCBspNode.inl"
+    #include "zCCBspNode.inl"
   };
 
   // sizeof 8Ch
@@ -402,7 +402,7 @@ namespace Gothic_II_Addon {
     void BuildTree( float )                                  zCall( 0x0053D610 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCCBspTree.inl"
+    #include "zCCBspTree.inl"
   };
 
   // sizeof 64h
@@ -420,7 +420,7 @@ namespace Gothic_II_Addon {
       zTPortalInfo() {}
 
       // user API
-      #include "..\..\Gothic_UserAPI\zCBspSector_zTPortalInfo.inl"
+      #include "zCBspSector_zTPortalInfo.inl"
     };
 
     zSTRING sectorName;                     // sizeof 14h    offset 00h
@@ -453,7 +453,7 @@ namespace Gothic_II_Addon {
     static zCArray<zTBBox2D>& s_activeOutdoorPortals;
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBspSector.inl"
+    #include "zCBspSector.inl"
   };
 
   // sizeof 4Ch
@@ -473,7 +473,7 @@ namespace Gothic_II_Addon {
     ~zCBuildPortal()            zCall( 0x00541D60 );
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCBuildPortal.inl"
+    #include "zCBuildPortal.inl"
   };
 
 } // namespace Gothic_II_Addon

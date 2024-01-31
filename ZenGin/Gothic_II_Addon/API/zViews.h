@@ -20,7 +20,7 @@ namespace Gothic_II_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
-    #include "..\..\Gothic_UserAPI\zCViewWindow.inl"
+    #include "zCViewWindow.inl"
   };
 
 } // namespace Gothic_II_Addon

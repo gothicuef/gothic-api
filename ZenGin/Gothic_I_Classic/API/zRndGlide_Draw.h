@@ -32,7 +32,7 @@ namespace Gothic_I_Classic {
     zSRndGlide_AlphaPoly() {}
 
     // user API
-    #include "..\..\Gothic_UserAPI\zSRndGlide_AlphaPoly.inl"
+    #include "zSRndGlide_AlphaPoly.inl"
   };
 
 } // namespace Gothic_I_Classic
