@@ -215,7 +215,7 @@ namespace Gothic_I_Addon {
     zCRenderLight()             zInit( zCRenderLight_OnInit() );
 
     // user API
-    #include "Gothic_UserAPI\zCRenderLight.inl"
+    #include "zCRenderLight.inl"
   };
 
   // sizeof 0Ch
@@ -233,7 +233,7 @@ namespace Gothic_I_Addon {
     virtual int IsAlphaPoly()       zCall( 0x0052D790 );
 
     // user API
-    #include "Gothic_UserAPI\zCRndAlphaSortObject.inl"
+    #include "zCRndAlphaSortObject.inl"
   };
 
   // sizeof 24h
@@ -253,7 +253,7 @@ namespace Gothic_I_Addon {
     zTRnd_TexFormatInfo() {}
 
     // user API
-    #include "Gothic_UserAPI\zTRnd_TexFormatInfo.inl"
+    #include "zTRnd_TexFormatInfo.inl"
   };
 
   // sizeof 14h
@@ -266,7 +266,7 @@ namespace Gothic_I_Addon {
     ~zTRnd_DeviceInfo() zCall( 0x004290E0 );
 
     // user API
-    #include "Gothic_UserAPI\zTRnd_DeviceInfo.inl"
+    #include "zTRnd_DeviceInfo.inl"
   };
 
   // sizeof 10h
@@ -281,7 +281,7 @@ namespace Gothic_I_Addon {
     zTRnd_VidModeInfo() {}
 
     // user API
-    #include "Gothic_UserAPI\zTRnd_VidModeInfo.inl"
+    #include "zTRnd_VidModeInfo.inl"
   };
 
   // sizeof 24h
@@ -301,7 +301,7 @@ namespace Gothic_I_Addon {
     zTRnd_Stats() {}
 
     // user API
-    #include "Gothic_UserAPI\zTRnd_Stats.inl"
+    #include "zTRnd_Stats.inl"
   };
 
   // sizeof 18h
@@ -317,7 +317,7 @@ namespace Gothic_I_Addon {
     zTRndSimpleVertex()             zInit( zTRndSimpleVertex_OnInit() );
 
     // user API
-    #include "Gothic_UserAPI\zTRndSimpleVertex.inl"
+    #include "zTRndSimpleVertex.inl"
   };
 
   // sizeof 20h
@@ -336,7 +336,7 @@ namespace Gothic_I_Addon {
     zTRndSurfaceDesc() {}
 
     // user API
-    #include "Gothic_UserAPI\zTRndSurfaceDesc.inl"
+    #include "zTRndSurfaceDesc.inl"
   };
 
   // sizeof 34h
@@ -354,7 +354,7 @@ namespace Gothic_I_Addon {
       zTMaterial() {}
 
       // user API
-      #include "Gothic_UserAPI\zCRenderer_zTMaterial.inl"
+      #include "zCRenderer_zTMaterial.inl"
     };
 
     zTRnd_PolySortMode polySortMode; // sizeof 04h    offset 04h
@@ -469,7 +469,7 @@ namespace Gothic_I_Addon {
     virtual zCVertexBuffer* CreateVertexBuffer()                                                       zPureCall;
 
     // user API
-    #include "Gothic_UserAPI\zCRenderer.inl"
+    #include "zCRenderer.inl"
   };
 
 } // namespace Gothic_I_Addon

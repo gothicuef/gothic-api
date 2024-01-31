@@ -54,7 +54,7 @@ namespace Gothic_II_Addon {
     ~zCOptionEntry()                                            zCall( 0x004606F0 );
 
     // user API
-    #include "Gothic_UserAPI\zCOptionEntry.inl"
+    #include "zCOptionEntry.inl"
   };
 
   // sizeof 20h
@@ -71,7 +71,7 @@ namespace Gothic_II_Addon {
     ~zCOptionSection()                            zCall( 0x00460240 );
 
     // user API
-    #include "Gothic_UserAPI\zCOptionSection.inl"
+    #include "zCOptionSection.inl"
   };
 
   // sizeof 298h
@@ -138,7 +138,7 @@ namespace Gothic_II_Addon {
     virtual ~zCOption()                                                                       zCall( 0x00460570 );
 
     // user API
-    #include "Gothic_UserAPI\zCOption.inl"
+    #include "zCOption.inl"
   };
 
 } // namespace Gothic_II_Addon

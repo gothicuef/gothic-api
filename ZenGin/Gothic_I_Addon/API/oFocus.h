@@ -75,7 +75,7 @@ namespace Gothic_I_Addon {
     static oCNpcFocus** focuslist;
 
     // user API
-    #include "Gothic_UserAPI\oCNpcFocus.inl"
+    #include "oCNpcFocus.inl"
   };
 
 } // namespace Gothic_I_Addon

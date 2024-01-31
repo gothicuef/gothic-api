@@ -235,7 +235,7 @@ namespace Gothic_II_Addon {
     virtual ~oCSpell()                          zCall( 0x00483F50 );
 
     // user API
-    #include "Gothic_UserAPI\oCSpell.inl"
+    #include "oCSpell.inl"
   };
 
 } // namespace Gothic_II_Addon

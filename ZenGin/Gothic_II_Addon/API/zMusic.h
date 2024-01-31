@@ -55,7 +55,7 @@ namespace Gothic_II_Addon {
     virtual int IsActive() const zCall( 0x004E73F0 );
 
     // user API
-    #include "Gothic_UserAPI\zCMusicTheme.inl"
+    #include "zCMusicTheme.inl"
   };
 
   // sizeof 40h
@@ -83,7 +83,7 @@ namespace Gothic_II_Addon {
     virtual void CacheOut()         zCall( 0x004E7FA0 );
 
     // user API
-    #include "Gothic_UserAPI\zCMusicJingle.inl"
+    #include "zCMusicJingle.inl"
   };
 
   // sizeof 0Ch
@@ -123,7 +123,7 @@ namespace Gothic_II_Addon {
     static int& s_musicSystemDisabled;
 
     // user API
-    #include "Gothic_UserAPI\zCMusicSystem.inl"
+    #include "zCMusicSystem.inl"
   };
 
   // sizeof 0Ch
@@ -141,7 +141,7 @@ namespace Gothic_II_Addon {
     virtual void DoMusicUpdate()                                zCall( 0x00632DF0 );
 
     // user API
-    #include "Gothic_UserAPI\zCMusicSys_Dummy.inl"
+    #include "zCMusicSys_Dummy.inl"
   };
 
 } // namespace Gothic_II_Addon

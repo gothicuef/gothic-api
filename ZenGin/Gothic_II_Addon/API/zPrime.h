@@ -18,7 +18,7 @@ namespace Gothic_II_Addon {
     static unsigned long NextPrime( unsigned long ) zCall( 0x005BFD90 );
 
     // user API
-    #include "Gothic_UserAPI\zCPrime.inl"
+    #include "zCPrime.inl"
   };
 
 } // namespace Gothic_II_Addon

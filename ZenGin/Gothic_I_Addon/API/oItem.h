@@ -180,7 +180,7 @@ namespace Gothic_I_Addon {
     virtual oTSndMaterial GetSoundMaterial()                                                 zCall( 0x0069E830 );
 
     // user API
-    #include "Gothic_UserAPI\oCItem.inl"
+    #include "oCItem.inl"
   };
 
 } // namespace Gothic_I_Addon

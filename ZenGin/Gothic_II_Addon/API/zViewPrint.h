@@ -47,7 +47,7 @@ namespace Gothic_II_Addon {
     /* for zCViewBase num : 9*/
 
     // user API
-    #include "Gothic_UserAPI\zCViewPrint.inl"
+    #include "zCViewPrint.inl"
   };
 
 } // namespace Gothic_II_Addon

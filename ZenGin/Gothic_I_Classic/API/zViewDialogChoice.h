@@ -46,7 +46,7 @@ namespace Gothic_I_Classic {
     virtual int HandleEvent( int )                                      zCall( 0x00758A60 );
 
     // user API
-    #include "Gothic_UserAPI\zCViewDialogChoice.inl"
+    #include "zCViewDialogChoice.inl"
   };
 
 } // namespace Gothic_I_Classic

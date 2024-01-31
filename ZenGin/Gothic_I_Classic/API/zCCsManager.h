@@ -85,7 +85,7 @@ namespace Gothic_I_Classic {
     virtual void PoolInsertItem( zCCSPoolItem* )                        zCall( 0x0041A830 );
 
     // user API
-    #include "Gothic_UserAPI\zCCSManager.inl"
+    #include "zCCSManager.inl"
   };
 
 } // namespace Gothic_I_Classic

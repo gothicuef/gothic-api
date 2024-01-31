@@ -27,7 +27,7 @@ namespace Gothic_I_Classic {
     virtual int CheckRoleResult()                                       zCall( 0x00403E80 );
 
     // user API
-    #include "Gothic_UserAPI\oCCSProps.inl"
+    #include "oCCSProps.inl"
   };
 
 } // namespace Gothic_I_Classic

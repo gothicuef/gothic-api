@@ -205,7 +205,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zVEC2.inl"
+    #include "zVEC2.inl"
   };
 
   class zVEC3 {
@@ -422,7 +422,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zVEC3.inl"
+    #include "zVEC3.inl"
   };
 
   class zVEC4 {
@@ -592,7 +592,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zVEC4.inl"
+    #include "zVEC4.inl"
   };
 
   inline zMAT3 Alg_Scaling2D( zVEC2& );
@@ -802,7 +802,7 @@ namespace Gothic_I_Classic {
     static zMAT3& s_identity;
 
     // user API
-    #include "Gothic_UserAPI\zMAT3.inl"
+    #include "zMAT3.inl"
   };
 
   class zMAT4 {
@@ -1080,7 +1080,7 @@ namespace Gothic_I_Classic {
     static zMAT4& s_identity;
 
     // user API
-    #include "Gothic_UserAPI\zMAT4.inl"
+    #include "zMAT4.inl"
   };
 
   class zCQuat {
@@ -1248,7 +1248,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zCQuat.inl"
+    #include "zCQuat.inl"
   };
 
   inline float Alg_SqrtInvApprox( float );
@@ -1355,7 +1355,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zComplex.inl"
+    #include "zComplex.inl"
   };
 
   inline void GetProjection( int& x, int& y, zVEC3 v );
@@ -1499,7 +1499,7 @@ namespace Gothic_I_Classic {
     }
 
     // user API
-    #include "Gothic_UserAPI\zCLine2D.inl"
+    #include "zCLine2D.inl"
   };
 
   inline zVEC2 Alg_Min( zVEC2 const &, zVEC2 const & )               zCall( 0x005033B0 );

@@ -55,7 +55,7 @@ namespace Gothic_II_Classic {
     static int& news_counter;
 
     // user API
-    #include "Gothic_UserAPI\oCNews.inl"
+    #include "oCNews.inl"
   };
 
   // sizeof 0Ch
@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
     virtual void Unarchive( zCArchiver& )  zCall( 0x006CC130 );
 
     // user API
-    #include "Gothic_UserAPI\oCNewsMemory.inl"
+    #include "oCNewsMemory.inl"
   };
 
   // sizeof 58h
@@ -102,7 +102,7 @@ namespace Gothic_II_Classic {
     void SpreadNews( oCNews* )                               zCall( 0x006CAF70 );
 
     // user API
-    #include "Gothic_UserAPI\oCNewsManager.inl"
+    #include "oCNewsManager.inl"
   };
 
 } // namespace Gothic_II_Classic

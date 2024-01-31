@@ -39,7 +39,7 @@ namespace Gothic_I_Classic {
     zCCallback() {}
 
     // user API
-    #include "Gothic_UserAPI\zCCallback.inl"
+    #include "zCCallback.inl"
   };
 
   // sizeof 04h
@@ -52,7 +52,7 @@ namespace Gothic_I_Classic {
     virtual void HandleVob( zCVob*, void* ) zPureCall;
 
     // user API
-    #include "Gothic_UserAPI\zCVobCallback.inl"
+    #include "zCVobCallback.inl"
   };
 
   // sizeof 04h
@@ -65,7 +65,7 @@ namespace Gothic_I_Classic {
     zCWorldPerFrameCallback() : zCtor( zCCallback ) {}
 
     // user API
-    #include "Gothic_UserAPI\zCWorldPerFrameCallback.inl"
+    #include "zCWorldPerFrameCallback.inl"
   };
 
   // sizeof 28h
@@ -82,7 +82,7 @@ namespace Gothic_I_Classic {
     zTTraceRayReport() {}
 
     // user API
-    #include "Gothic_UserAPI\zTTraceRayReport.inl"
+    #include "zTTraceRayReport.inl"
   };
 
   // sizeof 08h
@@ -96,7 +96,7 @@ namespace Gothic_I_Classic {
     zCTransferConstr() {}
 
     // user API
-    #include "Gothic_UserAPI\zCTransferConstr.inl"
+    #include "zCTransferConstr.inl"
   };
   
 #pragma pack( push, 1 )
@@ -112,7 +112,7 @@ namespace Gothic_I_Classic {
     zCTransfer() {}
 
     // user API
-    #include "Gothic_UserAPI\zCTransfer.inl"
+    #include "zCTransfer.inl"
   };
   
 #pragma pack( pop )
@@ -137,7 +137,7 @@ namespace Gothic_I_Classic {
     void DoTransfers() zCall( 0x006000D0 );
 
     // user API
-    #include "Gothic_UserAPI\zCPatch.inl"
+    #include "zCPatch.inl"
   };
     
 #pragma pack( push, 1 )
@@ -165,7 +165,7 @@ namespace Gothic_I_Classic {
     ~zCPatchMap()                                                          zCall( 0x005FF8F0 );
 
     // user API
-    #include "Gothic_UserAPI\zCPatchMap.inl"
+    #include "zCPatchMap.inl"
   };
     
 #pragma pack( pop )
@@ -355,7 +355,7 @@ namespace Gothic_I_Classic {
     static zTWorldLoadMergeMode& s_worldMergeMode;
 
     // user API
-    #include "Gothic_UserAPI\zCWorld.inl"
+    #include "zCWorld.inl"
   };
 
 } // namespace Gothic_I_Classic

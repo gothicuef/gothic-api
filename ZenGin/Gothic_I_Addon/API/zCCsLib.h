@@ -37,7 +37,7 @@ namespace Gothic_I_Addon {
     virtual ~zCCSLib()                                                  zCall( 0x0041ADE0 );
 
     // user API
-    #include "Gothic_UserAPI\zCCSLib.inl"
+    #include "zCCSLib.inl"
   };
 
 } // namespace Gothic_I_Addon

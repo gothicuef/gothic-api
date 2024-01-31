@@ -29,7 +29,7 @@ namespace Gothic_I_Classic {
     zRandom_Gauss() {}
 
     // user API
-    #include "Gothic_UserAPI\zRandom_Gauss.inl"
+    #include "zRandom_Gauss.inl"
   };
 
   // sizeof 18h
@@ -47,7 +47,7 @@ namespace Gothic_I_Classic {
     zCFFT() {}
 
     // user API
-    #include "Gothic_UserAPI\zCFFT.inl"
+    #include "zCFFT.inl"
   };
 
 } // namespace Gothic_I_Classic

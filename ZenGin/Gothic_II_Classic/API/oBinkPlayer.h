@@ -27,7 +27,7 @@ namespace Gothic_II_Classic {
     virtual int PlayHandleEvents()         zCall( 0x00422970 );
 
     // user API
-    #include "Gothic_UserAPI\oCBinkPlayer.inl"
+    #include "oCBinkPlayer.inl"
   };
 
 } // namespace Gothic_II_Classic

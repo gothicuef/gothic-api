@@ -38,7 +38,7 @@ namespace Gothic_II_Classic {
     virtual ~zCFileCSV()                                   zCall( 0x0044E540 );
 
     // user API
-    #include "Gothic_UserAPI\zCFileCSV.inl"
+    #include "zCFileCSV.inl"
   };
 
 } // namespace Gothic_II_Classic

@@ -27,7 +27,7 @@ namespace Gothic_II_Classic {
     void Show()                          zCall( 0x00741AC0 );
 
     // user API
-    #include "Gothic_UserAPI\zCPar_StringTable.inl"
+    #include "zCPar_StringTable.inl"
   };
 
   // sizeof 3Ch
@@ -99,7 +99,7 @@ namespace Gothic_II_Classic {
     static void*& instance_adr;
 
     // user API
-    #include "Gothic_UserAPI\zCPar_Symbol.inl"
+    #include "zCPar_Symbol.inl"
   };
 
   // sizeof 2Ch
@@ -144,7 +144,7 @@ namespace Gothic_II_Classic {
     static zCPar_SymbolTable*& cur_table;
 
     // user API
-    #include "Gothic_UserAPI\zCPar_SymbolTable.inl"
+    #include "zCPar_SymbolTable.inl"
   };
 
   // sizeof 10h
@@ -190,7 +190,7 @@ namespace Gothic_II_Classic {
     void Load( zFILE* )             zCall( 0x007454B0 );
 
     // user API
-    #include "Gothic_UserAPI\zCPar_Stack.inl"
+    #include "zCPar_Stack.inl"
   };
 
   // sizeof 1004h
@@ -211,7 +211,7 @@ namespace Gothic_II_Classic {
     void Clear()                  zCall( 0x00745680 );
 
     // user API
-    #include "Gothic_UserAPI\zCPar_DataStack.inl"
+    #include "zCPar_DataStack.inl"
   };
 
 } // namespace Gothic_II_Classic

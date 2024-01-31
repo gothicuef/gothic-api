@@ -61,7 +61,7 @@ namespace Gothic_II_Addon {
     static int& TXT_HELP;
 
     // user API
-    #include "Gothic_UserAPI\oCText.inl"
+    #include "oCText.inl"
   };
 
 } // namespace Gothic_II_Addon

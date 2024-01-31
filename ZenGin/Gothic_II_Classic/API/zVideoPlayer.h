@@ -40,7 +40,7 @@ namespace Gothic_II_Classic {
     virtual int PlayWaitNextFrame()       zCall( 0x0046DCE0 );
 
     // user API
-    #include "Gothic_UserAPI\zCVideoPlayer.inl"
+    #include "zCVideoPlayer.inl"
   };
 
 } // namespace Gothic_II_Classic

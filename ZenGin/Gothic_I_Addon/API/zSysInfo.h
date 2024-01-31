@@ -56,7 +56,7 @@ namespace Gothic_I_Addon {
     virtual void AnalyseNow()  zCall( 0x004708A0 );
 
     // user API
-    #include "Gothic_UserAPI\zCSystemInfo.inl"
+    #include "zCSystemInfo.inl"
   };
 
 } // namespace Gothic_I_Addon

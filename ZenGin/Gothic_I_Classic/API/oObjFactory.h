@@ -26,7 +26,7 @@ namespace Gothic_I_Classic {
     virtual oCItem* CreateItem( int )                                   zCall( 0x006C8660 );
 
     // user API
-    #include "Gothic_UserAPI\oCObjectFactory.inl"
+    #include "oCObjectFactory.inl"
   };
 
 } // namespace Gothic_I_Classic

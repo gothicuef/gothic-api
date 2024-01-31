@@ -84,7 +84,7 @@ namespace Gothic_II_Classic {
       zTCallbackData() {}
 
       // user API
-      #include "Gothic_UserAPI\zCVertexBuffer_zTCallbackData.inl"
+      #include "zCVertexBuffer_zTCallbackData.inl"
     };
 
     unsigned long numVertex;              // sizeof 04h    offset 24h
@@ -123,7 +123,7 @@ namespace Gothic_II_Classic {
     static unsigned long& s_classCtorCtr;
 
     // user API
-    #include "Gothic_UserAPI\zCVertexBuffer.inl"
+    #include "zCVertexBuffer.inl"
   };
 
   // sizeof 1Ch
@@ -152,7 +152,7 @@ namespace Gothic_II_Classic {
     void Unlock()                                                 zCall( 0x005F55E0 );
 
     // user API
-    #include "Gothic_UserAPI\zCVertexBufferDyn.inl"
+    #include "zCVertexBufferDyn.inl"
   };
 
   // sizeof 1Ch
@@ -182,7 +182,7 @@ namespace Gothic_II_Classic {
     void Unlock( unsigned long )                                   zCall( 0x005F5720 );
 
     // user API
-    #include "Gothic_UserAPI\zCVertexBufferDyn2.inl"
+    #include "zCVertexBufferDyn2.inl"
   };
 
   // sizeof 1Ch
@@ -204,7 +204,7 @@ namespace Gothic_II_Classic {
     void EndChangeWorld()                                                                                   zCall( 0x005F5E50 );
 
     // user API
-    #include "Gothic_UserAPI\zCVertexBufferManager.inl"
+    #include "zCVertexBufferManager.inl"
   };
 
 } // namespace Gothic_II_Classic

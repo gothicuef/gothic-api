@@ -41,7 +41,7 @@ namespace Gothic_I_Addon {
     virtual void Unpack( zCBuffer& )                             zCall( 0x00451F60 );
 
     // user API
-    #include "Gothic_UserAPI\zCGameInfo.inl"
+    #include "zCGameInfo.inl"
   };
 
 } // namespace Gothic_I_Addon

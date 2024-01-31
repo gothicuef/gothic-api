@@ -50,7 +50,7 @@ namespace Gothic_I_Addon {
       void SetDefaults() zCall( 0x00606310 );
 
       // user API
-      #include "Gothic_UserAPI\zCSoundSystem_zTSound3DParams.inl"
+      #include "zCSoundSystem_zTSound3DParams.inl"
     };
 
     float defaultRadius; // sizeof 04h    offset 04h
@@ -93,7 +93,7 @@ namespace Gothic_I_Addon {
     virtual float GetCPULoad()                                               zCall( 0x004EF3F0 );
 
     // user API
-    #include "Gothic_UserAPI\zCSoundSystem.inl"
+    #include "zCSoundSystem.inl"
   };
 
   // sizeof 54h
@@ -122,7 +122,7 @@ namespace Gothic_I_Addon {
     virtual int IsLooping() const                                       zCall( 0x004F2470 );
 
     // user API
-    #include "Gothic_UserAPI\zCSoundFX.inl"
+    #include "zCSoundFX.inl"
   };
 
   // sizeof 54h
@@ -135,7 +135,7 @@ namespace Gothic_I_Addon {
     virtual ~zCSoundFXDummy() zCall( 0x00625830 );
 
     // user API
-    #include "Gothic_UserAPI\zCSoundFXDummy.inl"
+    #include "zCSoundFXDummy.inl"
   };
 
   // sizeof 08h
@@ -157,7 +157,7 @@ namespace Gothic_I_Addon {
     virtual void SetGlobalOcclusion( float )                                                zCall( 0x00625860 );
 
     // user API
-    #include "Gothic_UserAPI\zCSoundSystemDummy.inl"
+    #include "zCSoundSystemDummy.inl"
   };
 
 } // namespace Gothic_I_Addon

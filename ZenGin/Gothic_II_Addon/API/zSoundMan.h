@@ -41,7 +41,7 @@ namespace Gothic_II_Addon {
       zTScriptSoundData()             zInit( zTScriptSoundData_OnInit() );
 
       // user API
-      #include "Gothic_UserAPI\zCSoundManager_zTScriptSoundData.inl"
+      #include "zCSoundManager_zTScriptSoundData.inl"
     };
 
     // sizeof 1Ch
@@ -59,7 +59,7 @@ namespace Gothic_II_Addon {
       void GetData( zCSoundFX*&, zCParticleEmitter*& )                 zCall( 0x005ED840 );
 
       // user API
-      #include "Gothic_UserAPI\zCSoundManager_zCSoundEventData.inl"
+      #include "zCSoundManager_zCSoundEventData.inl"
     };
 
     // sizeof 18h
@@ -75,7 +75,7 @@ namespace Gothic_II_Addon {
       zCMediumType()             zInit( zCMediumType_OnInit() );
 
       // user API
-      #include "Gothic_UserAPI\zCSoundManager_zCMediumType.inl"
+      #include "zCSoundManager_zCMediumType.inl"
     };
 
     // sizeof 2Ch
@@ -91,7 +91,7 @@ namespace Gothic_II_Addon {
       ~zCTableEntry()            zCall( 0x00632BD0 );
 
       // user API
-      #include "Gothic_UserAPI\zCSoundManager_zCTableEntry.inl"
+      #include "zCSoundManager_zCTableEntry.inl"
     };
 
     zCArraySort<zCMediumType> mediumTypeIDList;       // sizeof 10h    offset 00h
@@ -118,7 +118,7 @@ namespace Gothic_II_Addon {
     static zSTRING& prefixProto;
 
     // user API
-    #include "Gothic_UserAPI\zCSoundManager.inl"
+    #include "zCSoundManager.inl"
   };
 
 } // namespace Gothic_II_Addon

@@ -43,7 +43,7 @@ namespace Gothic_I_Addon {
     void SetFlagsByString( zSTRING const& ) zCall( 0x005A0440 );
 
     // user API
-    #include "Gothic_UserAPI\zCMorphMeshAni.inl"
+    #include "zCMorphMeshAni.inl"
   };
 
   // sizeof 38h
@@ -79,7 +79,7 @@ namespace Gothic_I_Addon {
     static zCMorphMeshProto*& morphRoot;
 
     // user API
-    #include "Gothic_UserAPI\zCMorphMeshProto.inl"
+    #include "zCMorphMeshProto.inl"
   };
 
   // sizeof 84h
@@ -112,7 +112,7 @@ namespace Gothic_I_Addon {
       zTMorphAniEntry() {}
 
       // user API
-      #include "Gothic_UserAPI\zCMorphMesh_zTMorphAniEntry.inl"
+      #include "zCMorphMesh_zTMorphAniEntry.inl"
     };
 
     // sizeof 1Ch
@@ -130,7 +130,7 @@ namespace Gothic_I_Addon {
       zTRandAni() {}
 
       // user API
-      #include "Gothic_UserAPI\zCMorphMesh_zTRandAni.inl"
+      #include "zCMorphMesh_zTRandAni.inl"
     };
 
     zCMorphMeshProto* morphProto;             // sizeof 04h    offset 34h
@@ -181,7 +181,7 @@ namespace Gothic_I_Addon {
     virtual zSTRING const* GetAnyAnimation()                                                              zCall( 0x005A2460 );
 
     // user API
-    #include "Gothic_UserAPI\zCMorphMesh.inl"
+    #include "zCMorphMesh.inl"
   };
 
   // sizeof 30h
@@ -196,7 +196,7 @@ namespace Gothic_I_Addon {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005A3290 );
 
     // user API
-    #include "Gothic_UserAPI\zCMorphMeshConvertFileHandler.inl"
+    #include "zCMorphMeshConvertFileHandler.inl"
   };
 
 } // namespace Gothic_I_Addon

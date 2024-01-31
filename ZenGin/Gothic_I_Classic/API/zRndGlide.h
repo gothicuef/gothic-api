@@ -52,7 +52,7 @@ namespace Gothic_I_Classic {
     static zCTex_RndGlide*& tmpTexture;
 
     // user API
-    #include "Gothic_UserAPI\zCTex_RndGlide.inl"
+    #include "zCTex_RndGlide.inl"
   };
 
   class zCRnd_Glide : public zCRenderer {
@@ -113,7 +113,7 @@ namespace Gothic_I_Classic {
     zCRnd_Glide() : zCtor( zCRenderer ) {}
 
     // user API
-    #include "Gothic_UserAPI\zCRnd_Glide.inl"
+    #include "zCRnd_Glide.inl"
   };
 
 } // namespace Gothic_I_Classic

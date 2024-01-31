@@ -73,7 +73,7 @@ namespace Gothic_II_Classic {
     static void __fastcall RenderOutdoor( zCBspBase*, zTBBox3D, int, int )                    zCall( 0x0052C540 );
 
     // user API
-    #include "Gothic_UserAPI\zCBspBase.inl"
+    #include "zCBspBase.inl"
   };
 
   // sizeof 4Ch
@@ -93,7 +93,7 @@ namespace Gothic_II_Classic {
     void CalcPlaneSignbits( zCBspTree* ) zCall( 0x0052DB60 );
 
     // user API
-    #include "Gothic_UserAPI\zCBspNode.inl"
+    #include "zCBspNode.inl"
   };
 
   // sizeof 5Ch
@@ -123,7 +123,7 @@ namespace Gothic_II_Classic {
     void __fastcall TraceRayCollectVobs( zCArray<zCVob*>&, zTBBox3D const&, int ) const zCall( 0x0052E7B0 );
 
     // user API
-    #include "Gothic_UserAPI\zCBspLeaf.inl"
+    #include "zCBspLeaf.inl"
   };
 
   // sizeof 90h
@@ -198,7 +198,7 @@ namespace Gothic_II_Classic {
     static int& s_renderAllPortals;
 
     // user API
-    #include "Gothic_UserAPI\zCBspTree.inl"
+    #include "zCBspTree.inl"
   };
 
   // sizeof 10h
@@ -214,7 +214,7 @@ namespace Gothic_II_Classic {
     zTPolyNode() {}
 
     // user API
-    #include "Gothic_UserAPI\zTPolyNode.inl"
+    #include "zTPolyNode.inl"
   };
 
   // sizeof 54h
@@ -267,7 +267,7 @@ namespace Gothic_II_Classic {
     void DescribeTree( int )                                                       zCall( 0x0053C3A0 );
 
     // user API
-    #include "Gothic_UserAPI\zCCBspNode.inl"
+    #include "zCCBspNode.inl"
   };
 
   // sizeof 8Ch
@@ -309,7 +309,7 @@ namespace Gothic_II_Classic {
     void BuildTree( float )                                  zCall( 0x005384E0 );
 
     // user API
-    #include "Gothic_UserAPI\zCCBspTree.inl"
+    #include "zCCBspTree.inl"
   };
 
   // sizeof 64h
@@ -327,7 +327,7 @@ namespace Gothic_II_Classic {
       zTPortalInfo() {}
 
       // user API
-      #include "Gothic_UserAPI\zCBspSector_zTPortalInfo.inl"
+      #include "zCBspSector_zTPortalInfo.inl"
     };
 
     zSTRING sectorName;                     // sizeof 14h    offset 00h
@@ -360,7 +360,7 @@ namespace Gothic_II_Classic {
     static zCArray<zTBBox2D>& s_activeOutdoorPortals;
 
     // user API
-    #include "Gothic_UserAPI\zCBspSector.inl"
+    #include "zCBspSector.inl"
   };
 
   // sizeof 4Ch
@@ -380,7 +380,7 @@ namespace Gothic_II_Classic {
     ~zCBuildPortal()            zCall( 0x0053CC50 );
 
     // user API
-    #include "Gothic_UserAPI\zCBuildPortal.inl"
+    #include "zCBuildPortal.inl"
   };
 
 } // namespace Gothic_II_Classic

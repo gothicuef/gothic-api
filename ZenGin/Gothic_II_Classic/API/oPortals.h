@@ -28,7 +28,7 @@ namespace Gothic_II_Classic {
     void LoadPortalData( zCArchiver& )         zCall( 0x00713050 );
 
     // user API
-    #include "Gothic_UserAPI\oCPortalRoom.inl"
+    #include "oCPortalRoom.inl"
   };
 
   // sizeof 20h
@@ -67,7 +67,7 @@ namespace Gothic_II_Classic {
     static int SortPortals( void const*, void const* )       zCall( 0x00713090 );
 
     // user API
-    #include "Gothic_UserAPI\oCPortalRoomManager.inl"
+    #include "oCPortalRoomManager.inl"
   };
 
 } // namespace Gothic_II_Classic

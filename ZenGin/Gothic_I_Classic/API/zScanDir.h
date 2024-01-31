@@ -32,7 +32,7 @@ namespace Gothic_I_Classic {
     virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zPureCall;
 
     // user API
-    #include "Gothic_UserAPI\zCScanDirFileHandler.inl"
+    #include "zCScanDirFileHandler.inl"
   };
 
   // sizeof 18h
@@ -53,7 +53,7 @@ namespace Gothic_I_Classic {
     virtual void Scan( zSTRING const& )                                       zCall( 0x00464900 );
 
     // user API
-    #include "Gothic_UserAPI\zCScanDir.inl"
+    #include "zCScanDir.inl"
   };
 
 } // namespace Gothic_I_Classic

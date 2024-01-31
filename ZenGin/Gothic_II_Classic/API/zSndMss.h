@@ -34,7 +34,7 @@ namespace Gothic_II_Classic {
     ~zCDrvProperties_MSS()            zCall( 0x004E7600 );
 
     // user API
-    #include "Gothic_UserAPI\zCDrvProperties_MSS.inl"
+    #include "zCDrvProperties_MSS.inl"
   };
 
   // sizeof 60h
@@ -118,7 +118,7 @@ namespace Gothic_II_Classic {
     static zCActiveSnd*& nextFreeSnd;
 
     // user API
-    #include "Gothic_UserAPI\zCActiveSnd.inl"
+    #include "zCActiveSnd.inl"
   };
 
   // sizeof 18h
@@ -136,7 +136,7 @@ namespace Gothic_II_Classic {
     ~zCSndChannel()            zCall( 0x004F6A50 );
 
     // user API
-    #include "Gothic_UserAPI\zCSndChannel.inl"
+    #include "zCSndChannel.inl"
   };
 
   // sizeof 6Ch
@@ -170,7 +170,7 @@ namespace Gothic_II_Classic {
     void CacheOut()               zCall( 0x004F7390 );
 
     // user API
-    #include "Gothic_UserAPI\zCSndFrame.inl"
+    #include "zCSndFrame.inl"
   };
 
   // sizeof 30h
@@ -201,7 +201,7 @@ namespace Gothic_II_Classic {
     int GetSize()                      zCall( 0x004F9660 );
 
     // user API
-    #include "Gothic_UserAPI\zCWaveData.inl"
+    #include "zCWaveData.inl"
   };
 
   // sizeof 14h
@@ -268,7 +268,7 @@ namespace Gothic_II_Classic {
     static zCDrvProperties_MSS& prefs;
 
     // user API
-    #include "Gothic_UserAPI\zCSndSys_MSS.inl"
+    #include "zCSndSys_MSS.inl"
   };
 
   // sizeof 84h
@@ -320,7 +320,7 @@ namespace Gothic_II_Classic {
     virtual int GetIsFixed() const                 zCall( 0x004EB490 );
 
     // user API
-    #include "Gothic_UserAPI\zCSndFX_MSS.inl"
+    #include "zCSndFX_MSS.inl"
   };
 
   // sizeof 18h
@@ -341,7 +341,7 @@ namespace Gothic_II_Classic {
     void DisposeAllSamples()      zCall( 0x004F98A0 );
 
     // user API
-    #include "Gothic_UserAPI\zCHandleManager.inl"
+    #include "zCHandleManager.inl"
   };
 
 } // namespace Gothic_II_Classic

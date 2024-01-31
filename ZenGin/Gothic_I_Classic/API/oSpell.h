@@ -195,7 +195,7 @@ namespace Gothic_I_Classic {
     virtual ~oCSpell()                                                       zCall( 0x0047BB70 );
 
     // user API
-    #include "Gothic_UserAPI\oCSpell.inl"
+    #include "oCSpell.inl"
   };
 
 } // namespace Gothic_I_Classic

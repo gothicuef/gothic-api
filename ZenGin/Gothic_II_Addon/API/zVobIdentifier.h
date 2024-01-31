@@ -17,7 +17,7 @@ namespace Gothic_II_Addon {
     zCVobIdentifier() {}
 
     // user API
-    #include "Gothic_UserAPI\zCVobIdentifier.inl"
+    #include "zCVobIdentifier.inl"
   };
 
 } // namespace Gothic_II_Addon

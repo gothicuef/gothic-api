@@ -121,7 +121,7 @@ namespace Gothic_I_Classic {
     void RenderThunderList( zTRenderContext& )          zCall( 0x00631FD0 );
 
     // user API
-    #include "Gothic_UserAPI\oCBarrier.inl"
+    #include "oCBarrier.inl"
   };
 
   // sizeof 688h
@@ -138,7 +138,7 @@ namespace Gothic_I_Classic {
     virtual void RenderSkyPre()                                zCall( 0x00632140 );
 
     // user API
-    #include "Gothic_UserAPI\oCSkyControler_Barrier.inl"
+    #include "oCSkyControler_Barrier.inl"
   };
 
 } // namespace Gothic_I_Classic

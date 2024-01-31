@@ -35,7 +35,7 @@ namespace Gothic_II_Classic {
     zTRenderContext() {}
 
     // user API
-    #include "Gothic_UserAPI\zTRenderContext.inl"
+    #include "zTRenderContext.inl"
   };
 
   // sizeof 34h
@@ -81,7 +81,7 @@ namespace Gothic_II_Classic {
     static zCArray<zCVisual*>& s_visualClassList;
 
     // user API
-    #include "Gothic_UserAPI\zCVisual.inl"
+    #include "zCVisual.inl"
   };
 
   // sizeof 34h
@@ -102,7 +102,7 @@ namespace Gothic_II_Classic {
     virtual zSTRING const* GetAnyAnimation()        zPureCall;
 
     // user API
-    #include "Gothic_UserAPI\zCVisualAnimate.inl"
+    #include "zCVisualAnimate.inl"
   };
 
   // sizeof 54h
@@ -147,7 +147,7 @@ namespace Gothic_II_Classic {
     static zCMesh*& decalMesh2Sided;
 
     // user API
-    #include "Gothic_UserAPI\zCDecal.inl"
+    #include "zCDecal.inl"
   };
 
   // sizeof E4h
@@ -276,7 +276,7 @@ namespace Gothic_II_Classic {
     static zCArraySort<zCVertex*>& s_vertexCache;
 
     // user API
-    #include "Gothic_UserAPI\zCMesh.inl"
+    #include "zCMesh.inl"
   };
 
 } // namespace Gothic_II_Classic

@@ -24,7 +24,7 @@ namespace Gothic_II_Addon {
     static zCArray<zCCollisionObjectDef*>*& s_aoCollObjClassList;
 
     // user API
-    #include "Gothic_UserAPI\zCCollisionObjectDef.inl"
+    #include "zCCollisionObjectDef.inl"
   };
 
   // sizeof 8Ch
@@ -55,7 +55,7 @@ namespace Gothic_II_Addon {
     virtual void __fastcall GetLargestBBox3DLocal( zTBBox3D& )                                                       zCall( 0x0054D520 );
 
     // user API
-    #include "Gothic_UserAPI\zCCollisionObject.inl"
+    #include "zCCollisionObject.inl"
   };
 
 } // namespace Gothic_II_Addon

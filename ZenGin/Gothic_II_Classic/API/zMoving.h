@@ -32,7 +32,7 @@ namespace Gothic_II_Classic {
       zTMOR_Sample() {}
 
       // user API
-      #include "Gothic_UserAPI\zCMoveRecorder_zTMOR_Sample.inl"
+      #include "zCMoveRecorder_zTMOR_Sample.inl"
     };
 
     zSTRING name;                  // sizeof 14h    offset 00h
@@ -46,7 +46,7 @@ namespace Gothic_II_Classic {
     zCMoveRecorder() {}
 
     // user API
-    #include "Gothic_UserAPI\zCMoveRecorder.inl"
+    #include "zCMoveRecorder.inl"
   };
 
   // sizeof 58h

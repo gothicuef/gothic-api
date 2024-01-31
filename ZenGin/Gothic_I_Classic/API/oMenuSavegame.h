@@ -45,7 +45,7 @@ namespace Gothic_I_Classic {
     virtual int GetSelectedSlot()                                                           zCall( 0x0042D840 );
 
     // user API
-    #include "Gothic_UserAPI\oCMenuSavegame.inl"
+    #include "oCMenuSavegame.inl"
   };
 
 } // namespace Gothic_I_Classic

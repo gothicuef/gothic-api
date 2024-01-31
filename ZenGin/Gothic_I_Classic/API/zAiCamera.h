@@ -139,7 +139,7 @@ namespace Gothic_I_Classic {
     static int& bCamChanges;
 
     // user API
-    #include "Gothic_UserAPI\zCAICamera.inl"
+    #include "zCAICamera.inl"
   };
 
 } // namespace Gothic_I_Classic

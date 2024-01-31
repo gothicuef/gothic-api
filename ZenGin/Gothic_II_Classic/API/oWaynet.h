@@ -20,7 +20,7 @@ namespace Gothic_II_Classic {
     virtual int CanBeUsed( zCVob const* ) zCall( 0x0071E520 );
 
     // user API
-    #include "Gothic_UserAPI\oCWaypoint.inl"
+    #include "oCWaypoint.inl"
   };
 
   // sizeof 28h
@@ -41,7 +41,7 @@ namespace Gothic_II_Classic {
     virtual int IsObjectOnWay( zCVob const* )     zCall( 0x0071EE40 );
 
     // user API
-    #include "Gothic_UserAPI\oCWay.inl"
+    #include "oCWay.inl"
   };
 
 } // namespace Gothic_II_Classic

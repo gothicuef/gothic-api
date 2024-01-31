@@ -33,7 +33,7 @@ namespace Gothic_II_Classic {
     virtual void ProcessMessages()                                                              zCall( 0x0045B440 );
 
     // user API
-    #include "Gothic_UserAPI\zCNetManager.inl"
+    #include "zCNetManager.inl"
   };
 
 } // namespace Gothic_II_Classic

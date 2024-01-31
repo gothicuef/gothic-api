@@ -23,7 +23,7 @@ namespace Gothic_II_Addon {
     zCPluecker& operator-= ( zCPluecker const& )         zCall( 0x005D37D0 );
 
     // user API
-    #include "Gothic_UserAPI\zCPluecker.inl"
+    #include "zCPluecker.inl"
   };
 
 } // namespace Gothic_II_Addon

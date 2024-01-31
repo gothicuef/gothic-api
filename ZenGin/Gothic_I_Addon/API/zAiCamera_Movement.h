@@ -197,7 +197,7 @@ namespace Gothic_I_Addon {
     static zCMovementTracker* GetTracker()                                    zCall( 0x004B9A80 );
 
     // user API
-    #include "Gothic_UserAPI\zCMovementTracker.inl"
+    #include "zCMovementTracker.inl"
   };
 
 } // namespace Gothic_I_Addon

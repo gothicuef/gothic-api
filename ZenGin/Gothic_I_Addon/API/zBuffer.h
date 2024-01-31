@@ -98,7 +98,7 @@ namespace Gothic_I_Addon {
     virtual ~zCBuffer()                                   zCall( 0x004420A0 );
 
     // user API
-    #include "Gothic_UserAPI\zCBuffer.inl"
+    #include "zCBuffer.inl"
   };
 
 } // namespace Gothic_I_Addon

@@ -50,7 +50,7 @@ namespace Gothic_II_Addon {
     static zCList<zCInputCallback>& inputList;
 
     // user API
-    #include "Gothic_UserAPI\zCInputCallback.inl"
+    #include "zCInputCallback.inl"
   };
 
   // sizeof 38h
@@ -77,7 +77,7 @@ namespace Gothic_II_Addon {
     virtual ~zCViewText()                                                                  zCall( 0x007AC700 );
 
     // user API
-    #include "Gothic_UserAPI\zCViewText.inl"
+    #include "zCViewText.inl"
   };
 
   // sizeof 100h
@@ -255,7 +255,7 @@ namespace Gothic_II_Addon {
     static float& s_fViewTimePerChar;
 
     // user API
-    #include "Gothic_UserAPI\zCView.inl"
+    #include "zCView.inl"
   };
 
   extern zCView*& screen;

@@ -30,7 +30,7 @@ namespace Gothic_I_Addon {
     /* for zCViewDialog num : 1*/
 
     // user API
-    #include "Gothic_UserAPI\zCViewDialog.inl"
+    #include "zCViewDialog.inl"
   };
 
 } // namespace Gothic_I_Addon

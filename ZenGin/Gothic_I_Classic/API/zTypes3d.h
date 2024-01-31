@@ -82,7 +82,7 @@ namespace Gothic_I_Classic {
     zCOLOR( unsigned char a0, unsigned char a1, unsigned char a2, unsigned char a3 = 255 ) zInit( zCOLOR_OnInit( a0, a1, a2, a3 ));
 
     // user API
-    #include "Gothic_UserAPI\zCOLOR.inl"
+    #include "zCOLOR.inl"
   };
 
   struct zTPlane {
@@ -105,7 +105,7 @@ namespace Gothic_I_Classic {
     void GetOriginUpRight( zVEC3&, zVEC3&, zVEC3& ) const             zCall( 0x005D0850 );
 
     // user API
-    #include "Gothic_UserAPI\zTPlane.inl"
+    #include "zTPlane.inl"
   };
 
 } // namespace Gothic_I_Classic

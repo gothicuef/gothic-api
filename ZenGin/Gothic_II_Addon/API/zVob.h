@@ -105,7 +105,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                               zCall( 0x004020C0 );
 
     // user API
-    #include "Gothic_UserAPI\zCEventMessage.inl"
+    #include "zCEventMessage.inl"
   };
 
   // sizeof 4Ch
@@ -144,7 +144,7 @@ namespace Gothic_II_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* ) zCall( 0x006061D0 );
 
     // user API
-    #include "Gothic_UserAPI\zCEventCore.inl"
+    #include "zCEventCore.inl"
   };
 
   // sizeof 120h
@@ -187,7 +187,7 @@ namespace Gothic_II_Addon {
       ~zTCollisionContext() zCall( 0x0061F490 );
 
       // user API
-      #include "Gothic_UserAPI\zCVob_zTCollisionContext.inl"
+      #include "zCVob_zTCollisionContext.inl"
     };
 
     // sizeof 1Ch
@@ -204,7 +204,7 @@ namespace Gothic_II_Addon {
       ~zTModelLimbColl()            zCall( 0x00603A50 );
 
       // user API
-      #include "Gothic_UserAPI\zCVob_zTModelLimbColl.inl"
+      #include "zCVob_zTModelLimbColl.inl"
     };
 
     zCTree<zCVob>* globalVobTreeNode;               // sizeof 04h    offset 24h
@@ -451,7 +451,7 @@ namespace Gothic_II_Addon {
     static zCCollisionDetector*& s_poCollisionDetector;
 
     // user API
-    #include "Gothic_UserAPI\zCVob.inl"
+    #include "zCVob.inl"
   };
 
   // sizeof 48h
@@ -494,7 +494,7 @@ namespace Gothic_II_Addon {
     void SetRange( float, int )                zCall( 0x0060AA60 );
 
     // user API
-    #include "Gothic_UserAPI\zCVobLightData.inl"
+    #include "zCVobLightData.inl"
   };
 
   // sizeof 80h
@@ -513,7 +513,7 @@ namespace Gothic_II_Addon {
     virtual ~zCVobLightPreset()              zCall( 0x005FD6D0 );
 
     // user API
-    #include "Gothic_UserAPI\zCVobLightPreset.inl"
+    #include "zCVobLightPreset.inl"
   };
 
   // sizeof 188h
@@ -551,7 +551,7 @@ namespace Gothic_II_Addon {
     static int& renderLightVisuals;
 
     // user API
-    #include "Gothic_UserAPI\zCVobLight.inl"
+    #include "zCVobLight.inl"
   };
 
   // sizeof 120h
@@ -574,7 +574,7 @@ namespace Gothic_II_Addon {
     static int& unarcIgnoreVisuals;
 
     // user API
-    #include "Gothic_UserAPI\zCVobLevelCompo.inl"
+    #include "zCVobLevelCompo.inl"
   };
 
 } // namespace Gothic_II_Addon

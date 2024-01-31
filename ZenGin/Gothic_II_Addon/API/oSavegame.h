@@ -52,7 +52,7 @@ namespace Gothic_II_Addon {
     virtual ~oCSavegameInfo()                    zCall( 0x00437810 );
 
     // user API
-    #include "Gothic_UserAPI\oCSavegameInfo.inl"
+    #include "oCSavegameInfo.inl"
   };
 
   // sizeof 18h
@@ -78,7 +78,7 @@ namespace Gothic_II_Addon {
     virtual ~oCSavegameManager()                     zCall( 0x004388D0 );
 
     // user API
-    #include "Gothic_UserAPI\oCSavegameManager.inl"
+    #include "oCSavegameManager.inl"
   };
 
 } // namespace Gothic_II_Addon

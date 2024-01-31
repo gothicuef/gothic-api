@@ -24,7 +24,7 @@ namespace Gothic_I_Addon {
     static int& size_checked;
 
     // user API
-    #include "Gothic_UserAPI\oCTradeManager.inl"
+    #include "oCTradeManager.inl"
   };
 
   // sizeof 20h
@@ -60,7 +60,7 @@ namespace Gothic_I_Addon {
     int GetNpcInstance()                  zCall( 0x006A1AD0 );
 
     // user API
-    #include "Gothic_UserAPI\oCItemReactModule.inl"
+    #include "oCItemReactModule.inl"
   };
 
 } // namespace Gothic_I_Addon

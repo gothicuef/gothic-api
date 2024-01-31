@@ -151,7 +151,7 @@ namespace Gothic_II_Classic {
     static zCGfx** gfx_arrow;
 
     // user API
-    #include "Gothic_UserAPI\oCItemContainer.inl"
+    #include "oCItemContainer.inl"
   };
 
   // sizeof A4h
@@ -171,7 +171,7 @@ namespace Gothic_II_Classic {
     virtual void CreateList()                     zCall( 0x006AD2F0 );
 
     // user API
-    #include "Gothic_UserAPI\oCStealContainer.inl"
+    #include "oCStealContainer.inl"
   };
 
   // sizeof A4h
@@ -189,7 +189,7 @@ namespace Gothic_II_Classic {
     virtual void CreateList()                    zCall( 0x006ADA80 );
 
     // user API
-    #include "Gothic_UserAPI\oCNpcContainer.inl"
+    #include "oCNpcContainer.inl"
   };
 
   // sizeof CCh
@@ -250,7 +250,7 @@ namespace Gothic_II_Classic {
     static zCGfx*& gfx_title;
 
     // user API
-    #include "Gothic_UserAPI\oCNpcInventory.inl"
+    #include "oCNpcInventory.inl"
   };
 
 } // namespace Gothic_II_Classic

@@ -33,7 +33,7 @@ namespace Gothic_II_Addon {
     virtual void DoAI( zCVob*, int& ) zCall( 0x006BC150 );
 
     // user API
-    #include "Gothic_UserAPI\oCAskBox.inl"
+    #include "oCAskBox.inl"
   };
 
 } // namespace Gothic_II_Addon

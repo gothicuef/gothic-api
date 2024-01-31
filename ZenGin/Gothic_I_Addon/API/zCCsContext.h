@@ -93,7 +93,7 @@ namespace Gothic_I_Addon {
     static int& playDisabled;
 
     // user API
-    #include "Gothic_UserAPI\zCCSCutsceneContext.inl"
+    #include "zCCSCutsceneContext.inl"
   };
 
   // sizeof 18h
@@ -117,7 +117,7 @@ namespace Gothic_I_Addon {
     virtual void CSDB_Stop( zCCutscene* )                 zPureCall;
 
     // user API
-    #include "Gothic_UserAPI\zCCSDebugger.inl"
+    #include "zCCSDebugger.inl"
   };
 
 } // namespace Gothic_I_Addon
