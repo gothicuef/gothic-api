@@ -123,17 +123,30 @@ namespace Gothic_II_Classic {
     #include "zCObject.inl"
   };
 
-  template<class T>
-  T* zDYNAMIC_CAST( zCObject const* pObject ) {
-    if( !pObject ) {
-      return NULL;
+#if defined(_MSVC_LANG) &&  _MSVC_LANG  >= 201703L
+#define GAPI_CONSTEXPR17 constexpr
+#else
+#define GAPI_CONSTEXPR17
+#endif
+
+  template<class T, class U>
+  T* zDYNAMIC_CAST(U* const pObject) {
+    static_assert( std::is_base_of_v<zCObject, T> && std::is_base_of_v<zCObject, U>, "zCObject must be a base class of both types" );
+    
+    if GAPI_CONSTEXPR17 ( &T::classDef != &U::classDef ) {
+      if (!pObject) {
+        return nullptr;
+      }
+
+      zCClassDef* pDef = pObject->_GetClassDef();
+      if ( zCObject::CheckInheritance( T::classDef, pDef ) ) {
+        return static_cast<T*>(pObject);
+      }
+
     }
-    zCClassDef* pDef = pObject->_GetClassDef();
-    if( zCObject::CheckInheritance( T::classDef, pDef ) ) {
-      return (T*)pObject;
-    }
-    return dynamic_cast<T*>((zCObject*)pObject);
+    return dynamic_cast<T*>(pObject);
   }
+#undef GAPI_CONSTEXPR17
 
   template<class T>
   T* zCObject::CastTo() {
