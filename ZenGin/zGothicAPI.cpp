@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <stdio.h>
+#include <type_traits>
 
 #include "zGothicAPI.h"
 
