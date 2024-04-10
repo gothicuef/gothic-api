@@ -64,7 +64,7 @@ namespace Gothic_II_Addon {
       #include "oCMission_TMisStatus.inl"
     };
 
-    group {
+    struct {
       zSTRING name;                  // sizeof 14h    offset 04h
       zSTRING description;           // sizeof 14h    offset 18h
       int duration;                  // sizeof 04h    offset 2Ch

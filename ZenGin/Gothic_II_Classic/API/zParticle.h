@@ -243,7 +243,7 @@ namespace Gothic_II_Classic {
     zTBBox3D bbox3DWorld;                      // sizeof 18h    offset 58h
     zCVob* connectedVob;                       // sizeof 04h    offset 70h
     int bboxUpdateCtr;                         // sizeof 04h    offset 74h
-    group {
+    struct {
       unsigned char emitterIsOwned        : 1; // sizeof 01h    offset bit
       unsigned char dontKillPFXWhenDone   : 1; // sizeof 01h    offset bit
       unsigned char dead                  : 1; // sizeof 01h    offset bit

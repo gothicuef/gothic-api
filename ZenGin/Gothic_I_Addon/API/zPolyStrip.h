@@ -38,7 +38,7 @@ namespace Gothic_I_Addon {
     float newAlpha;               // sizeof 04h    offset 90h
     int lastDirSeg;               // sizeof 04h    offset 94h
     zVEC3 lastDirNormal;          // sizeof 0Ch    offset 98h
-    group {
+    struct {
       unsigned char localFOR : 1; // sizeof 01h    offset bit
     };
 

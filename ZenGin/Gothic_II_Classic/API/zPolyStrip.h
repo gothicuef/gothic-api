@@ -41,7 +41,7 @@ namespace Gothic_II_Classic {
     float newAlpha;               // sizeof 04h    offset 9Ch
     int lastDirSeg;               // sizeof 04h    offset A0h
     zVEC3 lastDirNormal;          // sizeof 0Ch    offset A4h
-    group {
+    struct {
       unsigned char localFOR : 1; // sizeof 01h    offset bit
     };
 

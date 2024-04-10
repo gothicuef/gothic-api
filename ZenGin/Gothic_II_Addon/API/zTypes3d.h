@@ -63,7 +63,7 @@ namespace Gothic_II_Addon {
     zOPERATORS_DECLARATION()
 
     union {
-      group {
+      struct {
         unsigned char b;
         unsigned char g;
         unsigned char r;

@@ -24,7 +24,7 @@ namespace Gothic_I_Classic {
     float distVobToCam;                         // sizeof 04h    offset 10h
     zTVisualCamAlign visualCamAlign;            // sizeof 04h    offset 14h
     zCOLOR hintLightingHighlightColor;          // sizeof 04h    offset 18h
-    group {
+    struct {
       unsigned char hintLightingFullbright : 1; // sizeof 01h    offset bit
       unsigned char hintLightingSwell      : 1; // sizeof 01h    offset bit
       unsigned char hintLightingHighlight  : 1; // sizeof 01h    offset bit

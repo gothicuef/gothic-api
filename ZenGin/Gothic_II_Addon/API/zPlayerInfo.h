@@ -23,7 +23,7 @@ namespace Gothic_II_Addon {
     unsigned long pingTime;        // sizeof 04h    offset 28h
     unsigned long pingTimeStart;   // sizeof 04h    offset 2Ch
     unsigned long pingLost;        // sizeof 04h    offset 30h
-    group {
+    struct {
       unsigned char id       : 8;  // sizeof 08h    offset bit
       int ready              : 1;  // sizeof 01h    offset bit
       int deactivated        : 1;  // sizeof 01h    offset bit

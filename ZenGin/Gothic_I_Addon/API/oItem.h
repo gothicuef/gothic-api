@@ -61,7 +61,7 @@ namespace Gothic_I_Addon {
   public:
     zCLASS_DECLARATION( oCItem )
 
-    group {
+    struct {
       int idx;                           // sizeof 04h    offset 100h
       zSTRING name;                      // sizeof 14h    offset 104h
       zSTRING nameID;                    // sizeof 14h    offset 118h

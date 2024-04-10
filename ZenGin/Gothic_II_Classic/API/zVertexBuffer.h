@@ -64,7 +64,7 @@ namespace Gothic_II_Classic {
       zVEC3* normalPtr;       // sizeof 04h    offset 0Ch
       zCOLOR* colorPtr;       // sizeof 04h    offset 10h
       union {
-        group {
+        struct {
           zVEC2* texUV0Ptr;   // sizeof 04h    offset 14h
           zVEC2* texUV1Ptr;   // sizeof 04h    offset 18h
           zVEC2* texUV2Ptr;   // sizeof 04h    offset 1Ch

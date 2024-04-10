@@ -60,7 +60,7 @@ namespace Gothic_I_Classic {
     zSTRING* detailObjectVisualName;              // sizeof 04h    offset 60h
     float kambient;                               // sizeof 04h    offset 64h
     float kdiffuse;                               // sizeof 04h    offset 68h
-    group {
+    struct {
       unsigned char smooth                   : 1; // sizeof 01h    offset bit
       unsigned char dontUseLightmaps         : 1; // sizeof 01h    offset bit
       unsigned char texAniMap                : 1; // sizeof 01h    offset bit

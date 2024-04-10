@@ -21,7 +21,7 @@ namespace Gothic_I_Addon {
   public:
     zOPERATORS_DECLARATION()
 
-    group {
+    struct {
       float n_range3;  // sizeof 04h    offset 00h
       float n_range1;  // sizeof 04h    offset 04h
       float n_range2;  // sizeof 04h    offset 08h

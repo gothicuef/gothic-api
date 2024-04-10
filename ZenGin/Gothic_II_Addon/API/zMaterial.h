@@ -77,7 +77,7 @@ namespace Gothic_II_Addon {
     float kambient;                               // sizeof 04h    offset 64h
     float kdiffuse;                               // sizeof 04h    offset 68h
     float m_bEnvironmentalMappingStrength;        // sizeof 04h    offset 6Ch
-    group {
+    struct {
       unsigned char smooth                   : 1; // sizeof 01h    offset bit
       unsigned char dontUseLightmaps         : 1; // sizeof 01h    offset bit
       unsigned char texAniMap                : 1; // sizeof 01h    offset bit

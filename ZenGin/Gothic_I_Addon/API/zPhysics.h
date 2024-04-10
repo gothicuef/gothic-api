@@ -32,7 +32,7 @@ namespace Gothic_I_Addon {
     float gravityScale;                 // sizeof 04h    offset ECh
     zVEC3 slideDir;                     // sizeof 0Ch    offset F0h
     float slideAngle;                   // sizeof 04h    offset FCh
-    group {
+    struct {
       unsigned char gravityOn      : 1; // sizeof 01h    offset bit
       unsigned char collisionHad   : 1; // sizeof 01h    offset bit
       unsigned char mode           : 1; // sizeof 01h    offset bit

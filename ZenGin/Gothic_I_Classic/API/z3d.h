@@ -255,7 +255,7 @@ namespace Gothic_I_Classic {
 
     zVEC3 position;                      // sizeof 0Ch    offset 00h
     union {
-      group {
+      struct {
         unsigned short transformedIndex; // sizeof 02h    offset 0Ch
         unsigned short myIndex;          // sizeof 02h    offset 0Eh
       };

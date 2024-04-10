@@ -37,7 +37,7 @@ namespace Gothic_I_Classic {
     zMAT4 m_oTrafoOld;                      // sizeof 40h    offset 04h
     zMAT4 m_oTrafoNew;                      // sizeof 40h    offset 44h
     void* m_pvClientData;                   // sizeof 04h    offset 84h
-    group {
+    struct {
       unsigned char m_bHintTranslation : 1; // sizeof 01h    offset bit
       unsigned char m_bHintRotation    : 1; // sizeof 01h    offset bit
     };

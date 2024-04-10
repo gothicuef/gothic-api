@@ -170,7 +170,7 @@ namespace Gothic_I_Addon {
 
       float m_fMaxGroundAngleWalk;                       // sizeof 04h    offset 00h
       float m_fStepHeight;                               // sizeof 04h    offset 04h
-      group {
+      struct {
         unsigned char m_bTreatWaterAsSolid          : 1; // sizeof 01h    offset bit
         unsigned char m_bDoWallSliding              : 1; // sizeof 01h    offset bit
         unsigned char m_bUseSpacingRays             : 1; // sizeof 01h    offset bit
@@ -198,7 +198,7 @@ namespace Gothic_I_Addon {
       zCPolygon* m_poFloorPoly;            // sizeof 04h    offset 10h
       zCPolygon* m_poWaterPoly;            // sizeof 04h    offset 14h
       zCPolygon* m_poCeilingPoly;          // sizeof 04h    offset 18h
-      group {
+      struct {
         unsigned char m_bFloorIsStair : 1; // sizeof 01h    offset bit
         unsigned char m_bFloorIsVob   : 1; // sizeof 01h    offset bit
         unsigned char m_bIsUninited   : 1; // sizeof 01h    offset bit

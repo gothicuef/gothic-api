@@ -454,7 +454,7 @@ namespace Gothic_I_Addon {
     zOPERATORS_DECLARATION()
 
     unsigned int xtex_textureflag;                  // sizeof 04h    offset 8Ch
-    group {
+    struct {
       int                         : 17;             // sizeof 11h    offset bit
       int xtex_decompress         : 1;              // sizeof 01h    offset bit
       int xtex_locked             : 1;              // sizeof 01h    offset bit
@@ -504,7 +504,7 @@ namespace Gothic_I_Addon {
   public:
     zOPERATORS_DECLARATION()
 
-    group {
+    struct {
       int                                      : 23; // sizeof 17h    offset bit
       unsigned char xvb_optimized              : 1;  // sizeof 01h    offset bit
       unsigned char xvb_locked                 : 1;  // sizeof 01h    offset bit
