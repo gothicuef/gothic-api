@@ -98,7 +98,7 @@ namespace Gothic_II_Classic {
     zCResource* prevRes;                   // sizeof 04h    offset 28h
     unsigned long timeStamp;               // sizeof 04h    offset 2Ch
     zCCriticalSection stateChangeGuard;    // sizeof 1Ch    offset 30h
-    group {
+    struct {
       unsigned char cacheState       : 2;  // sizeof 02h    offset bit
       unsigned char cacheOutLock     : 1;  // sizeof 01h    offset bit
       unsigned char cacheClassIndex  : 8;  // sizeof 08h    offset bit

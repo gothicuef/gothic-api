@@ -93,7 +93,7 @@ namespace Gothic_I_Addon {
     zSTRING limbname;                          // sizeof 14h    offset 194h
     float paradeBeginFrame;                    // sizeof 04h    offset 1A8h
     float paradeEndFrame;                      // sizeof 04h    offset 1ACh
-    group {
+    struct {
       unsigned char canEnableNextCombo : 1;    // sizeof 01h    offset bit
       unsigned char endCombo           : 1;    // sizeof 01h    offset bit
       unsigned char comboCanHit        : 1;    // sizeof 01h    offset bit

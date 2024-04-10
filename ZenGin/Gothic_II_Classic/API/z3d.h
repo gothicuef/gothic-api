@@ -262,7 +262,7 @@ namespace Gothic_II_Classic {
 
     zVEC3 position;           // sizeof 0Ch    offset 00h
     union {
-      group {
+      struct {
         int transformedIndex; // sizeof 04h    offset 0Ch
         int myIndex;          // sizeof 04h    offset 10h
       };

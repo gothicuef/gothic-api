@@ -141,7 +141,7 @@ namespace Gothic_II_Classic {
     float hoverOld;                    // sizeof 04h    offset 74h
     float hoverDir;                    // sizeof 04h    offset 78h
     int spellEnergy;                   // sizeof 04h    offset 7Ch
-    group {
+    struct {
       float manaInvestTime;            // sizeof 04h    offset 80h
       int damagePerLevel;              // sizeof 04h    offset 84h
       int damageType;                  // sizeof 04h    offset 88h

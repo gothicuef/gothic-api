@@ -56,7 +56,7 @@ namespace Gothic_II_Addon {
     float obstructionToGo;              // sizeof 04h    offset 28h
     float volumeToGo;                   // sizeof 04h    offset 2Ch
     int autoObstructTimer;              // sizeof 04h    offset 30h
-    group {
+    struct {
       unsigned char active    : 1;      // sizeof 01h    offset bit
       unsigned char looping   : 1;      // sizeof 01h    offset bit
       unsigned char isAmbient : 1;      // sizeof 01h    offset bit

@@ -52,7 +52,7 @@ namespace Gothic_I_Addon {
     float pitchOffset;                  // sizeof 04h    offset 1Ch
     float volWeight;                    // sizeof 04h    offset 20h
     float obstruction;                  // sizeof 04h    offset 24h
-    group {
+    struct {
       unsigned char active    : 1;      // sizeof 01h    offset bit
       unsigned char looping   : 1;      // sizeof 01h    offset bit
       unsigned char isAmbient : 1;      // sizeof 01h    offset bit

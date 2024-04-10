@@ -254,7 +254,7 @@ namespace Gothic_II_Classic {
     zCTexture* prevAni[zTEX_MAX_ANIS];    // sizeof 0Ch    offset 64h
     int actAniFrame[zTEX_MAX_ANIS];       // sizeof 0Ch    offset 70h
     int numAniFrames[zTEX_MAX_ANIS];      // sizeof 0Ch    offset 7Ch
-    group {
+    struct {
       unsigned char hasAlpha         : 1; // sizeof 01h    offset bit
       unsigned char isAnimated       : 1; // sizeof 01h    offset bit
       unsigned char changingRealtime : 1; // sizeof 01h    offset bit

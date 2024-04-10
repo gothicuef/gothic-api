@@ -211,14 +211,14 @@ namespace Gothic_II_Addon {
     zTMdl_AniSample* aniSampleMatrix; // sizeof 04h    offset CCh
     float samplePosRangeMin;          // sizeof 04h    offset D0h
     float samplePosScaler;            // sizeof 04h    offset D4h
-    group {
+    struct {
       int numFrames         : 16;     // sizeof 10h    offset bit
       int numNodes          : 16;     // sizeof 10h    offset bit
       zTMdl_AniType aniType : 6;      // sizeof 06h    offset bit
       zTMdl_AniDir aniDir   : 2;      // sizeof 02h    offset bit
       int numAniEvents      : 6;      // sizeof 06h    offset bit
     };
-    group {
+    struct {
       byte flagVobRot      : 1;       // sizeof 01h    offset bit
       byte flagVobPos      : 1;       // sizeof 01h    offset bit
       byte flagEndSync     : 1;       // sizeof 01h    offset bit
@@ -635,7 +635,7 @@ namespace Gothic_II_Addon {
     zVEC3 modelVelocity;                                   // sizeof 0Ch    offset 188h
     int actVelRingPos;                                     // sizeof 04h    offset 194h
     zVEC3 modelVelRing[zMDL_VELRING_SIZE];                 // sizeof 60h    offset 198h
-    group {
+    struct {
       unsigned char isVisible         : 1;                 // sizeof 01h    offset bit
       unsigned char isFlying          : 1;                 // sizeof 01h    offset bit
       unsigned char randAnisEnabled   : 1;                 // sizeof 01h    offset bit

@@ -234,7 +234,7 @@ namespace Gothic_II_Addon {
     zSTRING* vobPresetName;                         // sizeof 04h    offset F8h
     zCEventManager* eventManager;                   // sizeof 04h    offset FCh
     float nextOnTimer;                              // sizeof 04h    offset 100h
-    group {
+    struct {
       unsigned char showVisual                : 1;  // sizeof 01h    offset bit
       unsigned char drawBBox3D                : 1;  // sizeof 01h    offset bit
       unsigned char visualAlphaEnabled        : 1;  // sizeof 01h    offset bit
@@ -472,7 +472,7 @@ namespace Gothic_II_Addon {
     float colorAniActFrame;             // sizeof 04h    offset 38h
     float colorAniFPS;                  // sizeof 04h    offset 3Ch
     float spotConeAngleDeg;             // sizeof 04h    offset 40h
-    group {
+    struct {
       unsigned char isStatic       : 1; // sizeof 01h    offset bit
       unsigned char rangeAniSmooth : 1; // sizeof 01h    offset bit
       unsigned char rangeAniLoop   : 1; // sizeof 01h    offset bit

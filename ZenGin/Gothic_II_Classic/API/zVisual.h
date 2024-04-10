@@ -26,7 +26,7 @@ namespace Gothic_II_Classic {
     zTAnimationMode m_AniMode;                  // sizeof 04h    offset 18h
     float m_aniModeStrength;                    // sizeof 04h    offset 1Ch
     zCOLOR hintLightingHighlightColor;          // sizeof 04h    offset 20h
-    group {
+    struct {
       unsigned char hintLightingFullbright : 1; // sizeof 01h    offset bit
       unsigned char hintLightingSwell      : 1; // sizeof 01h    offset bit
       unsigned char hintLightingHighlight  : 1; // sizeof 01h    offset bit

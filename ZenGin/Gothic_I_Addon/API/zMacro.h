@@ -22,7 +22,6 @@ namespace Gothic_I_Addon {
 #define zPureCall ;
 #define virtual
 #endif
-#define group struct
 #define RGBA(r,g,b,a)   ((zUINT32)(zUINT8)(a)|(zUINT32)(zUINT8)(b)<<8|(zUINT32)(zUINT8)(g)<<16|(zUINT32)(zUINT8)(r)<<24)
 #define EXTRACT_R(rgba) (rgba       & 0xff)
 #define EXTRACT_G(rgba) (rgba >> 8  & 0xff)

@@ -378,7 +378,7 @@ namespace Gothic_II_Addon {
     zCLASS_DECLARATION( zCPFXControler )
 
     zSTRING pfxName;                     // sizeof 14h    offset 120h
-    group {
+    struct {
       unsigned char killVobWhenDone : 1; // sizeof 01h    offset bit
       unsigned char pfxStartOn      : 1; // sizeof 01h    offset bit
     };
@@ -649,7 +649,7 @@ namespace Gothic_II_Addon {
       MT_RESET
     };
 
-    group {
+    struct {
       unsigned char sendWhenTriggered   : 4; // sizeof 04h    offset bit
       unsigned char sendWhenUntriggered : 4; // sizeof 04h    offset bit
     };

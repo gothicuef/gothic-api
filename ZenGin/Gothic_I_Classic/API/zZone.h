@@ -270,7 +270,7 @@ namespace Gothic_I_Classic {
     zSTRING soundName;                       // sizeof 14h    offset 104h
     float soundRadius;                       // sizeof 04h    offset 118h
     zTSoundMode soundMode;                   // sizeof 04h    offset 11Ch
-    group {
+    struct {
       unsigned char soundStartOn        : 1; // sizeof 01h    offset bit
       unsigned char soundIsRunning      : 1; // sizeof 01h    offset bit
       unsigned char soundIsAmbient3D    : 1; // sizeof 01h    offset bit

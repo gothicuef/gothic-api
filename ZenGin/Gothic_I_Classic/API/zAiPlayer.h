@@ -96,7 +96,7 @@ namespace Gothic_I_Classic {
     float checkWaterCollBodyLen;                                      // sizeof 04h    offset B0h
     zCModelNodeInst* modelHeadNode;                                   // sizeof 04h    offset B4h
 #pragma pack( push, 1 )
-    group {
+    struct {
       unsigned char zMV_DO_SURFACE_ALIGN                         : 2; // sizeof 02h    offset bit
       unsigned char zMV_DO_DETECT_WALK_STOP_CHASM                : 1; // sizeof 01h    offset bit
       unsigned char zMV_DO_WALL_SLIDING                          : 1; // sizeof 01h    offset bit

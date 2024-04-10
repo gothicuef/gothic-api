@@ -412,7 +412,7 @@ namespace Gothic_I_Classic {
       float fTimeDuration;                                 // sizeof 04h    offset 7Ch
       float fTimeInterval;                                 // sizeof 04h    offset 80h
       float fDamagePerInterval;                            // sizeof 04h    offset 84h
-      group {
+      struct {
         unsigned long bOnce          : 1;                  // sizeof 01h    offset bit
         unsigned long bFinished      : 1;                  // sizeof 01h    offset bit
         unsigned long bIsDead        : 1;                  // sizeof 01h    offset bit
@@ -458,7 +458,7 @@ namespace Gothic_I_Classic {
     struct oTRobustTrace {
       zOPERATORS_DECLARATION()
 
-      group {
+      struct {
         unsigned char stand                : 1; // sizeof 01h    offset bit
         unsigned char dirChoosed           : 1; // sizeof 01h    offset bit
         unsigned char exactPosition        : 1; // sizeof 01h    offset bit
@@ -531,7 +531,7 @@ namespace Gothic_I_Classic {
       #include "oCNpc_oCNpcTimedOverlay.inl"
     };
 
-    group {
+    struct {
       int idx;                                    // sizeof 04h    offset 100h
       zSTRING name[5];                            // sizeof 64h    offset 104h
       zSTRING slot;                               // sizeof 14h    offset 168h
