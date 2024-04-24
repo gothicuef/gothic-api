@@ -255,7 +255,6 @@ namespace Gothic_I_Classic {
           }
         }
       }
-      return FALSE;
     }
 
     void DeleteListDatas() {
