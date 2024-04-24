@@ -255,7 +255,6 @@ namespace Gothic_I_Addon {
           }
         }
       }
-      return FALSE;
     }
 
     void DeleteListDatas() {
