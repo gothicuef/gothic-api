@@ -43,11 +43,11 @@ public:                                                                         
     }                                                                                               \
                                                                                                     \
     void* operator new(unsigned int size,const char *classn,const char *file,int l) {               \
-        return operator new(size);                                                                  \
+        return shi_malloc(size);                                                                    \
     }                                                                                               \
                                                                                                     \
     void operator delete(void *ptr,const char *classn,const char *file,int line) {                  \
-        operator delete(ptr);                                                                       \
+        operator shi_free(ptr);                                                                     \
     }                                                                                               \
                                                                                                     \
     static size_t PoolMark() { return s_MemMan.Mark(); }                                            \
