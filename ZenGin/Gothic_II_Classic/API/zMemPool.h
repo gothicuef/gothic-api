@@ -93,6 +93,18 @@ namespace Gothic_II_Classic {
     #include "zCMemPoolBase.inl"
   };
 
+  template <class T> class zCVolatileMemory : public zCVolatileMemoryBase {
+    virtual void Destroyed(void* ptr) { reinterpret_cast<T*>(ptr)->~T(); }
+  public:
+    zCVolatileMemory( size_t num, zTVolatileOverflowMode overflow = zVOLATILE_OVERFLOW_FORBID ) : zCVolatileMemoryBase(sizeof(T), num, overflow) {}
+    zCVolatileMemory( zTVolatileOverflowMode overflow = zVOLATILE_OVERFLOW_FORBID ) : zCVolatileMemoryBase(sizeof(T), overflow) {}
+    T* CreateNew() { return new(Alloc()) T; }
+    T& Element( size_t i ) { return reinterpret_cast<T*>(data)[i]; }
+    T& operator[]( size_t i ) { return Element(i); }
+    int LastAllocatedIndex() { return nextfree - 1; }
+    int Index(T* o) { return ((size_t)(o)-(size_t)(data)) / sizeof(T); }
+  };
+
 } // namespace Gothic_II_Classic
 
 #endif // __ZMEM_POOL_H__VER2__
