@@ -1002,7 +1002,7 @@ namespace Gothic_I_Classic {
       return *this;
     }
 
-	#define ROWCOL( i, j )       \
+#define ROWCOL( i, j )           \
       self[i][0] * other[0][j] + \
       self[i][1] * other[1][j] + \
       self[i][2] * other[2][j] + \
@@ -1017,6 +1017,7 @@ namespace Gothic_I_Classic {
         zVEC4( ROWCOL( 3, 0 ), ROWCOL( 3, 1 ), ROWCOL( 3, 2 ), ROWCOL( 3, 3 ) )
       );
     }
+#undef ROWCOL
 
     int operator == ( const zMAT4& a0 ) const
     {
