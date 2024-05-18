@@ -211,7 +211,7 @@ namespace Gothic_I_Addon {
     zSTRING complete_path;              // sizeof 14h    offset 60h
     zSTRING complete_directory;         // sizeof 14h    offset 74h
     int error;                          // sizeof 04h    offset 88h
-    FILE* file_handle;                  // sizeof 04h    offset 8Ch
+    zGOTHIC_FILE* file_handle;          // sizeof 04h    offset 8Ch
     long file_mode;                     // sizeof 04h    offset 90h
     _finddata32i64_t_vc6 find_fileinfo; // sizeof 120h   offset 98h
     long find_handle;                   // sizeof 04h    offset 1B8h

@@ -133,7 +133,7 @@ namespace Gothic_II_Classic {
     virtual void SetFile( zSTRING )                               zPureCall;
     virtual void SetFilename( zSTRING )                           zPureCall;
     virtual void SetExt( zSTRING )                                zPureCall;
-    virtual FILE* GetFileHandle()                                 zPureCall;
+    virtual zGOTHIC_FILE* GetFileHandle()                         zPureCall;
     virtual zSTRING GetFullPath()                                 zPureCall;
     virtual zSTRING GetPath()                                     zPureCall;
     virtual zSTRING GetDirectoryPath()                            zPureCall;
@@ -211,7 +211,7 @@ namespace Gothic_II_Classic {
     zSTRING complete_path;              // sizeof 14h    offset 60h
     zSTRING complete_directory;         // sizeof 14h    offset 74h
     int error;                          // sizeof 04h    offset 88h
-    FILE* file_handle;                  // sizeof 04h    offset 8Ch
+    zGOTHIC_FILE* file_handle;          // sizeof 04h    offset 8Ch
     long file_mode;                     // sizeof 04h    offset 90h
     _finddata32i64_t_vc6 find_fileinfo; // sizeof 120h   offset 98h
     long find_handle;                   // sizeof 04h    offset 1B8h
@@ -236,7 +236,7 @@ namespace Gothic_II_Classic {
     virtual void SetFile( zSTRING )                               zCall( 0x00445BB0 );
     virtual void SetFilename( zSTRING )                           zCall( 0x00445890 );
     virtual void SetExt( zSTRING )                                zCall( 0x00445A20 );
-    virtual FILE* GetFileHandle()                                 zCall( 0x00442B20 );
+    virtual zGOTHIC_FILE* GetFileHandle()                         zCall( 0x00442B20 );
     virtual zSTRING GetFullPath()                                 zCall( 0x00445D30 );
     virtual zSTRING GetPath()                                     zCall( 0x00442B30 );
     virtual zSTRING GetDirectoryPath()                            zCall( 0x00442B80 );

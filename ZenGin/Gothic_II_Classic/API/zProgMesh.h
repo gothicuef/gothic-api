@@ -378,7 +378,7 @@ namespace Gothic_II_Classic {
     void zCProgMeshConvertFileHandler_OnInit()                         zCall( 0x005C9560 );
     zCProgMeshConvertFileHandler() : zCtor( zCScanDirFileHandler )     zInit( zCProgMeshConvertFileHandler_OnInit() );
     virtual ~zCProgMeshConvertFileHandler()                            zCall( 0x00424930 );
-    virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005C9640 );
+    virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x005C9640 );
 
     // user API
     #include "zCProgMeshConvertFileHandler.inl"

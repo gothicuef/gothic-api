@@ -358,7 +358,7 @@ namespace Gothic_II_Addon {
 
     zCTextureFileHandler() : zCtor( zCScanDirFileHandler ) {}
     virtual ~zCTextureFileHandler()                                    zCall( 0x00424C10 );
-    virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005F7C40 );
+    virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x005F7C40 );
 
     // user API
     #include "zCTextureFileHandler.inl"

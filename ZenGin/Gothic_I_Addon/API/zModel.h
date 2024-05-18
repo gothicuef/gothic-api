@@ -747,7 +747,7 @@ namespace Gothic_I_Addon {
     void zCModelConvertFileHandler_OnInit()                            zCall( 0x0059C6C0 );
     zCModelConvertFileHandler() : zCtor( zCScanDirFileHandler )        zInit( zCModelConvertFileHandler_OnInit() );
     virtual ~zCModelConvertFileHandler()                               zCall( 0x00426AF0 );
-    virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x0059C7F0 );
+    virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x0059C7F0 );
 
     // user API
     #include "zCModelConvertFileHandler.inl"
