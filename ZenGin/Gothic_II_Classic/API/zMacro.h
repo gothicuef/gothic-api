@@ -47,7 +47,7 @@ public:                                                                         
     }                                                                                               \
                                                                                                     \
     void operator delete(void *ptr,const char *classn,const char *file,int line) {                  \
-        operator shi_free(ptr);                                                                     \
+        shi_free(ptr);                                                                              \
     }                                                                                               \
                                                                                                     \
     static size_t PoolMark() { return s_MemMan.Mark(); }                                            \
