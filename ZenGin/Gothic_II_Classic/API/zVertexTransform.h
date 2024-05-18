@@ -9,8 +9,6 @@ namespace Gothic_II_Classic {
   // sizeof 1Ch
   class zCVertexTransform {
   public:
-    zOPERATORS_DECLARATION()
-
     zMEMPOOL_VOLATILE_DECLARATION( zCVertexTransform )
 
     zCVertex* untransformed; // sizeof 04h    offset 00h
