@@ -193,7 +193,7 @@ namespace Gothic_I_Addon {
     void zCMorphMeshConvertFileHandler_OnInit()                        zCall( 0x005A31B0 );
     zCMorphMeshConvertFileHandler() : zCtor( zCScanDirFileHandler )    zInit( zCMorphMeshConvertFileHandler_OnInit() );
     virtual ~zCMorphMeshConvertFileHandler()                           zCall( 0x00426B00 );
-    virtual int HandleFile( zSTRING const&, char const*, _finddata_t ) zCall( 0x005A3290 );
+    virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x005A3290 );
 
     // user API
     #include "zCMorphMeshConvertFileHandler.inl"

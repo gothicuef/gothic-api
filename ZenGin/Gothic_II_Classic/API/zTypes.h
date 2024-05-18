@@ -48,7 +48,8 @@ namespace Gothic_II_Classic {
     zCCollisionObject*  collObject1,
     zCCollisionReport** ppoCollReport);
 
-  struct _iobuf {
+  // old FILE (aka _iobuf) implementation
+  struct zGOTHIC_FILE {
     zOPERATORS_DECLARATION()
 
     char* _ptr;
@@ -60,9 +61,9 @@ namespace Gothic_II_Classic {
     int   _bufsiz;
     char* _tmpfname;
   };
-  typedef struct _iobuf FILE;
 
-  struct _finddata_t {
+  // old _finddata_t implementation
+  struct zFINDDATA {
     zOPERATORS_DECLARATION()
 
     unsigned int  attrib;
