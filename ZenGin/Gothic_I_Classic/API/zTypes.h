@@ -48,7 +48,6 @@ namespace Gothic_I_Classic {
     zCCollisionObject*  collObject1,
     zCCollisionReport** ppoCollReport);
 
-#ifndef _FILE_DEFINED
   struct _iobuf {
     zOPERATORS_DECLARATION()
 
@@ -62,10 +61,7 @@ namespace Gothic_I_Classic {
     char *_tmpfname;
   };
   typedef struct _iobuf FILE;
-#define _FILE_DEFINED
-#endif
 
-#ifndef _finddata_t
   struct _finddata_t {
     zOPERATORS_DECLARATION()
 
@@ -76,8 +72,6 @@ namespace Gothic_I_Classic {
     unsigned long size;
     char          name[260];
   };
-#endif
-
 } // namespace Gothic_II_Addon
 
 #endif // __ZTYPES_H__VER0__
