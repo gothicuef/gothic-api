@@ -38,34 +38,3 @@ endif()
 if(${GOTHIC_API_G2A})
     target_compile_definitions(gothic_api INTERFACE __G2A)
 endif()
-
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ZenGin DESTINATION include)
-
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/GothicAPIConfigVersion.cmake"
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY AnyNewerVersion
-)
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/GothicAPIConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/GothicAPIConfig.cmake"
-    INSTALL_DESTINATION "cmake/GothicAPI"
-)
-install(FILES 
-    "${CMAKE_CURRENT_BINARY_DIR}/GothicAPIConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/GothicAPIConfigVersion.cmake"
-    DESTINATION "cmake/GothicAPI"
-)
-install(TARGETS gothic_api
-    EXPORT gothic_apiTargets
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-install(EXPORT gothic_apiTargets 
-    FILE GothicAPITargets.cmake
-    DESTINATION "cmake/GothicAPI"
-)
