@@ -57,7 +57,7 @@ int GetGameVersion() {
 
 
 static const char* GothicNamespace = nullptr;
-static int GothicNamespaceLength = 0;
+static uint32_t GothicNamespaceLength = 0;
 
 
 inline void DisableNamespace( char* where ) {
