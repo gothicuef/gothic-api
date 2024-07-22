@@ -133,7 +133,7 @@ namespace Gothic_I_Addon {
     virtual void SetFile( zSTRING )                               zPureCall;
     virtual void SetFilename( zSTRING )                           zPureCall;
     virtual void SetExt( zSTRING )                                zPureCall;
-    virtual _iobuf* GetFileHandle()                               zPureCall;
+    virtual zGOTHIC_FILE* GetFileHandle()                         zPureCall;
     virtual zSTRING GetFullPath()                                 zPureCall;
     virtual zSTRING GetPath()                                     zPureCall;
     virtual zSTRING GetDirectoryPath()                            zPureCall;
@@ -236,7 +236,7 @@ namespace Gothic_I_Addon {
     virtual void SetFile( zSTRING )                               zCall( 0x00447B20 );
     virtual void SetFilename( zSTRING )                           zCall( 0x004477E0 );
     virtual void SetExt( zSTRING )                                zCall( 0x00447980 );
-    virtual _iobuf* GetFileHandle()                               zCall( 0x00444630 );
+    virtual zGOTHIC_FILE* GetFileHandle()                         zCall( 0x00444630 );
     virtual zSTRING GetFullPath()                                 zCall( 0x00447CF0 );
     virtual zSTRING GetPath()                                     zCall( 0x00444640 );
     virtual zSTRING GetDirectoryPath()                            zCall( 0x00444690 );
