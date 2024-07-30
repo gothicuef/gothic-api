@@ -32,6 +32,6 @@ target_compile_definitions(gothic_api
     INTERFACE
         $<$<BOOL:${GOTHIC_API_G1}>:__G1>
         $<$<BOOL:${GOTHIC_API_G1A}>:__G1A>
-        $<$<BOOL:${GOTHIC_API_G1}>:__G2>
-        $<$<BOOL:${GOTHIC_API_G1}>:__G2A>
+        $<$<BOOL:${GOTHIC_API_G2}>:__G2>
+        $<$<BOOL:${GOTHIC_API_G2A}>:__G2A>
 )
