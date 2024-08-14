@@ -9,9 +9,9 @@
 namespace Gothic_II_Classic {
   extern zCMallocGeneric* zmalloc;
 
-  const int zARRAY_START_ALLOC = 16;
+  inline int zArraySortDefaultCompare( const void* ele1, const void* ele2 ) zCall( 0x00553CA0 );
 
-  inline int zArraySortDefaultCompare( const void* ele1, const void* ele2 ) zCall( 0x0054EA80 );
+  const int zARRAY_START_ALLOC = 16;
 
   template <class T>
   class zCArray {
@@ -47,8 +47,7 @@ namespace Gothic_II_Classic {
     }
 
     ~zCArray() {
-      shi_free(parray);
-      parray = 0;
+      DeleteList();
     }
 
     T* GetArray() const {
@@ -63,9 +62,10 @@ namespace Gothic_II_Classic {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 ) return;
       T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
-      if( numInArray > 0 )
-        for( int i = 0; i < numInArray; i++ )
-          newArray[i] = parray[i];
+      for( int i = 0; i < numInArray; i++ ) {
+        newArray[i] = parray[i];
+        parray[i].~T();
+      }
       shi_free(parray);
       parray = newArray;
       numAlloc += numDelta;
@@ -88,8 +88,10 @@ namespace Gothic_II_Classic {
       }
       if( numAlloc > numInArray ) {
         T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
-        for( int i = 0; i < numInArray; i++ )
+        for( int i = 0; i < numInArray; i++ ) {
           newArray[i] = parray[i];
+          parray[i].~T();
+        }
         shi_free(parray);
         parray = newArray;
         numAlloc = numInArray;
@@ -265,7 +267,7 @@ namespace Gothic_II_Classic {
     // user API
     #include "zCArray.inl"
   };
-
+  
   template <class T>
   class zCArraySort {
   public:
@@ -304,8 +306,7 @@ namespace Gothic_II_Classic {
     }
 
     ~zCArraySort() {
-      shi_free(array);
-      array = 0;
+      DeleteList();
     }
 
     T* GetArray() const {
@@ -320,9 +321,12 @@ namespace Gothic_II_Classic {
       if( numDelta <= 0 )
         return;
       T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
-      if( numInArray > 0 )
-        for( int i = 0; i < numInArray; i++ )
+      if( numInArray > 0 ) {
+        for( int i = 0; i < numInArray; i++ ) {
           newArray[i] = array[i];
+          array[i].~T();
+        }
+      }
       shi_free(array);
       array = newArray;
       numAlloc += numDelta;
@@ -341,8 +345,10 @@ namespace Gothic_II_Classic {
       }
       if( numAlloc > numInArray ) {
         T* newArray = new T()[numInArray];
-        for( int i = 0; i < numInArray; i++ )
+        for( int i = 0; i < numInArray; i++ ) {
           newArray[i] = array[i];
+          array[i].~T();
+        }
         shi_free(array);
         array = newArray;
         numAlloc = numInArray;
@@ -504,6 +510,8 @@ namespace Gothic_II_Classic {
     }
 
     void DeleteList() {
+      for( int i = 0; i < numInArray; i++ )
+          array[i].~T();
       shi_free(array);
       array = 0;
       numAlloc = 0;
@@ -1171,5 +1179,6 @@ namespace Gothic_II_Classic {
     }
   };
 } // namespace Gothic_II_Classic
+
 
 #endif // __ZCONTAINER_H__VER2__

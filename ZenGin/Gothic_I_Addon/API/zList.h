@@ -40,14 +40,13 @@ namespace Gothic_I_Addon {
       array = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof(T) * numInArray );
+      for( int i = 0; i < array2.GetNumInList(); i++ )
+        array[i] = array2.array[i];
       allow_double_entrys = TRUE;
     }
 
     ~zCPQueue() {
-      shi_free(array);
-      array = 0;
+      DeleteList();
     }
 
     void SetAllowDouble( int allow ) {
@@ -60,8 +59,10 @@ namespace Gothic_I_Addon {
 
     void AllocDelta( const int numDelta ) {
       T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
-      if( numInArray > 0 )
-        memcpy( newArray, array, sizeof(T) * numInArray );
+      for( int i = 0; i < numInArray; i++ ) {
+          newArray[i] = parray[i];
+          array[i].~T();
+      }
       shi_free(array);
       array = newArray;
       numAlloc += numDelta;
@@ -80,7 +81,10 @@ namespace Gothic_I_Addon {
       }
       if( numAlloc > numInArray ) {
         T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
-        memcpy( newArray, array, sizeof(T) * numInArray );
+        for( int i = 0; i < numInArray; i++ ) {
+          newArray[i] = array[i];
+          array[i].~T();
+        }
         shi_free(array);
         array = newArray;
         numAlloc = numInArray;
@@ -91,8 +95,8 @@ namespace Gothic_I_Addon {
       DeleteList();
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof(T) * numInArray );
+      for( int i = 0; i < numInArray; i++ )
+          array[i] = array2[i];
     }
 
     T& operator [] ( int nr ) {
@@ -186,6 +190,8 @@ namespace Gothic_I_Addon {
     }
 
     void DeleteList() {
+      for (int i = 0; i < numInArray; i++)
+        array[i].~T();
       shi_free(array);
       array = 0;
       numAlloc = 0;
@@ -211,13 +217,13 @@ namespace Gothic_I_Addon {
     // user API
     #include "zCPQueue.inl"
   };
-
+  
   template <class T>
   class zCListSort {
   public:
     zMEMPOOL_DECLARATION_TEMPLATE( zCListSort, 0x008B9330 )
 
-    int(*Compare)(T* ele1, T* ele2);
+      int(*Compare)(T* ele1, T* ele2);
     T* data;
     zCListSort* next;
 
@@ -267,17 +273,17 @@ namespace Gothic_I_Addon {
       zCListSort* newItem = new zCListSort();
       newItem->data = ins;
       newItem->next = next;
-      zCListSort* val = this;
-      while( val->next ) {
-        if( Compare( ins, val->next->data ) < 0 ) {
-          newItem->next = val->next;
-          val->next = newItem;
+      zCListSort* ele = this;
+      while( ele->next ) {
+        if( Compare( ins, ele->next->data ) < 0 ) {
+          newItem->next = ele->next;
+          ele->next = newItem;
           return;
         }
-        val = val->next;
+        ele = ele->next;
       }
       newItem->next = NULL;
-      val->next = newItem;
+      ele->next = newItem;
     }
 
     void Remove( T* rem ) {
@@ -647,6 +653,6 @@ namespace Gothic_I_Addon {
     }
   };
 
-} // namespace Gothic_II_Addon
+} // namespace Gothic_I_Addon
 
 #endif // __ZLIST_H__VER1__

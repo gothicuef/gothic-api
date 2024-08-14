@@ -30,7 +30,7 @@ namespace Gothic_II_Addon {
     zCPQueue( int startSize ) {
       numInArray = 0;
       numAlloc = startSize;
-      array = reinterpret_cast<T*>(static_cast<T*>(shi_malloc(sizeof(T) * (startSize))));
+      array = static_cast<T*>(shi_malloc(sizeof(T) * (startSize)));
       allow_double_entrys = TRUE;
     }
 
@@ -40,14 +40,13 @@ namespace Gothic_II_Addon {
       array = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof(T) * numInArray );
+      for( int i = 0; i < array2.GetNumInList(); i++ )
+        array[i] = array2.array[i];
       allow_double_entrys = TRUE;
     }
 
     ~zCPQueue() {
-      shi_free(array);
-      array = 0;
+      DeleteList();
     }
 
     void SetAllowDouble( int allow ) {
@@ -60,8 +59,10 @@ namespace Gothic_II_Addon {
 
     void AllocDelta( const int numDelta ) {
       T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
-      if( numInArray > 0 )
-        memcpy( newArray, array, sizeof(T) * numInArray );
+      for( int i = 0; i < numInArray; i++ ) {
+          newArray[i] = parray[i];
+          array[i].~T();
+      }
       shi_free(array);
       array = newArray;
       numAlloc += numDelta;
@@ -80,7 +81,10 @@ namespace Gothic_II_Addon {
       }
       if( numAlloc > numInArray ) {
         T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
-        memcpy( newArray, array, sizeof(T) * numInArray );
+        for( int i = 0; i < numInArray; i++ ) {
+          newArray[i] = array[i];
+          array[i].~T();
+        }
         shi_free(array);
         array = newArray;
         numAlloc = numInArray;
@@ -91,8 +95,8 @@ namespace Gothic_II_Addon {
       DeleteList();
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof(T) * numInArray );
+      for( int i = 0; i < numInArray; i++ )
+          array[i] = array2[i];
     }
 
     T& operator [] ( int nr ) {
@@ -186,6 +190,8 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteList() {
+      for (int i = 0; i < numInArray; i++)
+        array[i].~T();
       shi_free(array);
       array = 0;
       numAlloc = 0;
