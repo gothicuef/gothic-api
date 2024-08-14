@@ -211,12 +211,18 @@ public:                                                                         
 #define zDefineInheritableCtor(className) className(InheritableInterfaceObject) 
 #define zCtor(baseClassName) baseClassName(zIInheritableInterfaceObject())
 
-#define zOPERATORS_DECLARATION()      \
-  void* operator new( size_t size ) { \
-    return shi_malloc( size );        \
-  };                                  \
-  void operator delete( void* mem ) { \
-    shi_free( mem );                  \
+#define zOPERATORS_DECLARATION()        \
+  void* operator new( size_t size ) {   \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete( void* mem ) {   \
+    shi_free( mem );                    \
+  };                                    \
+  void* operator new[]( size_t size ) { \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete[]( void* mem ) { \
+    shi_free( mem );                    \
   };
 } // namespace Gothic_II_Addon
 
