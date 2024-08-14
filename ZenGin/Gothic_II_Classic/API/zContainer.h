@@ -192,6 +192,8 @@ namespace Gothic_II_Classic {
     }
 
     void DeleteList() {
+      for( int i = 0; i < numInArray; i++ )
+          parray[i].~T();
       shi_free(parray);
       parray = 0;
       numAlloc = 0;
