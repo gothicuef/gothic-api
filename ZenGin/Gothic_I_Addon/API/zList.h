@@ -30,7 +30,7 @@ namespace Gothic_I_Addon {
     zCPQueue( int startSize ) {
       numInArray = 0;
       numAlloc = startSize;
-      array = new T[startSize];
+      array = static_cast<T*>(shi_malloc(sizeof(T) * (startSize)));
       allow_double_entrys = TRUE;
     }
 
@@ -41,12 +41,12 @@ namespace Gothic_I_Addon {
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
       if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof( T ) * numInArray );
+        memcpy( array, array2.array, sizeof(T) * numInArray );
       allow_double_entrys = TRUE;
     }
 
     ~zCPQueue() {
-      delete[] array;
+      shi_free(array);
       array = 0;
     }
 
@@ -59,10 +59,10 @@ namespace Gothic_I_Addon {
     }
 
     void AllocDelta( const int numDelta ) {
-      T* newArray = new T[numAlloc + numDelta];
+      T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
       if( numInArray > 0 )
-        memcpy( newArray, array, sizeof( T ) * numInArray );
-      delete[] array;
+        memcpy( newArray, array, sizeof(T) * numInArray );
+      shi_free(array);
       array = newArray;
       numAlloc += numDelta;
     }
@@ -79,9 +79,9 @@ namespace Gothic_I_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        T* newArray = new T[numInArray];
-        memcpy( newArray, array, sizeof( T ) * numInArray );
-        delete[] array;
+        T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
+        memcpy( newArray, array, sizeof(T) * numInArray );
+        shi_free(array);
         array = newArray;
         numAlloc = numInArray;
       }
@@ -92,7 +92,7 @@ namespace Gothic_I_Addon {
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
       if( numInArray > 0 )
-        memcpy( array, array2.array, sizeof( T ) * numInArray );
+        memcpy( array, array2.array, sizeof(T) * numInArray );
     }
 
     T& operator [] ( int nr ) {
@@ -144,7 +144,7 @@ namespace Gothic_I_Addon {
             if( erg > 0 ) index++;
             if( (erg == 0) && (!allow_double_entrys) ) return FALSE;
           }
-          memmove( &array[index + 1], &array[index], sizeof( T ) * (numInArray - index) );
+          memmove( &array[index + 1], &array[index], sizeof(T) * (numInArray - index) );
           array[index] = ins;
           numInArray++;
           return TRUE;
@@ -186,7 +186,7 @@ namespace Gothic_I_Addon {
     }
 
     void DeleteList() {
-      delete[] array;
+      shi_free(array);
       array = 0;
       numAlloc = 0;
       numInArray = 0;

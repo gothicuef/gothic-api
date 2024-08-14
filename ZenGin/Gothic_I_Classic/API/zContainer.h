@@ -33,7 +33,7 @@ namespace Gothic_I_Classic {
       numAlloc = startSize;
       parray = 0;
       if( startSize > 0 )
-        parray = new T[startSize];
+        parray = static_cast<T*>(shi_malloc(sizeof(T) * (startSize)));
     }
 
     zCArray( const zCArray<T>& array2 ) {
@@ -47,7 +47,7 @@ namespace Gothic_I_Classic {
     }
 
     ~zCArray() {
-      delete[] parray;
+      shi_free(parray);
       parray = 0;
     }
 
@@ -62,11 +62,11 @@ namespace Gothic_I_Classic {
 
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 ) return;
-      T* newArray = new T[numAlloc + numDelta];
+      T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
       if( numInArray > 0 )
         for( int i = 0; i < numInArray; i++ )
           newArray[i] = parray[i];
-      delete[] parray;
+      shi_free(parray);
       parray = newArray;
       numAlloc += numDelta;
     }
@@ -88,10 +88,10 @@ namespace Gothic_I_Classic {
         return;
       }
       if( numAlloc > numInArray ) {
-        T* newArray = new T[numInArray];
+        T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
         for( int i = 0; i < numInArray; i++ )
           newArray[i] = parray[i];
-        delete[] parray;
+        shi_free(parray);
         parray = newArray;
         numAlloc = numInArray;
       }
@@ -191,7 +191,7 @@ namespace Gothic_I_Classic {
     }
 
     void DeleteList() {
-      delete[] parray;
+      shi_free(parray);
       parray = 0;
       numAlloc = 0;
       numInArray = 0;
@@ -305,7 +305,7 @@ namespace Gothic_I_Classic {
     }
 
     ~zCArraySort() {
-      delete[] array;
+      shi_free(array);
       array = 0;
     }
 
@@ -320,11 +320,11 @@ namespace Gothic_I_Classic {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 )
         return;
-      T* newArray = new T[numAlloc + numDelta];
+      T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
       if( numInArray > 0 )
         for( int i = 0; i < numInArray; i++ )
           newArray[i] = array[i];
-      delete[] array;
+      shi_free(array);
       array = newArray;
       numAlloc += numDelta;
     }
@@ -344,7 +344,7 @@ namespace Gothic_I_Classic {
         T* newArray = new T()[numInArray];
         for( int i = 0; i < numInArray; i++ )
           newArray[i] = array[i];
-        delete[] array;
+        shi_free(array);
         array = newArray;
         numAlloc = numInArray;
       }
@@ -503,7 +503,7 @@ namespace Gothic_I_Classic {
     }
 
     void DeleteList() {
-      delete[] array;
+      shi_free(array);
       array = 0;
       numAlloc = 0;
       numInArray = 0;

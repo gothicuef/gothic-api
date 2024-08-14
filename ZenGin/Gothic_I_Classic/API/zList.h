@@ -30,7 +30,7 @@ namespace Gothic_I_Classic {
     zCPQueue( int startSize ) {
       numInArray = 0;
       numAlloc = startSize;
-      array = new T[startSize];
+      array = static_cast<T*>(shi_malloc(sizeof(T) * (startSize)));
       allow_double_entrys = TRUE;
     }
 
@@ -46,7 +46,7 @@ namespace Gothic_I_Classic {
     }
 
     ~zCPQueue() {
-      delete[] array;
+      shi_free(array);
       array = 0;
     }
 
@@ -59,10 +59,10 @@ namespace Gothic_I_Classic {
     }
 
     void AllocDelta( const int numDelta ) {
-      T* newArray = new T[numAlloc + numDelta];
+      T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
       if( numInArray > 0 )
         memcpy( newArray, array, sizeof(T)*numInArray );
-      delete[] array;
+      shi_free(array);
       array = newArray;
       numAlloc += numDelta;
     }
@@ -79,9 +79,9 @@ namespace Gothic_I_Classic {
         return;
       }
       if( numAlloc > numInArray ) {
-        T* newArray = new T[numInArray];
+        T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numInArray)));
         memcpy( newArray, array, sizeof(T)*numInArray );
-        delete[] array;
+        shi_free(array);
         array = newArray;
         numAlloc = numInArray;
       }
@@ -186,7 +186,7 @@ namespace Gothic_I_Classic {
     }
 
     void DeleteList() {
-      delete[] array;
+      shi_free(array);
       array = 0;
       numAlloc = 0;
       numInArray = 0;
