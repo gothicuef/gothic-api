@@ -73,7 +73,7 @@ namespace Gothic_II_Addon {
       numAlloc = startSize;
       parray = 0;
       if( startSize > 0 )
-        parray = zContainer::CreateArray<T>(startSize);
+        parray = zContainer::CreateArray<T>( startSize );
     }
 
     zCArray( const zCArray<T>& array2 ) {
@@ -82,7 +82,7 @@ namespace Gothic_II_Addon {
       parray = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::CopyArray(GetArray(), array2.GetArray(), array2.GetNumInList());
+      zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
     }
 
     ~zCArray() {
@@ -102,7 +102,7 @@ namespace Gothic_II_Addon {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 ) 
          return;
-      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numInArray );
+      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numAlloc );
       numAlloc += numDelta;
     }
 
@@ -122,7 +122,7 @@ namespace Gothic_II_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        parray = zContainer::RealocateArray( numInArray, parray, numInArray );
+        parray = zContainer::RealocateArray( numInArray, parray, numAlloc );
         numAlloc = numInArray;
       }
     }
@@ -131,7 +131,7 @@ namespace Gothic_II_Addon {
       EmptyList();
       AllocAbs( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::CopyArray(GetArray(), array2.GetArray(), array2.GetNumInList());
+      zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
     }
 
     const T& operator [] ( const int nr ) const {
@@ -348,7 +348,7 @@ namespace Gothic_II_Addon {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 )
         return;
-      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numInArray );
+      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numAlloc );
       numAlloc += numDelta;
     }
 
@@ -364,7 +364,7 @@ namespace Gothic_II_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        parray = zContainer::RealocateArray( numInArray, parray, numInArray );
+        parray = zContainer::RealocateArray( numInArray, parray, numAlloc );
         numAlloc = numInArray;
       }
     }
@@ -523,7 +523,7 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteList() {
-      zContainer::DeleteArray(parray, numAlloc);
+      zContainer::DeleteArray( parray, numAlloc );
       array = 0;
       numAlloc = 0;
       numInArray = 0;
