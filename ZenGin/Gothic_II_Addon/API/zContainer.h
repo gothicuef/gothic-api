@@ -38,7 +38,7 @@ namespace Gothic_II_Addon {
     }
 
     template<typename T>
-    static inline void SwapArray( T* ptr1, T* ptr2, const int num ) {
+    static inline void CopyArray( T* ptr1, T* ptr2, const int num ) {
       for ( int i = 0; i < num; i++ ) {
         ptr1[i] = ptr2[i];
       }
@@ -47,7 +47,7 @@ namespace Gothic_II_Addon {
     template<typename T>
     static inline T* RealocateArray( const int newSize, T* oldPtr, const int oldPtrSize ) {
       T* newArray = CreateArray<T>(newSize);
-      SwapArray(newArray, oldPtr, oldPtrSize);
+      CopyArray(newArray, oldPtr, oldPtrSize);
       DeleteArray(oldPtr, oldPtrSize);
       return newArray;
     }
@@ -82,7 +82,7 @@ namespace Gothic_II_Addon {
       parray = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::SwapArray(GetArray(), array2.GetArray(), array2.GetNumInList());
+      zContainer::CopyArray(GetArray(), array2.GetArray(), array2.GetNumInList());
     }
 
     ~zCArray() {
@@ -131,7 +131,7 @@ namespace Gothic_II_Addon {
       EmptyList();
       AllocAbs( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::SwapArray(GetArray(), array2.GetArray(), array2.GetNumInList());
+      zContainer::CopyArray(GetArray(), array2.GetArray(), array2.GetNumInList());
     }
 
     const T& operator [] ( const int nr ) const {
@@ -329,7 +329,7 @@ namespace Gothic_II_Addon {
       array = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::SwapArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
+      zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
       SetCompare( array2.Compare );
     }
 
@@ -373,7 +373,7 @@ namespace Gothic_II_Addon {
       EmptyList();
       AllocAbs( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      zContainer::SwapArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
+      zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
     }
 
     const T& operator [] ( const int nr ) const {
