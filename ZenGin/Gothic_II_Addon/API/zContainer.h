@@ -220,7 +220,7 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteList() {
-      zContainer::DeleteArray(parray, numAlloc);
+      zContainer::DeleteArray( parray, numAlloc );
       parray = 0;
       numAlloc = 0;
       numInArray = 0;
