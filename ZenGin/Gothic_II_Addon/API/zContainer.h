@@ -95,7 +95,8 @@ namespace Gothic_II_Addon {
 
     void ZeroFill() {
       if( parray )
-        memset( parray, 0, sizeof(T) * numAlloc );
+        for( int i = 0; i < numAlloc; i++ )
+          parray[i] = {};
     }
 
     void AllocDelta( const int numDelta ) {
@@ -286,8 +287,9 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteListDatas() {
-      for( int i = 0; i != numInArray; i++ )
-        SAFE_DELETE( parray[i] );
+      if constexpr( std::is_pointer_v<T> )
+        for( int i = 0; i != numInArray; i++ )
+          SAFE_DELETE( parray[i] );
       DeleteList();
     }
 
