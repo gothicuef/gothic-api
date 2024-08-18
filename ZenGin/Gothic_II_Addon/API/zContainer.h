@@ -319,7 +319,7 @@ namespace Gothic_II_Addon {
       numAlloc = startSize;
       array = 0;
       if( startSize > 0 )
-        parray = zContainer::CreateArray<T>( startSize );
+        array = zContainer::CreateArray<T>( startSize );
       SetCompare( zArraySortDefaultCompare );
     }
 
@@ -348,7 +348,7 @@ namespace Gothic_II_Addon {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 )
         return;
-      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numAlloc );
+      array = zContainer::RealocateArray( numAlloc + numDelta, array, numAlloc );
       numAlloc += numDelta;
     }
 
@@ -364,7 +364,7 @@ namespace Gothic_II_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        parray = zContainer::RealocateArray( numInArray, parray, numAlloc );
+        array = zContainer::RealocateArray( numInArray, array, numAlloc );
         numAlloc = numInArray;
       }
     }
@@ -523,7 +523,7 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteList() {
-      zContainer::DeleteArray( parray, numAlloc );
+      zContainer::DeleteArray( array, numAlloc );
       array = 0;
       numAlloc = 0;
       numInArray = 0;
