@@ -21,7 +21,7 @@ namespace Gothic_II_Addon {
       T* ptr = static_cast<T*>( shi_malloc( sizeof(T) * (num) ) );
       if constexpr( !std::is_trivially_constructible_v<T> ) {
         for ( int i = 0; i < num; i++ ) {
-          new(&ptr[i]) T{};
+          ::new(&ptr[i]) T{};
         }
       }
       return ptr;
