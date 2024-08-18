@@ -319,7 +319,7 @@ namespace Gothic_II_Addon {
       numAlloc = startSize;
       array = 0;
       if( startSize > 0 )
-        array = new T()[startSize];
+        parray = zContainer::CreateArray<T>( startSize );
       SetCompare( zArraySortDefaultCompare );
     }
 
@@ -329,8 +329,7 @@ namespace Gothic_II_Addon {
       array = 0;
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      for( int i = 0; i < array2.GetNumInList(); i++ )
-        array[i] = array2.array[i];
+      zContainer::SwapArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
       SetCompare( array2.Compare );
     }
 
@@ -349,13 +348,7 @@ namespace Gothic_II_Addon {
     void AllocDelta( const int numDelta ) {
       if( numDelta <= 0 )
         return;
-      T* newArray = static_cast<T*>(shi_malloc(sizeof(T) * (numAlloc + numDelta)));
-      for( int i = 0; i < numInArray; i++ ) {
-        newArray[i] = array[i];
-        array[i].~T();
-      }
-      shi_free(array);
-      array = newArray;
+      parray = zContainer::RealocateArray( numAlloc + numDelta, parray, numInArray );
       numAlloc += numDelta;
     }
 
@@ -371,13 +364,7 @@ namespace Gothic_II_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        T* newArray = new T()[numInArray];
-        for( int i = 0; i < numInArray; i++ ) {
-          newArray[i] = array[i];
-          array[i].~T();
-        }
-        shi_free(array);
-        array = newArray;
+        parray = zContainer::RealocateArray( numInArray, parray, numInArray );
         numAlloc = numInArray;
       }
     }
@@ -386,8 +373,7 @@ namespace Gothic_II_Addon {
       EmptyList();
       AllocAbs( array2.GetNumInList() );
       numInArray = array2.numInArray;
-      for( int i = 0; i < array2.GetNumInList(); i++ )
-        array[i] = array2.array[i];
+      zContainer::SwapArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
     }
 
     const T& operator [] ( const int nr ) const {
@@ -537,9 +523,7 @@ namespace Gothic_II_Addon {
     }
 
     void DeleteList() {
-      for( int i = 0; i < numInArray; i++ )
-          array[i].~T();
-      shi_free(array);
+      zContainer::DeleteArray(parray, numAlloc);
       array = 0;
       numAlloc = 0;
       numInArray = 0;
