@@ -748,8 +748,8 @@ namespace Gothic_II_Addon {
     zCTree()                         zInit( zCTree_OnInit() );
     ~zCTree()                        zCall( 0x005A1E80 );
     void RemoveChild()               zCall( 0x005A26B0 );
-    zCTree* AddChild( T* item )      zCall( 0x005F9E40 );
-    zCTree* AddChild( zCTree* node ) zCall( 0x00628660 );
+    zCTree* AddChild( T* item )      zCall( 0x005A1F30 );
+    zCTree* AddChild( zCTree* node ) zCall( 0x00606EE0);
     int CountNodes()                 zCall( 0x006286B0 );
     void RemoveSubtree()             zCall( 0x00606CD0 );
 
