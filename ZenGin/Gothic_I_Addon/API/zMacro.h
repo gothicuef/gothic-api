@@ -163,7 +163,7 @@ public:                                                                         
 
   // class definition for union zobject classes
 #define zCLASS_UNION_DEFINITION( className, baseClassName, classFlags, archiveVersion )                                                         \
-  zCClassDef* className::classDef = new zCClassDef( #className, #baseClassName, className::_CreateNewInstance, sizeof( className ), 0, 0, "" ); \
+  zCClassDef* className::classDef = new zCClassDef( #className, #baseClassName, className::_CreateNewInstance, sizeof(className), 0, 0, "" );   \
   zCObject* className::_CreateNewInstance( void ) {                                                                                             \
     return new className;                                                                                                                       \
   }                                                                                                                                             \
@@ -171,13 +171,13 @@ public:                                                                         
     return className::classDef;                                                                                                                 \
   };                                                                                                                                            \
   void* className::operator new( size_t size ) {                                                                                                \
-    void* mem = shi_malloc( size );                                                                                                         \
+    void* mem = shi_malloc( size );                                                                                                             \
   zCClassDef::ObjectCreated( (zCObject*)mem, className::classDef );                                                                             \
   return mem;                                                                                                                                   \
   };                                                                                                                                            \
   void className::operator delete( void* mem ) {                                                                                                \
     zCClassDef::ObjectDeleted( (zCObject*)mem, className::classDef );                                                                           \
-    shi_free( mem );                                                                                                                   \
+    shi_free( mem );                                                                                                                            \
   };
 
   // class declaration for gothic api collision object classes
@@ -211,12 +211,18 @@ struct zIInheritableInterfaceObject {};
 #define zDefineInheritableCtor(className) className(InheritableInterfaceObject) 
 #define zCtor(baseClassName) baseClassName(zIInheritableInterfaceObject())
 
-#define zOPERATORS_DECLARATION()      \
-  void* operator new( size_t size ) { \
-    return shi_malloc( size );        \
-  };                                  \
-  void operator delete( void* mem ) { \
-    shi_free( mem );                  \
+#define zOPERATORS_DECLARATION()        \
+  void* operator new( size_t size ) {   \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete( void* mem ) {   \
+    shi_free( mem );                    \
+  };                                    \
+  void* operator new[]( size_t size ) { \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete[]( void* mem ) { \
+    shi_free( mem );                    \
   };
 } // namespace Gothic_II_Addon
 

@@ -164,7 +164,7 @@ public:                                                                         
 
 // class definition for union zobject classes
 #define zCLASS_UNION_DEFINITION( className, baseClassName, classFlags, archiveVersion )                                                         \
-  zCClassDef* className::classDef = new zCClassDef( #className, #baseClassName, className::_CreateNewInstance, sizeof( className ), 0, 0, "" ); \
+  zCClassDef* className::classDef = new zCClassDef( #className, #baseClassName, className::_CreateNewInstance, sizeof(className), 0, 0, "" ); \
   zCObject* className::_CreateNewInstance( void ) {                                                                                             \
     return new className;                                                                                                                       \
   }                                                                                                                                             \
@@ -213,12 +213,18 @@ struct zIInheritableInterfaceObject {};
 #define zDefineInheritableCtor(className) className(InheritableInterfaceObject) 
 #define zCtor(baseClassName) baseClassName(zIInheritableInterfaceObject())
 
-#define zOPERATORS_DECLARATION()      \
-  void* operator new( size_t size ) { \
-    return shi_malloc( size );        \
-  };                                  \
-  void operator delete( void* mem ) { \
-    shi_free( mem );                  \
+#define zOPERATORS_DECLARATION()        \
+  void* operator new( size_t size ) {   \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete( void* mem ) {   \
+    shi_free( mem );                    \
+  };                                    \
+  void* operator new[]( size_t size ) { \
+    return shi_malloc( size );          \
+  };                                    \
+  void operator delete[]( void* mem ) { \
+    shi_free( mem );                    \
   };
 } // namespace Gothic_II_Classic
 
