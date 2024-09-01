@@ -43,7 +43,9 @@ namespace Gothic_II_Classic {
     virtual void Unarchive( zCArchiver& )                      zCall( 0x006B8150 );
 
     // user API
+    #if __has_include("oCMissionManager.inl")
     #include "oCMissionManager.inl"
+    #endif
   };
 
   // sizeof 80h
@@ -61,7 +63,9 @@ namespace Gothic_II_Classic {
       float startTime;     // sizeof 04h    offset 08h
 
       // user API
+      #if __has_include("oCMission_TMisStatus.inl")
       #include "oCMission_TMisStatus.inl"
+      #endif
     };
 
     struct {
@@ -116,7 +120,9 @@ namespace Gothic_II_Classic {
     virtual oCMission* Unarchive( zCArchiver& ) zCall( 0x006B9B20 );
 
     // user API
+    #if __has_include("oCMission.inl")
     #include "oCMission.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

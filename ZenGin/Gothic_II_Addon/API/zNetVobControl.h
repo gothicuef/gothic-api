@@ -38,7 +38,9 @@ namespace Gothic_II_Addon {
     virtual zCNetMessage* CreateNetMessage( unsigned short const& )               zCall( 0x0045E8C0 );
 
     // user API
+    #if __has_include("zCNetVobControl.inl")
     #include "zCNetVobControl.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

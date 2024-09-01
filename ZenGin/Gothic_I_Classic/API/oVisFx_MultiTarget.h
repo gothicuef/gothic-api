@@ -36,7 +36,9 @@ namespace Gothic_I_Classic {
     virtual void SetDamageType( int )                                   zCall( 0x004980C0 );
 
     // user API
+    #if __has_include("oCVisFX_MultiTarget.inl")
     #include "oCVisFX_MultiTarget.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

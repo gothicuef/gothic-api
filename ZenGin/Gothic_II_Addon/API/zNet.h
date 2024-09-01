@@ -28,7 +28,9 @@ namespace Gothic_II_Addon {
     zTNetStatistics() {}
 
     // user API
+    #if __has_include("zTNetStatistics.inl")
     #include "zTNetStatistics.inl"
+    #endif
   };
 
   // sizeof 60h
@@ -58,7 +60,9 @@ namespace Gothic_II_Addon {
     virtual ~zCNetStatistics()       zCall( 0x00452F80 );
 
     // user API
+    #if __has_include("zCNetStatistics.inl")
     #include "zCNetStatistics.inl"
+    #endif
   };
 
   // sizeof 80h
@@ -110,7 +114,9 @@ namespace Gothic_II_Addon {
     virtual ~zCNet()                                                                               zCall( 0x00450700 );
 
     // user API
+    #if __has_include("zCNet.inl")
     #include "zCNet.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

@@ -205,7 +205,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zVEC2.inl")
     #include "zVEC2.inl"
+    #endif
   };
 
   class zVEC3 {
@@ -421,7 +423,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zVEC3.inl")
     #include "zVEC3.inl"
+    #endif
   };
 
   class zVEC4 {
@@ -591,7 +595,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zVEC4.inl")
     #include "zVEC4.inl"
+    #endif
   };
 
   inline zMAT3 Alg_Scaling2D( zVEC2& );
@@ -801,7 +807,9 @@ namespace Gothic_II_Addon {
     static zMAT3& s_identity;
 
     // user API
+    #if __has_include("zMAT3.inl")
     #include "zMAT3.inl"
+    #endif
   };
 
   class zMAT4 {
@@ -1080,7 +1088,9 @@ namespace Gothic_II_Addon {
     static zMAT4& s_identity;
 
     // user API
+    #if __has_include("zMAT4.inl")
     #include "zMAT4.inl"
+    #endif
   };
 
   class zCQuat {
@@ -1248,7 +1258,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCQuat.inl")
     #include "zCQuat.inl"
+    #endif
   };
 
   struct zComplex {
@@ -1332,7 +1344,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zComplex.inl")
     #include "zComplex.inl"
+    #endif
   };
 
   class zCValueSmooth {
@@ -1384,7 +1398,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCValueSmooth.inl")
     #include "zCValueSmooth.inl"
+    #endif
   };
 
   class zCVEC3Smooth {
@@ -1436,7 +1452,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCVEC3Smooth.inl")
     #include "zCVEC3Smooth.inl"
+    #endif
   };
 
   inline void GetProjection( int& x, int& y, zVEC3 v );
@@ -1580,7 +1598,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCLine2D.inl")
     #include "zCLine2D.inl"
+    #endif
   };
   
   inline zVEC2 Alg_Min( zVEC2 const &, zVEC2 const & )               zCall( 0x00512FC0 );

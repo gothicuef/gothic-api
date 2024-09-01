@@ -23,7 +23,9 @@ namespace Gothic_II_Classic {
     static void operator delete( void* ) zCall( 0x00561450 );
 
     // user API
+    #if __has_include("zCMemPoolBlock.inl")
     #include "zCMemPoolBlock.inl"
+    #endif
   };
 
   // sizeof 24h
@@ -54,7 +56,9 @@ namespace Gothic_II_Classic {
     virtual void Destroyed( void* )                                                        zCall( 0x00560EA0 );
 
     // user API
+    #if __has_include("zCVolatileMemoryBase.inl")
     #include "zCVolatileMemoryBase.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -90,7 +94,9 @@ namespace Gothic_II_Classic {
     static int& s_disablePools;
 
     // user API
+    #if __has_include("zCMemPoolBase.inl")
     #include "zCMemPoolBase.inl"
+    #endif
   };
 
   template <class T> class zCVolatileMemory : public zCVolatileMemoryBase {

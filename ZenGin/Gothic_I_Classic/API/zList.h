@@ -199,7 +199,9 @@ namespace Gothic_I_Classic {
     int IsEmpty() const { return (numInArray == 0); }
 
     // user API
+    #if __has_include("zCPQueue.inl")
     #include "zCPQueue.inl"
+    #endif
   };
   
   template <class T>
@@ -343,7 +345,9 @@ namespace Gothic_I_Classic {
     }
 
     // user API
+    #if __has_include("zCListSort.inl")
     #include "zCListSort.inl"
+    #endif
   };
 
   template <class T>

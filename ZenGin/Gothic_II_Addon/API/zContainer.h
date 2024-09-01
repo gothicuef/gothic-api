@@ -294,7 +294,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCArray.inl")
     #include "zCArray.inl"
+    #endif
   };
   
   template <class T>
@@ -569,7 +571,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCArraySort.inl")
     #include "zCArraySort.inl"
+    #endif
   };
 
   template <class T>
@@ -706,7 +710,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCArrayAdapt.inl")
     #include "zCArrayAdapt.inl"
+    #endif
   };
 
   template <class T, int SIZE>
@@ -843,7 +849,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCTree.inl")
     #include "zCTree.inl"
+    #endif
   };
 
   template <class T>
@@ -1099,7 +1107,9 @@ namespace Gothic_II_Addon {
     }
 
     // user API
+    #if __has_include("zCList.inl")
     #include "zCList.inl"
+    #endif
   };
 
   template <class T>

@@ -1078,7 +1078,11 @@ HRESULT WINAPI D3DXCreateMatrixStack( DWORD flags, LPD3DXMATRIXSTACK *ppStack );
 }
 #endif
 
+#if __has_include("d3dxmath.inl")
+
 #include "d3dxmath.inl"
+
+#endif
 
 #pragma warning(default:4201)
 

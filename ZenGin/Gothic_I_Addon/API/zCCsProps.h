@@ -56,7 +56,9 @@ namespace Gothic_I_Addon {
     virtual void PrintDebugInfo()                                       zCall( 0x004240D0 );
 
     // user API
+    #if __has_include("zCCSProps.inl")
     #include "zCCSProps.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

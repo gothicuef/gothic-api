@@ -20,7 +20,9 @@ namespace Gothic_II_Classic {
     /* for zCInputCallback num : 1*/
 
     // user API
+    #if __has_include("zCViewWindow.inl")
     #include "zCViewWindow.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

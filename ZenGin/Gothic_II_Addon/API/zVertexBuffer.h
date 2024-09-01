@@ -64,7 +64,9 @@ namespace Gothic_II_Addon {
       zTCallbackData() {}
 
       // user API
+      #if __has_include("zCVertexBuffer_zTCallbackData.inl")
       #include "zCVertexBuffer_zTCallbackData.inl"
+      #endif
     };
 
     unsigned long numVertex;              // sizeof 04h    offset 24h
@@ -120,7 +122,9 @@ namespace Gothic_II_Addon {
     static unsigned long& s_classCtorCtr;
 
     // user API
+    #if __has_include("zCVertexBuffer.inl")
     #include "zCVertexBuffer.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -149,7 +153,9 @@ namespace Gothic_II_Addon {
     void Unlock()                                                 zCall( 0x005FC3D0 );
 
     // user API
+    #if __has_include("zCVertexBufferDyn.inl")
     #include "zCVertexBufferDyn.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -179,7 +185,9 @@ namespace Gothic_II_Addon {
     void Unlock( unsigned long )                                   zCall( 0x005FC510 );
 
     // user API
+    #if __has_include("zCVertexBufferDyn2.inl")
     #include "zCVertexBufferDyn2.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -201,7 +209,9 @@ namespace Gothic_II_Addon {
     void EndChangeWorld()                                                                                   zCall( 0x005FCC40 );
 
     // user API
+    #if __has_include("zCVertexBufferManager.inl")
     #include "zCVertexBufferManager.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

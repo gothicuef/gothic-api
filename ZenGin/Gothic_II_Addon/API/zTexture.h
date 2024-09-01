@@ -48,7 +48,9 @@ namespace Gothic_II_Addon {
     zTTexPalette() {}
 
     // user API
+    #if __has_include("zTTexPalette.inl")
     #include "zTTexPalette.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -67,7 +69,9 @@ namespace Gothic_II_Addon {
     zCTextureInfo() { ZeroMemory( this, sizeof(zCTextureInfo) ); }
 
     // user API
+    #if __has_include("zCTextureInfo.inl")
     #include "zCTextureInfo.inl"
+    #endif
   };
 
   // sizeof 24h
@@ -88,7 +92,9 @@ namespace Gothic_II_Addon {
     virtual int CanLoad() const                                   zPureCall;
 
     // user API
+    #if __has_include("zCTextureFileFormat.inl")
     #include "zCTextureFileFormat.inl"
+    #endif
   };
 
   // sizeof 84h
@@ -120,7 +126,9 @@ namespace Gothic_II_Addon {
       unsigned char ImageDescriptor; // sizeof 01h    offset 11h
 
       // user API
+      #if __has_include("zCTextureFileFormatTGA_zTTgaHeader.inl")
       #include "zCTextureFileFormatTGA_zTTgaHeader.inl"
+      #endif
     };
 #pragma pack( pop )
 
@@ -155,7 +163,9 @@ namespace Gothic_II_Addon {
     virtual int CanLoad() const                                   zCall( 0x005F08E0 );
 
     // user API
+    #if __has_include("zCTextureFileFormatTGA.inl")
     #include "zCTextureFileFormatTGA.inl"
+    #endif
   };
 
   // sizeof 4Ch
@@ -186,7 +196,9 @@ namespace Gothic_II_Addon {
     virtual int CanLoad() const                                   zCall( 0x005F0C10 );
 
     // user API
+    #if __has_include("zCTextureFileFormatInternal.inl")
     #include "zCTextureFileFormatInternal.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -213,7 +225,9 @@ namespace Gothic_II_Addon {
     virtual zVEC4 GetRGBAAtTexel( float, float )                             zCall( 0x005F8340 );
 
     // user API
+    #if __has_include("zCTextureExchange.inl")
     #include "zCTextureExchange.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -238,7 +252,9 @@ namespace Gothic_II_Addon {
     static void CorrectPow2( int&, int& )                     zCall( 0x005F5490 );
 
     // user API
+    #if __has_include("zCTextureConvert.inl")
     #include "zCTextureConvert.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -325,7 +341,9 @@ namespace Gothic_II_Addon {
     static zTTexFileDesiredBPP& s_texRefBPP;
 
     // user API
+    #if __has_include("zCTexture.inl")
     #include "zCTexture.inl"
+    #endif
   };
 
   // sizeof 4Ch
@@ -347,7 +365,9 @@ namespace Gothic_II_Addon {
     virtual ~zCLightMap()                                                      zCall( 0x005F8F60 );
 
     // user API
+    #if __has_include("zCLightMap.inl")
     #include "zCLightMap.inl"
+    #endif
   };
 
   // sizeof 30h
@@ -361,7 +381,9 @@ namespace Gothic_II_Addon {
     virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x005F7C40 );
 
     // user API
+    #if __has_include("zCTextureFileHandler.inl")
     #include "zCTextureFileHandler.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

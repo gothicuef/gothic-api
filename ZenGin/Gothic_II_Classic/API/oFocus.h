@@ -83,7 +83,9 @@ namespace Gothic_II_Classic {
     static int& isHighLighted;
 
     // user API
+    #if __has_include("oCNpcFocus.inl")
     #include "oCNpcFocus.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

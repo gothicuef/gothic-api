@@ -23,7 +23,9 @@ namespace Gothic_II_Addon {
     zCLivingObjectsState() {}
 
     // user API
+    #if __has_include("zCLivingObjectsState.inl")
     #include "zCLivingObjectsState.inl"
+    #endif
   };
 
   // sizeof 6Ch
@@ -81,7 +83,9 @@ namespace Gothic_II_Addon {
     static int& startupFinished;
 
     // user API
+    #if __has_include("zCClassDef.inl")
     #include "zCClassDef.inl"
+    #endif
   };
 
   // sizeof 24h
@@ -122,7 +126,9 @@ namespace Gothic_II_Addon {
     const T* CastTo() const;
 
     // user API
+    #if __has_include("zCObject.inl")
     #include "zCObject.inl"
+    #endif
   };
 
 #if defined(_MSVC_LANG) &&  _MSVC_LANG  >= 201703L
@@ -182,7 +188,9 @@ namespace Gothic_II_Addon {
     virtual zCWay* CreateWay( void )                       zCall( 0x005ABD70 );
 
     // user API
+    #if __has_include("zCObjectFactory.inl")
     #include "zCObjectFactory.inl"
+    #endif
   };
 
   

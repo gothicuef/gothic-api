@@ -44,7 +44,9 @@ namespace Gothic_II_Classic {
     zCCallback() {}
 
     // user API
+    #if __has_include("zCCallback.inl")
     #include "zCCallback.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -57,7 +59,9 @@ namespace Gothic_II_Classic {
     virtual void HandleVob( zCVob*, void* ) zPureCall;
 
     // user API
+    #if __has_include("zCVobCallback.inl")
     #include "zCVobCallback.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -70,7 +74,9 @@ namespace Gothic_II_Classic {
     zCWorldPerFrameCallback() : zCtor( zCCallback ) {}
 
     // user API
+    #if __has_include("zCWorldPerFrameCallback.inl")
     #include "zCWorldPerFrameCallback.inl"
+    #endif
   };
 
   // sizeof 28h
@@ -87,7 +93,9 @@ namespace Gothic_II_Classic {
     zTTraceRayReport() {}
 
     // user API
+    #if __has_include("zTTraceRayReport.inl")
     #include "zTTraceRayReport.inl"
+    #endif
   };
 
   // sizeof 08h
@@ -101,7 +109,9 @@ namespace Gothic_II_Classic {
     zCTransferConstr() {}
 
     // user API
+    #if __has_include("zCTransferConstr.inl")
     #include "zCTransferConstr.inl"
+    #endif
   };
   
 #pragma pack( push, 1 )
@@ -117,7 +127,9 @@ namespace Gothic_II_Classic {
     zCTransfer() {}
 
     // user API
+    #if __has_include("zCTransfer.inl")
     #include "zCTransfer.inl"
+    #endif
   };
   
 #pragma pack( pop )
@@ -143,7 +155,9 @@ namespace Gothic_II_Classic {
     void DoTransfers()    zCall( 0x00627880 );
 
     // user API
+    #if __has_include("zCPatch.inl")
     #include "zCPatch.inl"
+    #endif
   };
     
 #pragma pack( push, 1 )
@@ -171,7 +185,9 @@ namespace Gothic_II_Classic {
     ~zCPatchMap()                                                          zCall( 0x00626FE0 );
 
     // user API
+    #if __has_include("zCPatchMap.inl")
     #include "zCPatchMap.inl"
+    #endif
   };
     
 #pragma pack( pop )
@@ -372,7 +388,9 @@ namespace Gothic_II_Classic {
     static int& s_bAmbientVobsEnabled;
 
     // user API
+    #if __has_include("zCWorld.inl")
     #include "zCWorld.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

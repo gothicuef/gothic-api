@@ -23,7 +23,9 @@ namespace Gothic_I_Addon {
     /* for zCCSDebugger num : 7*/
 
     // user API
+    #if __has_include("oCCSPlayer.inl")
     #include "oCCSPlayer.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

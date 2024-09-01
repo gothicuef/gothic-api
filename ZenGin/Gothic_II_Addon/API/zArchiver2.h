@@ -154,7 +154,9 @@ namespace Gothic_II_Addon {
     virtual void __fastcall DeleteBuffer()                                                             zCall( 0x0051C900 );
 
     // user API
+    #if __has_include("zCArchiverBinSafe.inl")
     #include "zCArchiverBinSafe.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

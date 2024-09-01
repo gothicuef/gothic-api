@@ -23,7 +23,9 @@ namespace Gothic_II_Addon {
     virtual void __fastcall GetLargestBBox3DLocal( zTBBox3D& )                                                     zCall( 0x0054EBD0 );
 
     // user API
+    #if __has_include("zCCollObjectBase.inl")
     #include "zCCollObjectBase.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -39,7 +41,9 @@ namespace Gothic_II_Addon {
     virtual ~zCCollObjectUndef()                          zCall( 0x0054D670 );
 
     // user API
+    #if __has_include("zCCollObjectUndef.inl")
     #include "zCCollObjectUndef.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -62,7 +66,9 @@ namespace Gothic_II_Addon {
     virtual void __fastcall GetLargestBBox3DLocal( zTBBox3D& )                                                       zCall( 0x0054DC20 );
 
     // user API
+    #if __has_include("zCCollObjectPoint.inl")
     #include "zCCollObjectPoint.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -78,7 +84,9 @@ namespace Gothic_II_Addon {
     virtual ~zCCollObjectProjectile()                     zCall( 0x0054D9C0 );
 
     // user API
+    #if __has_include("zCCollObjectProjectile.inl")
     #include "zCCollObjectProjectile.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -96,7 +104,9 @@ namespace Gothic_II_Addon {
     virtual float __fastcall GetAdaptiveStepSize()                                        zCall( 0x0054E2A0 );
 
     // user API
+    #if __has_include("zCCollObjectComplex.inl")
     #include "zCCollObjectComplex.inl"
+    #endif
   };
 
   // sizeof 98h
@@ -115,7 +125,9 @@ namespace Gothic_II_Addon {
     virtual ~zCCollObjectLevelPolys()                     zCall( 0x0054D740 );
 
     // user API
+    #if __has_include("zCCollObjectLevelPolys.inl")
     #include "zCCollObjectLevelPolys.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -132,7 +144,9 @@ namespace Gothic_II_Addon {
     virtual int __fastcall SuppressCollisionResponse()    zCall( 0x0054DBE0 );
 
     // user API
+    #if __has_include("zCCollObjectBoxPassThrough.inl")
     #include "zCCollObjectBoxPassThrough.inl"
+    #endif
   };
 
   // sizeof 8Ch
@@ -148,7 +162,9 @@ namespace Gothic_II_Addon {
     virtual ~zCCollObjectBoxBlocker()                     zCall( 0x0054DB40 );
 
     // user API
+    #if __has_include("zCCollObjectBoxBlocker.inl")
     #include "zCCollObjectBoxBlocker.inl"
+    #endif
   };
 
   // sizeof 13Ch
@@ -186,7 +202,9 @@ namespace Gothic_II_Addon {
       zTConfig() {}
 
       // user API
+      #if __has_include("zCCollObjectCharacter_zTConfig.inl")
       #include "zCCollObjectCharacter_zTConfig.inl"
+      #endif
     };
 
     // sizeof 20h
@@ -209,7 +227,9 @@ namespace Gothic_II_Addon {
       zTSpatialState() {}
 
       // user API
+      #if __has_include("zCCollObjectCharacter_zTSpatialState.inl")
       #include "zCCollObjectCharacter_zTSpatialState.inl"
+      #endif
     };
 
     // sizeof 30h
@@ -245,7 +265,9 @@ namespace Gothic_II_Addon {
       zTInterferenceReport() {}
 
       // user API
+      #if __has_include("zCCollObjectCharacter_zTInterferenceReport.inl")
       #include "zCCollObjectCharacter_zTInterferenceReport.inl"
+      #endif
     };
 
     zCRayCache m_oUpRayCache;                   // sizeof 08h    offset 8Ch
@@ -294,7 +316,9 @@ namespace Gothic_II_Addon {
     virtual void PushAround( zVEC3 const& )                                                                          zCall( 0x0054F920 );
 
     // user API
+    #if __has_include("zCCollObjectCharacter.inl")
     #include "zCCollObjectCharacter.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon
