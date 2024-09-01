@@ -113,6 +113,10 @@ public:                                                                         
 
   // ZMEMPOOL INTERFACE
   // memory pool declaration for gothic api containers
+#ifdef zMEMPOOL_DECLARATION_TEMPLATE
+#undef zMEMPOOL_DECLARATION_TEMPLATE
+#endif
+
 #define zMEMPOOL_DECLARATION_TEMPLATE( classname, address )                                \
     void *operator new( [[maybe_unused]] size_t s ) {                                      \
       return ((zCMemPoolBase*)address)->Alloc();                                           \
@@ -134,7 +138,7 @@ public:                                                                         
       return shi_malloc(size);                                                             \
     }                                                                                      \
     void operator delete[]( void* mem ) {                                                  \
-      shi_free(mem);                                                                       \
+      shi_free( mem );                                                                       \
     }                    
 
 
