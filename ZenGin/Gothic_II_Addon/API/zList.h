@@ -73,7 +73,7 @@ namespace Gothic_II_Addon {
         return;
       }
       if( numAlloc > numInArray ) {
-        array = zContainer::RealocateArray( numInArray, array, numAlloc )
+        array = zContainer::RealocateArray( numInArray, array, numAlloc );
         numAlloc = numInArray;
       }
     }
