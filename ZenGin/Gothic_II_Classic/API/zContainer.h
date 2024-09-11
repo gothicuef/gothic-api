@@ -9,7 +9,7 @@
 namespace Gothic_II_Classic {
   extern zCMallocGeneric* zmalloc;
 
-  inline int zArraySortDefaultCompare( const void* ele1, const void* ele2 ) zCall( 0x0054EA80 );
+  inline int zArraySortDefaultCompare( [[maybe_unused]] const void* ele1, [[maybe_unused]] const void* ele2 ) zCall( 0x0054EA80 );
 
   const int zARRAY_START_ALLOC = 16;
 
