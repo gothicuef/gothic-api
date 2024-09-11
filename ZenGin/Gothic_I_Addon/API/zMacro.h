@@ -134,7 +134,7 @@ public:                                                                         
       return shi_malloc(size);                                                             \
     }                                                                                      \
     void operator delete[]( void* mem ) {                                                  \
-      shi_free(size);                                                                      \
+      shi_free(mem);                                                                      \
     }                    
 
 
