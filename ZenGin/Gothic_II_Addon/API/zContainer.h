@@ -5,7 +5,6 @@
 #define __ZCONTAINER_H__VER3__
 
 #include "zMemory_Generic.h"
-#include <new>
 #include <type_traits>
 
 namespace Gothic_II_Addon {
