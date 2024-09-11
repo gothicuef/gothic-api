@@ -5,6 +5,7 @@
 #define __ZCONTAINER_H__VER2__
 
 #include "zMemory_Generic.h"
+#include <type_traits>
 
 namespace Gothic_II_Classic {
   extern zCMallocGeneric* zmalloc;

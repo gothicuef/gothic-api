@@ -5,6 +5,7 @@
 #define __ZCONTAINER_H__VER1__
 
 #include "zMemory_Generic.h"
+#include <type_traits>
 
 namespace Gothic_I_Addon {
   extern zCMallocGeneric* zmalloc;
