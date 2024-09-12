@@ -5,14 +5,15 @@
 #define __ZCONTAINER_H__VER1__
 
 #include "zMemory_Generic.h"
+#include <type_traits>
 
 namespace Gothic_I_Addon {
   extern zCMallocGeneric* zmalloc;
 
-  inline int zArraySortDefaultCompare( const void* ele1, const void* ele2 ) zCall( 0x00553CA0 );
+  inline int zArraySortDefaultCompare( [[maybe_unused]] const void* ele1, [[maybe_unused]] const void* ele2 ) zCall( 0x00556F20 );
 
   const int zARRAY_START_ALLOC = 16;
-  
+
   namespace zContainer {
     template<typename T>
     static inline T* CreateArray( const int num ) {
@@ -292,9 +293,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #if __has_include("zCArray.inl")
     #include "zCArray.inl"
-    #endif
   };
   
   template <class T>
@@ -569,9 +568,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #if __has_include("zCArraySort.inl")
     #include "zCArraySort.inl"
-    #endif
   };
 
   template <class T>
@@ -708,9 +705,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #if __has_include("zCArrayAdapt.inl")
     #include "zCArrayAdapt.inl"
-    #endif
   };
 
   template <class T, int SIZE>
@@ -847,9 +842,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #if __has_include("zCTree.inl")
     #include "zCTree.inl"
-    #endif
   };
 
   template <class T>
@@ -1105,9 +1098,7 @@ namespace Gothic_I_Addon {
     }
 
     // user API
-    #if __has_include("zCList.inl")
     #include "zCList.inl"
-    #endif
   };
 
   template <class T>
