@@ -13,44 +13,6 @@ namespace Gothic_II_Classic {
   inline int zArraySortDefaultCompare( [[maybe_unused]] const void* ele1, [[maybe_unused]] const void* ele2 ) zCall( 0x0054EA80 );
 
   const int zARRAY_START_ALLOC = 16;
-  
-  namespace zContainer {
-    template<typename T>
-    static inline T* CreateArray( const int num ) {
-      T* ptr = static_cast<T*>( shi_malloc( sizeof(T) * (num) ) );
-      if constexpr( !std::is_trivially_constructible_v<T> ) {
-        for ( int i = 0; i < num; i++ ) {
-          ::new(&ptr[i]) T{};
-        }
-      }
-      return ptr;
-    }
-
-    template<typename T>
-    static inline void DeleteArray( T* ptr, const int num ) {
-      if constexpr ( !std::is_trivially_destructible_v<T> ) {
-        for ( int i = 0; i < num; i++ ) {
-          ptr[i].~T();
-        }
-      }
-      shi_free(ptr);
-    }
-
-    template<typename T>
-    static inline void CopyArray( T* ptr1, T* ptr2, const int num ) {
-      for ( int i = 0; i < num; i++ ) {
-        ptr1[i] = ptr2[i];
-      }
-    }
-
-    template<typename T>
-    static inline T* RealocateArray( const int newSize, T* oldPtr, const int oldPtrSize ) {
-      T* newArray = CreateArray<T>(newSize);
-      CopyArray(newArray, oldPtr, oldPtrSize);
-      DeleteArray(oldPtr, oldPtrSize);
-      return newArray;
-    }
-  }
 
   namespace zContainer {
     template<typename T>
