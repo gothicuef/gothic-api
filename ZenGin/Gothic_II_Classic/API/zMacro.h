@@ -7,6 +7,8 @@
 #include <crtversion.h>
 
 namespace Gothic_II_Classic {
+#define zERR_MESSAGE( level, flag, text ) ( (level) <= zerr->GetFilterLevel() ) ? zerr->Report( zERR_TYPE_INFO, 0, text, level, flag, __LINE__,  const_cast<char*>( __FILE__ ), 0 ) : 0
+#define zERR_WARNING( text ) zerr->Report( zERR_TYPE_WARN, 0, text, 0, 0, __LINE__, const_cast<char*>( __FILE__ ), 0 )
 #define zRELEASE( obj ) { (obj)->Release(); obj = NULL; }
 #define zADDREF( obj )  (obj)->AddRef()
 #define zNEW( obj ) new obj
