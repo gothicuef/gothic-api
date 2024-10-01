@@ -271,6 +271,11 @@ namespace Gothic_I_Addon {
       zFROM_ASC
     };
 
+    struct zTMatIDList {
+      zCPolygon* poly;
+      int matID;
+    };
+
     zCModelPrototype* next;                    // sizeof 04h    offset 00h
     zCModelPrototype* prev;                    // sizeof 04h    offset 04h
     int refCtr;                                // sizeof 04h    offset 08h
