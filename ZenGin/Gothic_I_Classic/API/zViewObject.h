@@ -15,6 +15,7 @@ namespace Gothic_I_Classic {
     long Y; // sizeof 04h    offset 04h
 
     zCPosition() {}
+    zCPosition( long x, long y){X = x; Y = y;}
     zCPosition& operator-= ( zCPosition& ) zCall( 0x00725B30 );
     zCPosition& operator+= ( zCPosition& ) zCall( 0x007555F0 );
   } zPOS;
