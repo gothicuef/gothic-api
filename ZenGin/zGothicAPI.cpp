@@ -70,7 +70,7 @@ inline void DisableNamespace( char* where ) {
 
 inline const char* FindGothicNamespace( const char* str ) {
   size_t length = strlen( str );
-  if( length > GothicNamespaceLength ) {
+  if( length > static_cast<size_t>(GothicNamespaceLength) ) {
     const char* part = str + length - GothicNamespaceLength;
     if( strcmp( part, GothicNamespace ) == 0 )
       return part;
