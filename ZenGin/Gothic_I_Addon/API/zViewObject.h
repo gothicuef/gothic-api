@@ -1,4 +1,4 @@
-﻿// Supported with union (c) 2018-2023 Union team
+// Supported with union (c) 2018-2023 Union team
 // Licence: GNU General Public License
 
 #ifndef __ZVIEW_OBJECT_H__VER1__
@@ -15,7 +15,7 @@ namespace Gothic_I_Addon {
     long Y; // sizeof 04h    offset 04h
 
     zCPosition() {}
-    zCPosition( long x, long y){X = x; Y = y;}
+    zCPosition( long x, long y ) { X = x; Y = y; }
     zCPosition& operator-= ( zCPosition& ) zCall( 0x00762DC0 );
     zCPosition& operator+= ( zCPosition& ) zCall( 0x00797A20 );
   } zPOS;
