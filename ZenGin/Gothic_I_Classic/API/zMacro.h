@@ -14,7 +14,11 @@ namespace Gothic_I_Classic {
 #ifndef SAFE_DELETE
 #define SAFE_DELETE( obj ) if( obj ) { delete obj; obj = 0; }
 #endif
+#ifdef UNION_MULTIPLATFORM
+#define zCall( address ) { if ( GetGameVersion() == ENGINE ) XCALL( address ); }
+#else
 #define zCall( address ) { XCALL( address ); }
+#endif
 #define zInit( call ) { call; }
 #define zRTTI( type ) { return type; }
 #ifndef __DONT_USE_VTABLE__
