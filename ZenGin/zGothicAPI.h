@@ -23,6 +23,8 @@ cimport int shi_MemInitDefaultPool();
 #define Engine_G2  3
 #define Engine_G2A 4
 
+int GetGameVersion();
+
 // gothic api for Gothic I v1.08k_mod
 #define ENGINE Engine_G1
 #include "Gothic_I_Classic/G1.h"
@@ -42,8 +44,6 @@ cimport int shi_MemInitDefaultPool();
 #define ENGINE Engine_G2A
 #include "Gothic_II_Addon/G2A.h"
 #undef ENGINE
-
-int GetGameVersion();
 
 template<typename T>
 T zSwitch( T g1, T g1a, T g2, T g2a ) {

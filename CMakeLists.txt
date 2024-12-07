@@ -1,14 +1,32 @@
 cmake_minimum_required(VERSION 3.21)
 
-option(GOTHIC_API_G1  "This option compiles Gothic API for Gothic I. By default this option is set to ON" ON)
-option(GOTHIC_API_G1A "This option compiles Gothic API for Gothic Sequel (Gothic I Addon). By default this option is set to ON" ON)
-option(GOTHIC_API_G2  "This option compiles Gothic API for Gothic II Classic. By default this option is set to ON" ON)
-option(GOTHIC_API_G2A "This option compiles Gothic API for Gothic II Night of the Raven. By default this option is set to ON" ON)
+option(GOTHIC_API_G1  "This option compiles Gothic API for Gothic I. By default this option is set to OFF" OFF)
+option(GOTHIC_API_G1A "This option compiles Gothic API for Gothic Sequel (Gothic I Addon). By default this option is set to OFF" OFF)
+option(GOTHIC_API_G2  "This option compiles Gothic API for Gothic II Classic. By default this option is set to OFF" OFF)
+option(GOTHIC_API_G2A "This option compiles Gothic API for Gothic II Night of the Raven. By default this option is set to OFF" OFF)
 
 project(GothicAPI)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(PLATFORMS_COUNT 0)
+
+if(GOTHIC_API_G1)
+    math(EXPR PLATFORMS_COUNT "${PLATFORMS_COUNT} + 1")
+endif()
+
+if(GOTHIC_API_G1A)
+    math(EXPR PLATFORMS_COUNT "${PLATFORMS_COUNT} + 1")
+endif()
+
+if(GOTHIC_API_G2)
+    math(EXPR PLATFORMS_COUNT "${PLATFORMS_COUNT} + 1")
+endif()
+
+if(GOTHIC_API_G2A)
+    math(EXPR PLATFORMS_COUNT "${PLATFORMS_COUNT} + 1")
+endif()
 
 add_library(gothic_api INTERFACE)
 
@@ -35,3 +53,7 @@ target_compile_definitions(gothic_api
         $<$<BOOL:${GOTHIC_API_G2}>:__G2>
         $<$<BOOL:${GOTHIC_API_G2A}>:__G2A>
 )
+
+if (PLATFORMS_COUNT GREATER_EQUAL 2)
+    target_compile_definitions(gothic_api INTERFACE UNION_MULTIPLATFORM)
+endif()
