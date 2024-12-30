@@ -68,16 +68,16 @@ namespace Gothic_II_Addon {
     int numAlloc;
     int numInArray;
 
-    zCArray() {
+    zCArray() noexcept {
       numInArray = 0;
       numAlloc = 0;
-      parray = 0;
+      parray = {};
     }
 
     zCArray( const int startSize ) {
       numInArray = 0;
       numAlloc = startSize;
-      parray = 0;
+      parray = {};
       if( startSize > 0 )
         parray = zContainer::CreateArray<T>( startSize );
     }
@@ -85,7 +85,7 @@ namespace Gothic_II_Addon {
     zCArray( const zCArray<T>& array2 ) {
       numInArray = 0;
       numAlloc = 0;
-      parray = 0;
+      parray = {};
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
       zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
@@ -243,7 +243,7 @@ namespace Gothic_II_Addon {
 
     void DeleteList() {
       zContainer::DeleteArray( parray, numAlloc );
-      parray = 0;
+      parray = {};
       numAlloc = 0;
       numInArray = 0;
     }
@@ -332,14 +332,14 @@ namespace Gothic_II_Addon {
     zCArraySort() {
       numInArray = 0;
       numAlloc = 0;
-      array = 0;
+      array = {};
       SetCompare( zArraySortDefaultCompare );
     }
 
     zCArraySort( const int startSize ) {
       numInArray = 0;
       numAlloc = startSize;
-      array = 0;
+      array = {};
       if( startSize > 0 )
         array = zContainer::CreateArray<T>( startSize );
       SetCompare( zArraySortDefaultCompare );
@@ -348,7 +348,7 @@ namespace Gothic_II_Addon {
     zCArraySort( const zCArraySort<T>& array2 ) {
       numInArray = 0;
       numAlloc = 0;
-      array = 0;
+      array = {};
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
       zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
@@ -563,7 +563,7 @@ namespace Gothic_II_Addon {
 
     void DeleteList() {
       zContainer::DeleteArray( array, numAlloc );
-      array = 0;
+      array = {};
       numAlloc = 0;
       numInArray = 0;
     }
@@ -621,11 +621,11 @@ namespace Gothic_II_Addon {
 
     zCArrayAdapt() {
       numInArray = 0;
-      array = 0;
+      array = {};
     }
 
     ~zCArrayAdapt() {
-      array = 0;
+      array = {};
     }
 
     T* GetArray() const {
@@ -836,7 +836,7 @@ namespace Gothic_II_Addon {
     void DeleteDataSubtree() {
       if( data ) {
         delete data;
-        data = 0;
+        data = {};
       }
       zCTree* child = GetFirstChild();
       while( child ) {
@@ -882,7 +882,7 @@ namespace Gothic_II_Addon {
     int GetNumChilds() {
       int num = 0;
       zCTree* child = GetFirstChild();
-      while( child != 0 ) {
+      while( child != nullptr ) {
         num++;
         child = child->GetNextChild();
       }
@@ -895,18 +895,18 @@ namespace Gothic_II_Addon {
       zCTree* child = GetFirstChild();
       while( child != 0 ) {
         zCTree* res = child->Search( item );
-        if( res != 0 )
+        if( res != nullptr )
           return res;
         child = child->GetNextChild();
       }
-      return NULL;
+      return nullptr;
     }
 
     int Search( const zCTree* node ) {
       if( this == node )
         return TRUE;
       zCTree* child = GetFirstChild();
-      while( child != 0 ) {
+      while( child != nullptr ) {
         if( child->Search( node ) )
           return TRUE;
         child = child->GetNextChild();
@@ -919,7 +919,7 @@ namespace Gothic_II_Addon {
       if( destParent )
         destParent->AddChild( this );
       else
-        parent = 0;
+        parent = {};
     }
 
     // user API
@@ -937,8 +937,8 @@ namespace Gothic_II_Addon {
     T* root;
 
     zList() {
-      last = 0;
-      root = NULL;
+      last = {};
+      root = {};
       count = 0;
     }
 
@@ -950,20 +950,20 @@ namespace Gothic_II_Addon {
       T* ele;
       T* help;
       ele = root;
-      while( ele != NULL ) {
+      while( ele != nullptr ) {
         help = ele;
         ele = ele->next;
-        delete(help);
+        delete help;
       }
-      last = NULL;
-      root = NULL;
+      last = {};
+      root = {};
       count = 0;
     }
 
     void Insert( T* ins ) {
       if( IsIn( ins ) )
         return;
-      if( root == NULL )
+      if( root == nullptr )
         last = ins;
       ins->next = root;
       root = ins;
@@ -974,14 +974,14 @@ namespace Gothic_II_Addon {
       if( IsIn( ins ) )
         return;
       count++;
-      ins->next = NULL;
-      if( root == NULL ) {
+      ins->next = nullptr;
+      if( root == nullptr) {
         last = ins;
         root = ins;
       }
       else {
         last->next = ins;
-        ins->next = NULL;
+        ins->next = nullptr;
         last = ins;
       }
     }
@@ -1009,7 +1009,7 @@ namespace Gothic_II_Addon {
         return TRUE;
       }
       T* ele = root;
-      while( ele != NULL ) {
+      while( ele != nullptr) {
         if( ele->next == object ) {
           ins->next = object;
           ele->next = ins;
@@ -1026,14 +1026,14 @@ namespace Gothic_II_Addon {
       if( IsIn( ins ) ) {
         return;
       }
-      if( root == NULL || Compare( ins, root ) < 0 ) {
+      if( root == nullptr || Compare( ins, root ) < 0 ) {
         ins->next = root;
         root = ins;
         count++;
       }
       else {
         ele = root;
-        while( ele->next != NULL ) {
+        while( ele->next != nullptr ) {
           if( Compare( ins, ele->next ) <= 0 ) {
             ins->next = ele->next;
             ele->next = ins;
@@ -1043,7 +1043,7 @@ namespace Gothic_II_Addon {
           ele = ele->next;
         }
         ele->next = ins;
-        ins->next = NULL;
+        ins->next = nullptr;
         last = ins;
         count++;
       }
@@ -1051,25 +1051,25 @@ namespace Gothic_II_Addon {
 
     void Remove( T* rem ) {
       T* ele = root;
-      if( ele == NULL )
+      if( ele == nullptr )
         return;
       if( ele == rem ) {
         root = ele->next;
-        if( root == NULL )
-          last = NULL;
+        if( root == nullptr )
+          last = nullptr;
         count--;
       }
       else {
-        while( ele->next != NULL ) {
+        while( ele->next != nullptr ) {
           if( ele->next == rem ) {
-            if( rem->next == NULL )
+            if( rem->next == nullptr )
               last = ele;
             ele->next = rem->next;
             count--;
             return;
           }
           if( ele == ele->next )
-            ele->next = NULL;
+            ele->next = nullptr;
           else
             ele = ele->next;
         }
@@ -1078,19 +1078,19 @@ namespace Gothic_II_Addon {
 
     void Delete( T* rem ) {
       T* ele = root;
-      if( ele == NULL )
+      if( ele == nullptr )
         return;
       if( ele == rem ) {
         root = ele->next;
-        if( root == NULL )
-          last = NULL;
+        if( root == nullptr )
+          last = nullptr;
         delete(ele);
         count--;
       }
       else {
-        while( ele->next != NULL ) {
+        while( ele->next != nullptr ) {
           if( ele->next == rem ) {
-            if( rem->next == NULL )
+            if( rem->next == nullptr )
               last = ele;
             ele->next = rem->next;
             delete(rem);
@@ -1105,13 +1105,13 @@ namespace Gothic_II_Addon {
     T* Get( int nr ) {
       T* ele = root;
       int c = 0;
-      while( ele != NULL ) {
+      while( ele != nullptr ) {
         c++;
         if( c == nr )
           return(ele);
         ele = ele->next;
       }
-      return NULL;
+      return nullptr;
     }
     T* GetLast() {
       return last;
@@ -1119,7 +1119,7 @@ namespace Gothic_II_Addon {
 
     int IsIn( T* ele2 ) {
       T* ele = root;
-      while( ele != NULL ) {
+      while( ele != nullptr ) {
         if( ele == ele2 )
           return TRUE;
         ele = ele->next;
