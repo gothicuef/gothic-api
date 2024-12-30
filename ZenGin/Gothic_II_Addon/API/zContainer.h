@@ -50,6 +50,13 @@ namespace Gothic_II_Addon {
       DeleteArray(oldPtr, oldPtrSize);
       return newArray;
     }
+
+    template<typename T, typename U = T>
+    static inline T Exchange( T& obj, U&& newValue = {} ) {
+      T temp{ static_cast<T&&>( obj ) };
+      obj = static_cast<U&&>( newValue );
+      return temp;
+    }
   }
 
   template <class T>
@@ -82,6 +89,12 @@ namespace Gothic_II_Addon {
       AllocDelta( array2.GetNumInList() );
       numInArray = array2.numInArray;
       zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
+    }
+
+    zCArray( zCArray<T>&& array2 ) noexcept
+      : parray{ zContainer::Exchange( array2.parray ) }, 
+      numAlloc{ zContainer::Exchange( array2.numAlloc ) },
+      numInArray{ zContainer::Exchange( array2.numInArray) } {
     }
 
     ~zCArray() {
@@ -126,11 +139,21 @@ namespace Gothic_II_Addon {
       }
     }
 
-    void operator = ( const zCArray<T>& array2 ) {
+    zCArray<T>& operator = ( const zCArray<T>& array2 ) {
       EmptyList();
       AllocAbs( array2.GetNumInList() );
       numInArray = array2.numInArray;
       zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
+      return *this;
+    }
+
+     zCArray<T>& operator = ( zCArray<T>&& array2 ) noexcept {
+      if( &array2 != this ) {
+        parray = zContainer::Exchange( array2.parray );
+        numAlloc = zContainer::Exchange( array2.numAlloc );
+        numInArray = zContainer::Exchange( array2.numInArray );
+      }
+      return *this;
     }
 
     const T& operator [] ( const int nr ) const {
@@ -330,6 +353,23 @@ namespace Gothic_II_Addon {
       numInArray = array2.numInArray;
       zContainer::CopyArray( GetArray(), array2.GetArray(), array2.GetNumInList() );
       SetCompare( array2.Compare );
+    }
+
+    zCArraySort( zCArraySort<T>&& array2 ) noexcept
+      : array{ zContainer::Exchange( array2.parray ) },
+      numAlloc{ zContainer::Exchange( array2.numAlloc ) },
+      numInArray{ zContainer::Exchange( array2.numInArray ) },
+      Compare{ array2.Compare } {
+    }
+
+    zCArraySort<T>& operator = ( zCArraySort<T>&& array2 ) noexcept {
+      if ( &array2 != this ) {
+        array = zContainer::Exchange( array2.array );
+        numAlloc = zContainer::Exchange( array2.numAlloc );
+        numInArray = zContainer::Exchange( array2.numInArray );
+        Compare = array2.Compare;
+      }
+      return *this;
     }
 
     ~zCArraySort() {
@@ -752,6 +792,47 @@ namespace Gothic_II_Addon {
     int CountNodes()                 zCall( 0x006286B0 );
     void RemoveSubtree()             zCall( 0x00606CD0 );
 
+    zCTree( const zCTree& tree ) {
+      parent = firstChild = next = prev = {};
+      data = {};
+      
+      zCTree* child = tree.firstChild;
+      while ( child ) {
+        AddChild( child );
+        child = child->next;
+      }
+    }
+
+    zCTree( zCTree&& tree ) noexcept
+      : parent{ zContainer::Exchange(tree.parent ) },
+      firstChild{ zContainer::Exchange(tree.firstChild ) },
+      next{ zContainer::Exchange(tree.next ) },
+      prev{ zContainer::Exchange(tree.prev ) },
+      data{ tree.data } {
+    }
+
+    zCTree& operator=( const zCTree& tree ) {
+      DeleteChilds();
+      
+      zCTree* child = tree.firstChild;
+      while ( child ) {
+        AddChild(child);
+        child = child->next;
+      }
+      return *this;
+    }
+
+    zCTree& operator=( zCTree&& tree ) noexcept {
+      if( &tree != this ) {    
+        parent = zContainer::Exchange( tree.parent  );
+        firstChild = zContainer::Exchange( tree.firstChild  );
+        next = zContainer::Exchange( tree.next  );
+        prev = zContainer::Exchange( tree.prev );
+      }
+
+      return *this;
+    }
+
     void DeleteDataSubtree() {
       if( data ) {
         delete data;
@@ -1070,9 +1151,59 @@ namespace Gothic_II_Addon {
     int GetNum() const                    zCall( 0x0072B530 );
     T* operator [] ( const int nr ) const zCall( 0x0047FF40 );
 
-    zCList() {
+    zCList() noexcept {
       next = 0;
       data = 0;
+    }
+
+    zCList( zCList&& list ) noexcept
+      : data{ zContainer::Exchange( list.data ) }, 
+      next{ zContainer::Exchange( list.next ) } {
+    }
+
+    // inserts data pointers from one list to another
+    // don't owns memory
+    zCList( const zCList& list ) {
+      next = 0;
+      data = 0;
+      for( zCList* copyNext = list.GetNextInList(); copyNext; copyNext = copyNext->next ) {
+        Insert( copyNext->data );
+      }
+    }
+
+    // inserts data pointers from one list to another
+    // don't owns memory
+    zCList& operator=( const zCList& list ) {
+      zCList* item = GetNextInList();
+      zCList* temp = 0;
+      zCList* copyFrom = list.GetNextInList();
+      while(item && copyFrom) {
+        item->data = copyFrom->data;
+
+        temp = item;
+        item = item->next;
+        copyFrom = copyFrom->next;
+      }
+
+      if( item ) {
+        delete temp;
+        item = {};
+      }
+      else {
+        while (copyFrom) { 
+          Insert(copyFrom->data);
+          copyFrom = copyFrom->next;
+        }
+      }
+      return *this;
+    }
+
+    zCList& operator=( zCList&& list ) noexcept {
+      if( &list != this ) { 
+        data = zContainer::Exchange( list.data );
+        next = zContainer::Exchange( list.next );
+      }
+      return *this;
     }
 
     void Replace( T* newData ) {
@@ -1141,7 +1272,26 @@ namespace Gothic_II_Addon {
       Used = 0;
     }
 
-    GETSmallArrayNative<T>& operator=( GETSmallArrayNative<T>& classItem ) {
+    GETSmallArrayNative( const GETSmallArrayNative<T>& classItem ) {
+      if( Entries == classItem.GetAllocatedEntries() ) {
+        Used = classItem.Used;
+        memcpy( &Entry[0], &classItem.Entry[0], sizeof(T) * classItem.Used );
+      }
+      else {
+        Used = classItem.Used;
+        zmalloc->Free( Entry );
+        Entry = (T*)zmalloc->Malloc( sizeof(T) * (classItem.Used + 1) );
+        memcpy( &Entry[0], &classItem.Entry[0], sizeof(T) * classItem.Used );
+      }
+    }
+
+    GETSmallArrayNative( GETSmallArrayNative<T>&& classItem ) noexcept
+        : Entries{ zContainer::Exchange( classItem.Entries ) }, 
+        Used{ zContainer::Exchange( classItem.Used ) },
+        Entry{ zContainer::Exchange( classItem.Entries ) } {    
+    }
+
+    GETSmallArrayNative<T>& operator=( const GETSmallArrayNative<T>& classItem ) {
       if( Entries == classItem.GetAllocatedEntries() ) {
         Used = classItem.Used;
         memcpy( &Entry[0], &classItem.Entry[0], sizeof(T) * classItem.Used );
@@ -1155,7 +1305,16 @@ namespace Gothic_II_Addon {
       return *this;
     }
 
-    unsigned long GetAllocatedEntries() {
+    GETSmallArrayNative<T>& operator=( GETSmallArrayNative<T>&& classItem ) noexcept {
+       if( &classItem != this ){
+          Entries = zContainer::Exchange( classItem.Entries );
+          Used = zContainer::Exchange( classItem.Used );
+          Entry = zContainer::Exchange( classItem.Entries );
+        }
+        return *this;
+    }
+
+    unsigned long GetAllocatedEntries() const {
       return Entries;
     }
 
