@@ -12,7 +12,7 @@ Documentation is available on [Gothic API Wiki](https://gitlab.com/union-framewo
 
 ## Usage
 
-To use Gothic API, please refer to [Gothic API Wiki](https://gitlab.com/union-framework/gothic-api/-/wikis/home) and [Union API](https://gitlab.com/union-framework/union-api) project.
+To use Gothic API, please refer to [Union Framework Docs](https://union-framework.gitlab.io/docs/gothic-api/) and [Union API](https://gitlab.com/union-framework/union-api) project.
 
 ## Support
 
