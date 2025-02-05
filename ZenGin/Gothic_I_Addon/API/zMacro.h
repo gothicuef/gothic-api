@@ -15,15 +15,17 @@ namespace Gothic_I_Addon {
 #define SAFE_DELETE( obj ) if( obj ) { delete obj; obj = 0; }
 #endif
 #ifdef UNION_MULTIPLATFORM
-#define zCall( address )            \
-{                                   \
-_asm { pushad }                     \
-if ( GetGameVersion() == ENGINE )   \
-{                                   \
-  _asm { popad }                    \
-  XCALL( address );                 \
-}                                   \
-}                                   
+
+#define zCall( address )          \
+{                                 \
+  _asm  { pushad }                \
+  _asm  { call GetGameVersion }   \
+  _asm  { cmp eax, ENGINE }       \
+  _asm  { popad }                 \
+  _asm  { jne zCall_end }         \
+  XCALL(address);                 \
+  zCall_end:;                     \
+}
 #else
 #define zCall( address ) { XCALL( address ); }
 #endif
