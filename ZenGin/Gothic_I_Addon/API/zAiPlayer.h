@@ -199,6 +199,11 @@ namespace Gothic_I_Addon {
     virtual void StartStandAni()                                        zCall( 0x00515CA0 );
     virtual void StartFallDownAni()                                     zCall( 0x00515CC0 );
 
+    // inline
+    const zCCollObjectCharacter::zTInterferenceReport& GetInterferenceReport() const { return GetCollObject()->GetInterferenceReport(); }
+    zCPolygon* GetFloorPoly() const { return GetCollObject()->GetSpatialState().m_poFloorPoly; }
+    zCCollObjectCharacter* GetCollObject() const { return static_cast<zCCollObjectCharacter*>(vob->GetCollisionObject()); }
+
     // user API
     #if __has_include("zCAIPlayer.inl")
     #include "zCAIPlayer.inl"

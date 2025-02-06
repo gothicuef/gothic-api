@@ -428,7 +428,10 @@ namespace Gothic_I_Classic {
     static void LightPolyList( zCArray<zCVobLight*> const&, zCPolygon**, int, zMAT4* )                                zCall( 0x00596A90 );
     static void TexApplyPlanarMapping( zCList<zCPolygon> const&, float, float, int )                                  zCall( 0x005991C0 );
     static void AlignPolyListToAvgPlane( zCArray<zCPolygon*> )                                                        zCall( 0x00599400 );
-
+    
+    // inline
+    const zTPlane& GetPlane() const { return polyPlane; }
+    
     // static properties
     static zCVertex*& s_clipVertScene;
     static int& s_numClipVertScene;

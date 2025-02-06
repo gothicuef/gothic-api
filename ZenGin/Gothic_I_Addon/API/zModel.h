@@ -769,6 +769,8 @@ namespace Gothic_I_Addon {
     virtual int IsAnimationActive( zSTRING const& )                                                                                            zCall( 0x00575280 );
     virtual zSTRING const* GetAnyAnimation()                                                                                                   zCall( 0x005794F0 );
 
+    // inline
+    zBOOL GetIsFlying() const { return isFlying; }
 
     // static properties
     static int& s_drawSkeleton;

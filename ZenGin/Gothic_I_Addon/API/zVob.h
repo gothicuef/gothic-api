@@ -420,6 +420,8 @@ namespace Gothic_I_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )                                                       zCall( 0x005F5BF0 );
     virtual void ThisVobRemovedFromWorld( zCWorld* )                                                   zCall( 0x005F5C10 );
 
+    // inline
+    zCAIBase* GetAI() const { return callback_ai; }
 
     // static properties
     static int& s_ignoreVisuals;

@@ -412,7 +412,7 @@ namespace Gothic_II_Addon {
     void PC_GoForward()                                              zCall( 0x006B1D70 );
     void PC_GoBackward()                                             zCall( 0x006B1DC0 );
     void PC_JumpForward()                                            zCall( 0x006B1E00 );
-    int CanJump( int )                                               zCall( 0x006B1FE0 );
+    int CanJump( int = 0 )                                           zCall( 0x006B1FE0 );
     int CanJumpLedge()                                               zCall( 0x006B2050 );
     int JumpForward()                                                zCall( 0x006B21E0 );
     int Swim_CanClimbLedge()                                         zCall( 0x006B2400 );

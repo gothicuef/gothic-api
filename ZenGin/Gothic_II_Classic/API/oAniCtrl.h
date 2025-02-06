@@ -411,7 +411,7 @@ namespace Gothic_II_Classic {
     void PC_GoForward()                                              zCall( 0x006553E0 );
     void PC_GoBackward()                                             zCall( 0x00655430 );
     void PC_JumpForward()                                            zCall( 0x00655470 );
-    int CanJump( int )                                               zCall( 0x00655650 );
+    int CanJump( int = 0 )                                           zCall( 0x00655650 );
     int CanJumpLedge()                                               zCall( 0x006556C0 );
     int JumpForward()                                                zCall( 0x00655850 );
     int Swim_CanClimbLedge()                                         zCall( 0x00655A70 );

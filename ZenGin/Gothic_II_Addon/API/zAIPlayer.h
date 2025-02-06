@@ -207,6 +207,11 @@ namespace Gothic_II_Addon {
     virtual void StartStandAni()                                      zCall( 0x00511D80 );
     virtual void StartFallDownAni()                                   zCall( 0x00511DA0 );
 
+    // inline
+    const zCCollObjectCharacter::zTInterferenceReport& GetInterferenceReport() const { return GetCollObject()->GetInterferenceReport(); }
+    zCPolygon* GetFloorPoly() const { return GetCollObject()->GetSpatialState().m_poFloorPoly; }
+    zCCollObjectCharacter* GetCollObject() const { return static_cast<zCCollObjectCharacter*>(vob->GetCollisionObject()); }
+
     // static properties
     static int& s_bShowWeaponTrails;
 

@@ -314,6 +314,11 @@ namespace Gothic_II_Addon {
     virtual int DontLetHimComeNearer( zCVob const* ) const                                                           zCall( 0x0054F900 );
     virtual float TurnSpeed() const                                                                                  zCall( 0x0054F910 );
     virtual void PushAround( zVEC3 const& )                                                                          zCall( 0x0054F920 );
+    
+    // inline
+    const zTInterferenceReport& GetInterferenceReport() const { return m_oInterferenceReport; }
+    const zTSpatialState& GetSpatialState() const { return m_oSpatialState; }
+    zTSpatialState& GetSpatialState() { return m_oSpatialState; }
 
     // user API
     #if __has_include("zCCollObjectCharacter.inl")

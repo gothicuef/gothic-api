@@ -786,6 +786,9 @@ namespace Gothic_II_Classic {
     virtual void StopAnimation( zSTRING const& )                                                                                               zCall( 0x00571340 );
     virtual int IsAnimationActive( zSTRING const& )                                                                                            zCall( 0x005713E0 );
     virtual zSTRING const* GetAnyAnimation()                                                                                                   zCall( 0x00575900 );
+    
+    // inline
+    zBOOL GetIsFlying() const { return isFlying; }
 
     // static properties
     static int& s_drawSkeleton;
