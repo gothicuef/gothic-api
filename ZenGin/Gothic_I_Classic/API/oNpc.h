@@ -161,6 +161,19 @@ namespace Gothic_I_Classic {
   static const int FA_MAX_ENTRY                          = 6;
 
   enum {
+    NPC_OBST_NONE,
+    NPC_OBST_FALL,
+    NPC_OBST_WALL,
+    NPC_OBST_WALL_CLIMB,
+    NPC_OBST_CHASM,
+    NPC_OBST_NPC,
+    NPC_OBST_LADDER,
+    NPC_OBST_STAIRS,
+    NPC_OBST_MOBINTER,
+    NPC_OBST_JUMP
+  };
+
+  enum {
     NPC_GAME_NORMAL,
     NPC_GAME_PLUNDER,
     NPC_GAME_STEAL
