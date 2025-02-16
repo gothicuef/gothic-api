@@ -15,16 +15,13 @@ namespace Gothic_I_Addon {
 #define SAFE_DELETE( obj ) if( obj ) { delete obj; obj = 0; }
 #endif
 #ifdef UNION_MULTIPLATFORM
-
-#define zCall( address )          \
-{                                 \
-  _asm  { pushad }                \
-  _asm  { call GetGameVersion }   \
-  _asm  { cmp eax, ENGINE }       \
-  _asm  { popad }                 \
-  _asm  { jne zCall_end }         \
-  XCALL(address);                 \
-  zCall_end:;                     \
+#define zCall( address )                        \
+{                                               \
+    __asm { mov eax, 0x00401000 }               \
+    __asm { cmp dword ptr[eax], 0x8136D4A1 }    \
+    __asm { jne endp }                          \
+    XCALL( address )                            \
+  endp:;                                        \
 }
 #else
 #define zCall( address ) { XCALL( address ); }
@@ -75,11 +72,11 @@ public:                                                                         
       shi_free( mem );                                                                              \
     }      
 
-#define XCALL(uAddr)			  \
-	__asm { mov esp, ebp	 } 	\
-	__asm { pop ebp	       }  \
-	__asm { mov eax, uAddr }  \
-	__asm { jmp eax        }
+#define XCALL(uAddr)          \
+	__asm { mov esp, ebp } 	    \
+	__asm { pop ebp }           \
+	__asm { mov eax, uAddr }    \
+	__asm { jmp eax }
 
 
 #define SafeDiv( a, b ) \
