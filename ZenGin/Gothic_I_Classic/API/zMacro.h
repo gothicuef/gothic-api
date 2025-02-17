@@ -16,7 +16,18 @@ namespace Gothic_I_Classic {
 #ifndef SAFE_DELETE
 #define SAFE_DELETE( obj ) if( obj ) { delete obj; obj = 0; }
 #endif
+#ifdef UNION_MULTIPLATFORM
+#define zCall( address )                        \
+{                                               \
+    __asm { mov eax, 0x00401000 }               \
+    __asm { cmp dword ptr[eax], 0xE0EC05C7 }    \
+    __asm { jne endp }                          \
+    XCALL( address )                            \
+  endp:;                                        \
+}
+#else
 #define zCall( address ) { XCALL( address ); }
+#endif
 #define zInit( call ) { call; }
 #define zRTTI( type ) { return type; }
 #ifndef __DONT_USE_VTABLE__
@@ -63,11 +74,11 @@ public:                                                                         
       shi_free( mem );                                                                              \
     }      
 
-#define XCALL(uAddr)			  \
-	__asm { mov esp, ebp	 } 	\
-	__asm { pop ebp	       }  \
-	__asm { mov eax, uAddr }  \
-	__asm { jmp eax        }
+#define XCALL(uAddr)          \
+	__asm { mov esp, ebp }      \
+	__asm { pop ebp }           \
+	__asm { mov eax, uAddr }    \
+	__asm { jmp eax }
 
 
 #define SafeDiv( a, b ) \

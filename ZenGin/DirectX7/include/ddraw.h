@@ -843,6 +843,7 @@ typedef struct tagDDDEVICEIDENTIFIER
     GUID    guidDeviceIdentifier;
 } DDDEVICEIDENTIFIER, * LPDDDEVICEIDENTIFIER;
 
+#pragma pack (push, 1)
 typedef struct tagDDDEVICEIDENTIFIER2
 {
     /*
@@ -899,6 +900,7 @@ typedef struct tagDDDEVICEIDENTIFIER2
     DWORD   dwWHQLLevel;
 
 } DDDEVICEIDENTIFIER2, * LPDDDEVICEIDENTIFIER2;
+#pragma pack (pop)
 
 /*
  * Flags for the IDirectDraw4::GetDeviceIdentifier method

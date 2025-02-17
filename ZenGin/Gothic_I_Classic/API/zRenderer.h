@@ -325,9 +325,6 @@ namespace Gothic_I_Classic {
     zVEC2 uv;     // sizeof 08h    offset 0Ch
     zCOLOR color; // sizeof 04h    offset 14h
 
-    void zTRndSimpleVertex_OnInit() zCall( 0x005AF340 );
-    zTRndSimpleVertex()             zInit( zTRndSimpleVertex_OnInit() );
-
     // user API
     #if __has_include("zTRndSimpleVertex.inl")
     #include "zTRndSimpleVertex.inl"
