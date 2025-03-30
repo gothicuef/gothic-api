@@ -210,7 +210,7 @@ namespace Gothic_I_Addon {
   }
 
   template<class T, class... Types>
-  std::unique_ptr<T> zUniqueShared( Types&&... args ) {
+  std::unique_ptr<T> zMakeUnique( Types&&... args ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
     return std::unique_ptr<T>( new T( args... ), zCObjectDeleter<T>() );
   }
