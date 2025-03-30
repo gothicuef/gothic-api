@@ -212,7 +212,7 @@ namespace Gothic_II_Classic {
   }
 
   template<class T, class... Types>
-  std::unique_ptr<T, zCObjectDeleter<T>> zUniqueShared( Types&&... args ) {
+  std::unique_ptr<T, zCObjectDeleter<T>> zMakeUnique( Types&&... args ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
     return std::unique_ptr<T, zCObjectDeleter<T>>( new T( args... ) );
   }
