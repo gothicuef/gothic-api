@@ -214,14 +214,14 @@ namespace Gothic_II_Classic {
   
   template<class T>
   std::shared_ptr<T> zSharedPtr( T* instance ) {
-    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zSharedPtr: T is not derived from zCObject");
     zCObjectMemoryWrapper::PushedIntoSmartPointer( instance );
     return std::shared_ptr<T>( instance, zCObjectDeleter() );
   }
   
   template<class T, class... Types>
   std::unique_ptr<T, zCObjectDeleter> zMakeUnique( Types&&... args ) {
-    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeUnique: T is not derived from zCObject");
     return std::unique_ptr<T, zCObjectDeleter>( new T( args... ) );
   }
   
