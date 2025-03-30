@@ -4,6 +4,7 @@
 #ifndef __ZOBJECT_H__VER3__
 #define __ZOBJECT_H__VER3__
 #include <type_traits>
+#include <memory>
 
 namespace Gothic_II_Addon {
 
@@ -91,7 +92,7 @@ namespace Gothic_II_Addon {
   public:
     zCLASS_DECLARATION( zCObject )
 
-    int refCtr;               // sizeof 04h    offset 04h
+    mutable int refCtr;       // sizeof 04h    offset 04h
     unsigned short hashIndex; // sizeof 02h    offset 08h
     zCObject* hashNext;       // sizeof 04h    offset 0Ch
     zSTRING objectName;       // sizeof 14h    offset 10h
@@ -100,6 +101,7 @@ namespace Gothic_II_Addon {
     void zCObject_OnInit()                                              zCall( 0x00401D60 );
     zCObject()                                                          zInit( zCObject_OnInit() );
     int Release()                                                       zCall( 0x0040C310 );
+    int Release() const                                                 zCall( 0x0040C310 );
     zCObject* CreateCopy()                                              zCall( 0x005A90A0 );
     zSTRING const& GetObjectName() const                                zCall( 0x005A9CD0 );
     int SetObjectName( zSTRING const& )                                 zCall( 0x005A9CE0 );
@@ -114,6 +116,7 @@ namespace Gothic_II_Addon {
     virtual void Unarchive( zCArchiver& )                               zCall( 0x00401EE0 );
     virtual ~zCObject( void )                                           zCall( 0x005A8C50 );
     void AddRef() { refCtr++; }
+    void AddRef() const { refCtr++; }
     
     template<class T>
     T* CastTo();
@@ -185,7 +188,42 @@ namespace Gothic_II_Addon {
     #include "zCObjectFactory.inl"
   };
 
-  
+  template<class T>
+  struct zCObjectDeleter {
+    void operator()( T* object ) const {
+      if( object )
+        object->Release();
+    }
+  };
+
+  template<class T, class... Types>
+  std::shared_ptr<T> zMakeShared( Types&&... args ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
+    std::shared_ptr<T> sharedPtr( new T( args... ), zCObjectDeleter<T>() );
+    return sharedPtr;
+  }
+
+  template<class T>
+  std::shared_ptr<T> zSharedPtr( T* instance ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
+    if (instance)
+      instance->AddRef();
+    return std::shared_ptr<T>( instance, zCObjectDeleter<T>() );
+  }
+
+  template<class T, class... Types>
+  std::unique_ptr<T> zUniqueShared( Types&&... args ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
+    return std::unique_ptr<T>( new T( args... ), zCObjectDeleter<T>() );
+  }
+
+  template<class T>
+  std::unique_ptr<T> zUniquePtr( T* instance ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniquePtr: T is not derived from zCObject");
+    if (instance)
+      instance->AddRef();
+    return std::unique_ptr<T>( instance, zCObjectDeleter<T>() );
+  }
 } // namespace Gothic_II_Addon
 
 #endif // __ZOBJECT_H__VER3__
