@@ -212,17 +212,17 @@ namespace Gothic_II_Addon {
   }
 
   template<class T, class... Types>
-  std::unique_ptr<T> zMakeUnique( Types&&... args ) {
+  std::unique_ptr<T, zCObjectDeleter<T>> zUniqueShared( Types&&... args ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
-    return std::unique_ptr<T>( new T( args... ), zCObjectDeleter<T>() );
+    return std::unique_ptr<T, zCObjectDeleter<T>>( new T( args... ) );
   }
 
   template<class T>
-  std::unique_ptr<T> zUniquePtr( T* instance ) {
+  std::unique_ptr<T, zCObjectDeleter<T>> zUniquePtr( T* instance ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniquePtr: T is not derived from zCObject");
-    if (instance)
+    if( instance )
       instance->AddRef();
-    return std::unique_ptr<T>( instance, zCObjectDeleter<T>() );
+    return std::unique_ptr<T, zCObjectDeleter<T>>( instance );
   }
 } // namespace Gothic_II_Addon
 
