@@ -91,7 +91,7 @@ namespace Gothic_II_Classic {
   public:
     zCLASS_DECLARATION( zCObject )
 
-    mutable int refCtr;       // sizeof 04h    offset 04h
+    int refCtr;               // sizeof 04h    offset 04h
     unsigned short hashIndex; // sizeof 02h    offset 08h
     zCObject* hashNext;       // sizeof 04h    offset 0Ch
     zSTRING objectName;       // sizeof 14h    offset 10h
@@ -100,7 +100,6 @@ namespace Gothic_II_Classic {
     void zCObject_OnInit()                                              zCall( 0x00401D60 );
     zCObject()                                                          zInit( zCObject_OnInit() );
     int Release()                                                       zCall( 0x0040C310 );
-    int Release() const                                                 zCall( 0x0040C310 );
     zCObject* CreateCopy()                                              zCall( 0x005A3B40 );
     zSTRING const& GetObjectName() const                                zCall( 0x005A4770 );
     int SetObjectName( zSTRING const& )                                 zCall( 0x005A4780 );
@@ -115,7 +114,7 @@ namespace Gothic_II_Classic {
     virtual void Unarchive( zCArchiver& )                               zCall( 0x00401EE0 );
     virtual ~zCObject()                                                 zCall( 0x005A36F0 );
     void AddRef() { refCtr++; }
-    void AddRef() const { refCtr++; }
+
 
     template<class T>
     T* CastTo();
@@ -188,41 +187,49 @@ namespace Gothic_II_Classic {
     #include "zCObjectFactory.inl"
   };
 
-  template<class T>
-  struct zCObjectDeleter {
-    void operator()( T* object ) const {
+  struct zCObjectMemoryWrapper {
+    static void PushedIntoSmartPointer( const zCObject* object ) {
       if( object )
-        object->Release();
+        const_cast<zCObject*>(object)->AddRef();
+    }
+  
+    static void PoppedFromSmartPointer( const zCObject* object ) {
+      if( object )
+        const_cast<zCObject*>(object)->Release();
     }
   };
-
+  
+  struct zCObjectDeleter : zCObjectMemoryWrapper {
+    void operator()( const zCObject* object ) const {
+      PoppedFromSmartPointer( object );
+    }
+  };
+  
   template<class T, class... Types>
   std::shared_ptr<T> zMakeShared( Types&&... args ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
-    std::shared_ptr<T> sharedPtr( new T( args... ), zCObjectDeleter<T>() );
+    std::shared_ptr<T> sharedPtr( new T( args... ), zCObjectDeleter() );
     return sharedPtr;
   }
-
+  
   template<class T>
   std::shared_ptr<T> zSharedPtr( T* instance ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
-    if (instance)
-      instance->AddRef();
-    return std::shared_ptr<T>( instance, zCObjectDeleter<T>() );
+    zCObjectMemoryWrapper::PushedIntoSmartPointer( instance );
+    return std::shared_ptr<T>( instance, zCObjectDeleter() );
   }
-
+  
   template<class T, class... Types>
-  std::unique_ptr<T, zCObjectDeleter<T>> zMakeUnique( Types&&... args ) {
+  std::unique_ptr<T, zCObjectDeleter> zMakeUnique( Types&&... args ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniqueShared: T is not derived from zCObject");
-    return std::unique_ptr<T, zCObjectDeleter<T>>( new T( args... ) );
+    return std::unique_ptr<T, zCObjectDeleter>( new T( args... ) );
   }
-
+  
   template<class T>
-  std::unique_ptr<T, zCObjectDeleter<T>> zUniquePtr( T* instance ) {
+  std::unique_ptr<T, zCObjectDeleter> zUniquePtr( T* instance ) {
     static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniquePtr: T is not derived from zCObject");
-    if( instance )
-      instance->AddRef();
-    return std::unique_ptr<T, zCObjectDeleter<T>>( instance );
+    zCObjectMemoryWrapper::PushedIntoSmartPointer( instance );
+    return std::unique_ptr<T, zCObjectDeleter>( instance );
   }
 } // namespace Gothic_II_Classic
 
