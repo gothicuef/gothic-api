@@ -37,7 +37,9 @@ namespace Gothic_I_Addon {
     /* for zCInputCallback num : 1*/
 
     // user API
+    #if __has_include("oCViewStatusBar.inl")
     #include "oCViewStatusBar.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

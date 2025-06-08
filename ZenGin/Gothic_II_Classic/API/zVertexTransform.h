@@ -20,7 +20,9 @@ namespace Gothic_II_Classic {
     zCVertexTransform() {}
 
     // user API
+    #if __has_include("zCVertexTransform.inl")
     #include "zCVertexTransform.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

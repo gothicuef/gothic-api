@@ -21,7 +21,9 @@ namespace Gothic_II_Classic {
     virtual int IsActive() const zCall( 0x004E4AA0 );
 
     // user API
+    #if __has_include("zCMusicTheme_DM.inl")
     #include "zCMusicTheme_DM.inl"
+    #endif
   };
 
   // sizeof 40h
@@ -33,7 +35,9 @@ namespace Gothic_II_Classic {
     zCMusicJingle_DM() : zCtor( zCMusicJingle ) {}
 
     // user API
+    #if __has_include("zCMusicJingle_DM.inl")
     #include "zCMusicJingle_DM.inl"
+    #endif
   };
 
   // sizeof 1Ch
@@ -84,7 +88,9 @@ namespace Gothic_II_Classic {
     virtual int IsAvailable( zSTRING const& )                                                                zCall( 0x004E7500 );
 
     // user API
+    #if __has_include("zCMusicSys_DirectMusic.inl")
     #include "zCMusicSys_DirectMusic.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

@@ -193,7 +193,9 @@ namespace Gothic_II_Addon {
     static float& s_fGlobalItemZBiasScale;
 
     // user API
+    #if __has_include("oCItem.inl")
     #include "oCItem.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

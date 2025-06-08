@@ -69,7 +69,9 @@ namespace Gothic_II_Classic {
       int nodeIndex;    // sizeof 04h    offset 04h
 
       // user API
+      #if __has_include("zCModelMeshLib_zTNodeMesh.inl")
       #include "zCModelMeshLib_zTNodeMesh.inl"
+      #endif
     };
 
     zCArray<zTNodeMesh> meshNodeList;          // sizeof 0Ch    offset 24h
@@ -98,7 +100,9 @@ namespace Gothic_II_Classic {
     virtual ~zCModelMeshLib()                                                               zCall( 0x00599A60 );
 
     // user API
+    #if __has_include("zCModelMeshLib.inl")
     #include "zCModelMeshLib.inl"
+    #endif
   };
 
   // sizeof 94h
@@ -125,7 +129,9 @@ namespace Gothic_II_Classic {
     void Load( zCFileBIN& )       zCall( 0x00583000 );
 
     // user API
+    #if __has_include("zCModelAniEvent.inl")
     #include "zCModelAniEvent.inl"
+    #endif
   };
 
   // sizeof C0h
@@ -152,7 +158,9 @@ namespace Gothic_II_Classic {
     void SetNodeVisualS( zCVisual* )              zCall( 0x0057F7D0 );
 
     // user API
+    #if __has_include("zCModelNode.inl")
     #include "zCModelNode.inl"
+    #endif
   };
 
 #pragma pack( push, 1 )
@@ -169,7 +177,9 @@ namespace Gothic_II_Classic {
     static float& samplePosRangeMin;
 
     // user API
+    #if __has_include("zTMdl_AniSample.inl")
     #include "zTMdl_AniSample.inl"
+    #endif
   };
 #pragma pack( pop )
 
@@ -253,7 +263,9 @@ namespace Gothic_II_Classic {
     virtual ~zCModelAni()                                            zCall( 0x0057FDA0 );
 
     // user API
+    #if __has_include("zCModelAni.inl")
     #include "zCModelAni.inl"
+    #endif
   };
 
   // sizeof E4h
@@ -264,6 +276,11 @@ namespace Gothic_II_Classic {
     enum zTFileSourceType {
       zFROM_MDS,
       zFROM_ASC
+    };
+
+    struct zTMatIDList {
+      zCPolygon* poly;
+      int matID;
     };
 
     zCModelPrototype* next;                    // sizeof 04h    offset 00h
@@ -365,7 +382,9 @@ namespace Gothic_II_Classic {
     static zCModelPrototype*& s_modelRoot;
 
     // user API
+    #if __has_include("zCModelPrototype.inl")
     #include "zCModelPrototype.inl"
+    #endif
   };
 
   // sizeof 88h
@@ -405,7 +424,9 @@ namespace Gothic_II_Classic {
     void DoCombineAni( zCModel*, int, int ) zCall( 0x0057A890 );
 
     // user API
+    #if __has_include("zCModelAniActive.inl")
     #include "zCModelAniActive.inl"
+    #endif
   };
 
   // sizeof 28h
@@ -437,7 +458,9 @@ namespace Gothic_II_Classic {
     void FinishTexList( zCArray<zCTexture*>& )                            zCall( 0x00572430 );
 
     // user API
+    #if __has_include("zCModelTexAniState.inl")
     #include "zCModelTexAniState.inl"
+    #endif
   };
 
 #pragma pack( push, 1 )
@@ -465,7 +488,9 @@ namespace Gothic_II_Classic {
       zTNodeAni() {}
 
       // user API
+      #if __has_include("zCModelNodeInst_zTNodeAni.inl")
       #include "zCModelNodeInst_zTNodeAni.inl"
+      #endif
     };
 
     zCModelNodeInst* parentNode;                   // sizeof 04h    offset 00h
@@ -499,7 +524,9 @@ namespace Gothic_II_Classic {
     int GetNodeAniListIndex( zCModelAniActive const* ) const zCall( 0x0057A390 );
 
     // user API
+    #if __has_include("zCModelNodeInst.inl")
     #include "zCModelNodeInst.inl"
+    #endif
   };
 #pragma pack( pop )
 
@@ -513,7 +540,9 @@ namespace Gothic_II_Classic {
     zTRandAni() {}
 
     // user API
+    #if __has_include("zTRandAni.inl")
     #include "zTRandAni.inl"
+    #endif
   };
 
   // sizeof 18h
@@ -530,7 +559,9 @@ namespace Gothic_II_Classic {
     zTAniAttachment()             zInit( zTAniAttachment_OnInit() );
 
     // user API
+    #if __has_include("zTAniAttachment.inl")
     #include "zTAniAttachment.inl"
+    #endif
   };
 
   // sizeof 204h
@@ -558,7 +589,9 @@ namespace Gothic_II_Classic {
       zCModelNodeInst* mnode; // sizeof 04h    offset 04h
 
       // user API
+      #if __has_include("zCModel_zTMdl_NodeVobAttachment.inl")
       #include "zCModel_zTMdl_NodeVobAttachment.inl"
+      #endif
     };
 
     // sizeof 08h
@@ -570,7 +603,9 @@ namespace Gothic_II_Classic {
       float vobFXHandle; // sizeof 04h    offset 04h
 
       // user API
+      #if __has_include("zCModel_zTMdl_StartedVobFX.inl")
       #include "zCModel_zTMdl_StartedVobFX.inl"
+      #endif
     };
 
     // sizeof 08h
@@ -582,7 +617,9 @@ namespace Gothic_II_Classic {
       zCModelMeshLib* meshLib; // sizeof 04h    offset 04h
 
       // user API
+      #if __has_include("zCModel_zTAniMeshLibEntry.inl")
       #include "zCModel_zTAniMeshLibEntry.inl"
+      #endif
     };
 
     // sizeof 2Ch
@@ -594,7 +631,9 @@ namespace Gothic_II_Classic {
       zCModelMeshLib* meshLib;        // sizeof 04h    offset 28h
 
       // user API
+      #if __has_include("zCModel_zTMeshLibEntry.inl")
       #include "zCModel_zTMeshLibEntry.inl"
+      #endif
     };
 
     int numActiveAnis;                                     // sizeof 04h    offset 34h
@@ -747,13 +786,18 @@ namespace Gothic_II_Classic {
     virtual void StopAnimation( zSTRING const& )                                                                                               zCall( 0x00571340 );
     virtual int IsAnimationActive( zSTRING const& )                                                                                            zCall( 0x005713E0 );
     virtual zSTRING const* GetAnyAnimation()                                                                                                   zCall( 0x00575900 );
+    
+    // inline
+    zBOOL GetIsFlying() const { return isFlying; }
 
     // static properties
     static int& s_drawSkeleton;
     static int& s_bSmoothRootNode;
 
     // user API
+    #if __has_include("zCModel.inl")
     #include "zCModel.inl"
+    #endif
   };
 
   // sizeof 30h
@@ -768,7 +812,9 @@ namespace Gothic_II_Classic {
     virtual int HandleFile( zSTRING const&, char const*, zFINDDATA )   zCall( 0x0059C1E0 );
 
     // user API
+    #if __has_include("zCModelConvertFileHandler.inl")
     #include "zCModelConvertFileHandler.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

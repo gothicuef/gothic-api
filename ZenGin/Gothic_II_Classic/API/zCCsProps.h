@@ -55,7 +55,9 @@ namespace Gothic_II_Classic {
     virtual void PrintDebugInfo()               zCall( 0x00422080 );
 
     // user API
+    #if __has_include("zCCSProps.inl")
     #include "zCCSProps.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

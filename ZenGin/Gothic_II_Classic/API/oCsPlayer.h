@@ -23,7 +23,9 @@ namespace Gothic_II_Classic {
     /* for zCCSDebugger num : 7*/
 
     // user API
+    #if __has_include("oCCSPlayer.inl")
     #include "oCCSPlayer.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

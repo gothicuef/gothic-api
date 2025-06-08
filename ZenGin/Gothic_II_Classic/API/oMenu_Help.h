@@ -20,7 +20,9 @@ namespace Gothic_II_Classic {
     oSMenuKey() {}
 
     // user API
+    #if __has_include("oSMenuKey.inl")
     #include "oSMenuKey.inl"
+    #endif
   };
 
   // sizeof CD0h
@@ -33,7 +35,9 @@ namespace Gothic_II_Classic {
     oCMenu_Help() : zCtor( zCMenu ) {}
 
     // user API
+    #if __has_include("oCMenu_Help.inl")
     #include "oCMenu_Help.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -46,7 +50,9 @@ namespace Gothic_II_Classic {
     oCHelpScreen() {}
 
     // user API
+    #if __has_include("oCHelpScreen.inl")
     #include "oCHelpScreen.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

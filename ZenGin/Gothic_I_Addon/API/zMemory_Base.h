@@ -39,7 +39,9 @@ namespace Gothic_I_Addon {
     zTMallocStats() {}
 
     // user API
+    #if __has_include("zTMallocStats.inl")
     #include "zTMallocStats.inl"
+    #endif
   };
 
   // sizeof 0Ch
@@ -53,7 +55,9 @@ namespace Gothic_I_Addon {
     zTMallocProcessStats() {}
 
     // user API
+    #if __has_include("zTMallocProcessStats.inl")
     #include "zTMallocProcessStats.inl"
+    #endif
   };
 
   // sizeof 04h
@@ -78,7 +82,9 @@ namespace Gothic_I_Addon {
     virtual int Shutdown()                                              zPureCall;
 
     // user API
+    #if __has_include("zCMalloc.inl")
     #include "zCMalloc.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

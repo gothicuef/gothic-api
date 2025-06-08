@@ -55,7 +55,9 @@ namespace Gothic_II_Addon {
     static int& gfxcount;
 
     // user API
+    #if __has_include("zCGfx.inl")
     #include "zCGfx.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

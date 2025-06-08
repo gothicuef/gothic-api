@@ -28,7 +28,9 @@ namespace Gothic_I_Classic {
     zTNetStatistics() {}
 
     // user API
+    #if __has_include("zTNetStatistics.inl")
     #include "zTNetStatistics.inl"
+    #endif
   };
 
   // sizeof 60h
@@ -58,7 +60,9 @@ namespace Gothic_I_Classic {
     virtual ~zCNetStatistics()       zCall( 0x0044E760 );
 
     // user API
+    #if __has_include("zCNetStatistics.inl")
     #include "zCNetStatistics.inl"
+    #endif
   };
 
   // sizeof 80h
@@ -110,7 +114,9 @@ namespace Gothic_I_Classic {
     virtual ~zCNet()                                                                               zCall( 0x0044BF90 );
 
     // user API
+    #if __has_include("zCNet.inl")
     #include "zCNet.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

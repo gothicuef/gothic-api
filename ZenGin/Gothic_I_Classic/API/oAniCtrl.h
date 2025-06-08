@@ -61,7 +61,9 @@ namespace Gothic_I_Classic {
       int comboDir;        // sizeof 04h    offset 14h
 
       // user API
+      #if __has_include("oCAniCtrl_Human_oTComboInfo.inl")
       #include "oCAniCtrl_Human_oTComboInfo.inl"
+      #endif
     };
 
     float angle_slide1;                        // sizeof 04h    offset 118h
@@ -404,7 +406,7 @@ namespace Gothic_I_Classic {
     void PC_GoForward()                                                 zCall( 0x00628C00 );
     void PC_GoBackward()                                                zCall( 0x00628C50 );
     void PC_JumpForward()                                               zCall( 0x00628C90 );
-    int CanJump( int )                                                  zCall( 0x00628E70 );
+    int CanJump( int = 0 )                                              zCall( 0x00628E70 );
     int CanJumpLedge()                                                  zCall( 0x00628EE0 );
     int JumpForward()                                                   zCall( 0x00629070 );
     int Swim_CanClimbLedge()                                            zCall( 0x00629290 );
@@ -458,7 +460,9 @@ namespace Gothic_I_Classic {
     virtual void Init( oCNpc* )                                         zCall( 0x0061B740 );
 
     // user API
+    #if __has_include("oCAniCtrl_Human.inl")
     #include "oCAniCtrl_Human.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

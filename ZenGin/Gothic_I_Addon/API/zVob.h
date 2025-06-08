@@ -93,7 +93,9 @@ namespace Gothic_I_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                               zCall( 0x004023A0 );
 
     // user API
+    #if __has_include("zCEventMessage.inl")
     #include "zCEventMessage.inl"
+    #endif
   };
 
   // sizeof 4Ch
@@ -132,7 +134,9 @@ namespace Gothic_I_Addon {
     virtual void Unpack( zCBuffer&, zCEventManager* )                   zCall( 0x005F9210 );
 
     // user API
+    #if __has_include("zCEventCore.inl")
     #include "zCEventCore.inl"
+    #endif
   };
 
   // sizeof 100h
@@ -175,7 +179,9 @@ namespace Gothic_I_Addon {
       ~zTCollisionContext() zCall( 0x00612C80 );
 
       // user API
+      #if __has_include("zCVob_zTCollisionContext.inl")
       #include "zCVob_zTCollisionContext.inl"
+      #endif
     };
 
     // sizeof 18h
@@ -191,7 +197,9 @@ namespace Gothic_I_Addon {
       ~zTModelLimbColl()            zCall( 0x005F7AA0 );
 
       // user API
+      #if __has_include("zCVob_zTModelLimbColl.inl")
       #include "zCVob_zTModelLimbColl.inl"
+      #endif
     };
 
     zCTree<zCVob>* globalVobTreeNode;               // sizeof 04h    offset 24h
@@ -412,6 +420,8 @@ namespace Gothic_I_Addon {
     virtual void ThisVobAddedToWorld( zCWorld* )                                                       zCall( 0x005F5BF0 );
     virtual void ThisVobRemovedFromWorld( zCWorld* )                                                   zCall( 0x005F5C10 );
 
+    // inline
+    zCAIBase* GetAI() const { return callback_ai; }
 
     // static properties
     static int& s_ignoreVisuals;
@@ -423,7 +433,9 @@ namespace Gothic_I_Addon {
     static zCCollisionDetector*& s_poCollisionDetector;
 
     // user API
+    #if __has_include("zCVob.inl")
     #include "zCVob.inl"
+    #endif
   };
 
   // sizeof 48h
@@ -465,7 +477,9 @@ namespace Gothic_I_Addon {
     void SetRange( float, int )                zCall( 0x005FD9A0 );
 
     // user API
+    #if __has_include("zCVobLightData.inl")
     #include "zCVobLightData.inl"
+    #endif
   };
 
   // sizeof 80h
@@ -484,7 +498,9 @@ namespace Gothic_I_Addon {
     virtual ~zCVobLightPreset()                                         zCall( 0x005F16F0 );
 
     // user API
+    #if __has_include("zCVobLightPreset.inl")
     #include "zCVobLightPreset.inl"
+    #endif
   };
 
   // sizeof 15Ch
@@ -520,7 +536,9 @@ namespace Gothic_I_Addon {
     static int& renderLightVisuals;
 
     // user API
+    #if __has_include("zCVobLight.inl")
     #include "zCVobLight.inl"
+    #endif
   };
 
   // sizeof 100h
@@ -544,7 +562,9 @@ namespace Gothic_I_Addon {
     static int& unarcIgnoreVisuals;
 
     // user API
+    #if __has_include("zCVobLevelCompo.inl")
     #include "zCVobLevelCompo.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

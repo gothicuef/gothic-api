@@ -48,7 +48,9 @@ namespace Gothic_II_Classic {
       zTConfig() {}
 
       // user API
+      #if __has_include("zCAIPlayer_zTConfig.inl")
       #include "zCAIPlayer_zTConfig.inl"
+      #endif
     };
 
     // sizeof 28h
@@ -63,7 +65,9 @@ namespace Gothic_II_Classic {
       zTLedgeInfo() {}
 
       // user API
+      #if __has_include("zCAIPlayer_zTLedgeInfo.inl")
       #include "zCAIPlayer_zTLedgeInfo.inl"
+      #endif
     };
 
     // sizeof 08h
@@ -76,7 +80,9 @@ namespace Gothic_II_Classic {
       zTBloodVobTrack() {}
 
       // user API
+      #if __has_include("zCAIPlayer_zTBloodVobTrack.inl")
       #include "zCAIPlayer_zTBloodVobTrack.inl"
+      #endif
     };
 
     zTConfig config;                                                  // sizeof 40h    offset 24h
@@ -193,8 +199,15 @@ namespace Gothic_II_Classic {
     virtual void StartStandAni()                                      zCall( 0x0050EFB0 );
     virtual void StartFallDownAni()                                   zCall( 0x0050EFD0 );
 
+    // inline
+    const zCCollObjectCharacter::zTInterferenceReport& GetInterferenceReport() const { return GetCollObject()->GetInterferenceReport(); }
+    zCPolygon* GetFloorPoly() const { return GetCollObject()->GetSpatialState().m_poFloorPoly; }
+    zCCollObjectCharacter* GetCollObject() const { return static_cast<zCCollObjectCharacter*>(vob->GetCollisionObject()); }
+
     // user API
+    #if __has_include("zCAIPlayer.inl")
     #include "zCAIPlayer.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

@@ -65,7 +65,9 @@ namespace Gothic_II_Classic {
     void Unarchive( zCArchiver& )                                            zCall( 0x005B0E40 );
 
     // user API
+    #if __has_include("zCRigidBody.inl")
     #include "zCRigidBody.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

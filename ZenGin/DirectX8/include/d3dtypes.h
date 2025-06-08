@@ -529,7 +529,9 @@ typedef struct _D3DMATRIX {
 typedef struct _D3DMATRIX *LPD3DMATRIX;
 
 #if (defined __cplusplus) && (defined D3D_OVERLOADS)
+#if __has_include("d3dvec.inl")
 #include "d3dvec.inl"
+#endif
 #endif
 
 typedef struct _D3DVIEWPORT {

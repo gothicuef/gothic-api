@@ -77,7 +77,9 @@ namespace Gothic_I_Classic {
     virtual int GetCode( int, int )                                     zCall( 0x007562F0 );
 
     // user API
+    #if __has_include("zCViewObject.inl")
     #include "zCViewObject.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

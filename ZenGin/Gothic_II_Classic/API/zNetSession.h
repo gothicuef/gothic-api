@@ -25,7 +25,9 @@ namespace Gothic_II_Classic {
     virtual ~zCNetSession()                    zCall( 0x0045CA70 );
 
     // user API
+    #if __has_include("zCNetSession.inl")
     #include "zCNetSession.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

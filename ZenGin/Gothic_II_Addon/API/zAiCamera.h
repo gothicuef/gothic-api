@@ -142,7 +142,9 @@ namespace Gothic_II_Addon {
     static int& bCamChanges;
 
     // user API
+    #if __has_include("zCAICamera.inl")
     #include "zCAICamera.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

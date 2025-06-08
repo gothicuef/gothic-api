@@ -187,6 +187,19 @@ namespace Gothic_II_Addon {
   static const int FA_MAX_ENTRY                          = 6;
 
   enum {
+    NPC_OBST_NONE,
+    NPC_OBST_FALL,
+    NPC_OBST_WALL,
+    NPC_OBST_WALL_CLIMB,
+    NPC_OBST_CHASM,
+    NPC_OBST_NPC,
+    NPC_OBST_LADDER,
+    NPC_OBST_STAIRS,
+    NPC_OBST_MOBINTER,
+    NPC_OBST_JUMP
+  };
+
+  enum {
     NPC_GAME_NORMAL,
     NPC_GAME_PLUNDER,
     NPC_GAME_STEAL
@@ -309,7 +322,9 @@ namespace Gothic_II_Addon {
     virtual ~oCNpcTalent()                                 zCall( 0x0072C660 );
 
     // user API
+    #if __has_include("oCNpcTalent.inl")
     #include "oCNpcTalent.inl"
+    #endif
   };
 
   // sizeof 38h
@@ -331,7 +346,9 @@ namespace Gothic_II_Addon {
     ~TNpcSlot()            zCall( 0x0072ED90 );
 
     // user API
+    #if __has_include("TNpcSlot.inl")
     #include "TNpcSlot.inl"
+    #endif
   };
 
   // sizeof 08h
@@ -345,7 +362,9 @@ namespace Gothic_II_Addon {
     TNpcPerc() {}
 
     // user API
+    #if __has_include("TNpcPerc.inl")
     #include "TNpcPerc.inl"
+    #endif
   };
 
   // sizeof A04h
@@ -500,7 +519,9 @@ namespace Gothic_II_Addon {
       oSDirectionInfo() {}
 
       // user API
+      #if __has_include("oCNpc_oSDirectionInfo.inl")
       #include "oCNpc_oSDirectionInfo.inl"
+      #endif
     };
 
     // sizeof 9Ch
@@ -541,7 +562,9 @@ namespace Gothic_II_Addon {
       ~oTRobustTrace() zCall( 0x0072E3D0 );
 
       // user API
+      #if __has_include("oCNpc_oTRobustTrace.inl")
       #include "oCNpc_oTRobustTrace.inl"
+      #endif
     };
 
     // sizeof 04h
@@ -560,7 +583,9 @@ namespace Gothic_II_Addon {
       ~TActiveInfo()                          zCall( 0x0072C970 );
 
       // user API
+      #if __has_include("oCNpc_TActiveInfo.inl")
       #include "oCNpc_TActiveInfo.inl"
+      #endif
     };
 
     // sizeof 18h
@@ -577,7 +602,9 @@ namespace Gothic_II_Addon {
       int Process()        zCall( 0x0075F4A0 );
 
       // user API
+      #if __has_include("oCNpc_oCNpcTimedOverlay.inl")
       #include "oCNpc_oCNpcTimedOverlay.inl"
+      #endif
     };
 
     struct {
@@ -1413,7 +1440,9 @@ namespace Gothic_II_Addon {
     static int& isEnabledTalkBoxNoise;
 
     // user API
+    #if __has_include("oCNpc.inl")
     #include "oCNpc.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Addon

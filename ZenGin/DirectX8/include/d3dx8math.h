@@ -1208,7 +1208,11 @@ HRESULT WINAPI
 }
 #endif
 
+#if __has_include("d3dx8math.inl")
+
 #include "d3dx8math.inl"
+
+#endif
 
 #pragma warning(default:4201)
 

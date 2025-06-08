@@ -98,7 +98,9 @@ namespace Gothic_I_Classic {
     virtual ~zCBuffer()                                   zCall( 0x0043CED0 );
 
     // user API
+    #if __has_include("zCBuffer.inl")
     #include "zCBuffer.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

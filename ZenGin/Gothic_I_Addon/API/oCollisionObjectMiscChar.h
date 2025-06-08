@@ -30,7 +30,9 @@ namespace Gothic_I_Addon {
     static zCCollisionObjectDef& s_oCollObjClass;
 
     // user API
+    #if __has_include("oCCollObjectCharacter.inl")
     #include "oCCollObjectCharacter.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Addon

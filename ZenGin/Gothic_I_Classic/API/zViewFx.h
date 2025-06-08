@@ -55,7 +55,9 @@ namespace Gothic_I_Classic {
     /* for zCViewBase num : 8*/
 
     // user API
+    #if __has_include("zCViewFX.inl")
     #include "zCViewFX.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

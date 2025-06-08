@@ -218,7 +218,9 @@ namespace Gothic_II_Classic {
     zCRenderLight()             zInit( zCRenderLight_OnInit() );
 
     // user API
+    #if __has_include("zCRenderLight.inl")
     #include "zCRenderLight.inl"
+    #endif
   };
 
   // sizeof 0Ch
@@ -236,7 +238,9 @@ namespace Gothic_II_Classic {
     virtual int IsAlphaPoly()       zCall( 0x00525E10 );
 
     // user API
+    #if __has_include("zCRndAlphaSortObject.inl")
     #include "zCRndAlphaSortObject.inl"
+    #endif
   };
 
   // sizeof 24h
@@ -256,7 +260,9 @@ namespace Gothic_II_Classic {
     zTRnd_TexFormatInfo() {}
 
     // user API
+    #if __has_include("zTRnd_TexFormatInfo.inl")
     #include "zTRnd_TexFormatInfo.inl"
+    #endif
   };
 
   // sizeof 14h
@@ -270,7 +276,9 @@ namespace Gothic_II_Classic {
     zTRnd_DeviceInfo()             zInit( zTRnd_DeviceInfo_OnInit() );
 
     // user API
+    #if __has_include("zTRnd_DeviceInfo.inl")
     #include "zTRnd_DeviceInfo.inl"
+    #endif
   };
 
   // sizeof 10h
@@ -285,7 +293,9 @@ namespace Gothic_II_Classic {
     zTRnd_VidModeInfo() {}
 
     // user API
+    #if __has_include("zTRnd_VidModeInfo.inl")
     #include "zTRnd_VidModeInfo.inl"
+    #endif
   };
 
   // sizeof 24h
@@ -305,7 +315,9 @@ namespace Gothic_II_Classic {
     zTRnd_Stats() {}
 
     // user API
+    #if __has_include("zTRnd_Stats.inl")
     #include "zTRnd_Stats.inl"
+    #endif
   };
 
   // sizeof 18h
@@ -318,7 +330,9 @@ namespace Gothic_II_Classic {
     zCOLOR color; // sizeof 04h    offset 14h
 
     // user API
+    #if __has_include("zTRndSimpleVertex.inl")
     #include "zTRndSimpleVertex.inl"
+    #endif
   };
 
   // sizeof 20h
@@ -337,7 +351,9 @@ namespace Gothic_II_Classic {
     zTRndSurfaceDesc() {}
 
     // user API
+    #if __has_include("zTRndSurfaceDesc.inl")
     #include "zTRndSurfaceDesc.inl"
+    #endif
   };
 
   // sizeof 34h
@@ -355,7 +371,9 @@ namespace Gothic_II_Classic {
       zTMaterial() {}
 
       // user API
+      #if __has_include("zCRenderer_zTMaterial.inl")
       #include "zCRenderer_zTMaterial.inl"
+      #endif
     };
 
     zTRnd_PolySortMode polySortMode; // sizeof 04h    offset 04h
@@ -483,7 +501,9 @@ namespace Gothic_II_Classic {
     virtual zCVertexBuffer* CreateVertexBuffer()                                                       zPureCall;
 
     // user API
+    #if __has_include("zCRenderer.inl")
     #include "zCRenderer.inl"
+    #endif
   };
 
 } // namespace Gothic_II_Classic

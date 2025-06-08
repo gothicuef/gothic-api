@@ -27,7 +27,9 @@ namespace Gothic_I_Classic {
     void LoadGuildTable( zCArchiver& )          zCall( 0x00663730 );
 
     // user API
+    #if __has_include("oCGuilds.inl")
     #include "oCGuilds.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic

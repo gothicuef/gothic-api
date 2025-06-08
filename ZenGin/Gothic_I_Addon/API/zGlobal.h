@@ -58,6 +58,9 @@ namespace Gothic_I_Addon {
   extern HDC&                   dcScreen;
   extern HICON&                 hIconApp;
   extern HWND&                  hWndApp;
+  extern zREAL&                 SPAWN_INSERTTIME_MAX;
+  extern zREAL&                 SPAWN_INSERTRANGE;
+  extern zREAL&                 SPAWN_REMOVERANGE;
 
   // References
   namespace Gothic {

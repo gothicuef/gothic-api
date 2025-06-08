@@ -75,7 +75,9 @@ namespace Gothic_I_Classic {
     static oCNpcFocus** focuslist;
 
     // user API
+    #if __has_include("oCNpcFocus.inl")
     #include "oCNpcFocus.inl"
+    #endif
   };
 
 } // namespace Gothic_I_Classic
