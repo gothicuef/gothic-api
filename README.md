@@ -13,7 +13,7 @@ Documentation is available on [Union Framework Docs](https://union-framework.git
 ## Usage
 
 ### Build
-Union API is built using [CMake](https://cmake.org/) and requires C++17 or later to compile. The recommended way to build is to use [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with CMake support enabled.
+Gothic API is built using [CMake](https://cmake.org/) and requires C++17 or later to compile. The recommended way to build is to use [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with CMake support enabled.
 
 ### Including
 
@@ -24,7 +24,7 @@ If you are using git submodule, run the following command in your project root:
 ```bash
 git submodule add https://gitlab.com/union-framework/gothic-api.git
 ```
-This will add Union API as a submodule in your project. You can then include it in your CMake project by adding the following lines to your `CMakeLists.txt`:
+This will add Gothic API as a submodule in your project. You can then include it in your CMake project by adding the following lines to your `CMakeLists.txt`:
 
 ```cmake
 add_subdirectory(union-api)
@@ -57,4 +57,4 @@ If you have found a bug, please [create an issue](https://gitlab.com/union-frame
 
 ## License
 
-Union API is licensed under [BSD 3-Clause](https://gitlab.com/union-framework/gothic-api/-/blob/main/LICENSE).
+Gothic API is licensed under [BSD 3-Clause](https://gitlab.com/union-framework/gothic-api/-/blob/main/LICENSE).
