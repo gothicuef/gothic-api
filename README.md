@@ -53,7 +53,7 @@ target_link_libraries(your_target PRIVATE gothic_api)
 
 Community-driven support is provided on [Gothic Modding Community Discord](https://discord.gg/mCpS5b5SUY).
 
-If you have found a bug, please [create an issue](https://gitlab.com/union-framework/union-api/-/issues) with a detailed description and your environment.
+If you have found a bug, please [create an issue](https://gitlab.com/union-framework/gothic-api/-/issues) with a detailed description and your environment.
 
 ## License
 
