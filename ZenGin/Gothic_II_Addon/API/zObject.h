@@ -4,6 +4,7 @@
 #ifndef __ZOBJECT_H__VER3__
 #define __ZOBJECT_H__VER3__
 #include <type_traits>
+#include <memory>
 
 namespace Gothic_II_Addon {
 
@@ -185,7 +186,50 @@ namespace Gothic_II_Addon {
     #include "zCObjectFactory.inl"
   };
 
+  struct zCObjectMemoryWrapper {
+    static void PushedIntoSmartPointer( const zCObject* object ) {
+      if( object )
+        const_cast<zCObject*>(object)->AddRef();
+    }
   
+    static void PoppedFromSmartPointer( const zCObject* object ) {
+      if( object )
+        const_cast<zCObject*>(object)->Release();
+    }
+  };
+  
+  struct zCObjectDeleter : zCObjectMemoryWrapper {
+    void operator()( const zCObject* object ) const {
+      PoppedFromSmartPointer( object );
+    }
+  };
+  
+  template<class T, class... Types>
+  std::shared_ptr<T> zMakeShared( Types&&... args ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeShared: T is not derived from zCObject");
+    std::shared_ptr<T> sharedPtr( new T( args... ), zCObjectDeleter() );
+    return sharedPtr;
+  }
+  
+  template<class T>
+  std::shared_ptr<T> zSharedPtr( T* instance ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zSharedPtr: T is not derived from zCObject");
+    zCObjectMemoryWrapper::PushedIntoSmartPointer( instance );
+    return std::shared_ptr<T>( instance, zCObjectDeleter() );
+  }
+  
+  template<class T, class... Types>
+  std::unique_ptr<T, zCObjectDeleter> zMakeUnique( Types&&... args ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zMakeUnique: T is not derived from zCObject");
+    return std::unique_ptr<T, zCObjectDeleter>( new T( args... ) );
+  }
+  
+  template<class T>
+  std::unique_ptr<T, zCObjectDeleter> zUniquePtr( T* instance ) {
+    static_assert(std::is_base_of<zCObject, T>::value, "static_assert: zUniquePtr: T is not derived from zCObject");
+    zCObjectMemoryWrapper::PushedIntoSmartPointer( instance );
+    return std::unique_ptr<T, zCObjectDeleter>( instance );
+  }
 } // namespace Gothic_II_Addon
 
 #endif // __ZOBJECT_H__VER3__
